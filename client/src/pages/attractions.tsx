@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
-import { attractions, governorates, wilayatsByGovernorate } from "@/lib/attractions";
+import { attractions, governorates, wilayatsByGovernorate, getAttractionImage } from "@/lib/attractions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -264,7 +264,7 @@ export default function AttractionsPage() {
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
-                      src={attraction.image}
+                      src={getAttractionImage(attraction.image)}
                       alt={attraction.nameAr}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

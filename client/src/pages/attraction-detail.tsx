@@ -1,5 +1,5 @@
 import { useLocation, useParams } from "wouter";
-import { attractions } from "@/lib/attractions";
+import { attractions, getAttractionImage } from "@/lib/attractions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -97,7 +97,7 @@ export default function AttractionDetailPage() {
 
       <section className="relative h-[50vh] overflow-hidden">
         <img
-          src={attraction.image}
+          src={getAttractionImage(attraction.image)}
           alt={attraction.nameAr}
           className="w-full h-full object-cover"
         />
@@ -215,7 +215,7 @@ export default function AttractionDetailPage() {
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <img
-                      src={related.image}
+                      src={getAttractionImage(related.image)}
                       alt={related.nameAr}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

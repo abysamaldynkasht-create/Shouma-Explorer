@@ -1,5 +1,101 @@
 import type { Attraction } from "@shared/schema";
 
+// Stock images imports
+import wadiImg1 from "@assets/stock_images/oman_wadi_valley_nat_1af4dc65.jpg";
+import wadiImg2 from "@assets/stock_images/oman_wadi_valley_nat_7dfbf540.jpg";
+import wadiImg3 from "@assets/stock_images/oman_wadi_valley_nat_bb47f469.jpg";
+import wadiImg4 from "@assets/stock_images/oman_wadi_valley_nat_edac93ff.jpg";
+import wadiImg5 from "@assets/stock_images/oman_wadi_valley_nat_483e8ecc.jpg";
+
+import fortImg1 from "@assets/stock_images/oman_fort_castle_her_5f96b3a5.jpg";
+import fortImg2 from "@assets/stock_images/oman_fort_castle_her_ff40f531.jpg";
+import fortImg3 from "@assets/stock_images/oman_fort_castle_her_d3f0dd07.jpg";
+import fortImg4 from "@assets/stock_images/oman_fort_castle_her_8ba571c8.jpg";
+import fortImg5 from "@assets/stock_images/oman_fort_castle_her_1c36e80d.jpg";
+
+import springImg1 from "@assets/stock_images/oman_natural_spring__a6b99a8c.jpg";
+import springImg2 from "@assets/stock_images/oman_natural_spring__0385760d.jpg";
+import springImg3 from "@assets/stock_images/oman_natural_spring__3dd8cde9.jpg";
+import springImg4 from "@assets/stock_images/oman_natural_spring__e1013501.jpg";
+import springImg5 from "@assets/stock_images/oman_natural_spring__5e306873.jpg";
+
+import beachImg1 from "@assets/stock_images/oman_beach_coast_sea_bf5cd867.jpg";
+import beachImg2 from "@assets/stock_images/oman_beach_coast_sea_d5389d20.jpg";
+import beachImg3 from "@assets/stock_images/oman_beach_coast_sea_516aabf1.jpg";
+import beachImg4 from "@assets/stock_images/oman_beach_coast_sea_4b208efe.jpg";
+import beachImg5 from "@assets/stock_images/oman_beach_coast_sea_74608e1a.jpg";
+
+import marketImg1 from "@assets/stock_images/oman_traditional_mar_7dcf1ff7.jpg";
+import marketImg2 from "@assets/stock_images/oman_traditional_mar_aacd0b8f.jpg";
+import marketImg3 from "@assets/stock_images/oman_traditional_mar_43a305bc.jpg";
+import marketImg4 from "@assets/stock_images/oman_traditional_mar_8eb824f6.jpg";
+import marketImg5 from "@assets/stock_images/oman_traditional_mar_2c996097.jpg";
+
+import parkImg1 from "@assets/stock_images/oman_park_garden_rec_fcd88d12.jpg";
+import parkImg2 from "@assets/stock_images/oman_park_garden_rec_499435c5.jpg";
+import parkImg3 from "@assets/stock_images/oman_park_garden_rec_134f240d.jpg";
+import parkImg4 from "@assets/stock_images/oman_park_garden_rec_81025203.jpg";
+import parkImg5 from "@assets/stock_images/oman_park_garden_rec_7b088d4a.jpg";
+
+import desertImg1 from "@assets/stock_images/oman_desert_sand_dun_4be59f12.jpg";
+import desertImg2 from "@assets/stock_images/oman_desert_sand_dun_94a49ff8.jpg";
+import desertImg3 from "@assets/stock_images/oman_desert_sand_dun_5775117a.jpg";
+import desertImg4 from "@assets/stock_images/oman_desert_sand_dun_db69c565.jpg";
+import desertImg5 from "@assets/stock_images/oman_desert_sand_dun_8e6b9356.jpg";
+
+import mountainImg1 from "@assets/stock_images/oman_mountain_green__dc357e36.jpg";
+import mountainImg2 from "@assets/stock_images/oman_mountain_green__8489ed5b.jpg";
+import mountainImg3 from "@assets/stock_images/oman_mountain_green__90679dbd.jpg";
+import mountainImg4 from "@assets/stock_images/oman_mountain_green__6405e796.jpg";
+import mountainImg5 from "@assets/stock_images/oman_mountain_green__cab0f532.jpg";
+
+const imageMap: Record<string, string> = {
+  "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg": wadiImg1,
+  "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg": wadiImg2,
+  "/stock_images/oman_wadi_valley_nat_bb47f469.jpg": wadiImg3,
+  "/stock_images/oman_wadi_valley_nat_edac93ff.jpg": wadiImg4,
+  "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg": wadiImg5,
+  "/stock_images/oman_fort_castle_her_5f96b3a5.jpg": fortImg1,
+  "/stock_images/oman_fort_castle_her_ff40f531.jpg": fortImg2,
+  "/stock_images/oman_fort_castle_her_d3f0dd07.jpg": fortImg3,
+  "/stock_images/oman_fort_castle_her_8ba571c8.jpg": fortImg4,
+  "/stock_images/oman_fort_castle_her_1c36e80d.jpg": fortImg5,
+  "/stock_images/oman_natural_spring__a6b99a8c.jpg": springImg1,
+  "/stock_images/oman_natural_spring__0385760d.jpg": springImg2,
+  "/stock_images/oman_natural_spring__3dd8cde9.jpg": springImg3,
+  "/stock_images/oman_natural_spring__e1013501.jpg": springImg4,
+  "/stock_images/oman_natural_spring__5e306873.jpg": springImg5,
+  "/stock_images/oman_beach_coast_sea_bf5cd867.jpg": beachImg1,
+  "/stock_images/oman_beach_coast_sea_d5389d20.jpg": beachImg2,
+  "/stock_images/oman_beach_coast_sea_516aabf1.jpg": beachImg3,
+  "/stock_images/oman_beach_coast_sea_4b208efe.jpg": beachImg4,
+  "/stock_images/oman_beach_coast_sea_74608e1a.jpg": beachImg5,
+  "/stock_images/oman_traditional_mar_7dcf1ff7.jpg": marketImg1,
+  "/stock_images/oman_traditional_mar_aacd0b8f.jpg": marketImg2,
+  "/stock_images/oman_traditional_mar_43a305bc.jpg": marketImg3,
+  "/stock_images/oman_traditional_mar_8eb824f6.jpg": marketImg4,
+  "/stock_images/oman_traditional_mar_2c996097.jpg": marketImg5,
+  "/stock_images/oman_park_garden_rec_fcd88d12.jpg": parkImg1,
+  "/stock_images/oman_park_garden_rec_499435c5.jpg": parkImg2,
+  "/stock_images/oman_park_garden_rec_134f240d.jpg": parkImg3,
+  "/stock_images/oman_park_garden_rec_81025203.jpg": parkImg4,
+  "/stock_images/oman_park_garden_rec_7b088d4a.jpg": parkImg5,
+  "/stock_images/oman_desert_sand_dun_4be59f12.jpg": desertImg1,
+  "/stock_images/oman_desert_sand_dun_94a49ff8.jpg": desertImg2,
+  "/stock_images/oman_desert_sand_dun_5775117a.jpg": desertImg3,
+  "/stock_images/oman_desert_sand_dun_db69c565.jpg": desertImg4,
+  "/stock_images/oman_desert_sand_dun_8e6b9356.jpg": desertImg5,
+  "/stock_images/oman_mountain_green__dc357e36.jpg": mountainImg1,
+  "/stock_images/oman_mountain_green__8489ed5b.jpg": mountainImg2,
+  "/stock_images/oman_mountain_green__90679dbd.jpg": mountainImg3,
+  "/stock_images/oman_mountain_green__6405e796.jpg": mountainImg4,
+  "/stock_images/oman_mountain_green__cab0f532.jpg": mountainImg5,
+};
+
+export function getAttractionImage(imagePath: string): string {
+  return imageMap[imagePath] || imagePath;
+}
+
 export const governorates = [
   { id: "dakhiliyah", nameAr: "محافظة الداخلية" },
   { id: "wusta", nameAr: "محافظة الوسطى" },
@@ -24,7 +120,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "أودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/oJfK2xq7pUZH2s7q7",
     "rating": "4.3"
   },
@@ -37,7 +133,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "وادٍ طبيعي",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/2sc9ykwrTYdwC1dK6",
     "rating": "4.1"
   },
@@ -50,7 +146,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "وادٍ ترفيهي",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/45mBLdnG2FzFT8m67",
     "rating": "4.2"
   },
@@ -63,7 +159,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "وادٍ طبيعي",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/9wTQqPRDGohEfiRAA",
     "rating": "4.3"
   },
@@ -76,7 +172,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "ينابيع طبيعية",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/qCg8XsQJ6SqPnmAC9",
     "rating": "4.1"
   },
@@ -89,7 +185,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "عين مائية",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/9CKrA1g1U7oN4vH9A",
     "rating": "4.8"
   },
@@ -102,7 +198,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "ينابيع طبيعية",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/3htEUDpY4i3QZ8Y6A",
     "rating": "4.5"
   },
@@ -115,7 +211,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "عين موسمية",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/7sLmpPKt7m7zBv6A8",
     "rating": "4.5"
   },
@@ -128,7 +224,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "متنزهات",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/GGQVmpQv2sczJZ6h6",
     "rating": "4.4"
   },
@@ -141,7 +237,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "ترفيه",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/pVX4jzXNwEZA9goN6",
     "rating": "4.6"
   },
@@ -154,7 +250,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "متنزه طبيعي",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/23HAzLcVLcXVyoYp9",
     "rating": "4.1"
   },
@@ -167,7 +263,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "مسارات مشي",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/yrrL6yFHXxEuq7tA7",
     "rating": "4.5"
   },
@@ -180,7 +276,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "مول",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/rJ6zYfx2MchdpVcia",
     "rating": "4.5"
   },
@@ -193,7 +289,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "مركز تجاري",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/bFvXEjchua2KkdzE6",
     "rating": "4.5"
   },
@@ -206,7 +302,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "مركز تجاري",
-    "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/8v6MwqHLW9jyP6Kv6",
     "rating": "4.1"
   },
@@ -219,7 +315,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "سوق تراثي",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/Z4eHG9BJ8P7zfoyK8",
     "rating": "4.3"
   },
@@ -232,7 +328,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "قلعة تاريخية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/KsmQbMKj2t7epLsL8",
     "rating": "4.7"
   },
@@ -245,7 +341,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "حصن تراثي",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/2fPeoGk2FbWxnL2v8",
     "rating": "4.2"
   },
@@ -258,7 +354,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "قرية تراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/B8v6kBa7LaPPRTnG8",
     "rating": "4.3"
   },
@@ -271,7 +367,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx26",
     "rating": "4.1"
   },
@@ -284,7 +380,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx27",
     "rating": "4.1"
   },
@@ -297,7 +393,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx28",
     "rating": "4.1"
   },
@@ -310,7 +406,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx29",
     "rating": "4.0"
   },
@@ -323,7 +419,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx30",
     "rating": "4.5"
   },
@@ -336,7 +432,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx32",
     "rating": "4.6"
   },
@@ -349,7 +445,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx33",
     "rating": "4.4"
   },
@@ -362,7 +458,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx34",
     "rating": "4.6"
   },
@@ -375,7 +471,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx35",
     "rating": "4.7"
   },
@@ -388,7 +484,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx36",
     "rating": "4.4"
   },
@@ -401,7 +497,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx37",
     "rating": "4.9"
   },
@@ -414,7 +510,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx38",
     "rating": "4.6"
   },
@@ -427,7 +523,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx41",
     "rating": "4.7"
   },
@@ -440,7 +536,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx42",
     "rating": "4.8"
   },
@@ -453,7 +549,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx43",
     "rating": "4.1"
   },
@@ -466,7 +562,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx44",
     "rating": "4.2"
   },
@@ -479,7 +575,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx45",
     "rating": "4.8"
   },
@@ -492,7 +588,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_beach_coast_sea_bf5cd867.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx46",
     "rating": "4.7"
   },
@@ -505,7 +601,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_beach_coast_sea_d5389d20.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx47",
     "rating": "4.8"
   },
@@ -518,7 +614,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx48",
     "rating": "4.8"
   },
@@ -531,7 +627,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx49",
     "rating": "4.3"
   },
@@ -544,7 +640,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية القم",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx50",
     "rating": "4.3"
   },
@@ -557,7 +653,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx51",
     "rating": "4.2"
   },
@@ -570,7 +666,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx52",
     "rating": "4.1"
   },
@@ -583,7 +679,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx53",
     "rating": "4.5"
   },
@@ -596,7 +692,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx54",
     "rating": "4.1"
   },
@@ -609,7 +705,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx55",
     "rating": "4.6"
   },
@@ -622,7 +718,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx56",
     "rating": "4.9"
   },
@@ -635,7 +731,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx57",
     "rating": "4.2"
   },
@@ -648,7 +744,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx58",
     "rating": "4.3"
   },
@@ -661,7 +757,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx59",
     "rating": "4.6"
   },
@@ -674,7 +770,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx60",
     "rating": "4.1"
   },
@@ -687,7 +783,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx61",
     "rating": "4.9"
   },
@@ -700,7 +796,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx62",
     "rating": "4.0"
   },
@@ -713,7 +809,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx63",
     "rating": "4.6"
   },
@@ -726,7 +822,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx64",
     "rating": "4.1"
   },
@@ -739,7 +835,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx65",
     "rating": "4.7"
   },
@@ -752,7 +848,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx66",
     "rating": "4.6"
   },
@@ -765,7 +861,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx67",
     "rating": "4.2"
   },
@@ -778,7 +874,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx68",
     "rating": "4.7"
   },
@@ -791,7 +887,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx69",
     "rating": "4.4"
   },
@@ -804,7 +900,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx70",
     "rating": "4.7"
   },
@@ -817,7 +913,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_beach_coast_sea_516aabf1.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx71",
     "rating": "4.2"
   },
@@ -830,7 +926,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx72",
     "rating": "4.4"
   },
@@ -843,7 +939,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx73",
     "rating": "4.7"
   },
@@ -856,7 +952,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx74",
     "rating": "4.5"
   },
@@ -869,7 +965,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية محوت",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx75",
     "rating": "4.7"
   },
@@ -882,7 +978,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx1",
     "rating": "4.1"
   },
@@ -895,7 +991,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx2",
     "rating": "4.9"
   },
@@ -908,7 +1004,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx5",
     "rating": "4.7"
   },
@@ -921,7 +1017,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx6",
     "rating": "4.4"
   },
@@ -934,7 +1030,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx7",
     "rating": "4.0"
   },
@@ -947,7 +1043,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx8",
     "rating": "4.5"
   },
@@ -960,7 +1056,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx9",
     "rating": "4.9"
   },
@@ -973,7 +1069,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "العيون والافلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx10",
     "rating": "4.0"
   },
@@ -986,7 +1082,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx11",
     "rating": "4.3"
   },
@@ -999,7 +1095,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx12",
     "rating": "4.1"
   },
@@ -1012,7 +1108,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx13",
     "rating": "4.8"
   },
@@ -1025,7 +1121,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx14",
     "rating": "4.5"
   },
@@ -1038,7 +1134,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx15",
     "rating": "4.5"
   },
@@ -1051,7 +1147,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx16",
     "rating": "4.8"
   },
@@ -1064,7 +1160,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx17",
     "rating": "4.5"
   },
@@ -1077,7 +1173,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx18",
     "rating": "4.2"
   },
@@ -1090,7 +1186,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx19",
     "rating": "4.8"
   },
@@ -1103,7 +1199,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx20",
     "rating": "4.8"
   },
@@ -1116,7 +1212,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx21",
     "rating": "4.2"
   },
@@ -1129,7 +1225,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx22",
     "rating": "4.6"
   },
@@ -1142,7 +1238,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx23",
     "rating": "4.2"
   },
@@ -1155,7 +1251,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx24",
     "rating": "4.7"
   },
@@ -1168,7 +1264,7 @@ export const attractions: Attraction[] = [
     "governorateId": "wusta",
     "wilayat": "ولاية هيما",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/xxxx25",
     "rating": "4.5"
   },
@@ -1181,7 +1277,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/XYZ789abc123",
     "rating": "4.8"
   },
@@ -1194,7 +1290,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/DEF123ghi456",
     "rating": "4.8"
   },
@@ -1207,7 +1303,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/PQR567stu890",
     "rating": "4.1"
   },
@@ -1220,7 +1316,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/HIJ012klm345",
     "rating": "4.8"
   },
@@ -1233,7 +1329,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM678nop901",
     "rating": "4.3"
   },
@@ -1246,7 +1342,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/QRS890tuv123",
     "rating": "4.8"
   },
@@ -1259,7 +1355,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_beach_coast_sea_4b208efe.jpg",
     "mapUrl": "https://maps.app.goo.gl/TUV456wxy789",
     "rating": "4.6"
   },
@@ -1272,7 +1368,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/WXY012yza345",
     "rating": "4.3"
   },
@@ -1285,7 +1381,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA678zab901",
     "rating": "4.1"
   },
@@ -1298,7 +1394,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية إبراء",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/CDE234fgh567",
     "rating": "4.6"
   },
@@ -1311,7 +1407,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/XYZ123abc456",
     "rating": "4.8"
   },
@@ -1324,7 +1420,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/ABC456def789",
     "rating": "4.1"
   },
@@ -1337,7 +1433,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/JKL345mno678",
     "rating": "4.7"
   },
@@ -1350,7 +1446,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/MNO678pqr901",
     "rating": "4.8"
   },
@@ -1363,7 +1459,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/6YVp8wHQN2k7wSox8",
     "rating": "4.6"
   },
@@ -1376,7 +1472,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/HIJ789jkl012",
     "rating": "4.4"
   },
@@ -1389,7 +1485,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM012mno345",
     "rating": "4.3"
   },
@@ -1402,7 +1498,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/NOP345pqr678",
     "rating": "4.1"
   },
@@ -1415,7 +1511,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU901vwx234",
     "rating": "4.2"
   },
@@ -1428,7 +1524,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA567bcd890",
     "rating": "4.0"
   },
@@ -1441,7 +1537,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية القابل",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/BCD890efg123",
     "rating": "4.7"
   },
@@ -1454,7 +1550,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/FGH890ijk123",
     "rating": "4.7"
   },
@@ -1467,7 +1563,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/LMN123opq456",
     "rating": "4.7"
   },
@@ -1480,7 +1576,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/OPQ789rst012",
     "rating": "4.8"
   },
@@ -1493,7 +1589,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/UVW901xyz234",
     "rating": "4.5"
   },
@@ -1506,7 +1602,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/XYZ567zab890",
     "rating": "4.2"
   },
@@ -1519,7 +1615,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/NOP456qrs789",
     "rating": "4.3"
   },
@@ -1532,7 +1628,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/QRS890tuv123",
     "rating": "4.8"
   },
@@ -1545,7 +1641,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/TUV456wxy789",
     "rating": "4.8"
   },
@@ -1558,7 +1654,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/CDE234fgh567",
     "rating": "4.9"
   },
@@ -1571,7 +1667,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية المضيبي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/LMN123opq456",
     "rating": "4.8"
   },
@@ -1584,7 +1680,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/OPQ789rst012",
     "rating": "4.8"
   },
@@ -1597,7 +1693,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/RST345uvw678",
     "rating": "4.5"
   },
@@ -1610,7 +1706,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/UVW901xyz234",
     "rating": "4.7"
   },
@@ -1623,7 +1719,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/XYZ567zab890",
     "rating": "4.3"
   },
@@ -1636,7 +1732,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG234hij567",
     "rating": "4.4"
   },
@@ -1649,7 +1745,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA678zab901",
     "rating": "4.2"
   },
@@ -1662,7 +1758,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/CDE234fgh567",
     "rating": "4.9"
   },
@@ -1675,7 +1771,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/IJK456lmn789",
     "rating": "4.2"
   },
@@ -1688,7 +1784,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/LMN123opq456",
     "rating": "4.2"
   },
@@ -1701,7 +1797,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/RST345uvw678",
     "rating": "4.4"
   },
@@ -1714,7 +1810,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية بدية",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/UVW901xyz234",
     "rating": "4.7"
   },
@@ -1727,7 +1823,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM123mno456",
     "rating": "4.8"
   },
@@ -1740,7 +1836,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/NOP456pqr789",
     "rating": "4.6"
   },
@@ -1753,7 +1849,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU012vwx345",
     "rating": "4.7"
   },
@@ -1766,7 +1862,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/VWX345yza678لايوجد",
     "rating": "4.4"
   },
@@ -1779,7 +1875,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA678bcd901",
     "rating": "4.9"
   },
@@ -1792,7 +1888,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/BCD901efg234",
     "rating": "4.2"
   },
@@ -1805,7 +1901,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG234hij567",
     "rating": "4.6"
   },
@@ -1818,7 +1914,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": null,
     "rating": "4.5"
   },
@@ -1831,7 +1927,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU789vwx012",
     "rating": "4.9"
   },
@@ -1844,7 +1940,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/VWX012yza345",
     "rating": "4.2"
   },
@@ -1857,7 +1953,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/BCD678efg901",
     "rating": "4.7"
   },
@@ -1870,7 +1966,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG901hij234",
     "rating": "4.9"
   },
@@ -1883,7 +1979,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM567mno890",
     "rating": "4.4"
   },
@@ -1896,7 +1992,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية دماء والطائين",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/NOP890pqr123",
     "rating": "4.2"
   },
@@ -1909,7 +2005,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "الاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/PQR123stu456",
     "rating": "4.0"
   },
@@ -1922,7 +2018,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "الاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU456vwx789",
     "rating": "4.2"
   },
@@ -1935,7 +2031,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "الاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA012bcd345",
     "rating": "4.9"
   },
@@ -1948,7 +2044,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/BCD345efg678",
     "rating": "4.7"
   },
@@ -1961,7 +2057,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG678hij901",
     "rating": "4.6"
   },
@@ -1974,7 +2070,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM234mno567",
     "rating": "4.1"
   },
@@ -1987,7 +2083,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA789bcd012",
     "rating": "4.6"
   },
@@ -2000,7 +2096,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/HIJ678jkl901",
     "rating": "4.3"
   },
@@ -2013,7 +2109,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM901mno234",
     "rating": "4.7"
   },
@@ -2026,7 +2122,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية سناو",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU890vwx123",
     "rating": "4.0"
   },
@@ -2039,7 +2135,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG123hij456",
     "rating": "4.6"
   },
@@ -2052,7 +2148,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "العيون والأفلاج",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/STU678wxy901",
     "rating": "4.1"
   },
@@ -2065,7 +2161,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/6YVp8wHQN2k7wSox8",
     "rating": "4.9"
   },
@@ -2078,7 +2174,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/EFG890hij123",
     "rating": "4.3"
   },
@@ -2091,7 +2187,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "القلاع والحصون",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/KLM456mno789",
     "rating": "4.8"
   },
@@ -2104,7 +2200,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/NOP789pqr012",
     "rating": "4.7"
   },
@@ -2117,7 +2213,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/VWX678yza901",
     "rating": "4.8"
   },
@@ -2130,7 +2226,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/YZA901bcd234",
     "rating": "4.9"
   },
@@ -2143,7 +2239,7 @@ export const attractions: Attraction[] = [
     "governorateId": "north_sharqiyah",
     "wilayat": "ولاية وادي بني خالد",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/HIJ890jkl123",
     "rating": "4.7"
   },
@@ -2156,7 +2252,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/JkLnN9qQ1rR2tUvW3",
     "rating": "4.3"
   },
@@ -2169,7 +2265,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/LmNpP1sS3tT4vWxY5",
     "rating": "4.3"
   },
@@ -2182,7 +2278,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/MnOqQ2tT4uU5wXyZ6",
     "rating": "4.1"
   },
@@ -2195,7 +2291,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": null,
     "rating": "4.8"
   },
@@ -2208,7 +2304,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "العيون.",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/OpQsS4vV6wW7yZzB8",
     "rating": "4.5"
   },
@@ -2221,7 +2317,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "العيون.",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/PqRtT5wW7xX8zAaC9",
     "rating": "4.5"
   },
@@ -2234,7 +2330,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/RsTvV7yY9zZ0bCcE1",
     "rating": "4.8"
   },
@@ -2247,7 +2343,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/TuVxX9aA1bB2dEeG3",
     "rating": "4.5"
   },
@@ -2260,7 +2356,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/VwXzZ1cC3dD4fGgI5",
     "rating": "4.4"
   },
@@ -2273,7 +2369,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/WxYaA2dD4eE5gHhJ6",
     "rating": "4.4"
   },
@@ -2286,7 +2382,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/XyZbB3eE5fF6hIiK7",
     "rating": "4.5"
   },
@@ -2299,7 +2395,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/YzAcC4fF6gG7iJjL8",
     "rating": "4.9"
   },
@@ -2312,7 +2408,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/ZaBdD5gG7hH8jKkM9",
     "rating": "4.1"
   },
@@ -2325,7 +2421,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/AbCeE6hH8iI9kLlN0",
     "rating": "4.5"
   },
@@ -2338,7 +2434,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/BcDfF7iI9jJ0lMmO1",
     "rating": "4.5"
   },
@@ -2351,7 +2447,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية الكامل والوافي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/CdEgG8jJ0kK1mNnP2",
     "rating": "4.6"
   },
@@ -2364,7 +2460,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/XyZbB9eE1fF2hIiK3",
     "rating": "4.4"
   },
@@ -2377,7 +2473,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/AbCeE2hH4iI5kLlN6",
     "rating": "4.5"
   },
@@ -2390,7 +2486,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/DeFhH5kK7lL8nOoQ9",
     "rating": "4.1"
   },
@@ -2403,7 +2499,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/EfGiI6lL8mM9oPpR0",
     "rating": "4.1"
   },
@@ -2416,7 +2512,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/GhIkK8nN0oO1qRrT2",
     "rating": "4.7"
   },
@@ -2429,7 +2525,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/HiJlL9oO1pP2rSsU3",
     "rating": "4.0"
   },
@@ -2442,7 +2538,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/JkLnN1qQ3rR4tUuW5",
     "rating": "4.6"
   },
@@ -2455,7 +2551,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/KlMoO2rR4sS5uVvX6",
     "rating": "4.2"
   },
@@ -2468,7 +2564,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/LmNpP3sS5tT6vWwY7",
     "rating": "4.6"
   },
@@ -2481,7 +2577,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/MnOqQ4tT6uU7wXxZ8",
     "rating": "4.9"
   },
@@ -2494,7 +2590,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/OpQsS6vV8wW9yZzB0",
     "rating": "4.4"
   },
@@ -2507,7 +2603,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/PqRtT7wW9xX0zAaC1",
     "rating": "4.2"
   },
@@ -2520,7 +2616,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بو علي",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
     "mapUrl": "https://maps.app.goo.gl/QrSuU8xX0yY1aBbD2",
     "rating": "4.4"
   },
@@ -2533,7 +2629,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/DeFhH9kK1lL2nOoQ3",
     "rating": "4.7"
   },
@@ -2546,7 +2642,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/EfGiI0lL2mM3oPpR4",
     "rating": "4.7"
   },
@@ -2559,7 +2655,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/FgHjJ1mM3nN4pQqS5",
     "rating": "4.2"
   },
@@ -2572,7 +2668,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/JkLnN5qQ7rR8tUuW9",
     "rating": "4.9"
   },
@@ -2585,7 +2681,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/KlMoO6rR8sS9uVvX0",
     "rating": "4.8"
   },
@@ -2598,7 +2694,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/MnOqQ8tT0uU1wXxZ2",
     "rating": "4.4"
   },
@@ -2611,7 +2707,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/NoPrR9uU1vV2xYyA3",
     "rating": "4.3"
   },
@@ -2624,7 +2720,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/PqRtT1wW3xX4zAaC5",
     "rating": "4.9"
   },
@@ -2637,7 +2733,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/QrSuU2xX4yY5aBbD6",
     "rating": "4.4"
   },
@@ -2650,7 +2746,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/RsTvV3yY5zZ6bCcE7",
     "rating": "4.4"
   },
@@ -2663,7 +2759,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
     "mapUrl": "https://maps.app.goo.gl/UvWyY6bB8cC9eFfH0",
     "rating": "4.7"
   },
@@ -2676,7 +2772,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية جعلان بني بوحسن",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
     "mapUrl": "https://maps.app.goo.gl/VwXzZ7cC9dD0fGgI1",
     "rating": "4.6"
   },
@@ -2689,7 +2785,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/6sxPjvNRUc6Y1f9aA",
     "rating": "4.2"
   },
@@ -2702,7 +2798,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
     "mapUrl": "https://maps.app.goo.gl/5QqLgPqXJ7a2gYjW8",
     "rating": "4.1"
   },
@@ -2715,7 +2811,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
     "mapUrl": "https://maps.app.goo.gl/kVpzqo9Q7uKz9ZbV8",
     "rating": "4.8"
   },
@@ -2728,7 +2824,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
     "mapUrl": "https://maps.app.goo.gl/9rD1tJg7s8nL8QYd9",
     "rating": "4.4"
   },
@@ -2741,7 +2837,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
     "mapUrl": "https://maps.app.goo.gl/nO6pY3rS9tM0UcXw8",
     "rating": "4.5"
   },
@@ -2754,7 +2850,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
     "mapUrl": "https://maps.app.goo.gl/oP7qZ4sT0uN1VdYx9",
     "rating": "4.4"
   },
@@ -2767,7 +2863,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
     "mapUrl": "https://maps.app.goo.gl/pQ8rA5tU1vO2WeZz0",
     "rating": "4.6"
   },
@@ -2780,7 +2876,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
     "mapUrl": "https://maps.app.goo.gl/YyHj7V9nRjqT8M3d8",
     "rating": "4.4"
   },
@@ -2793,7 +2889,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
     "mapUrl": "https://maps.app.goo.gl/PqRsT4uV7wX8ZzAb9",
     "rating": "4.6"
   },
@@ -2806,7 +2902,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
     "mapUrl": "https://maps.app.goo.gl/QrStU5vW9xY0ZaBc1",
     "rating": "4.8"
   },
@@ -2819,7 +2915,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
     "mapUrl": "https://maps.app.goo.gl/RsTuV6wX0yZ1AbCd2",
     "rating": "4.5"
   },
@@ -2832,7 +2928,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/BcDeF1gH2iJ3kLmN4",
     "rating": "4.5"
   },
@@ -2845,7 +2941,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
     "mapUrl": "https://maps.app.goo.gl/CdEgG2hI4jK5lMnO6",
     "rating": "4.1"
   },
@@ -2858,7 +2954,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
     "mapUrl": "https://maps.app.goo.gl/DeFhH3jK5lM6nOpP7",
     "rating": "4.5"
   },
@@ -2871,7 +2967,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
     "mapUrl": "https://maps.app.goo.gl/EfGiI4kL6mN7oPqR8",
     "rating": "4.6"
   },
@@ -2884,7 +2980,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_beach_coast_sea_74608e1a.jpg",
     "mapUrl": "https://maps.app.goo.gl/GhIkK6mN8oO9qRsT0",
     "rating": "4.6"
   },
@@ -2897,7 +2993,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية صور",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
     "mapUrl": "https://maps.app.goo.gl/IjKmM8pP0qQ1sTuV2",
     "rating": "4.6"
   },
@@ -2910,7 +3006,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
     "mapUrl": "https://maps.app.goo.gl/RsTvV9yY1zZ2bCcE3",
     "rating": "4.7"
   },
@@ -2923,7 +3019,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "القلاع والحصون والاماكن التراثية",
-    "image": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
+    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
     "mapUrl": "https://maps.app.goo.gl/TuVxX1aA3bB4dEeG5",
     "rating": "4.1"
   },
@@ -2936,7 +3032,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
     "mapUrl": "https://maps.app.goo.gl/VwXzZ3cC5dD6fGgI7",
     "rating": "4.4"
   },
@@ -2949,7 +3045,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "العيون",
-    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800",
+    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
     "mapUrl": "https://maps.app.goo.gl/YzAcC6fF8gG9iJjL0",
     "rating": "4.5"
   },
@@ -2962,7 +3058,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "الأودية",
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
     "mapUrl": "https://maps.app.goo.gl/ZaBdD7gG9hH0jKkM1",
     "rating": "4.0"
   },
@@ -2975,7 +3071,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
     "mapUrl": "https://maps.app.goo.gl/DeFhH1kK3lL4nOoQ5",
     "rating": "4.8"
   },
@@ -2988,7 +3084,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "المراكز التجارية",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800",
+    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
     "mapUrl": "https://maps.app.goo.gl/EfGiI2lL4mM5oPpR6",
     "rating": "4.6"
   },
@@ -3001,7 +3097,7 @@ export const attractions: Attraction[] = [
     "governorateId": "south_sharqiyah",
     "wilayat": "ولاية مصيرة",
     "category": "الاماكن الترفيهية",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800",
+    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
     "mapUrl": "https://maps.app.goo.gl/HiJlL5nN7oO8qRrT9",
     "rating": "4.9"
   }
