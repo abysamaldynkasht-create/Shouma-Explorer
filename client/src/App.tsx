@@ -18,6 +18,7 @@ import TaxisPage from "@/pages/taxis";
 import TaxiDetailPage from "@/pages/taxi-detail";
 import HikingPage from "@/pages/hiking";
 import HikingDetailPage from "@/pages/hiking-detail";
+import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 
 function Router() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <AccessibilityAssistant />
       </TooltipProvider>
     </QueryClientProvider>
   );
