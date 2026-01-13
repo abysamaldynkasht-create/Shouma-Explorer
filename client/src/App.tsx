@@ -18,6 +18,8 @@ import TaxisPage from "@/pages/taxis";
 import TaxiDetailPage from "@/pages/taxi-detail";
 import HikingPage from "@/pages/hiking";
 import HikingDetailPage from "@/pages/hiking-detail";
+import HospitalsPage from "@/pages/hospitals";
+import HospitalDetailPage from "@/pages/hospital-detail";
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 
 function Router() {
@@ -37,6 +39,8 @@ function Router() {
       <Route path="/taxis/:id" component={TaxiDetailPage} />
       <Route path="/hiking" component={HikingPage} />
       <Route path="/hiking/:id" component={HikingDetailPage} />
+      <Route path="/hospitals" component={HospitalsPage} />
+      <Route path="/hospitals/:id" component={HospitalDetailPage} />
       <Route component={NotFound} />
     </Switch>
   );

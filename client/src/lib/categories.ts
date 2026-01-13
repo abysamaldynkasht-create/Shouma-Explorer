@@ -42,6 +42,14 @@ export const categories: Category[] = [
     color: "from-yellow-600/80 to-yellow-800/90",
   },
   {
+    id: "hospitals",
+    title: "Hospitals",
+    titleAr: "المستشفيات",
+    icon: "Hospital",
+    description: "مراكز صحية ومستشفيات",
+    color: "from-red-600/80 to-red-800/90",
+  },
+  {
     id: "shoumatak",
     title: "Shoumatak",
     titleAr: "شومتك",

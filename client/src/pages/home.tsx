@@ -9,7 +9,8 @@ import {
   Car, 
   Sparkles,
   LogOut,
-  Search
+  Search,
+  Hospital
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Mountain: <Mountain className="w-8 h-8" />,
   Car: <Car className="w-8 h-8" />,
   Sparkles: <Sparkles className="w-8 h-8" />,
+  Hospital: <Hospital className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -39,6 +41,8 @@ export default function HomePage() {
       setLocation("/taxis");
     } else if (categoryId === "hiking") {
       setLocation("/hiking");
+    } else if (categoryId === "hospitals") {
+      setLocation("/hospitals");
     }
   };
 
@@ -214,6 +218,7 @@ function getCategoryImage(id: string): string {
     restaurants: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800",
     hiking: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800",
     taxis: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800",
+    hospitals: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800",
     shoumatak: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800",
   };
   return images[id] || images.attractions;
