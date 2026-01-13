@@ -18,7 +18,8 @@ import {
   Star,
   Search,
   Map,
-  Building2
+  Building2,
+  Navigation
 } from "lucide-react";
 import logoUrl from "@assets/شومة_1768320219408.jpg";
 
@@ -289,9 +290,26 @@ export default function AttractionsPage() {
                     <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                       {attraction.description}
                     </p>
-                    <Badge variant="outline" className="text-xs">
-                      {attraction.governorate}
-                    </Badge>
+                    <div className="flex items-center justify-between gap-2">
+                      <Badge variant="outline" className="text-xs">
+                        {attraction.governorate}
+                      </Badge>
+                      {attraction.mapUrl && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          data-testid={`button-map-${attraction.id}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(attraction.mapUrl!, "_blank");
+                          }}
+                          className="gap-1"
+                        >
+                          <Navigation className="w-4 h-4" />
+                          الخريطة
+                        </Button>
+                      )}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
