@@ -84,6 +84,7 @@ export interface Hotel {
   rating: number;
   pricePerNight: number;
   stars: number;
+  phone: string;
 }
 
 export interface Restaurant {

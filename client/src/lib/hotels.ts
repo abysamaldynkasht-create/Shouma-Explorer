@@ -16,6 +16,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     pricePerNight: 250,
     stars: 5,
+    phone: "+968 2479 9666",
   },
   {
     id: "2",
@@ -32,6 +33,7 @@ export const hotels: Hotel[] = [
     rating: 4.8,
     pricePerNight: 200,
     stars: 5,
+    phone: "+968 2477 6666",
   },
   {
     id: "3",
@@ -48,6 +50,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     pricePerNight: 350,
     stars: 5,
+    phone: "+968 2521 8000",
   },
   {
     id: "4",
@@ -64,6 +67,7 @@ export const hotels: Hotel[] = [
     rating: 4.7,
     pricePerNight: 180,
     stars: 5,
+    phone: "+968 2494 4444",
   },
   {
     id: "5",
@@ -80,6 +84,7 @@ export const hotels: Hotel[] = [
     rating: 4.8,
     pricePerNight: 300,
     stars: 5,
+    phone: "+968 2534 4200",
   },
   {
     id: "6",
@@ -96,6 +101,7 @@ export const hotels: Hotel[] = [
     rating: 4.6,
     pricePerNight: 150,
     stars: 5,
+    phone: "+968 2321 1234",
   },
   {
     id: "7",
@@ -112,6 +118,7 @@ export const hotels: Hotel[] = [
     rating: 4.7,
     pricePerNight: 120,
     stars: 4,
+    phone: "+968 9266 1900",
   },
   {
     id: "8",
@@ -128,5 +135,6 @@ export const hotels: Hotel[] = [
     rating: 4.5,
     pricePerNight: 100,
     stars: 4,
+    phone: "+968 2466 0660",
   },
 ];

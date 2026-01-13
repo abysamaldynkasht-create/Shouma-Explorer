@@ -17,7 +17,8 @@ import {
   Wifi,
   Car,
   UtensilsCrossed,
-  Waves
+  Waves,
+  Phone
 } from "lucide-react";
 
 export default function HotelDetailPage() {
@@ -210,6 +211,23 @@ export default function HotelDetailPage() {
                     <div className="flex gap-0.5">
                       {renderStars(hotel.stars)}
                     </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">للحجز والاستفسار</p>
+                    <a 
+                      href={`tel:${hotel.phone}`} 
+                      className="font-medium text-primary hover:underline"
+                      dir="ltr"
+                      data-testid="link-hotel-phone"
+                    >
+                      {hotel.phone}
+                    </a>
                   </div>
                 </div>
 
