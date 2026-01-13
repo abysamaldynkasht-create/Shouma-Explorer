@@ -99,3 +99,18 @@ export interface Restaurant {
   rating: number;
   features: string[];
 }
+
+export interface Taxi {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  city: string;
+  region: string;
+  image: string;
+  vehicleType: string;
+  pricePerKm: number;
+  rating: number;
+  features: string[];
+  phone: string;
+}

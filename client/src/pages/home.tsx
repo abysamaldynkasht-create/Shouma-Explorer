@@ -35,6 +35,8 @@ export default function HomePage() {
       setLocation("/hotels");
     } else if (categoryId === "restaurants") {
       setLocation("/restaurants");
+    } else if (categoryId === "taxis") {
+      setLocation("/taxis");
     }
   };
 
