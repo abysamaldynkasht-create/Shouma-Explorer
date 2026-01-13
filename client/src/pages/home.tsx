@@ -31,6 +31,8 @@ export default function HomePage() {
       setLocation("/shoumatak");
     } else if (categoryId === "attractions") {
       setLocation("/attractions");
+    } else if (categoryId === "hotels") {
+      setLocation("/hotels");
     }
   };
 

@@ -70,3 +70,18 @@ export interface Attraction {
   rating: number;
   priceTier: "free" | "low" | "medium" | "high";
 }
+
+export interface Hotel {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  city: string;
+  region: string;
+  image: string;
+  gallery: string[];
+  amenities: string[];
+  rating: number;
+  pricePerNight: number;
+  stars: number;
+}

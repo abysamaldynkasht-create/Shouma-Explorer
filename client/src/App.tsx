@@ -10,6 +10,8 @@ import ShoumatakPage from "@/pages/shoumatak";
 import ItineraryPage from "@/pages/itinerary";
 import AttractionsPage from "@/pages/attractions";
 import AttractionDetailPage from "@/pages/attraction-detail";
+import HotelsPage from "@/pages/hotels";
+import HotelDetailPage from "@/pages/hotel-detail";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/itinerary" component={ItineraryPage} />
       <Route path="/attractions" component={AttractionsPage} />
       <Route path="/attractions/:id" component={AttractionDetailPage} />
+      <Route path="/hotels" component={HotelsPage} />
+      <Route path="/hotels/:id" component={HotelDetailPage} />
       <Route component={NotFound} />
     </Switch>
   );
