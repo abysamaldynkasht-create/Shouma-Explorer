@@ -16,6 +16,8 @@ import RestaurantsPage from "@/pages/restaurants";
 import RestaurantDetailPage from "@/pages/restaurant-detail";
 import TaxisPage from "@/pages/taxis";
 import TaxiDetailPage from "@/pages/taxi-detail";
+import HikingPage from "@/pages/hiking";
+import HikingDetailPage from "@/pages/hiking-detail";
 
 function Router() {
   return (
@@ -32,6 +34,8 @@ function Router() {
       <Route path="/restaurants/:id" component={RestaurantDetailPage} />
       <Route path="/taxis" component={TaxisPage} />
       <Route path="/taxis/:id" component={TaxiDetailPage} />
+      <Route path="/hiking" component={HikingPage} />
+      <Route path="/hiking/:id" component={HikingDetailPage} />
       <Route component={NotFound} />
     </Switch>
   );

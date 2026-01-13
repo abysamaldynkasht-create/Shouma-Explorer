@@ -115,3 +115,21 @@ export interface Taxi {
   features: string[];
   phone: string;
 }
+
+export interface HikingTrip {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  location: string;
+  region: string;
+  image: string;
+  gallery: string[];
+  difficulty: "easy" | "moderate" | "hard" | "expert";
+  duration: string;
+  distance: string;
+  price: number;
+  includes: string[];
+  rating: number;
+  phone: string;
+}
