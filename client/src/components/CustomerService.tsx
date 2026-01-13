@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Headphones, X, Phone, MessageCircle } from "lucide-react";
+import { Headphones, X, Phone, Mail } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 
 const CUSTOMER_SERVICE_NUMBER = "+96879688500";
+const CUSTOMER_SERVICE_EMAIL = "shomah272@gmail.com";
 
 export default function CustomerService() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,10 @@ export default function CustomerService() {
   const handleWhatsApp = () => {
     const cleanNumber = CUSTOMER_SERVICE_NUMBER.replace("+", "");
     window.open(`https://wa.me/${cleanNumber}`, "_blank");
+  };
+
+  const handleEmail = () => {
+    window.location.href = `mailto:${CUSTOMER_SERVICE_EMAIL}`;
   };
 
   return (
@@ -65,6 +70,19 @@ export default function CustomerService() {
                 <div className="flex flex-col items-start">
                   <span className="text-sm font-medium">واتساب</span>
                   <span className="text-xs text-white/80">محادثة مباشرة</span>
+                </div>
+              </Button>
+
+              <Button
+                className="w-full justify-start gap-3 h-12"
+                variant="outline"
+                onClick={handleEmail}
+                data-testid="button-email-customer-service"
+              >
+                <Mail className="h-5 w-5 text-primary" />
+                <div className="flex flex-col items-start">
+                  <span className="text-sm font-medium">البريد الإلكتروني</span>
+                  <span className="text-xs text-muted-foreground">{CUSTOMER_SERVICE_EMAIL}</span>
                 </div>
               </Button>
             </div>
