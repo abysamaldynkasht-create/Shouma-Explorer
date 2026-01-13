@@ -29,6 +29,8 @@ export default function HomePage() {
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === "shoumatak") {
       setLocation("/shoumatak");
+    } else if (categoryId === "attractions") {
+      setLocation("/attractions");
     }
   };
 

@@ -56,3 +56,17 @@ export interface Category {
   description: string;
   color: string;
 }
+
+export interface Attraction {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  city: string;
+  region: string;
+  image: string;
+  gallery: string[];
+  tags: string[];
+  rating: number;
+  priceTier: "free" | "low" | "medium" | "high";
+}

@@ -8,6 +8,8 @@ import LoginPage from "@/pages/login";
 import HomePage from "@/pages/home";
 import ShoumatakPage from "@/pages/shoumatak";
 import ItineraryPage from "@/pages/itinerary";
+import AttractionsPage from "@/pages/attractions";
+import AttractionDetailPage from "@/pages/attraction-detail";
 
 function Router() {
   return (
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/home" component={HomePage} />
       <Route path="/shoumatak" component={ShoumatakPage} />
       <Route path="/itinerary" component={ItineraryPage} />
+      <Route path="/attractions" component={AttractionsPage} />
+      <Route path="/attractions/:id" component={AttractionDetailPage} />
       <Route component={NotFound} />
     </Switch>
   );
