@@ -7,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { Eye, EyeOff, Compass } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
+import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { insertUserSchema } from "@shared/schema";
 
 export default function LoginPage() {
@@ -81,11 +82,13 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
         
-        <div className="absolute top-8 right-8 flex items-center gap-3 z-10">
-          <div className="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center" data-testid="logo-login">
-            <Compass className="w-7 h-7 text-primary-foreground" />
-          </div>
-          <span className="text-3xl font-bold text-white drop-shadow-lg" data-testid="text-brand">شومة</span>
+        <div className="absolute top-8 right-8 z-10">
+          <img 
+            src={shoumaLogo} 
+            alt="شومة" 
+            className="h-20 w-auto drop-shadow-lg"
+            data-testid="logo-login"
+          />
         </div>
         
         <div className="absolute bottom-16 right-12 left-12 z-10">
@@ -100,11 +103,13 @@ export default function LoginPage() {
 
       <div className="flex-1 flex items-center justify-center p-6 bg-background">
         <div className="w-full max-w-md">
-          <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
-            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center" data-testid="logo-mobile">
-              <Compass className="w-8 h-8 text-primary-foreground" />
-            </div>
-            <span className="text-4xl font-bold text-foreground" data-testid="text-brand-mobile">شومة</span>
+          <div className="lg:hidden flex items-center justify-center mb-8">
+            <img 
+              src={shoumaLogo} 
+              alt="شومة" 
+              className="h-24 w-auto"
+              data-testid="logo-mobile"
+            />
           </div>
 
           <Card className="border-card-border shadow-lg" data-testid="card-login">
