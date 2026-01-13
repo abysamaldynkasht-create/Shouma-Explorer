@@ -189,11 +189,12 @@ export default function HomePage() {
 
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <Compass className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">شومة</span>
+          <div className="flex items-center justify-center mb-4">
+            <img 
+              src={shoumaLogo} 
+              alt="شومة" 
+              className="h-10 w-auto"
+            />
           </div>
           <p className="text-sm text-muted-foreground" data-testid="text-copyright">
             جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
