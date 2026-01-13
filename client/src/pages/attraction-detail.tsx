@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Compass, 
   ArrowRight,
   MapPin,
   Star,
-  Clock,
-  Wallet,
   Share2,
   Heart,
-  Navigation
+  Navigation,
+  Building2,
+  Tag
 } from "lucide-react";
+import logoUrl from "@assets/شومة_1768320219408.jpg";
 
 export default function AttractionDetailPage() {
   const [, setLocation] = useLocation();
@@ -21,21 +21,17 @@ export default function AttractionDetailPage() {
   
   const attraction = attractions.find((a) => a.id === params.id);
 
-  const getPriceTierLabel = (tier: string) => {
-    const labels: Record<string, string> = {
-      free: "مجاني",
-      low: "اقتصادي",
-      medium: "متوسط",
-      high: "مرتفع",
-    };
-    return labels[tier] || tier;
-  };
-
   const getRelatedAttractions = () => {
     if (!attraction) return [];
     return attractions
-      .filter((a) => a.id !== attraction.id && a.region === attraction.region)
+      .filter((a) => a.id !== attraction.id && a.wilayat === attraction.wilayat)
       .slice(0, 3);
+  };
+
+  const handleGetDirections = () => {
+    if (attraction?.mapUrl) {
+      window.open(attraction.mapUrl, "_blank");
+    }
   };
 
   if (!attraction) {
@@ -79,9 +75,11 @@ export default function AttractionDetailPage() {
             </button>
 
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <Compass className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img 
+                src={logoUrl} 
+                alt="شومة" 
+                className="w-8 h-8 rounded-full object-cover"
+              />
               <span className="text-lg font-bold">تفاصيل المكان</span>
             </div>
 
@@ -108,11 +106,9 @@ export default function AttractionDetailPage() {
         <div className="absolute bottom-0 right-0 left-0 p-6 sm:p-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap gap-2 mb-4">
-              {attraction.tags.map((tag) => (
-                <Badge key={tag} className="bg-white/20 backdrop-blur-sm text-white border-0">
-                  {tag}
-                </Badge>
-              ))}
+              <Badge className="bg-white/20 backdrop-blur-sm text-white border-0">
+                {attraction.category}
+              </Badge>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-lg" data-testid="text-attraction-title">
               {attraction.nameAr}
@@ -120,7 +116,7 @@ export default function AttractionDetailPage() {
             <div className="flex flex-wrap items-center gap-4 text-white/90">
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
-                <span>{attraction.city}، {attraction.region}</span>
+                <span>{attraction.wilayat}</span>
               </div>
               <div className="flex items-center gap-1">
                 <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
@@ -142,21 +138,6 @@ export default function AttractionDetailPage() {
                 {attraction.description}
               </p>
             </section>
-
-            {attraction.gallery.length > 1 && (
-              <section>
-                <h2 className="text-2xl font-bold text-foreground mb-4">
-                  معرض الصور
-                </h2>
-                <div className="grid grid-cols-2 gap-4">
-                  {attraction.gallery.map((img, index) => (
-                    <div key={index} className="aspect-video rounded-xl overflow-hidden">
-                      <img src={img} alt={`${attraction.nameAr} ${index + 1}`} className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
           </div>
 
           <div className="space-y-6">
@@ -166,21 +147,31 @@ export default function AttractionDetailPage() {
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
+                    <Building2 className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">الموقع</p>
-                    <p className="font-medium">{attraction.city}</p>
+                    <p className="text-sm text-muted-foreground">المحافظة</p>
+                    <p className="font-medium">{attraction.governorate}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Wallet className="w-5 h-5 text-primary" />
+                    <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">التكلفة</p>
-                    <p className="font-medium">{getPriceTierLabel(attraction.priceTier)}</p>
+                    <p className="text-sm text-muted-foreground">الولاية</p>
+                    <p className="font-medium">{attraction.wilayat}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Tag className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">التصنيف</p>
+                    <p className="font-medium">{attraction.category}</p>
                   </div>
                 </div>
 
@@ -194,10 +185,16 @@ export default function AttractionDetailPage() {
                   </div>
                 </div>
 
-                <Button className="w-full h-12" data-testid="button-get-directions">
-                  <Navigation className="w-5 h-5 ml-2" />
-                  احصل على الاتجاهات
-                </Button>
+                {attraction.mapUrl && (
+                  <Button 
+                    className="w-full h-12" 
+                    data-testid="button-get-directions"
+                    onClick={handleGetDirections}
+                  >
+                    <Navigation className="w-5 h-5 ml-2" />
+                    احصل على الاتجاهات
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -206,7 +203,7 @@ export default function AttractionDetailPage() {
         {relatedAttractions.length > 0 && (
           <section className="mt-16">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              أماكن قريبة
+              أماكن قريبة في نفس الولاية
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedAttractions.map((related) => (
@@ -222,12 +219,16 @@ export default function AttractionDetailPage() {
                       alt={related.nameAr}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute top-2 left-2 flex items-center gap-1 bg-black/60 text-white px-2 py-1 rounded-full text-xs">
+                      <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      <span>{related.rating}</span>
+                    </div>
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-bold text-foreground mb-1">{related.nameAr}</h3>
+                    <h3 className="font-bold text-foreground mb-1 line-clamp-1">{related.nameAr}</h3>
                     <div className="flex items-center gap-1 text-muted-foreground text-sm">
                       <MapPin className="w-4 h-4" />
-                      <span>{related.city}</span>
+                      <span>{related.wilayat}</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -239,6 +240,10 @@ export default function AttractionDetailPage() {
 
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <img src={logoUrl} alt="شومة" className="w-6 h-6 rounded-full object-cover" />
+            <span className="font-semibold">شومة</span>
+          </div>
           <p className="text-sm text-muted-foreground">
             جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
           </p>
