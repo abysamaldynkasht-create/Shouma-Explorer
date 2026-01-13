@@ -360,916 +360,6 @@ export const attractions: Attraction[] = [
   },
   {
     "id": "20",
-    "name": "حصن الدقم",
-    "nameAr": "حصن الدقم",
-    "description": "حصن تاريخي يطل على بحر العرب، بني لحماية المدينة من الهجمات البحرية وكان مركزاً للحكم والإدارة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx26",
-    "rating": "4.1"
-  },
-  {
-    "id": "21",
-    "name": "متحف الدقم",
-    "nameAr": "متحف الدقم",
-    "description": "متحف يعرض تاريخ المنطقة البحري والتراث الثقافي للسكان المحليين مع قطع أثرية من الحفريات.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx27",
-    "rating": "4.1"
-  },
-  {
-    "id": "22",
-    "name": "موقع رأس مدركة الأثري",
-    "nameAr": "موقع رأس مدركة الأثري",
-    "description": "موقع أثري مهم يعود إلى الألفية الثالثة قبل الميلاد، يضم بقايا مستوطنة قديمة ومقابر.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx28",
-    "rating": "4.1"
-  },
-  {
-    "id": "23",
-    "name": "حصن الصفية",
-    "nameAr": "حصن الصفية",
-    "description": "حصن دفاعي صغير في منطقة الصفية، كان يستخدم لمراقبة السواحل والطرق البرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx29",
-    "rating": "4.0"
-  },
-  {
-    "id": "24",
-    "name": "قرية الحكمان التراثية",
-    "nameAr": "قرية الحكمان التراثية",
-    "description": "قرية صيد تقليدية محافظة على طابعها القديم، تعرض حياة الصيادين والبيوت التقليدية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx30",
-    "rating": "4.5"
-  },
-  {
-    "id": "25",
-    "name": "فلج الدقم",
-    "nameAr": "فلج الدقم",
-    "description": "نظام ري تقليدي يظهر adaptability السكان في استغلال المياه في المنطقة الساحلية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx32",
-    "rating": "4.6"
-  },
-  {
-    "id": "26",
-    "name": "عين الصفية",
-    "nameAr": "عين الصفية",
-    "description": "نبع مائي في منطقة الصفية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx33",
-    "rating": "4.4"
-  },
-  {
-    "id": "27",
-    "name": "بئر الحكمان",
-    "nameAr": "بئر الحكمان",
-    "description": "بئر تاريخي في قرية الحكمان، كان مصدراً رئيسياً للمياه العذبة للقرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx34",
-    "rating": "4.6"
-  },
-  {
-    "id": "28",
-    "name": "عين الخوير",
-    "nameAr": "عين الخوير",
-    "description": "عين مائية في منطقة الخوير.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx35",
-    "rating": "4.7"
-  },
-  {
-    "id": "29",
-    "name": "وادي الدقم",
-    "nameAr": "وادي الدقم",
-    "description": "المجرى المائي الرئيسي في الولاية، يصب في بحر العرب ويشكل نظاماً بيئياً مهماً للطيور والنباتات.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx36",
-    "rating": "4.4"
-  },
-  {
-    "id": "30",
-    "name": "وادي الصفية",
-    "nameAr": "وادي الصفية",
-    "description": "وادي ساحلي يتميز بتكوناته الرملية والصخرية الفريدة near الساحل.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx37",
-    "rating": "4.9"
-  },
-  {
-    "id": "31",
-    "name": "وادي الحكمان",
-    "nameAr": "وادي الحكمان",
-    "description": "وادي صغير near قرية الحكمان، يجري موسمياً towards البحر.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx38",
-    "rating": "4.6"
-  },
-  {
-    "id": "32",
-    "name": "سوق الدقم المركزي",
-    "nameAr": "سوق الدقم المركزي",
-    "description": "السوق الرئيسي في المدينة الحديثة، يضم محلات تجارية متنوعة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx41",
-    "rating": "4.7"
-  },
-  {
-    "id": "33",
-    "name": "مجمع الدقم التجاري",
-    "nameAr": "مجمع الدقم التجاري",
-    "description": "مجمع تسوق حديث يخدم المنطقة الاقتصادية الخاصة والزوار.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx42",
-    "rating": "4.8"
-  },
-  {
-    "id": "34",
-    "name": "سوق الأسماك بالدقم",
-    "nameAr": "سوق الأسماك بالدقم",
-    "description": "سوق تقليدي لبيع الأسماك الطازجة التي يجلبها الصيادون المحليون daily.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx43",
-    "rating": "4.1"
-  },
-  {
-    "id": "35",
-    "name": "مركز خدمات المنطقة الاقتصادية",
-    "nameAr": "مركز خدمات المنطقة الاقتصادية",
-    "description": "مركز يقدم خدمات للشركات والمستثمرين في المنطقة الاقتصادية الخاصة بالدقم.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx44",
-    "rating": "4.2"
-  },
-  {
-    "id": "36",
-    "name": "متجر منتجات بحرية",
-    "nameAr": "متجر منتجات بحرية",
-    "description": "متجر متخصص في بيع المنتجات البحرية المجففة والمدخنة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx45",
-    "rating": "4.8"
-  },
-  {
-    "id": "37",
-    "name": "شاطئ الدقم",
-    "nameAr": "شاطئ الدقم",
-    "description": "شاطئ رملي واسع ونظيف، مثالي للسباحة وممارسة الرياضات المائية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_beach_coast_sea_bf5cd867.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx46",
-    "rating": "4.7"
-  },
-  {
-    "id": "38",
-    "name": "الكورنيش البحري",
-    "nameAr": "الكورنيش البحري",
-    "description": "ممشى بحري حديث يمتد along الساحل، مزود بمناطق للجلوس وألعاب للأطفال.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_beach_coast_sea_d5389d20.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx47",
-    "rating": "4.8"
-  },
-  {
-    "id": "39",
-    "name": "نادي الدقم للغوص",
-    "nameAr": "نادي الدقم للغوص",
-    "description": "نادي متخصص في رحلات الغوص لاكتشاف الحياة البحرية في مياه بحر العرب.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx48",
-    "rating": "4.8"
-  },
-  {
-    "id": "40",
-    "name": "منتزه الدقم العام",
-    "nameAr": "منتزه الدقم العام",
-    "description": "منتزه حديث مجهز بمرافق للعائلات والأطفال.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx49",
-    "rating": "4.3"
-  },
-  {
-    "id": "41",
-    "name": "مارينا الدقم",
-    "nameAr": "مارينا الدقم",
-    "description": "مرسى حديث للقوارب واليخوت، يوفر إطلالة جميلة وفرصة للقيام برحلات بحرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية القم",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx50",
-    "rating": "4.3"
-  },
-  {
-    "id": "42",
-    "name": "حصن محوت",
-    "nameAr": "حصن محوت",
-    "description": "حصن ساحلي تاريخي يطل على خليج محوت، بني للدفاع عن المدينة وكان مركزاً تجارياً مهماً.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx51",
-    "rating": "4.2"
-  },
-  {
-    "id": "43",
-    "name": "متحف محوت البحري",
-    "nameAr": "متحف محوت البحري",
-    "description": "متحف يوثق التراث البحري للمنطقة including أدوات الصيد وبناء القوارب التقليدية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx52",
-    "rating": "4.1"
-  },
-  {
-    "id": "44",
-    "name": "حصن خور روري (سمهرم)",
-    "nameAr": "حصن خور روري (سمهرم)",
-    "description": "موقع أثري مهم يعود إلى القرن الأول الميلادي، كان ميناءً تجارياً لتصدير اللبان.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx53",
-    "rating": "4.5"
-  },
-  {
-    "id": "45",
-    "name": "برج المراقبة الساحلي",
-    "nameAr": "برج المراقبة الساحلي",
-    "description": "برج تاريخي لمراقبة السواحل وحماية المدينة من التهديدات البحرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_d3f0dd07.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx54",
-    "rating": "4.1"
-  },
-  {
-    "id": "46",
-    "name": "قرية رأس مدركة التراثية",
-    "nameAr": "قرية رأس مدركة التراثية",
-    "description": "قرية صيد تقليدية near خور روري، تحافظ على نمط الحياة التقليدي.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_8ba571c8.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx55",
-    "rating": "4.6"
-  },
-  {
-    "id": "47",
-    "name": "عين خور روري",
-    "nameAr": "عين خور روري",
-    "description": "عين مائية near الموقع الأثري، كانت مصدراً للمياه للسكان القدامى.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx56",
-    "rating": "4.9"
-  },
-  {
-    "id": "48",
-    "name": "فلج محوت",
-    "nameAr": "فلج محوت",
-    "description": "نظام ري تقليدي يظهر براعة السكان في استغلال الموارد المائية في المنطقة الساحلية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx57",
-    "rating": "4.2"
-  },
-  {
-    "id": "49",
-    "name": "عين رأس مدركة",
-    "nameAr": "عين رأس مدركة",
-    "description": "نبع مائي في منطقة رأس مدركة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx58",
-    "rating": "4.3"
-  },
-  {
-    "id": "50",
-    "name": "بئر محوت القديم",
-    "nameAr": "بئر محوت القديم",
-    "description": "بئر تاريخي في مركز المدينة، كان مصدراً رئيسياً للمياه العذبة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx59",
-    "rating": "4.6"
-  },
-  {
-    "id": "51",
-    "name": "عين الحواسنة (محوت)",
-    "nameAr": "عين الحواسنة (محوت)",
-    "description": "عين مائية في منطقة الحواسنة near محوت.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx60",
-    "rating": "4.1"
-  },
-  {
-    "id": "52",
-    "name": "وادي محوت",
-    "nameAr": "وادي محوت",
-    "description": "المجرى المائي الرئيسي في الولاية، يصب في خليج محوت ويشكل نظاماً بيئياً مهماً.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx61",
-    "rating": "4.9"
-  },
-  {
-    "id": "53",
-    "name": "وادي دوكة",
-    "nameAr": "وادي دوكة",
-    "description": "وادي مشهور بأشجار اللبان، يعد جزءاً من طريق اللبان التاريخي.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx62",
-    "rating": "4.0"
-  },
-  {
-    "id": "54",
-    "name": "وادي خور روري",
-    "nameAr": "وادي خور روري",
-    "description": "وادي near الموقع الأثري، يصب في الخور ويشكل منظراً طبيعياً خلاباً.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx63",
-    "rating": "4.6"
-  },
-  {
-    "id": "55",
-    "name": "وادي رأس مدركة",
-    "nameAr": "وادي رأس مدركة",
-    "description": "وادي ساحلي في منطقة رأس مدركة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx64",
-    "rating": "4.1"
-  },
-  {
-    "id": "56",
-    "name": "وادي الحواسنة (محوت)",
-    "nameAr": "وادي الحواسنة (محوت)",
-    "description": "وادي في منطقة الحواسنة near محوت.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx65",
-    "rating": "4.7"
-  },
-  {
-    "id": "57",
-    "name": "سوق محوت المركزي",
-    "nameAr": "سوق محوت المركزي",
-    "description": "السوق الرئيسي في الولاية، يضم محلات تجارية متنوعة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx66",
-    "rating": "4.6"
-  },
-  {
-    "id": "58",
-    "name": "مجمع محوت التجاري",
-    "nameAr": "مجمع محوت التجاري",
-    "description": "مجمع تسوق حديث يخدم السكان والزوار.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx67",
-    "rating": "4.2"
-  },
-  {
-    "id": "59",
-    "name": "سوق الأسماك بمحوت",
-    "nameAr": "سوق الأسماك بمحوت",
-    "description": "سوق تقليدي لبيع الأسماك الطازجة التي يجلبها الصيادون المحليون.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx68",
-    "rating": "4.7"
-  },
-  {
-    "id": "60",
-    "name": "متجر منتجات اللبان",
-    "nameAr": "متجر منتجات اللبان",
-    "description": "متجر متخصص في بيع اللبان العماني ومنتجاته like البخور والزيوت.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx69",
-    "rating": "4.4"
-  },
-  {
-    "id": "61",
-    "name": "سوق الحرف اليدوية",
-    "nameAr": "سوق الحرف اليدوية",
-    "description": "سوق صغير لبيع المشغولات اليدوية التقليدية like السعفيات.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx70",
-    "rating": "4.7"
-  },
-  {
-    "id": "62",
-    "name": "شاطئ محوت",
-    "nameAr": "شاطئ محوت",
-    "description": "شاطئ هادئ ونظيف على خليج محوت، مناسب للسباحة والاسترخاء.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_beach_coast_sea_516aabf1.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx71",
-    "rating": "4.2"
-  },
-  {
-    "id": "63",
-    "name": "خور روري",
-    "nameAr": "خور روري",
-    "description": "نظام بيئي فريد حيث يلتقي الماء العذب بالمالح، موطن لأنواع مختلفة من الطيور والكائنات البحرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx72",
-    "rating": "4.4"
-  },
-  {
-    "id": "64",
-    "name": "منتزه محوت العام",
-    "nameAr": "منتزه محوت العام",
-    "description": "منتزه حديث مجهز بمرافق للعائلات والأطفال.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_7b088d4a.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx73",
-    "rating": "4.7"
-  },
-  {
-    "id": "65",
-    "name": "منطقة تخييم وادي دوكة",
-    "nameAr": "منطقة تخييم وادي دوكة",
-    "description": "منطقة مخصصة للتخييم near أشجار اللبان التاريخية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx74",
-    "rating": "4.5"
-  },
-  {
-    "id": "66",
-    "name": "مسارات المشي near خور روري",
-    "nameAr": "مسارات المشي near خور روري",
-    "description": "مسارات لرياضة المشي تطل على الخور والموقع الأثري.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية محوت",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx75",
-    "rating": "4.7"
-  },
-  {
-    "id": "67",
-    "name": "حصن هيما",
-    "nameAr": "حصن هيما",
-    "description": "حصن تاريخي شيد في القرن التاسع عشر، وكان مقرًا للحاكم ومحطة رئيسية على طريق التجارة عبر الصحراء.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_1c36e80d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx1",
-    "rating": "4.1"
-  },
-  {
-    "id": "68",
-    "name": "متحف هيما",
-    "nameAr": "متحف هيما",
-    "description": "متحف يوثق تاريخ وتراث منطقة هيما، مع عرض لأدوات الصيد والرعي والحياة البدوية التقليدية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx2",
-    "rating": "4.9"
-  },
-  {
-    "id": "69",
-    "name": "قرية الجو التراثية",
-    "nameAr": "قرية الجو التراثية",
-    "description": "قرية تقليدية محفوظة تعرض نمط الحياة القديم في الصحراء، مع بيوت من الطين وأحواض المياه التقليدية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx5",
-    "rating": "4.7"
-  },
-  {
-    "id": "70",
-    "name": "عين الجو",
-    "nameAr": "عين الجو",
-    "description": "عين مائية طبيعية تشكل بركة دائمة في قلب الصحراء، وهي مصدر حيوي للمياه منذ القدم ومكان لتجمع الحياة البرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx6",
-    "rating": "4.4"
-  },
-  {
-    "id": "71",
-    "name": "فلج المنجرد",
-    "nameAr": "فلج المنجرد",
-    "description": "نظام ري تقليدي (فلج) يعمل بنظام الداؤدي، ويعد شاهدًا على براعة سكان الصحراء في إدارة شح المياه.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__e1013501.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx7",
-    "rating": "4.0"
-  },
-  {
-    "id": "72",
-    "name": "عين هيما",
-    "nameAr": "عين هيما",
-    "description": "نبع مائي تاريخي في مركز الولاية، كان محطة استراحة أساسية للقوافل العابرة للصحراء.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx8",
-    "rating": "4.5"
-  },
-  {
-    "id": "73",
-    "name": "فلج هيما",
-    "nameAr": "فلج هيما",
-    "description": "أحد أقدم أنظمة الري في المنطقة، ولا يزال مستخدمًا حتى اليوم لري البساتين الصغيرة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__a6b99a8c.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx9",
-    "rating": "4.9"
-  },
-  {
-    "id": "74",
-    "name": "عين الحواسنة",
-    "nameAr": "عين الحواسنة",
-    "description": "بئر طبيعي في منطقة الحواسنة، محاط بأشجار الطلح، يشكل واحة صغيرة في الصحراء.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "العيون والافلاج",
-    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx10",
-    "rating": "4.0"
-  },
-  {
-    "id": "75",
-    "name": "وادي صراف",
-    "nameAr": "وادي صراف",
-    "description": "وادي واسع في شمال هيما، يشتهر بتكوناته الرملية والصخرية المذهلة، وهو مسار مفضل لرحلات السفاري.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx11",
-    "rating": "4.3"
-  },
-  {
-    "id": "76",
-    "name": "وادي عردة",
-    "nameAr": "وادي عردة",
-    "description": "وادي داخلي يتميز بكثبانه الرملية الحمراء والذهبية، ويوفر مناظر خلابة خاصة عند غروب الشمس.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx12",
-    "rating": "4.1"
-  },
-  {
-    "id": "77",
-    "name": "وادي هيما",
-    "nameAr": "وادي هيما",
-    "description": "المجرى المائي الرئيسي في الولاية، تتجمع فيه مياه الأمطار شتاءً، محولة إياه إلى بحيرة موسمية تجذب الطيور المهاجرة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx13",
-    "rating": "4.8"
-  },
-  {
-    "id": "78",
-    "name": "وادي الجو",
-    "nameAr": "وادي الجو",
-    "description": "وادي صغير يتفرع من وادي هيما، تحيط به التلال الصخرية ويوجد بالقرب منه مواقع أثرية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx14",
-    "rating": "4.5"
-  },
-  {
-    "id": "79",
-    "name": "وادي المنجرد",
-    "nameAr": "وادي المنجرد",
-    "description": "وادي في منطقة المنجرد، يتميز بصخوره السوداء البركانية التي تشكلت من الحمم القديمة.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_bb47f469.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx15",
-    "rating": "4.5"
-  },
-  {
-    "id": "80",
-    "name": "سوق هيما للماشية",
-    "nameAr": "سوق هيما للماشية",
-    "description": "سوق تقليدي شهير لبيع وشراء الإبل والماشية، يعقد في أيام محددة ويعتبر من أقدم أسواق الماشية في عمان.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx16",
-    "rating": "4.8"
-  },
-  {
-    "id": "81",
-    "name": "مجمع هيما التجاري",
-    "nameAr": "مجمع هيما التجاري",
-    "description": "المركز التجاري الرئيسي في الولاية، يضم محلات لبيع المواد الغذائية والملابس والاحتياجات اليومية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx17",
-    "rating": "4.5"
-  },
-  {
-    "id": "82",
-    "name": "سوق الجو الشعبي",
-    "nameAr": "سوق الجو الشعبي",
-    "description": "سوق صغير في قرية الجو، يبيع المنتجات المحلية البسيطة والمشغولات اليدوية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_aacd0b8f.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx18",
-    "rating": "4.2"
-  },
-  {
-    "id": "83",
-    "name": "مركز هيما للخدمات",
-    "nameAr": "مركز هيما للخدمات",
-    "description": "مركز يقدم خدمات متنوعة للسكان والزوار including الاتصالات والخدمات البريدية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_43a305bc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx19",
-    "rating": "4.8"
-  },
-  {
-    "id": "84",
-    "name": "متجر منتجات البادية",
-    "nameAr": "متجر منتجات البادية",
-    "description": "متجر متخصص في بيع المنتجات التقليدية للبادية مثل السمن العماني والعسل البري والتمر.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_8eb824f6.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx20",
-    "rating": "4.8"
-  },
-  {
-    "id": "85",
-    "name": "منتزه الكثبان الرملية",
-    "nameAr": "منتزه الكثبان الرملية",
-    "description": "منطقة مخصصة للتخييم وممارسة رياضة قيادة السيارات على الكثبان الرملية الذهبية.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx21",
-    "rating": "4.2"
-  },
-  {
-    "id": "86",
-    "name": "مخيم هيما للنجوم",
-    "nameAr": "مخيم هيما للنجوم",
-    "description": "مخيم سياحي فاخر يوفر إقامة في الخيام مع إطلالة على صحراء هيما النقية، مما يجعله موقعًا مثاليًا لمراقبة النجوم due to انعدام التلوث الضوئي.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_134f240d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx22",
-    "rating": "4.6"
-  },
-  {
-    "id": "87",
-    "name": "منطقة مراقبة الطيور في وادي هيما",
-    "nameAr": "منطقة مراقبة الطيور في وادي هيما",
-    "description": "موقع مثالي لعشاق مراقبة الطيور، حيث يمكن مشاهدة أنواع مختلفة من الطيور المهاجرة والمحلية خاصة في فصل الشتاء.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx23",
-    "rating": "4.2"
-  },
-  {
-    "id": "88",
-    "name": "منتزه عين الجو",
-    "nameAr": "منتزه عين الجو",
-    "description": "منتزه طبيعي حول عين الجو، مجهز بجلسات عائلية ومظلات.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx24",
-    "rating": "4.7"
-  },
-  {
-    "id": "89",
-    "name": "مسارات المشي في جبال المنجرد",
-    "nameAr": "مسارات المشي في جبال المنجرد",
-    "description": "شبكة من المسارات لرياضة المشي لمسافات طويلة بين التلال والجبال الصخرية في منطقة المنجرد.",
-    "governorate": "محافظة الوسطى",
-    "governorateId": "wusta",
-    "wilayat": "ولاية هيما",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
-    "mapUrl": "https://maps.app.goo.gl/xxxx25",
-    "rating": "4.5"
-  },
-  {
-    "id": "90",
     "name": "حصن إبراء",
     "nameAr": "حصن إبراء",
     "description": "حصن تاريخي شامخ يعود بناؤه إلى أكثر من 300 عام، وكان مقراً للحكم والإدارة في الولاية. يتميز بتصميمه المعماري الفريد وأبراجه الدفاعية.",
@@ -1282,7 +372,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "91",
+    "id": "21",
     "name": "سوق إبراء القديم (سوق الخميس)",
     "nameAr": "سوق إبراء القديم (سوق الخميس)",
     "description": "سوق تراثي يعقد أيام الخميس، ويشتهر ببيع المنتجات المحلية من تمور ولبان وأعلاف وسجاد تقليدي.",
@@ -1295,7 +385,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "92",
+    "id": "22",
     "name": "عين سفالة",
     "nameAr": "عين سفالة",
     "description": "نبع مائي تاريخي يستخدم للري، ويقع في منطقة زراعية خصبة.",
@@ -1308,7 +398,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "93",
+    "id": "23",
     "name": "إبراء جراند مول",
     "nameAr": "إبراء جراند مول",
     "description": "أكبر مركز تجاري في الولاية، يضم مجموعة متنوعة من المحلات العالمية والمطاعم والملاهي الداخلية.",
@@ -1321,7 +411,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "94",
+    "id": "24",
     "name": "سوق إبراء المركزي",
     "nameAr": "سوق إبراء المركزي",
     "description": "سوق حديث يلبي جميع الاحتياجات اليومية للسكان والزوار.",
@@ -1334,7 +424,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "95",
+    "id": "25",
     "name": "سوق الخضار والفواكه",
     "nameAr": "سوق الخضار والفواكه",
     "description": "سوق متخصص في بيع المنتجات الزراعية الطازجة من مزارع الولاية.",
@@ -1347,7 +437,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "96",
+    "id": "26",
     "name": "كورنيش إبراء",
     "nameAr": "كورنيش إبراء",
     "description": "ممشى حديث ومساحات خضراء على طرف الوادي، مناسب للنزهات المسائية والعائلية.",
@@ -1360,7 +450,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "97",
+    "id": "27",
     "name": "منتزه عين حلوة",
     "nameAr": "منتزه عين حلوة",
     "description": "منتزه مجهز حول عين حلوة الطبيعية، يوفر بيئة جميلة للاسترخاء والترفيه.",
@@ -1373,7 +463,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "98",
+    "id": "28",
     "name": "نادي إبراء",
     "nameAr": "نادي إبراء",
     "description": "نادي رياضي وترفيهي ينظم فعاليات وأنشطة متنوعة لأفراد المجتمع.",
@@ -1386,7 +476,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "99",
+    "id": "29",
     "name": "بحيرة إبراء",
     "nameAr": "بحيرة إبراء",
     "description": "بحيرة صناعية جميلة محاطة بالمساحات الخضراء، تعتبر وجهة للعائلات ومحبي الطبيعة.",
@@ -1399,7 +489,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "100",
+    "id": "30",
     "name": "حصن القابل",
     "nameAr": "حصن القابل",
     "description": "حصن تاريخي مهم كان مقراً للحكم في الولاية، ويتميز بموقعه الاستراتيجي وتصميمه الدفاعي.",
@@ -1412,7 +502,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "101",
+    "id": "31",
     "name": "قلعة المنجرد",
     "nameAr": "قلعة المنجرد",
     "description": "قلعة أثرية تقع في منطقة المنجرد، كانت تستخدم للحراسة والمراقبة.",
@@ -1425,7 +515,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "102",
+    "id": "32",
     "name": "عين القابل",
     "nameAr": "عين القابل",
     "description": "عين مائية تاريخية في مركز الولاية.",
@@ -1438,7 +528,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "103",
+    "id": "33",
     "name": "فلج القابل",
     "nameAr": "فلج القابل",
     "description": "من الأفلاج الرئيسية في الولاية.",
@@ -1451,7 +541,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "104",
+    "id": "34",
     "name": "سد وادي العقيدة (",
     "nameAr": "سد وادي العقيدة (",
     "description": "يعد سد وادي العقيدة من السدود المهمة في سلطنة عُمان، وقد تم إنشاؤه ضمن استراتيجية السلطنة لإدارة الموارد المائية والحفاظ عليها. يتميز السد بتصميمه الهندسي الحديث ويخدم أغراضاً متعددة أهمها:",
@@ -1464,7 +554,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "105",
+    "id": "35",
     "name": "سوق القابل التقليدي",
     "nameAr": "سوق القابل التقليدي",
     "description": "سوق شعبي يبيع المنتجات المحلية والتمور.",
@@ -1477,7 +567,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "106",
+    "id": "36",
     "name": "مجمع القابل التجاري",
     "nameAr": "مجمع القابل التجاري",
     "description": "مركز تجاري يقدم خدمات متنوعة للمنطقة.",
@@ -1490,7 +580,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "107",
+    "id": "37",
     "name": "مركز المنجرد",
     "nameAr": "مركز المنجرد",
     "description": "مركز تسوق في منطقة المنجرد.",
@@ -1503,7 +593,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "108",
+    "id": "38",
     "name": "منتزه القابل",
     "nameAr": "منتزه القابل",
     "description": "منتزه عام في مركز الولاية.",
@@ -1516,7 +606,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "109",
+    "id": "39",
     "name": "حديقة المنجرد",
     "nameAr": "حديقة المنجرد",
     "description": "حديقة عامة في منطقة المنجرد.",
@@ -1529,7 +619,7 @@ export const attractions: Attraction[] = [
     "rating": "4.0"
   },
   {
-    "id": "110",
+    "id": "40",
     "name": "منطقة الكثبان الرملية",
     "nameAr": "منطقة الكثبان الرملية",
     "description": "منطقة صحراوية لممارسة رياضة السيارات.",
@@ -1542,7 +632,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "111",
+    "id": "41",
     "name": "حصن المضيبي",
     "nameAr": "حصن المضيبي",
     "description": "حصن تاريخي كبير وهام، يعد من أبرز معالم الولاية، وكان مركزاً إدارياً مهماً في الماضي.",
@@ -1555,7 +645,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "112",
+    "id": "42",
     "name": "حصن الفليج",
     "nameAr": "حصن الفليج",
     "description": "حصن دفاعي صغير في منطقة الفليج.",
@@ -1568,7 +658,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "113",
+    "id": "43",
     "name": "سوق المضيبي القديم",
     "nameAr": "سوق المضيبي القديم",
     "description": "سوق تقليدي لا يزال محافظاً على طابعه الأصلي، يبيع المنتجات المحلية.",
@@ -1581,7 +671,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "114",
+    "id": "44",
     "name": "فلج المضيبي",
     "nameAr": "فلج المضيبي",
     "description": "من الأفلاج الرئيسية في الولاية، ويستخدم لري المزارع.",
@@ -1594,7 +684,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "115",
+    "id": "45",
     "name": "عين الوطية",
     "nameAr": "عين الوطية",
     "description": "نبع مائي يستخدم للري في المناطق الزراعية.",
@@ -1607,7 +697,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "116",
+    "id": "46",
     "name": "وادي عندام (قسم المضيبي)",
     "nameAr": "وادي عندام (قسم المضيبي)",
     "description": "وادي يتميز بتكويناته الصخرية.",
@@ -1620,7 +710,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "117",
+    "id": "47",
     "name": "المضيبي مول",
     "nameAr": "المضيبي مول",
     "description": "مركز تجاري رئيسي في الولاية يقدم خدمات تسوق متنوعة.",
@@ -1633,7 +723,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "118",
+    "id": "48",
     "name": "سوق المضيبي المركزي",
     "nameAr": "سوق المضيبي المركزي",
     "description": "سوق حديث يلبي احتياجات السكان.",
@@ -1646,7 +736,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "119",
+    "id": "49",
     "name": "منتزه المضيبي",
     "nameAr": "منتزه المضيبي",
     "description": "منتزه عام مجهز بمرافق للعائلات.",
@@ -1659,20 +749,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "120",
-    "name": "منطقة الكثبان الرملية",
-    "nameAr": "منطقة الكثبان الرملية",
-    "description": "منطقة صحراوية لممارسة رياضة السيارات.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية المضيبي",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_fcd88d12.jpg",
-    "mapUrl": "https://maps.app.goo.gl/LMN123opq456",
-    "rating": "4.8"
-  },
-  {
-    "id": "121",
+    "id": "50",
     "name": "حصن بدية",
     "nameAr": "حصن بدية",
     "description": "حصن تاريخي مشهور يعود للقرن 17، ويقع على قمة تل يشرف على البلدة.",
@@ -1685,7 +762,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "122",
+    "id": "51",
     "name": "قلعة المنترب",
     "nameAr": "قلعة المنترب",
     "description": "قلعة أثرية على قمة جبل، كانت للحراسة والمراقبة.",
@@ -1698,7 +775,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "123",
+    "id": "52",
     "name": "بيت العود",
     "nameAr": "بيت العود",
     "description": "مبنى تراثي يمثل العمارة التقليدية في بدية.",
@@ -1711,7 +788,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "124",
+    "id": "53",
     "name": "سوق بدية القديم",
     "nameAr": "سوق بدية القديم",
     "description": "سوق تراثي كان مركزاً للتجارة في الماضي.",
@@ -1724,7 +801,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "125",
+    "id": "54",
     "name": "فلج البديع",
     "nameAr": "فلج البديع",
     "description": "من الأفلاج التاريخية المهمة في الولاية.",
@@ -1737,7 +814,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "126",
+    "id": "55",
     "name": "سوق بدية الحديث",
     "nameAr": "سوق بدية الحديث",
     "description": "مركز تجاري يضم محلات متنوعة لخدمات السكان والزوار.",
@@ -1750,7 +827,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "127",
+    "id": "56",
     "name": "مجمع الواحة",
     "nameAr": "مجمع الواحة",
     "description": "مجمع تجاري يقدم مختلف الخدمات والمنتجات.",
@@ -1763,7 +840,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "128",
+    "id": "57",
     "name": "سوق الخضار المركزي",
     "nameAr": "سوق الخضار المركزي",
     "description": "سوق للفواكه والخضروات الطازجة من مزارع الولاية.",
@@ -1776,7 +853,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "129",
+    "id": "58",
     "name": "منتزه بدية",
     "nameAr": "منتزه بدية",
     "description": "منتزه عام مجهز بمرافق للعائلات والأطفال.",
@@ -1789,7 +866,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "130",
+    "id": "59",
     "name": "حديقة الواحة",
     "nameAr": "حديقة الواحة",
     "description": "حديقة عامة تضم مساحات خضراء وأماكن للاستراحة.",
@@ -1802,20 +879,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "131",
-    "name": "منطقة الكثبان الرملية",
-    "nameAr": "منطقة الكثبان الرملية",
-    "description": "منطقة صحراوية جميلة لممارسة رياضة السيارات والتخييم.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية بدية",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
-    "mapUrl": "https://maps.app.goo.gl/UVW901xyz234",
-    "rating": "4.7"
-  },
-  {
-    "id": "132",
+    "id": "60",
     "name": "حصن دماء",
     "nameAr": "حصن دماء",
     "description": "حصن تاريخي كبير يضم متحفاً يعرض تاريخ المنطقة.",
@@ -1828,7 +892,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "133",
+    "id": "61",
     "name": "حصن الطائيين",
     "nameAr": "حصن الطائيين",
     "description": "حصن قديم في منطقة الطائيين.",
@@ -1841,7 +905,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "134",
+    "id": "62",
     "name": "برج المراقبة",
     "nameAr": "برج المراقبة",
     "description": "برج تاريخي للحراسة.",
@@ -1854,7 +918,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "135",
+    "id": "63",
     "name": "عين دماء",
     "nameAr": "عين دماء",
     "description": "عين مائية في مركز الولاية.",
@@ -1867,7 +931,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "136",
+    "id": "64",
     "name": "فلج دماء",
     "nameAr": "فلج دماء",
     "description": "من الأفلاج الرئيسية في الولاية.",
@@ -1880,7 +944,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "137",
+    "id": "65",
     "name": "عين الطائيين",
     "nameAr": "عين الطائيين",
     "description": "عين في منطقة الطائيين.",
@@ -1893,7 +957,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "138",
+    "id": "66",
     "name": "فلج الطائيين",
     "nameAr": "فلج الطائيين",
     "description": "فلج يخدم منطقة الطائيين.",
@@ -1906,20 +970,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "139",
-    "name": "وادي الطائيين (Wadi Al Tayeen)",
-    "nameAr": "وادي الطائيين (Wadi Al Tayeen)",
-    "description": "يعد وادي الطائيين من الأودية الرئيسية في ولاية دماء والطائيين، ويجري بين سلسلة من الجبال والتلال التي تكسوها النباتات البرية. يتميز الوادي بجريان مياهه الموسمية خلال فصل الصيف نتيجة هطول الأمطار على الجبال المجاورة، مما يخلق مشهداً طبيعياً خلاباً يجذب عشاق الطبيعة والاستكشاف.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية دماء والطائين",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
-    "mapUrl": null,
-    "rating": "4.5"
-  },
-  {
-    "id": "140",
+    "id": "67",
     "name": "سوق دماء المركزي",
     "nameAr": "سوق دماء المركزي",
     "description": "سوق حديث في الولاية.",
@@ -1932,7 +983,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "141",
+    "id": "68",
     "name": "مجمع الطائيين",
     "nameAr": "مجمع الطائيين",
     "description": "مجمع تجاري في منطقة الطائيين.",
@@ -1945,7 +996,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "142",
+    "id": "69",
     "name": "سوق الخضار",
     "nameAr": "سوق الخضار",
     "description": "سوق للخضروات والفواكه.",
@@ -1958,7 +1009,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "143",
+    "id": "70",
     "name": "منتزه دماء",
     "nameAr": "منتزه دماء",
     "description": "منتزه عام في الولاية.",
@@ -1971,7 +1022,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "144",
+    "id": "71",
     "name": "حديقة الطائيين",
     "nameAr": "حديقة الطائيين",
     "description": "حديقة عامة في منطقة الطائيين.",
@@ -1984,20 +1035,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "145",
-    "name": "منطقة الكثبان الرملية",
-    "nameAr": "منطقة الكثبان الرملية",
-    "description": "منطقة صحراوية.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية دماء والطائين",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_499435c5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/NOP890pqr123",
-    "rating": "4.2"
-  },
-  {
-    "id": "146",
+    "id": "72",
     "name": "أبراج سناو التاريخية",
     "nameAr": "أبراج سناو التاريخية",
     "description": "تشتهر سناو بأبراجها التاريخية المنتشرة في أنحاء الولاية، والتي كانت تستخدم للحراسة.",
@@ -2010,7 +1048,7 @@ export const attractions: Attraction[] = [
     "rating": "4.0"
   },
   {
-    "id": "147",
+    "id": "73",
     "name": "حصن سناو",
     "nameAr": "حصن سناو",
     "description": "حصن تاريخي في مركز الولاية.",
@@ -2023,7 +1061,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "148",
+    "id": "74",
     "name": "سوق سناو القديم",
     "nameAr": "سوق سناو القديم",
     "description": "سوق تراثي في الولاية.",
@@ -2036,7 +1074,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "149",
+    "id": "75",
     "name": "عين سناو",
     "nameAr": "عين سناو",
     "description": "عين مائية تاريخية في مركز البلدة.",
@@ -2049,7 +1087,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "150",
+    "id": "76",
     "name": "فلج سناو",
     "nameAr": "فلج سناو",
     "description": "من الأفلاج الرئيسية في الولاية.",
@@ -2062,20 +1100,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "151",
-    "name": "فلج البديع",
-    "nameAr": "فلج البديع",
-    "description": "فلج قديم في الولاية.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية سناو",
-    "category": "العيون والأفلاج",
-    "image": "/stock_images/oman_natural_spring__0385760d.jpg",
-    "mapUrl": "https://maps.app.goo.gl/KLM234mno567",
-    "rating": "4.1"
-  },
-  {
-    "id": "152",
+    "id": "77",
     "name": "سوق سناو المركزي",
     "nameAr": "سوق سناو المركزي",
     "description": "سوق حديث في الولاية.",
@@ -2088,20 +1113,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "153",
-    "name": "سوق الخضار",
-    "nameAr": "سوق الخضار",
-    "description": "سوق للخضروات والفواكه.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية سناو",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_2c996097.jpg",
-    "mapUrl": "https://maps.app.goo.gl/HIJ678jkl901",
-    "rating": "4.3"
-  },
-  {
-    "id": "154",
+    "id": "78",
     "name": "منتزه سناو",
     "nameAr": "منتزه سناو",
     "description": "منتزه عام في الولاية.",
@@ -2114,20 +1126,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "155",
-    "name": "منطقة الكثبان الرملية",
-    "nameAr": "منطقة الكثبان الرملية",
-    "description": "منطقة صحراوية.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية سناو",
-    "category": "الاماكن الترفيهية",
-    "image": "/stock_images/oman_park_garden_rec_81025203.jpg",
-    "mapUrl": "https://maps.app.goo.gl/STU890vwx123",
-    "rating": "4.0"
-  },
-  {
-    "id": "156",
+    "id": "79",
     "name": "وادي بني خالد",
     "nameAr": "وادي بني خالد",
     "description": "من أشهر الوجهات السياحية في عمان، يتميز بمياهه الزرقاء المخضرة الدائمة وبحوره الصخرية العملاقة. مكان مثالي للسباحة والاسترخاء.",
@@ -2140,7 +1139,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "157",
+    "id": "80",
     "name": "فلج وادي بني خالد",
     "nameAr": "فلج وادي بني خالد",
     "description": "فلج يمر عبر مناطق الوادي.",
@@ -2153,7 +1152,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "158",
+    "id": "81",
     "name": "حصن العيونة (Al Ayouna Fort)",
     "nameAr": "حصن العيونة (Al Ayouna Fort)",
     "description": "يعد حصن العيونة من الحصون التاريخية المهمة في سلطنة عُمان، ويقع في ولاية بركاء بمحافظة جنوب الباطنة. بُني الحصن في القرن التاسع عشر الميلادي في عهد السيد سعيد بن سلطان البوسعيدي، ويتميز بموقعه الاستراتيجي على تلة مرتفعة تطل على المنطقة المحيطة. كان الحصن يمثل مركزاً إدارياً وعسكرياً مهماً في المنطقة.",
@@ -2166,33 +1165,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "159",
-    "name": "برج المراقبة",
-    "nameAr": "برج المراقبة",
-    "description": "برج تاريخي لمراقبة المنطقة.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية وادي بني خالد",
-    "category": "القلاع والحصون",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/EFG890hij123",
-    "rating": "4.3"
-  },
-  {
-    "id": "160",
-    "name": "حصن الفليج",
-    "nameAr": "حصن الفليج",
-    "description": "حصن دفاعي صغير.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية وادي بني خالد",
-    "category": "القلاع والحصون",
-    "image": "/stock_images/oman_fort_castle_her_ff40f531.jpg",
-    "mapUrl": "https://maps.app.goo.gl/KLM456mno789",
-    "rating": "4.8"
-  },
-  {
-    "id": "161",
+    "id": "82",
     "name": "سوق وادي بني خالد",
     "nameAr": "سوق وادي بني خالد",
     "description": "سوق شعبي في الولاية.",
@@ -2205,20 +1178,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "162",
-    "name": "سوق الخضار",
-    "nameAr": "سوق الخضار",
-    "description": "سوق للخضروات والفواكه.",
-    "governorate": "محافظة شمال الشرقية",
-    "governorateId": "north_sharqiyah",
-    "wilayat": "ولاية وادي بني خالد",
-    "category": "المراكز التجارية",
-    "image": "/stock_images/oman_traditional_mar_7dcf1ff7.jpg",
-    "mapUrl": "https://maps.app.goo.gl/VWX678yza901",
-    "rating": "4.8"
-  },
-  {
-    "id": "163",
+    "id": "83",
     "name": "منتزه وادي بني خالد",
     "nameAr": "منتزه وادي بني خالد",
     "description": "منتزه عند مدخل الوادي.",
@@ -2231,7 +1191,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "164",
+    "id": "84",
     "name": "منطقة التخييم",
     "nameAr": "منطقة التخييم",
     "description": "مناطق مخصصة للتخييم في الوادي.",
@@ -2244,7 +1204,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "165",
+    "id": "85",
     "name": "حصن الكامل",
     "nameAr": "حصن الكامل",
     "description": "حصن تاريخي مهم كان مركزاً للحكم والإدارة في المنطقة.",
@@ -2257,7 +1217,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "166",
+    "id": "86",
     "name": "حصن الوافي",
     "nameAr": "حصن الوافي",
     "description": "حصن دفاعي تاريخي يطل على المنطقة المحيطة.",
@@ -2270,7 +1230,7 @@ export const attractions: Attraction[] = [
     "rating": "4.3"
   },
   {
-    "id": "167",
+    "id": "87",
     "name": "بيت التراث",
     "nameAr": "بيت التراث",
     "description": "متحف تراثي يعرض حياة الأجداد والأدوات التقليدية.",
@@ -2283,20 +1243,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "168",
-    "name": "برج المراقبة",
-    "nameAr": "برج المراقبة",
-    "description": "برج تاريخي كان يستخدم لمراقبة الطرق وحماية المنطقة.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية الكامل والوافي",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": null,
-    "rating": "4.8"
-  },
-  {
-    "id": "169",
+    "id": "88",
     "name": "عين الخضراء",
     "nameAr": "عين الخضراء",
     "description": "عين مائية في منطقة زراعية خصبة.",
@@ -2309,7 +1256,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "170",
+    "id": "89",
     "name": "عين خميس",
     "nameAr": "عين خميس",
     "description": "نبع مائي صغير يستخدم للري والشرب.",
@@ -2322,7 +1269,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "171",
+    "id": "90",
     "name": "وادي عندام",
     "nameAr": "وادي عندام",
     "description": "وادي جميل تحيط به الجبال من جميع الجهات.",
@@ -2335,7 +1282,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "172",
+    "id": "91",
     "name": "وادي بني جابر",
     "nameAr": "وادي بني جابر",
     "description": "وادي يتميز بمناظره الطبيعية الخلابة.",
@@ -2348,7 +1295,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "173",
+    "id": "92",
     "name": "سوق الكامل التقليدي",
     "nameAr": "سوق الكامل التقليدي",
     "description": "سوق شعبي يبيع المنتجات المحلية والتمور.",
@@ -2361,7 +1308,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "174",
+    "id": "93",
     "name": "مجمع الوافي التجاري",
     "nameAr": "مجمع الوافي التجاري",
     "description": "مركز تجاري يقدم خدمات متنوعة للمنطقة.",
@@ -2374,7 +1321,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "175",
+    "id": "94",
     "name": "مركز الكامل الحديث",
     "nameAr": "مركز الكامل الحديث",
     "description": "مركز تسوق يضم محلات تجارية متنوعة.",
@@ -2387,7 +1334,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "176",
+    "id": "95",
     "name": "سوق الوافي الشعبي",
     "nameAr": "سوق الوافي الشعبي",
     "description": "سوق تقليدي للاحتياجات اليومية.",
@@ -2400,7 +1347,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "177",
+    "id": "96",
     "name": "منتزه الكامل",
     "nameAr": "منتزه الكامل",
     "description": "منتزه عام يتوفر على مساحات خضراء وألعاب للأطفال.",
@@ -2413,7 +1360,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "178",
+    "id": "97",
     "name": "نادي الكامل الرياضي",
     "nameAr": "نادي الكامل الرياضي",
     "description": "نادي رياضي يقدم أنشطة متنوعة لأفراد المجتمع.",
@@ -2426,7 +1373,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "179",
+    "id": "98",
     "name": "منطقة الوافي الترفيهية",
     "nameAr": "منطقة الوافي الترفيهية",
     "description": "منطقة مفتوحة للأنشطة الترفيهية والعائلية.",
@@ -2439,7 +1386,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "180",
+    "id": "99",
     "name": "حديقة العيون",
     "nameAr": "حديقة العيون",
     "description": "حديقة عامة حول العيون الطبيعية في الولاية.",
@@ -2452,7 +1399,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "181",
+    "id": "100",
     "name": "حصن جعلان بني بو علي",
     "nameAr": "حصن جعلان بني بو علي",
     "description": "حصن تاريخي مهم في مركز الولاية.",
@@ -2465,7 +1412,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "182",
+    "id": "101",
     "name": "حصن المضي",
     "nameAr": "حصن المضي",
     "description": "حصن تاريخي في منطقة المضي.",
@@ -2478,20 +1425,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "183",
-    "name": "عين القابل",
-    "nameAr": "عين القابل",
-    "description": "عين مائية تاريخية في منطقة القابل.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بو علي",
-    "category": "العيون",
-    "image": "/stock_images/oman_natural_spring__5e306873.jpg",
-    "mapUrl": "https://maps.app.goo.gl/DeFhH5kK7lL8nOoQ9",
-    "rating": "4.1"
-  },
-  {
-    "id": "184",
+    "id": "102",
     "name": "عين السيح",
     "nameAr": "عين السيح",
     "description": "نبع مائي في منطقة سهلية.",
@@ -2504,33 +1438,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "185",
-    "name": "وادي بني خالد",
-    "nameAr": "وادي بني خالد",
-    "description": "من أشهر أودية السلطنة بمياهه الزرقاء المخضرة.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بو علي",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_edac93ff.jpg",
-    "mapUrl": "https://maps.app.goo.gl/GhIkK8nN0oO1qRrT2",
-    "rating": "4.7"
-  },
-  {
-    "id": "186",
-    "name": "وادي عندام",
-    "nameAr": "وادي عندام",
-    "description": "وادي جميل تحيط به الجبال.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بو علي",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_483e8ecc.jpg",
-    "mapUrl": "https://maps.app.goo.gl/HiJlL9oO1pP2rSsU3",
-    "rating": "4.0"
-  },
-  {
-    "id": "187",
+    "id": "103",
     "name": "سوق جعلان بنi بو علي التقليدي",
     "nameAr": "سوق جعلان بنi بو علي التقليدي",
     "description": "سوق شعبي يبيع المنتجات المحلية والتمور.",
@@ -2543,7 +1451,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "188",
+    "id": "104",
     "name": "مجمع جعلان بني بو علي التجاري",
     "nameAr": "مجمع جعلان بني بو علي التجاري",
     "description": "مركز تجاري يقدم خدمات متنوعة.",
@@ -2556,7 +1464,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "189",
+    "id": "105",
     "name": "مركز القابل التجاري",
     "nameAr": "مركز القابل التجاري",
     "description": "مركز تسوق في منطقة القابل.",
@@ -2569,7 +1477,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "190",
+    "id": "106",
     "name": "سوق المضي الشعبي",
     "nameAr": "سوق المضي الشعبي",
     "description": "سوق تقليدي في منطقة المضي.",
@@ -2582,7 +1490,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "191",
+    "id": "107",
     "name": "نادي جعلان بني بو علي الرياضي",
     "nameAr": "نادي جعلان بني بو علي الرياضي",
     "description": "نادي رياضي يخدم المجتمع.",
@@ -2595,7 +1503,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "192",
+    "id": "108",
     "name": "حديقة المضي",
     "nameAr": "حديقة المضي",
     "description": "حديقة عامة في منطقة المضي.",
@@ -2608,7 +1516,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "193",
+    "id": "109",
     "name": "منطقة مشطة الترفيهية",
     "nameAr": "منطقة مشطة الترفيهية",
     "description": "منطقة near العين للترفيه.",
@@ -2621,7 +1529,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "194",
+    "id": "110",
     "name": "حصن جعلان بني بو حسن",
     "nameAr": "حصن جعلان بني بو حسن",
     "description": "حصن تاريخي مهم شاهد على تاريخ المنطقة العريق.",
@@ -2634,7 +1542,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "195",
+    "id": "111",
     "name": "قلعة المضيرب",
     "nameAr": "قلعة المضيرب",
     "description": "قلعة أثرية كانت تستخدم للدفاع عن المنطقة.",
@@ -2647,20 +1555,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "196",
-    "name": "بيت العود",
-    "nameAr": "بيت العود",
-    "description": "مبنى تراثي يمثل العمارة التقليدية في المنطقة.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بوحسن",
-    "category": "القلاع والحصون والاماكن التراثية",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
-    "mapUrl": "https://maps.app.goo.gl/FgHjJ1mM3nN4pQqS5",
-    "rating": "4.2"
-  },
-  {
-    "id": "197",
+    "id": "112",
     "name": "عين خضراء",
     "nameAr": "عين خضراء",
     "description": "عين مائية محاطة بأشجار النخيل.",
@@ -2673,46 +1568,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "198",
-    "name": "عين خميس",
-    "nameAr": "عين خميس",
-    "description": "نبع مائي صغير في منطقة ريفية.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بوحسن",
-    "category": "العيون",
-    "image": "/stock_images/oman_natural_spring__3dd8cde9.jpg",
-    "mapUrl": "https://maps.app.goo.gl/KlMoO6rR8sS9uVvX0",
-    "rating": "4.8"
-  },
-  {
-    "id": "199",
-    "name": "وادي عندام",
-    "nameAr": "وادي عندام",
-    "description": "وادي جميل تحيط به الجبال.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بوحسن",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg",
-    "mapUrl": "https://maps.app.goo.gl/MnOqQ8tT0uU1wXxZ2",
-    "rating": "4.4"
-  },
-  {
-    "id": "200",
-    "name": "وادي بني جابر",
-    "nameAr": "وادي بني جابر",
-    "description": "وادي يتميز بمناظره الطبيعية.",
-    "governorate": "محافظة جنوب الشرقية",
-    "governorateId": "south_sharqiyah",
-    "wilayat": "ولاية جعلان بني بوحسن",
-    "category": "الأودية",
-    "image": "/stock_images/oman_wadi_valley_nat_7dfbf540.jpg",
-    "mapUrl": "https://maps.app.goo.gl/NoPrR9uU1vV2xYyA3",
-    "rating": "4.3"
-  },
-  {
-    "id": "201",
+    "id": "113",
     "name": "سوق جعلان التقليدي",
     "nameAr": "سوق جعلان التقليدي",
     "description": "سوق شعبي يبيع المنتجات المحلية والتمور.",
@@ -2725,7 +1581,7 @@ export const attractions: Attraction[] = [
     "rating": "4.9"
   },
   {
-    "id": "202",
+    "id": "114",
     "name": "مجمع جعلان التجاري",
     "nameAr": "مجمع جعلان التجاري",
     "description": "مركز تجاري يقدم خدمات متنوعة.",
@@ -2738,7 +1594,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "203",
+    "id": "115",
     "name": "مركز المضيرب التجاري",
     "nameAr": "مركز المضيرب التجاري",
     "description": "مركز تسوق في منطقة المضيرب.",
@@ -2751,7 +1607,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "204",
+    "id": "116",
     "name": "نادي جعلان الرياضي",
     "nameAr": "نادي جعلان الرياضي",
     "description": "نادي رياضي يخدم المجتمع المحلي.",
@@ -2764,7 +1620,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "205",
+    "id": "117",
     "name": "حديقة المضيرب",
     "nameAr": "حديقة المضيرب",
     "description": "حديقة عامة في مركز الولاية.",
@@ -2777,7 +1633,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "206",
+    "id": "118",
     "name": "قلعة السنيسلة",
     "nameAr": "قلعة السنيسلة",
     "description": "قلعة تاريخية تقع على تلة مرتفعة مطلة على بحر العرب عند مدخل ولاية صور. بُنيت للدفاع عن المدينة وحماية مينائها من الهجمات البحرية.",
@@ -2790,7 +1646,7 @@ export const attractions: Attraction[] = [
     "rating": "4.2"
   },
   {
-    "id": "207",
+    "id": "119",
     "name": "حصن البلاد",
     "nameAr": "حصن البلاد",
     "description": "حصن تاريخي قديم كان مركزاً للحكم والإدارة في الولاية، ويتميز بتصميمه الدفاعي المميز.",
@@ -2803,7 +1659,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "208",
+    "id": "120",
     "name": "بيت الرافضة",
     "nameAr": "بيت الرافضة",
     "description": "مبنى تراثي كان محطة لاستراحة الحجاج والقوافل التجارية، ويمثل العمارة العمانية التقليدية.",
@@ -2816,7 +1672,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "209",
+    "id": "121",
     "name": "حصن الرفصة",
     "nameAr": "حصن الرفصة",
     "description": "حصن تاريخي شاهد على تاريخ المنطقة العريق في مجال الحكم والدفاع.",
@@ -2829,7 +1685,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "210",
+    "id": "122",
     "name": "عين التيور",
     "nameAr": "عين التيور",
     "description": "عين مائية تاريخية كانت مصدراً للمياه لسكان المنطقة لقرون عديدة.",
@@ -2842,7 +1698,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "211",
+    "id": "123",
     "name": "عين الشجنية",
     "nameAr": "عين الشجنية",
     "description": "عين طبيعية في منطقة ريفية هادئة محاطة بالأشجار.",
@@ -2855,7 +1711,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "212",
+    "id": "124",
     "name": "عين الحواري",
     "nameAr": "عين الحواري",
     "description": "نبع مائي صغير في منطقة سكنية تقليدية.",
@@ -2868,7 +1724,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "213",
+    "id": "125",
     "name": "وادي شاب",
     "nameAr": "وادي شاب",
     "description": "وادي يشتهر بوجود \"شق الوادي\" الضيق الذي يمكن السباحة بين جدرانه الصخرية.",
@@ -2881,7 +1737,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "214",
+    "id": "126",
     "name": "وادي الجزي",
     "nameAr": "وادي الجزي",
     "description": "وادي واسع وجميل تصب فيه العديد من الأودية الفرعية.",
@@ -2894,7 +1750,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "215",
+    "id": "127",
     "name": "وادي طيوي",
     "nameAr": "وادي طيوي",
     "description": "وادي ساحلي جميل يتميز بإطلالته على البحر.",
@@ -2907,7 +1763,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "216",
+    "id": "128",
     "name": "وادي عردة",
     "nameAr": "وادي عردة",
     "description": "وادي داخلي يتميز بمناظره الطبيعية الصحراوية الجميلة.",
@@ -2920,7 +1776,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "217",
+    "id": "129",
     "name": "صور مول",
     "nameAr": "صور مول",
     "description": "أول مركز تجاري كبير في الولاية، يضم العديد من المحلات والمطاعم والخدمات.",
@@ -2933,7 +1789,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "218",
+    "id": "130",
     "name": "سوق صور التقليدي",
     "nameAr": "سوق صور التقليدي",
     "description": "سوق شعبي يبيع المنتجات التقليدية والتمور واللبان.",
@@ -2946,7 +1802,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "219",
+    "id": "131",
     "name": "المركز التجاري الحديث",
     "nameAr": "المركز التجاري الحديث",
     "description": "مركز تجاري يقدم خدمات متنوعة للسكان والزوار.",
@@ -2959,7 +1815,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "220",
+    "id": "132",
     "name": "مجمع الأفنيوز",
     "nameAr": "مجمع الأفنيوز",
     "description": "مجمع تجاري حديث يضم ماركات عالمية ومطاعم متنوعة.",
@@ -2972,7 +1828,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "221",
+    "id": "133",
     "name": "كورنيش صور",
     "nameAr": "كورنيش صور",
     "description": "ممشى بحري جميل يمتد along الساحل، مناسب للنزهات المسائية.",
@@ -2985,7 +1841,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "222",
+    "id": "134",
     "name": "نادي صور الترفيهي",
     "nameAr": "نادي صور الترفيهي",
     "description": "نادي يقدم أنشطة ترفيهية متنوعة للأطفال والعائلات.",
@@ -2998,7 +1854,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "223",
+    "id": "135",
     "name": "حصن الجزيرة",
     "nameAr": "حصن الجزيرة",
     "description": "حصن تاريخي في جزيرة مصيرة.",
@@ -3011,7 +1867,7 @@ export const attractions: Attraction[] = [
     "rating": "4.7"
   },
   {
-    "id": "224",
+    "id": "136",
     "name": "برج المراقبة الساحلي",
     "nameAr": "برج المراقبة الساحلي",
     "description": "برج تاريخي لمراقبة السواحل.",
@@ -3024,7 +1880,7 @@ export const attractions: Attraction[] = [
     "rating": "4.1"
   },
   {
-    "id": "225",
+    "id": "137",
     "name": "عين حلوة",
     "nameAr": "عين حلوة",
     "description": "عين مائية في الجزيرة.",
@@ -3037,7 +1893,7 @@ export const attractions: Attraction[] = [
     "rating": "4.4"
   },
   {
-    "id": "226",
+    "id": "138",
     "name": "عين البستان",
     "nameAr": "عين البستان",
     "description": "نبع مائي صغير.",
@@ -3050,7 +1906,7 @@ export const attractions: Attraction[] = [
     "rating": "4.5"
   },
   {
-    "id": "227",
+    "id": "139",
     "name": "وادي الجزيرة",
     "nameAr": "وادي الجزيرة",
     "description": "الوادي الرئيسي في جزيرة مصيرة.",
@@ -3063,7 +1919,7 @@ export const attractions: Attraction[] = [
     "rating": "4.0"
   },
   {
-    "id": "228",
+    "id": "140",
     "name": "سوق مصيرة التقليدي",
     "nameAr": "سوق مصيرة التقليدي",
     "description": "سوق شعبي في الجزيرة.",
@@ -3076,7 +1932,7 @@ export const attractions: Attraction[] = [
     "rating": "4.8"
   },
   {
-    "id": "229",
+    "id": "141",
     "name": "مجمع مصيرة التجاري",
     "nameAr": "مجمع مصيرة التجاري",
     "description": "مركز تجاري في الجزيرة.",
@@ -3089,7 +1945,7 @@ export const attractions: Attraction[] = [
     "rating": "4.6"
   },
   {
-    "id": "230",
+    "id": "142",
     "name": "شواطئ مصيرة",
     "nameAr": "شواطئ مصيرة",
     "description": "تشتهر الجزيرة بشواطئها البكر الجميلة والهادئة.",
