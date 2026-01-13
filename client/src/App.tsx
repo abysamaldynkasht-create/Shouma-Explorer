@@ -21,6 +21,7 @@ import HikingDetailPage from "@/pages/hiking-detail";
 import HospitalsPage from "@/pages/hospitals";
 import HospitalDetailPage from "@/pages/hospital-detail";
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
+import CustomerService from "@/components/CustomerService";
 
 function Router() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Toaster />
         <Router />
         <AccessibilityAssistant />
+      <CustomerService />
       </TooltipProvider>
     </QueryClientProvider>
   );
