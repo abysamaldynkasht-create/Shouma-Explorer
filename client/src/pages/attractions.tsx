@@ -294,17 +294,22 @@ export default function AttractionsPage() {
                       <Badge variant="outline" className="text-xs">
                         {attraction.governorate}
                       </Badge>
-                      <a
-                        href={attraction.mapUrl || "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Button
+                        size="sm"
                         data-testid={`button-map-${attraction.id}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center justify-center gap-1 h-8 px-3 text-xs font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          if (attraction.mapUrl) {
+                            const newWindow = window.open(attraction.mapUrl, '_blank', 'noopener,noreferrer');
+                            if (newWindow) newWindow.opener = null;
+                          }
+                        }}
+                        className="gap-1"
                       >
                         <Navigation className="w-4 h-4" />
                         الخريطة
-                      </a>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
