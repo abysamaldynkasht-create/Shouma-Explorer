@@ -69,7 +69,7 @@ export default function CustomerService() {
                 <SiWhatsapp className="h-5 w-5" />
                 <div className="flex flex-col items-start">
                   <span className="text-sm font-medium">واتساب</span>
-                  <span className="text-xs text-white/80">محادثة مباشرة</span>
+                  <span className="text-xs text-white/80" dir="ltr">{CUSTOMER_SERVICE_NUMBER}</span>
                 </div>
               </Button>
 
