@@ -53,6 +53,14 @@ Preferred communication style: Simple, everyday language.
 - **Production**: esbuild for server bundling, Vite for client build
 - **Output**: `dist/` directory with `public/` for static assets
 
+## Pending Features
+
+### Payment Integration (Hotels)
+- **Status**: Not configured
+- **Requirement**: User requested Apple Pay and credit card payment for hotel bookings
+- **Solution**: Stripe integration - user needs to provide Stripe API keys (Secret Key and Publishable Key) or complete the Replit Stripe connector setup
+- **Note**: When ready, use Replit's Stripe connector for secure payment processing
+
 ## External Dependencies
 
 ### Database
