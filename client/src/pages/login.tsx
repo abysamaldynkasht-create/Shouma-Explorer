@@ -72,30 +72,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
-      <div className="hidden lg:flex lg:w-3/5 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=2070')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
-        
-        <div className="absolute top-8 right-8 z-10">
+      <div className="hidden lg:flex lg:w-3/5 relative overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 dark:from-amber-950 dark:via-stone-900 dark:to-amber-900">
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-12">
           <img 
             src={shoumaLogo} 
             alt="شومة" 
-            className="h-20 w-auto drop-shadow-lg"
+            className="w-80 h-auto mb-8 drop-shadow-2xl"
             data-testid="logo-login"
           />
-        </div>
-        
-        <div className="absolute bottom-16 right-12 left-12 z-10">
-          <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg" data-testid="text-hero-title">
+          <h1 className="text-4xl font-bold text-foreground mb-4 text-center" data-testid="text-hero-title">
             اكتشف جمال الوجهات السياحية
           </h1>
-          <p className="text-lg text-white/90 max-w-xl drop-shadow" data-testid="text-hero-subtitle">
+          <p className="text-lg text-muted-foreground max-w-xl text-center" data-testid="text-hero-subtitle">
             رحلتك المثالية تبدأ من هنا. اكتشف أجمل الأماكن، أفضل الفنادق، وألذ المطاعم في مكان واحد.
           </p>
         </div>
