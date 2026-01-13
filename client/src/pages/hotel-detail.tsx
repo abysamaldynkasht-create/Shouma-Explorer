@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useLocation, useParams } from "wouter";
 import { hotels } from "@/lib/hotels";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import PaymentModal from "@/components/PaymentModal";
 import { 
   Building2, 
   ArrowRight,
@@ -10,7 +12,7 @@ import {
   Star,
   Share2,
   Heart,
-  Phone,
+  CreditCard,
   Check,
   Wifi,
   Car,
@@ -20,6 +22,7 @@ import {
 
 export default function HotelDetailPage() {
   const [, setLocation] = useLocation();
+  const [paymentOpen, setPaymentOpen] = useState(false);
   const params = useParams<{ id: string }>();
   
   const hotel = hotels.find((h) => h.id === params.id);
@@ -210,14 +213,26 @@ export default function HotelDetailPage() {
                   </div>
                 </div>
 
-                <Button className="w-full h-12" data-testid="button-book-now">
-                  <Phone className="w-5 h-5 ml-2" />
+                <Button 
+                  className="w-full h-12" 
+                  data-testid="button-book-now"
+                  onClick={() => setPaymentOpen(true)}
+                >
+                  <CreditCard className="w-5 h-5 ml-2" />
                   احجز الآن
                 </Button>
               </CardContent>
             </Card>
           </div>
         </div>
+
+        <PaymentModal
+          open={paymentOpen}
+          onOpenChange={setPaymentOpen}
+          hotelName={hotel.nameAr}
+          pricePerNight={hotel.pricePerNight}
+          nights={1}
+        />
 
         {relatedHotels.length > 0 && (
           <section className="mt-16">
