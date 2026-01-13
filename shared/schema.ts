@@ -62,13 +62,13 @@ export interface Attraction {
   name: string;
   nameAr: string;
   description: string;
-  city: string;
-  region: string;
+  governorate: string;
+  governorateId: string;
+  wilayat: string;
+  category: string;
   image: string;
-  gallery: string[];
-  tags: string[];
-  rating: number;
-  priceTier: "free" | "low" | "medium" | "high";
+  mapUrl: string | null;
+  rating: string;
 }
 
 export interface Hotel {
