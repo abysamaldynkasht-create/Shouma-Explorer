@@ -2,7 +2,7 @@
 
 ## Overview
 
-Shouma (شومة) is a tourism discovery application designed for Saudi Arabia travelers. The app helps users explore destinations, hotels, restaurants, hiking trips, and taxis. A key feature called "Shoumatak" (شومتك) provides personalized trip planning through a questionnaire-based itinerary generator.
+Shouma (شومة) is a tourism discovery application designed for Oman travelers. The app helps users explore destinations, hotels, restaurants, hiking trips, and taxis. A key feature called "Shoumatak" (شومتك) provides personalized trip planning through a questionnaire-based itinerary generator.
 
 The application follows a modern full-stack architecture with a React frontend and Express backend, using Arabic (RTL) as the primary language with a warm brown/beige design palette inspired by premium travel platforms.
 

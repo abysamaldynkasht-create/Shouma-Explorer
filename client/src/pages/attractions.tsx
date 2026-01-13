@@ -14,7 +14,7 @@ import {
   Filter
 } from "lucide-react";
 
-const regions = ["الكل", "الرياض", "مكة المكرمة", "المدينة المنورة", "عسير", "جازان"];
+const regions = ["الكل", "مسقط", "الداخلية", "ظفار", "شمال الشرقية", "جنوب الشرقية"];
 
 export default function AttractionsPage() {
   const [, setLocation] = useLocation();
@@ -79,7 +79,7 @@ export default function AttractionsPage() {
             اكتشف أجمل الأماكن السياحية
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mb-6 drop-shadow" data-testid="text-page-subtitle">
-            استكشف المعالم التاريخية والطبيعية في المملكة العربية السعودية
+            استكشف المعالم التاريخية والطبيعية في سلطنة عُمان
           </p>
         </div>
       </section>
