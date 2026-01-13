@@ -33,6 +33,8 @@ export default function HomePage() {
       setLocation("/attractions");
     } else if (categoryId === "hotels") {
       setLocation("/hotels");
+    } else if (categoryId === "restaurants") {
+      setLocation("/restaurants");
     }
   };
 

@@ -85,3 +85,17 @@ export interface Hotel {
   pricePerNight: number;
   stars: number;
 }
+
+export interface Restaurant {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  city: string;
+  region: string;
+  image: string;
+  cuisine: string;
+  priceRange: "budget" | "moderate" | "expensive" | "luxury";
+  rating: number;
+  features: string[];
+}
