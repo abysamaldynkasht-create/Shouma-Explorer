@@ -290,23 +290,21 @@ export default function AttractionsPage() {
                     <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                       {attraction.description}
                     </p>
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
                       <Badge variant="outline" className="text-xs">
                         {attraction.governorate}
                       </Badge>
-                      {attraction.mapUrl && (
-                        <a
-                          href={attraction.mapUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-testid={`button-map-${attraction.id}`}
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center justify-center gap-1 h-8 px-3 text-xs font-medium rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                        >
-                          <Navigation className="w-4 h-4" />
-                          الخريطة
-                        </a>
-                      )}
+                      <a
+                        href={attraction.mapUrl || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`button-map-${attraction.id}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center justify-center gap-1 h-8 px-3 text-xs font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                      >
+                        <Navigation className="w-4 h-4" />
+                        الخريطة
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
