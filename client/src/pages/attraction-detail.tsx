@@ -28,12 +28,6 @@ export default function AttractionDetailPage() {
       .slice(0, 3);
   };
 
-  const handleGetDirections = () => {
-    if (attraction?.mapUrl) {
-      window.open(attraction.mapUrl, "_blank");
-    }
-  };
-
   if (!attraction) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
@@ -186,14 +180,16 @@ export default function AttractionDetailPage() {
                 </div>
 
                 {attraction.mapUrl && (
-                  <Button 
-                    className="w-full h-12" 
+                  <a 
+                    href={attraction.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-testid="button-get-directions"
-                    onClick={handleGetDirections}
+                    className="w-full h-12 inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
                   >
-                    <Navigation className="w-5 h-5 ml-2" />
+                    <Navigation className="w-5 h-5" />
                     احصل على الاتجاهات
-                  </Button>
+                  </a>
                 )}
               </CardContent>
             </Card>
