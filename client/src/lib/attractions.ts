@@ -54,7 +54,7 @@ export const attractions: Attraction[] = [
     "wilayat": "ولاية نزوى",
     "category": "قلاع وحصون",
     "image": "/stock_images/nizwa_fort_oman_hist_ca0d2be9.jpg",
-    "mapUrl": "https://maps.app.goo.gl/KsmQbMKj2t7epLsL8",
+    "mapUrl": "https://www.google.com/maps?cid=2294231192322615979",
     "rating": "4.7"
   },
   {
