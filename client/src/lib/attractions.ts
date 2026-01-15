@@ -1,13 +1,13 @@
 import type { Attraction } from "@shared/schema";
 
 import wadiImg1 from "@assets/stock_images/oman_wadi_valley_nat_1af4dc65.jpg";
-import fortImg1 from "@assets/stock_images/oman_fort_castle_her_5f96b3a5.jpg";
+import nizwaFortImg from "@assets/stock_images/nizwa_fort_oman_hist_ca0d2be9.jpg";
 import springImg1 from "@assets/stock_images/oman_natural_spring__a6b99a8c.jpg";
 import beachImg1 from "@assets/stock_images/oman_beach_coast_sea_bf5cd867.jpg";
 
 const imageMap: Record<string, string> = {
   "/stock_images/oman_wadi_valley_nat_1af4dc65.jpg": wadiImg1,
-  "/stock_images/oman_fort_castle_her_5f96b3a5.jpg": fortImg1,
+  "/stock_images/nizwa_fort_oman_hist_ca0d2be9.jpg": nizwaFortImg,
   "/stock_images/oman_natural_spring__a6b99a8c.jpg": springImg1,
   "/stock_images/oman_beach_coast_sea_bf5cd867.jpg": beachImg1,
 };
@@ -53,7 +53,7 @@ export const attractions: Attraction[] = [
     "governorateId": "dakhiliyah",
     "wilayat": "ولاية نزوى",
     "category": "قلاع وحصون",
-    "image": "/stock_images/oman_fort_castle_her_5f96b3a5.jpg",
+    "image": "/stock_images/nizwa_fort_oman_hist_ca0d2be9.jpg",
     "mapUrl": "https://maps.app.goo.gl/KsmQbMKj2t7epLsL8",
     "rating": "4.7"
   },
