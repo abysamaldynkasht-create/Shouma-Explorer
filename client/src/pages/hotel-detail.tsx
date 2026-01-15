@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import PaymentModal from "@/components/PaymentModal";
+import type { RoomOption } from "@shared/schema";
 import { 
   Building2, 
   ArrowRight,
@@ -18,12 +19,15 @@ import {
   Car,
   UtensilsCrossed,
   Waves,
-  Phone
+  Phone,
+  Users,
+  Bed
 } from "lucide-react";
 
 export default function HotelDetailPage() {
   const [, setLocation] = useLocation();
   const [paymentOpen, setPaymentOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState<RoomOption | null>(null);
   const params = useParams<{ id: string }>();
   
   const hotel = hotels.find((h) => h.id === params.id);
@@ -158,6 +162,77 @@ export default function HotelDetailPage() {
               </div>
             </section>
 
+            {hotel.roomOptions && hotel.roomOptions.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold text-foreground mb-4">
+                  خيارات الغرف
+                </h2>
+                <div className="space-y-4">
+                  {hotel.roomOptions.map((room) => (
+                    <Card 
+                      key={room.id} 
+                      className={`overflow-hidden cursor-pointer transition-all ${
+                        selectedRoom?.id === room.id 
+                          ? "ring-2 ring-primary border-primary" 
+                          : "hover:border-primary/50"
+                      }`}
+                      onClick={() => setSelectedRoom(room)}
+                      data-testid={`card-room-${room.id}`}
+                    >
+                      <CardContent className="p-5">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Bed className="w-5 h-5 text-primary" />
+                              <h3 className="font-bold text-lg">{room.nameAr}</h3>
+                              {selectedRoom?.id === room.id && (
+                                <Badge className="bg-primary text-primary-foreground">محدد</Badge>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground text-sm mb-3">{room.description}</p>
+                            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                              <div className="flex items-center gap-1">
+                                <Users className="w-4 h-4" />
+                                <span>حتى {room.maxGuests} ضيوف</span>
+                              </div>
+                            </div>
+                            <div className="flex flex-wrap gap-2 mt-3">
+                              {room.amenities.slice(0, 4).map((amenity) => (
+                                <Badge key={amenity} variant="secondary" className="text-xs">
+                                  {amenity}
+                                </Badge>
+                              ))}
+                              {room.amenities.length > 4 && (
+                                <Badge variant="outline" className="text-xs">
+                                  +{room.amenities.length - 4} المزيد
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <div className="text-left sm:text-right">
+                            <p className="text-2xl font-bold text-primary">{room.pricePerNight} ر.ع</p>
+                            <p className="text-sm text-muted-foreground">لليلة الواحدة</p>
+                            <Button 
+                              className="mt-3"
+                              size="sm"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedRoom(room);
+                                setPaymentOpen(true);
+                              }}
+                              data-testid={`button-book-room-${room.id}`}
+                            >
+                              احجز الآن
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {hotel.gallery.length > 1 && (
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">
@@ -178,8 +253,9 @@ export default function HotelDetailPage() {
             <Card>
               <CardContent className="p-6 space-y-4">
                 <div className="text-center pb-4 border-b border-border">
-                  <p className="text-sm text-muted-foreground mb-1">السعر لليلة الواحدة</p>
+                  <p className="text-sm text-muted-foreground mb-1">السعر يبدأ من</p>
                   <p className="text-3xl font-bold text-primary">{hotel.pricePerNight} ر.ع</p>
+                  <p className="text-xs text-muted-foreground">لليلة الواحدة</p>
                 </div>
                 
                 <div className="flex items-center gap-3">
@@ -231,14 +307,30 @@ export default function HotelDetailPage() {
                   </div>
                 </div>
 
-                <Button 
-                  className="w-full h-12" 
-                  data-testid="button-book-now"
-                  onClick={() => setPaymentOpen(true)}
-                >
-                  <CreditCard className="w-5 h-5 ml-2" />
-                  احجز الآن
-                </Button>
+                {hotel.roomOptions && hotel.roomOptions.length > 0 ? (
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground mb-2">اختر نوع الغرفة من الخيارات أعلاه</p>
+                    {selectedRoom && (
+                      <Button 
+                        className="w-full h-12" 
+                        data-testid="button-book-now"
+                        onClick={() => setPaymentOpen(true)}
+                      >
+                        <CreditCard className="w-5 h-5 ml-2" />
+                        احجز {selectedRoom.nameAr}
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  <Button 
+                    className="w-full h-12" 
+                    data-testid="button-book-now"
+                    onClick={() => setPaymentOpen(true)}
+                  >
+                    <CreditCard className="w-5 h-5 ml-2" />
+                    احجز الآن
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -247,8 +339,8 @@ export default function HotelDetailPage() {
         <PaymentModal
           open={paymentOpen}
           onOpenChange={setPaymentOpen}
-          hotelName={hotel.nameAr}
-          pricePerNight={hotel.pricePerNight}
+          hotelName={selectedRoom ? `${hotel.nameAr} - ${selectedRoom.nameAr}` : hotel.nameAr}
+          pricePerNight={selectedRoom ? selectedRoom.pricePerNight : hotel.pricePerNight}
           nights={1}
         />
 

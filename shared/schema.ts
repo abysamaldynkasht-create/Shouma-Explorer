@@ -71,6 +71,16 @@ export interface Attraction {
   rating: string;
 }
 
+export interface RoomOption {
+  id: string;
+  name: string;
+  nameAr: string;
+  description: string;
+  pricePerNight: number;
+  maxGuests: number;
+  amenities: string[];
+}
+
 export interface Hotel {
   id: string;
   name: string;
@@ -85,6 +95,7 @@ export interface Hotel {
   pricePerNight: number;
   stars: number;
   phone: string;
+  roomOptions?: RoomOption[];
 }
 
 export interface Restaurant {
