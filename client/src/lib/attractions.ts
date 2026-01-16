@@ -368,5 +368,83 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.8"
+  },
+  {
+    id: "26",
+    name: "مجمع الواحة",
+    nameAr: "مجمع الواحة",
+    description: "مجمع تجاري في الرستاق يوفر مرافق تسوق وخدمات متنوعة للزوار.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.0"
+  },
+  {
+    id: "27",
+    name: "قلعة الرستاق",
+    nameAr: "قلعة الرستاق",
+    description: "قلعة تاريخية ضخمة تعد من أهم المعالم التراثية في عُمان، تروي تاريخ المنطقة العريق.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "28",
+    name: "حصن الحزم",
+    nameAr: "حصن الحزم",
+    description: "تحفة معمارية دفاعية فريدة، يعتبر من أهم الحصون في سلطنة عُمان بتصميمه الهندسي المتقن.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
+  },
+  {
+    id: "29",
+    name: "سوق الرستاق القديم",
+    nameAr: "سوق الرستاق القديم",
+    description: "سوق تقليدي حيوي خاصة في الصباح الباكر، مشهور ببيع العسل والتمور والمنتجات المحلية.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "30",
+    name: "عين الكسفة",
+    nameAr: "عين الكسفة",
+    description: "عين مياه طبيعية حارة تصل حرارتها لـ 45 درجة مئوية، لها فوائد علاجية ويقصدها الزوار للاستشفاء.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "springs",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "31",
+    name: "وادي الحوقين",
+    nameAr: "وادي الحوقين",
+    description: "وادٍ طبيعي ساحر يضم شلالات مياه دائمة الجريان وسط النخيل، من أجمل الأودية في عُمان.",
+    governorate: "محافظة جنوب الباطنة",
+    governorateId: "south_batinah",
+    wilayat: "ولاية الرستاق",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
   }
 ];
