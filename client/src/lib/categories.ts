@@ -65,4 +65,12 @@ export const categories: Category[] = [
     description: "خطط رحلتك المثالية",
     color: "from-primary/80 to-primary/95",
   },
+  {
+    id: "nearby",
+    title: "Nearby Places",
+    titleAr: "الأماكن القريبة مني",
+    icon: "Navigation",
+    description: "اكتشف الأماكن القريبة من موقعك",
+    color: "from-blue-600/80 to-blue-800/90",
+  },
 ];
