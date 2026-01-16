@@ -511,5 +511,70 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.5"
+  },
+  {
+    id: "37",
+    name: "سوق صور القديم",
+    nameAr: "سوق صور القديم",
+    description: "سوق تقليدي عريق في ولاية صور، يعرض المنتجات البحرية والحرف التقليدية.",
+    governorate: "محافظة جنوب الشرقية",
+    governorateId: "south_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
+  },
+  {
+    id: "38",
+    name: "مرح لاند",
+    nameAr: "مرح لاند",
+    description: "مدينة ترفيهية للعائلات تضم ألعاب متنوعة ومرافق ترفيهية للأطفال والكبار.",
+    governorate: "محافظة جنوب الشرقية",
+    governorateId: "south_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
+  },
+  {
+    id: "39",
+    name: "شاطئ الأشخرة",
+    nameAr: "شاطئ الأشخرة",
+    description: "شاطئ طبيعي ساحر يتميز برماله الذهبية ومياهه الصافية، مثالي للسباحة والتخييم.",
+    governorate: "محافظة جنوب الشرقية",
+    governorateId: "south_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "40",
+    name: "حصن بلاد صور",
+    nameAr: "حصن بلاد صور",
+    description: "حصن تراثي تاريخي يعكس التاريخ البحري العريق لولاية صور وصناعة السفن.",
+    governorate: "محافظة جنوب الشرقية",
+    governorateId: "south_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "41",
+    name: "وادي حاور",
+    nameAr: "وادي حاور",
+    description: "وادٍ طبيعي جميل في جنوب الشرقية، يتميز بمناظره الخلابة وبركه المائية.",
+    governorate: "محافظة جنوب الشرقية",
+    governorateId: "south_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
   }
 ];
