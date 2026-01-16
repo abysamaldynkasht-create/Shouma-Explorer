@@ -54,7 +54,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية بوشر",
     category: "nature",
     image: "",
-    mapUrl: "https://maps.app.goo.gl/qurum-beach-muscat",
+    mapUrl: "https://maps.app.goo.gl/4YyuXLLuBvA9qLXG9",
     rating: "4.5"
   },
   {
@@ -67,7 +67,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية مطرح",
     category: "markets",
     image: "",
-    mapUrl: "https://maps.app.goo.gl/mutrah-souq",
+    mapUrl: "https://maps.app.goo.gl/qJGC5Rk4sqosFNyB8",
     rating: "4.8"
   },
   {
@@ -80,7 +80,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية السيب",
     category: "wadis",
     image: "",
-    mapUrl: "https://maps.app.goo.gl/wadi-al-khoud",
+    mapUrl: "https://maps.app.goo.gl/zWP2ztmNNAz6CB7y5",
     rating: "4.3"
   },
   {
@@ -93,7 +93,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية بوشر",
     category: "entertainment",
     image: "",
-    mapUrl: "https://maps.app.goo.gl/qurum-natural-park",
+    mapUrl: "https://maps.app.goo.gl/8in1t2GTgnyJxLjA9",
     rating: "4.7"
   },
   {
@@ -106,7 +106,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية مطرح",
     category: "heritage",
     image: "",
-    mapUrl: "https://maps.app.goo.gl/9TMKQUYtEgJ4NZ2u5",
+    mapUrl: "https://maps.app.goo.gl/NNR1WgRHypcg5Fst7",
     rating: "4.5"
   },
   {
@@ -119,7 +119,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية الجبل الاخضر",
     category: "nature",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/ZpensdHeBvouYugX8",
     rating: "4.9"
   },
   {
@@ -132,7 +132,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية نزوى",
     category: "heritage",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/sjaLFYq4BFUtcmqU6",
     rating: "4.8"
   },
   {
@@ -145,7 +145,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية الحمراء",
     category: "wadis",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/Ch5n2k9sDgediE4p7",
     rating: "4.7"
   },
   {
@@ -158,20 +158,20 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية نزوى",
     category: "markets",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/HmAB16MB7HbAdNuTA",
     rating: "4.6"
   },
   {
     id: "10",
-    name: "حديقة نزوى العامة",
-    nameAr: "حديقة نزوى العامة",
+    name: "حديقة فلج دارس",
+    nameAr: "حديقة فلج دارس",
     description: "متنزه حضري حديث في قلب نزوى. يحتوي على بحيرة اصطناعية ومسرح مفتوح ومناطق ألعاب للأطفال.",
     governorate: "محافظة الداخلية",
     governorateId: "dakhiliyah",
     wilayat: "ولاية نزوى",
     category: "entertainment",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/jotwJS8znZYBznfW7",
     rating: "4.4"
   },
   {
@@ -184,7 +184,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية محوت",
     category: "nature",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/EmekuatAbuASqSaXA",
     rating: "4.6"
   },
   {
