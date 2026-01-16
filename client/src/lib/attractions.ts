@@ -641,5 +641,70 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.9"
+  },
+  {
+    id: "47",
+    name: "مركز زاد المدينة للتسوق",
+    nameAr: "مركز زاد المدينة للتسوق",
+    description: "مركز تسوق وسوبرماركت في ولاية خصب، يوفر خيارات متنوعة من البضائع الأساسية والاحتياجات اليومية في بيئة نظيفة ومنظمة.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
+  },
+  {
+    id: "48",
+    name: "الرحلات البحرية في الخيران",
+    nameAr: "الرحلات البحرية في الخيران",
+    description: "جولات ممتعة بالقوارب التقليدية (الدهو) عبر الأخوار والجبال البحرية الخلابة، حيث يمكنك مشاهدة الدلافين والسباحة والغطس حول الجزر واستكشاف القرى الساحلية القديمة.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
+  },
+  {
+    id: "49",
+    name: "خور شم",
+    nameAr: "خور شم",
+    description: "من أجمل الأخوار الطبيعية، يتميز بمياهه الفيروزية الهادئة المحاطة بالجبال الشاهقة، وجهة مثالية لرحلات القوارب ومشاهدة الحياة البحرية.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.9"
+  },
+  {
+    id: "50",
+    name: "قلعة خصب",
+    nameAr: "قلعة خصب",
+    description: "معلم تاريخي بارز يعود للقرن السابع عشر، تتميز بأبراجها الحجرية وأسوارها التي تعكس الطابع المعماري العُماني التقليدي، وتضم متحفًا يعرض تراث المنطقة.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "51",
+    name: "وادي خب الشماسي",
+    nameAr: "وادي خب الشماسي",
+    description: "وادٍ يتميز بطبيعته الجبلية الخلابة وممراته الصخرية التي تتخللها برك مياه موسمية، وجهة مثالية لمحبي المغامرة والتنزه.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
   }
 ];
