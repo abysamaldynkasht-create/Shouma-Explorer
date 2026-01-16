@@ -53,7 +53,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية بوشر",
     category: "nature",
-    image: "/assets/stock_images/qurum_beach_muscat_o_29628761.jpg",
+    image: "",
     mapUrl: "https://maps.app.goo.gl/4YyuXLLuBvA9qLXG9",
     rating: "4.5"
   },
@@ -66,7 +66,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية مطرح",
     category: "markets",
-    image: "/assets/stock_images/mutrah_souq_traditio_3acd7b35.jpg",
+    image: "",
     mapUrl: "https://maps.app.goo.gl/qJGC5Rk4sqosFNyB8",
     rating: "4.8"
   },
@@ -79,7 +79,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية السيب",
     category: "wadis",
-    image: "/assets/stock_images/wadi_valley_oman_nat_b544f689.jpg",
+    image: "",
     mapUrl: "https://maps.app.goo.gl/zWP2ztmNNAz6CB7y5",
     rating: "4.3"
   },
@@ -92,7 +92,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية بوشر",
     category: "entertainment",
-    image: "/assets/stock_images/qurum_park_muscat_om_c4f9dc73.jpg",
+    image: "",
     mapUrl: "https://maps.app.goo.gl/8in1t2GTgnyJxLjA9",
     rating: "4.7"
   },
@@ -105,7 +105,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية مطرح",
     category: "heritage",
-    image: "/assets/stock_images/mutrah_fort_castle_o_5da7ed19.jpg",
+    image: "",
     mapUrl: "https://maps.app.goo.gl/NNR1WgRHypcg5Fst7",
     rating: "4.5"
   },
