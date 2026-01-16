@@ -56,6 +56,15 @@ Preferred communication style: Simple, everyday language.
 - Users table with username/password authentication
 - Questionnaire schema for trip preferences (duration, budget, interests, group size, activities, accommodation, meals)
 - Itinerary types for generated trip plans
+- Attraction interface with optional lat/lng coordinates for geolocation features
+
+### Nearby Places Feature
+- **Route**: `/nearby`
+- **Component**: `client/src/pages/nearby-places.tsx`
+- **Functionality**: Uses browser Geolocation API to find user's current location and displays nearby tourist attractions sorted by distance
+- **Algorithm**: Haversine formula for distance calculation between user location and attraction coordinates
+- **States**: Loading (requesting location), Error (location denied/unavailable with retry), Success (grid of nearby attractions)
+- **Coverage**: 18+ attractions have coordinates across Muscat, Dakhiliyah, Wusta, North Batinah, and Dhofar governorates
 
 ### Build System
 - **Development**: Vite dev server with Express middleware integration
