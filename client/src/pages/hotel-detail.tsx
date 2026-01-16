@@ -21,7 +21,8 @@ import {
   Waves,
   Phone,
   Users,
-  Bed
+  Bed,
+  Navigation
 } from "lucide-react";
 
 export default function HotelDetailPage() {
@@ -306,6 +307,24 @@ export default function HotelDetailPage() {
                     </a>
                   </div>
                 </div>
+
+                {hotel.mapUrl && (
+                  <a
+                    href={hotel.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors"
+                    data-testid="link-hotel-map"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                      <Navigation className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-primary">عرض على الخريطة</p>
+                      <p className="text-xs text-muted-foreground">افتح في خرائط جوجل</p>
+                    </div>
+                  </a>
+                )}
 
                 {hotel.roomOptions && hotel.roomOptions.length > 0 ? (
                   <div className="text-center">

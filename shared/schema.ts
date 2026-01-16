@@ -95,6 +95,7 @@ export interface Hotel {
   pricePerNight: number;
   stars: number;
   phone: string;
+  mapUrl?: string;
   roomOptions?: RoomOption[];
 }
 
