@@ -135,5 +135,70 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.5"
+  },
+  {
+    id: "8",
+    name: "جبل الأخضر",
+    nameAr: "جبل الأخضر",
+    description: "أعلى جبل في محافظة الداخلية. يتميّز بجوه المعتدل وطبيعته الخضراء وثماره المميزة كالرمان والورد.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية الجبل الاخضر",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.9"
+  },
+  {
+    id: "9",
+    name: "قلعة نزوى",
+    nameAr: "قلعة نزوى",
+    description: "حصن تاريخي ضخم في مركز مدينة نزوى. يتوسط سوق نزوى التقليدي الشعبي المعروف بصناعاته الحرفية.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
+  },
+  {
+    id: "10",
+    name: "وادي الغول",
+    nameAr: "وادي الغول",
+    description: "أحد أجمل المعالم الطبيعية في الداخلية. يمتاز بمناظره الخلابة وضخامة تضاريسه الجبلية.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية الحمراء",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "11",
+    name: "سوق نزوى التقليدي",
+    nameAr: "سوق نزوى التقليدي",
+    description: "سوق شعبي تاريخي، يمتاز بمحلاته الشعبية والصناعات الحرفية التقليدية العُمانية.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "12",
+    name: "حديقة نزوى العامة",
+    nameAr: "حديقة نزوى العامة",
+    description: "متنزه حضري حديث في قلب نزوى. يحتوي على بحيرة اصطناعية ومسرح مفتوح ومناطق ألعاب للأطفال.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
   }
 ];
