@@ -446,5 +446,70 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.8"
+  },
+  {
+    id: "32",
+    name: "سوق عبري",
+    nameAr: "سوق عبري",
+    description: "سوق تقليدي في ولاية عبري، يعرض المنتجات المحلية والحرف التقليدية.",
+    governorate: "محافظة الظاهرة",
+    governorateId: "dhahirah",
+    wilayat: "ولاية عبري",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
+  },
+  {
+    id: "33",
+    name: "مهرجان الظاهرة السياحي",
+    nameAr: "مهرجان الظاهرة السياحي",
+    description: "مهرجان سياحي سنوي يقام في محافظة الظاهرة، يضم فعاليات ثقافية وترفيهية متنوعة.",
+    governorate: "محافظة الظاهرة",
+    governorateId: "dhahirah",
+    wilayat: "ولاية عبري",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "34",
+    name: "مسفاة العبريين",
+    nameAr: "مسفاة العبريين",
+    description: "قرية جبلية تراثية ذات طبيعة خلابة، تتميز بمدرجاتها الزراعية ومنازلها التقليدية.",
+    governorate: "محافظة الظاهرة",
+    governorateId: "dhahirah",
+    wilayat: "ولاية عبري",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "35",
+    name: "سد المحيول",
+    nameAr: "سد المحيول",
+    description: "سد تراثي قديم يعكس براعة الهندسة العُمانية التقليدية في إدارة المياه.",
+    governorate: "محافظة الظاهرة",
+    governorateId: "dhahirah",
+    wilayat: "ولاية عبري",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
+  },
+  {
+    id: "36",
+    name: "وادي ضم",
+    nameAr: "وادي ضم",
+    description: "وادٍ طبيعي جميل في محافظة الظاهرة، يتميز بمناظره الخلابة ومياهه الجارية.",
+    governorate: "محافظة الظاهرة",
+    governorateId: "dhahirah",
+    wilayat: "ولاية عبري",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
   }
 ];
