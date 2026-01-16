@@ -701,7 +701,7 @@ export const attractions: Attraction[] = [
     description: "وادٍ يتميز بطبيعته الجبلية الخلابة وممراته الصخرية التي تتخللها برك مياه موسمية، وجهة مثالية لمحبي المغامرة والتنزه.",
     governorate: "محافظة مسندم",
     governorateId: "musandam",
-    wilayat: "ولاية خصب",
+    wilayat: "ولاية دبا",
     category: "wadis",
     image: "",
     mapUrl: null,
