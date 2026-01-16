@@ -576,5 +576,70 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.6"
+  },
+  {
+    id: "42",
+    name: "سوق إبراء",
+    nameAr: "سوق إبراء",
+    description: "سوق تقليدي عريق في ولاية إبراء، يضم محلات الحرف اليدوية والمنتجات المحلية.",
+    governorate: "محافظة شمال الشرقية",
+    governorateId: "north_sharqiyah",
+    wilayat: "ولاية إبراء",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "43",
+    name: "رمال وهيبة",
+    nameAr: "رمال وهيبة",
+    description: "صحراء رملية ذهبية مذهلة تمتد على مساحات واسعة، مثالية للتخييم ورحلات السفاري.",
+    governorate: "محافظة شمال الشرقية",
+    governorateId: "north_sharqiyah",
+    wilayat: "ولاية بدية",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
+  },
+  {
+    id: "44",
+    name: "وادي تيوي",
+    nameAr: "وادي تيوي",
+    description: "وادٍ خلاب يتميز بقراه الجبلية المعلقة ومزارع النخيل ومياهه الجارية.",
+    governorate: "محافظة شمال الشرقية",
+    governorateId: "north_sharqiyah",
+    wilayat: "ولاية صور",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "45",
+    name: "بيت الدّرْوازة",
+    nameAr: "بيت الدّرْوازة",
+    description: "منزل تراثي تاريخي يعكس العمارة العمانية التقليدية وأسلوب الحياة القديم.",
+    governorate: "محافظة شمال الشرقية",
+    governorateId: "north_sharqiyah",
+    wilayat: "ولاية إبراء",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "46",
+    name: "وادي بني خالد",
+    nameAr: "وادي بني خالد",
+    description: "أشهر الأودية في عُمان، يتميز ببركه الفيروزية الصافية وكهوفه الطبيعية.",
+    governorate: "محافظة شمال الشرقية",
+    governorateId: "north_sharqiyah",
+    wilayat: "ولاية بني خالد",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.9"
   }
 ];
