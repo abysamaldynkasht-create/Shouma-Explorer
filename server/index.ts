@@ -2,9 +2,12 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import path from "path";
 
 const app = express();
 const httpServer = createServer(app);
+
+app.use("/assets", express.static(path.resolve(import.meta.dirname, "..", "attached_assets")));
 
 declare module "http" {
   interface IncomingMessage {
