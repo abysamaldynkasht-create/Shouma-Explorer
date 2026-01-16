@@ -706,5 +706,57 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.5"
+  },
+  {
+    id: "52",
+    name: "البريمي مول",
+    nameAr: "البريمي مول",
+    description: "مركز تسوق محلي يجمع تحت سقف واحد مجموعة من المتاجر ومتاجر الأزياء والسلع المختلفة، وجهة مناسبة للتسوق وقضاء وقت مع العائلة.",
+    governorate: "محافظة البريمي",
+    governorateId: "buraimi",
+    wilayat: "ولاية البريمي",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.2"
+  },
+  {
+    id: "53",
+    name: "حديقة البريمي العامة",
+    nameAr: "حديقة البريمي العامة",
+    description: "حديقة واسعة توفر مكانًا مثاليًا للعائلات للاسترخاء والتنزه، تتميز بمنتزهات وألعاب للأطفال ومسارات للمشي وفعاليات ثقافية وترفيهية.",
+    governorate: "محافظة البريمي",
+    governorateId: "buraimi",
+    wilayat: "ولاية البريمي",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
+  },
+  {
+    id: "54",
+    name: "واحة صعراء",
+    nameAr: "واحة صعراء",
+    description: "منطقة طبيعية خضراء تضم أشجار النخيل والنباتات المثمرة كالمانجو والليمون، مكان مفضل للتنزّه والاسترخاء وسط الطبيعة.",
+    governorate: "محافظة البريمي",
+    governorateId: "buraimi",
+    wilayat: "ولاية البريمي",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "55",
+    name: "حصن الخندق",
+    nameAr: "حصن الخندق",
+    description: "معلم تاريخي قديم يعكس الطابع المعماري العُماني التقليدي، بني للحماية والدفاع عن المدينة، يتميز بأسواره وأبراج المراقبة.",
+    governorate: "محافظة البريمي",
+    governorateId: "buraimi",
+    wilayat: "ولاية البريمي",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
   }
 ];
