@@ -54,7 +54,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية بوشر",
     category: "nature",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/qurum-beach-muscat",
     rating: "4.5"
   },
   {
@@ -67,7 +67,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية مطرح",
     category: "markets",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/mutrah-souq",
     rating: "4.8"
   },
   {
@@ -80,7 +80,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية السيب",
     category: "wadis",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/wadi-al-khoud",
     rating: "4.3"
   },
   {
@@ -93,7 +93,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية بوشر",
     category: "entertainment",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/qurum-natural-park",
     rating: "4.7"
   },
   {
@@ -106,7 +106,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية مطرح",
     category: "heritage",
     image: "",
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/9TMKQUYtEgJ4NZ2u5",
     rating: "4.5"
   },
   {
