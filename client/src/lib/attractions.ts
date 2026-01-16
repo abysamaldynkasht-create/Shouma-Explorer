@@ -26,6 +26,8 @@ export const categories = [
   { id: "heritage", nameAr: "الأماكن التراثية" },
   { id: "nature", nameAr: "الأماكن الطبيعية" },
   { id: "wadis", nameAr: "الأودية" },
+  { id: "hotels", nameAr: "الفنادق" },
+  { id: "restaurants", nameAr: "المطاعم" },
 ];
 
 export const wilayatsByGovernorate: Record<string, string[]> = {
@@ -42,4 +44,96 @@ export const wilayatsByGovernorate: Record<string, string[]> = {
   buraimi: ["ولاية البريمي", "ولاية محضة", "ولاية السنينة"],
 };
 
-export const attractions: Attraction[] = [];
+export const attractions: Attraction[] = [
+  {
+    id: "1",
+    name: "شاطئ القرم",
+    nameAr: "شاطئ القرم",
+    description: "من الشواطئ الرملية التي تجذب العائلات للتنزه على الشاطئ والاستمتاع بالأجواء البحرية الهادئة.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "2",
+    name: "سوق مطرح",
+    nameAr: "سوق مطرح",
+    description: "أحد أقدم وأشهر الأسواق العُمانية. يضم المتاجر التي تبيع المصنوعات الحرفية العُمانية كالخناجر والنحاسيات والبخور والعطور التقليدية.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية مطرح",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.8"
+  },
+  {
+    id: "3",
+    name: "وادي الخوض",
+    nameAr: "وادي الخوض",
+    description: "وادٍ طبيعي جميل يتكوّن من برك مائية وعيون مياه ثابتة. مكان مثالي للاسترخاء والتمتع بالطبيعة.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
+  },
+  {
+    id: "4",
+    name: "فندق أفاني مسقط",
+    nameAr: "فندق أفاني مسقط",
+    description: "فندق 4 نجوم محلي مرموق صُمِّم على الطراز العُماني الأنيق. فندق يحرص على تقديم ضيافة عمانية أصيلة مع خدمات حديثة.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "hotels",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
+  },
+  {
+    id: "5",
+    name: "مطعم كارجين",
+    nameAr: "مطعم كارجين",
+    description: "مطعم محلي مشهور بأجوائه العُمانية التقليدية، ويقدم المأكولات المصنوعة منزليًا بنكهات عمانية أصيلة.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية مسقط",
+    category: "restaurants",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "6",
+    name: "منتزه القرم الطبيعي",
+    nameAr: "منتزه القرم الطبيعي",
+    description: "أكبر حديقة عامة في مسقط. يجمع بين المناظر الخضراء الشاسعة والهندسة المعمارية الجمالية. مكان مثالي للعائلات.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "7",
+    name: "قلعة مطرح",
+    nameAr: "قلعة مطرح",
+    description: "قلعة تاريخية تراثية تقع على تلال جبال الحجر المطلة على ميناء السلطان قابوس. تعكس التاريخ العريق لسلطنة عُمان.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية مطرح",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  }
+];
