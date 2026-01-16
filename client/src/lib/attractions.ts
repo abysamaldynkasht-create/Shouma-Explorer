@@ -199,5 +199,83 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.5"
+  },
+  {
+    id: "13",
+    name: "صحار سيتي سنتر",
+    nameAr: "صحار سيتي سنتر",
+    description: "أفضل مول في صحار، يضم أشهر العلامات التجارية والمطاعم ومرافق الترفيه للعائلات.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
+  },
+  {
+    id: "14",
+    name: "قلعة صحار",
+    nameAr: "قلعة صحار",
+    description: "قلعة تاريخية تضم متاحف تحكي تاريخ المدينة العريق والتراث البحري القديم لصحار.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "heritage",
+    image: "",
+    mapUrl: null,
+    rating: "4.7"
+  },
+  {
+    id: "15",
+    name: "سوق صحار التاريخي",
+    nameAr: "سوق صحار التاريخي",
+    description: "سوق تجاري بني على الطراز الإسلامي التقليدي ويقع بالقرب من القلعة، يعرض المنتجات التقليدية والحرفية.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "markets",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
+  },
+  {
+    id: "16",
+    name: "شاطئ صحار",
+    nameAr: "شاطئ صحار",
+    description: "شاطئ ممتاز للمشي والجلوس وقت الغروب، يوفر إطلالات خلابة على البحر.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.4"
+  },
+  {
+    id: "17",
+    name: "وادي الجزي",
+    nameAr: "وادي الجزي",
+    description: "وادٍ طبيعي جميل في صحار، يتميز بمناظره الخلابة ومياهه الجارية.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "wadis",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "18",
+    name: "حديقة اليوبيل الفضي",
+    nameAr: "حديقة اليوبيل الفضي",
+    description: "حديقة عامة جميلة في صحار، مثالية للتنزه والاسترخاء مع العائلة.",
+    governorate: "محافظة شمال الباطنة",
+    governorateId: "north_batinah",
+    wilayat: "ولاية صحار",
+    category: "entertainment",
+    image: "",
+    mapUrl: null,
+    rating: "4.3"
   }
 ];
