@@ -129,6 +129,7 @@ export const hotels: Hotel[] = [
     pricePerNight: 180,
     stars: 5,
     phone: "+968 2494 4444",
+    mapUrl: "https://maps.app.goo.gl/c7rmSmmzBgxku9iV8",
     roomOptions: [
       {
         id: "4-deluxe",
