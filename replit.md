@@ -26,6 +26,15 @@ Preferred communication style: Simple, everyday language.
 - Card-based UI for destination discovery and exploration
 - Mobile-first responsive design with breakpoints for tablet and desktop
 
+### Multi-Language System
+- **8 Languages Supported**: Arabic (AR), English (EN), French (FR), Spanish (ES), Turkish (TR), Chinese (ZH), Japanese (JA), Persian (FA)
+- **RTL Languages**: Arabic and Persian automatically set document direction to 'rtl' and apply Cairo font
+- **Language Context**: `client/src/contexts/LanguageContext.tsx` provides language state and translation function
+- **Translation Files**: `client/src/lib/translations.ts` contains all translation dictionaries
+- **Language Switcher**: Globe icon dropdown in header with code badges (no emoji flags for compliance)
+- **Persistence**: Language preference stored in localStorage with key 'shouma-language'
+- **Filter System**: Tour guides page uses language-agnostic keys for specialization/city filters to work across language switches
+
 ### Backend Architecture
 - **Framework**: Express.js with TypeScript
 - **HTTP Server**: Node.js native HTTP server
