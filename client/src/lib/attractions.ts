@@ -55,7 +55,9 @@ export const attractions: Attraction[] = [
     category: "nature",
     image: "",
     mapUrl: "https://maps.app.goo.gl/4YyuXLLuBvA9qLXG9",
-    rating: "4.5"
+    rating: "4.5",
+    lat: 23.6071,
+    lng: 58.4942
   },
   {
     id: "2",
@@ -68,7 +70,9 @@ export const attractions: Attraction[] = [
     category: "markets",
     image: "",
     mapUrl: "https://maps.app.goo.gl/qJGC5Rk4sqosFNyB8",
-    rating: "4.8"
+    rating: "4.8",
+    lat: 23.6193,
+    lng: 58.5713
   },
   {
     id: "3",
@@ -81,7 +85,9 @@ export const attractions: Attraction[] = [
     category: "wadis",
     image: "",
     mapUrl: "https://maps.app.goo.gl/zWP2ztmNNAz6CB7y5",
-    rating: "4.3"
+    rating: "4.3",
+    lat: 23.5451,
+    lng: 58.0872
   },
   {
     id: "4",
@@ -94,7 +100,9 @@ export const attractions: Attraction[] = [
     category: "entertainment",
     image: "",
     mapUrl: "https://maps.app.goo.gl/8in1t2GTgnyJxLjA9",
-    rating: "4.7"
+    rating: "4.7",
+    lat: 23.5992,
+    lng: 58.4156
   },
   {
     id: "5",
@@ -107,7 +115,9 @@ export const attractions: Attraction[] = [
     category: "heritage",
     image: "",
     mapUrl: "https://maps.app.goo.gl/NNR1WgRHypcg5Fst7",
-    rating: "4.5"
+    rating: "4.5",
+    lat: 23.6225,
+    lng: 58.5695
   },
   {
     id: "6",
@@ -120,7 +130,9 @@ export const attractions: Attraction[] = [
     category: "nature",
     image: "",
     mapUrl: "https://maps.app.goo.gl/ZpensdHeBvouYugX8",
-    rating: "4.9"
+    rating: "4.9",
+    lat: 23.0742,
+    lng: 57.6517
   },
   {
     id: "7",
@@ -133,7 +145,9 @@ export const attractions: Attraction[] = [
     category: "heritage",
     image: "",
     mapUrl: "https://maps.app.goo.gl/sjaLFYq4BFUtcmqU6",
-    rating: "4.8"
+    rating: "4.8",
+    lat: 22.9320,
+    lng: 57.5292
   },
   {
     id: "8",
@@ -146,7 +160,9 @@ export const attractions: Attraction[] = [
     category: "wadis",
     image: "",
     mapUrl: "https://maps.app.goo.gl/Ch5n2k9sDgediE4p7",
-    rating: "4.7"
+    rating: "4.7",
+    lat: 23.1250,
+    lng: 57.3500
   },
   {
     id: "9",
@@ -159,7 +175,9 @@ export const attractions: Attraction[] = [
     category: "markets",
     image: "",
     mapUrl: "https://maps.app.goo.gl/HmAB16MB7HbAdNuTA",
-    rating: "4.6"
+    rating: "4.6",
+    lat: 22.9315,
+    lng: 57.5283
   },
   {
     id: "10",
@@ -172,7 +190,9 @@ export const attractions: Attraction[] = [
     category: "entertainment",
     image: "",
     mapUrl: "https://maps.app.goo.gl/jotwJS8znZYBznfW7",
-    rating: "4.4"
+    rating: "4.4",
+    lat: 22.9251,
+    lng: 57.5350
   },
   {
     id: "11",
@@ -185,7 +205,9 @@ export const attractions: Attraction[] = [
     category: "nature",
     image: "",
     mapUrl: "https://maps.app.goo.gl/EmekuatAbuASqSaXA",
-    rating: "4.6"
+    rating: "4.6",
+    lat: 20.2670,
+    lng: 58.4100
   },
   {
     id: "12",
@@ -198,7 +220,9 @@ export const attractions: Attraction[] = [
     category: "springs",
     image: "",
     mapUrl: null,
-    rating: "4.5"
+    rating: "4.5",
+    lat: 19.9500,
+    lng: 56.2800
   },
   {
     id: "13",
@@ -211,7 +235,9 @@ export const attractions: Attraction[] = [
     category: "entertainment",
     image: "",
     mapUrl: null,
-    rating: "4.3"
+    rating: "4.3",
+    lat: 24.3650,
+    lng: 56.7420
   },
   {
     id: "14",
@@ -224,7 +250,9 @@ export const attractions: Attraction[] = [
     category: "heritage",
     image: "",
     mapUrl: null,
-    rating: "4.7"
+    rating: "4.7",
+    lat: 24.3472,
+    lng: 56.7459
   },
   {
     id: "15",
@@ -289,7 +317,9 @@ export const attractions: Attraction[] = [
     category: "entertainment",
     image: "",
     mapUrl: null,
-    rating: "4.5"
+    rating: "4.5",
+    lat: 17.0203,
+    lng: 54.0910
   },
   {
     id: "20",
@@ -302,7 +332,9 @@ export const attractions: Attraction[] = [
     category: "heritage",
     image: "",
     mapUrl: null,
-    rating: "4.8"
+    rating: "4.8",
+    lat: 17.0090,
+    lng: 54.1250
   },
   {
     id: "21",
@@ -328,7 +360,9 @@ export const attractions: Attraction[] = [
     category: "wadis",
     image: "",
     mapUrl: null,
-    rating: "4.9"
+    rating: "4.9",
+    lat: 17.1150,
+    lng: 54.4370
   },
   {
     id: "23",
@@ -354,7 +388,9 @@ export const attractions: Attraction[] = [
     category: "springs",
     image: "",
     mapUrl: null,
-    rating: "4.6"
+    rating: "4.6",
+    lat: 17.1070,
+    lng: 54.0680
   },
   {
     id: "25",

@@ -69,6 +69,8 @@ export interface Attraction {
   image: string;
   mapUrl: string | null;
   rating: string;
+  lat?: number;
+  lng?: number;
 }
 
 export interface RoomOption {

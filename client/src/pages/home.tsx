@@ -12,7 +12,8 @@ import {
   LogOut,
   Search,
   Hospital,
-  UserCheck
+  UserCheck,
+  Navigation
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Sparkles: <Sparkles className="w-8 h-8" />,
   Hospital: <Hospital className="w-8 h-8" />,
   UserCheck: <UserCheck className="w-8 h-8" />,
+  Navigation: <Navigation className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -50,6 +52,8 @@ export default function HomePage() {
       setLocation("/hospitals");
     } else if (categoryId === "tour-guides") {
       setLocation("/tour-guides");
+    } else if (categoryId === "nearby") {
+      setLocation("/nearby");
     }
   };
 
@@ -231,6 +235,7 @@ function getCategoryImage(id: string): string {
     hospitals: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800",
     "tour-guides": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800",
     shoumatak: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800",
+    nearby: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800",
   };
   return images[id] || images.attractions;
 }
@@ -245,6 +250,7 @@ function getCategoryTitle(id: string, t: (key: string) => string): string {
     hospitals: t('hospitals'),
     "tour-guides": t('tourGuides'),
     shoumatak: t('shoumatak'),
+    nearby: t('nearbyPlaces'),
   };
   return titles[id] || id;
 }
@@ -259,6 +265,7 @@ function getCategoryDesc(id: string, t: (key: string) => string): string {
     hospitals: t('hospitalsDesc'),
     "tour-guides": t('tourGuidesDesc'),
     shoumatak: t('shoumatakDescShort'),
+    nearby: t('nearbyPlacesDesc'),
   };
   return descs[id] || '';
 }
