@@ -26,6 +26,7 @@ export const categories = [
   { id: "heritage", nameAr: "الأماكن التراثية" },
   { id: "nature", nameAr: "الأماكن الطبيعية" },
   { id: "wadis", nameAr: "الأودية" },
+  { id: "springs", nameAr: "العيون الطبيعية" },
 ];
 
 export const wilayatsByGovernorate: Record<string, string[]> = {
@@ -172,5 +173,31 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.4"
+  },
+  {
+    id: "11",
+    name: "شاطئ بر الحكمان",
+    nameAr: "شاطئ بر الحكمان",
+    description: "شاطئ بر الحكمان امتداد طبيعي فريد. مناسب للعائلات والتخييم والمغامرات البحرية.",
+    governorate: "محافظة الوسطى",
+    governorateId: "wusta",
+    wilayat: "ولاية محوت",
+    category: "nature",
+    image: "",
+    mapUrl: null,
+    rating: "4.6"
+  },
+  {
+    id: "12",
+    name: "عين بوي الحوجاء",
+    nameAr: "عين بوي الحوجاء",
+    description: "واحدة من ثلاث عيون طبيعية مشهورة في هيما. تتشكل العين فوق صخرة ضخمة لهبّة تشبه المظلة الطبيعية، تنبع منها مياه دائمة نقية.",
+    governorate: "محافظة الوسطى",
+    governorateId: "wusta",
+    wilayat: "ولاية هيما",
+    category: "springs",
+    image: "",
+    mapUrl: null,
+    rating: "4.5"
   }
 ];
