@@ -506,7 +506,7 @@ export const attractions: Attraction[] = [
     description: "وادٍ طبيعي جميل في محافظة الظاهرة، يتميز بمناظره الخلابة ومياهه الجارية.",
     governorate: "محافظة الظاهرة",
     governorateId: "dhahirah",
-    wilayat: "ولاية عبري",
+    wilayat: "ولاية ضنك",
     category: "wadis",
     image: "",
     mapUrl: null,
