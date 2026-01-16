@@ -9,14 +9,14 @@ export interface LanguageInfo {
 }
 
 export const languages: LanguageInfo[] = [
-  { code: 'ar', name: 'Arabic', nativeName: 'العربية', direction: 'rtl', flag: '🇴🇲' },
-  { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr', flag: '🇬🇧' },
-  { code: 'fr', name: 'French', nativeName: 'Français', direction: 'ltr', flag: '🇫🇷' },
-  { code: 'es', name: 'Spanish', nativeName: 'Español', direction: 'ltr', flag: '🇪🇸' },
-  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', direction: 'ltr', flag: '🇹🇷' },
-  { code: 'zh', name: 'Chinese', nativeName: '中文', direction: 'ltr', flag: '🇨🇳' },
-  { code: 'ja', name: 'Japanese', nativeName: '日本語', direction: 'ltr', flag: '🇯🇵' },
-  { code: 'fa', name: 'Persian', nativeName: 'فارسی', direction: 'rtl', flag: '🇮🇷' },
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية', direction: 'rtl', flag: 'AR' },
+  { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr', flag: 'EN' },
+  { code: 'fr', name: 'French', nativeName: 'Français', direction: 'ltr', flag: 'FR' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', direction: 'ltr', flag: 'ES' },
+  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', direction: 'ltr', flag: 'TR' },
+  { code: 'zh', name: 'Chinese', nativeName: '中文', direction: 'ltr', flag: 'ZH' },
+  { code: 'ja', name: 'Japanese', nativeName: '日本語', direction: 'ltr', flag: 'JA' },
+  { code: 'fa', name: 'Persian', nativeName: 'فارسی', direction: 'rtl', flag: 'FA' },
 ];
 
 export const translations: Record<Language, Record<string, string>> = {
@@ -53,6 +53,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: 'ليس لديك حساب؟',
     createAccount: 'إنشاء حساب جديد',
     loginError: 'اسم المستخدم أو كلمة المرور غير صحيحة',
+    usernameRequired: 'اسم المستخدم مطلوب',
+    passwordRequired: 'كلمة المرور مطلوبة',
+    loginSuccess: 'تم تسجيل الدخول بنجاح',
+    registerSuccess: 'تم إنشاء الحساب بنجاح',
+    welcomeMessage: 'مرحباً بك في شومة!',
+    error: 'خطأ',
+    tryAgain: 'حدث خطأ، يرجى المحاولة مرة أخرى',
+    loading: 'جاري التحميل...',
     
     // Register Page
     createNewAccount: 'إنشاء حساب جديد',
@@ -209,6 +217,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: "Don't have an account?",
     createAccount: 'Create new account',
     loginError: 'Invalid username or password',
+    usernameRequired: 'Username is required',
+    passwordRequired: 'Password is required',
+    loginSuccess: 'Login successful',
+    registerSuccess: 'Account created successfully',
+    welcomeMessage: 'Welcome to Shouma!',
+    error: 'Error',
+    tryAgain: 'An error occurred, please try again',
+    loading: 'Loading...',
     
     // Register Page
     createNewAccount: 'Create New Account',
@@ -365,6 +381,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: "Vous n'avez pas de compte?",
     createAccount: 'Créer un nouveau compte',
     loginError: "Nom d'utilisateur ou mot de passe invalide",
+    usernameRequired: "Nom d'utilisateur requis",
+    passwordRequired: 'Mot de passe requis',
+    loginSuccess: 'Connexion réussie',
+    registerSuccess: 'Compte créé avec succès',
+    welcomeMessage: 'Bienvenue à Shouma!',
+    error: 'Erreur',
+    tryAgain: 'Une erreur est survenue, veuillez réessayer',
+    loading: 'Chargement...',
     
     // Register Page
     createNewAccount: 'Créer un nouveau compte',
@@ -521,6 +545,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: '¿No tienes cuenta?',
     createAccount: 'Crear nueva cuenta',
     loginError: 'Usuario o contraseña inválidos',
+    usernameRequired: 'Nombre de usuario requerido',
+    passwordRequired: 'Contraseña requerida',
+    loginSuccess: 'Inicio de sesión exitoso',
+    registerSuccess: 'Cuenta creada exitosamente',
+    welcomeMessage: 'Bienvenido a Shouma!',
+    error: 'Error',
+    tryAgain: 'Ocurrió un error, por favor intente de nuevo',
+    loading: 'Cargando...',
     
     // Register Page
     createNewAccount: 'Crear nueva cuenta',
@@ -677,6 +709,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: 'Hesabınız yok mu?',
     createAccount: 'Yeni hesap oluştur',
     loginError: 'Geçersiz kullanıcı adı veya şifre',
+    usernameRequired: 'Kullanıcı adı gerekli',
+    passwordRequired: 'Şifre gerekli',
+    loginSuccess: 'Giriş başarılı',
+    registerSuccess: 'Hesap başarıyla oluşturuldu',
+    welcomeMessage: 'Shouma\'ya hoş geldiniz!',
+    error: 'Hata',
+    tryAgain: 'Bir hata oluştu, lütfen tekrar deneyin',
+    loading: 'Yükleniyor...',
     
     // Register Page
     createNewAccount: 'Yeni hesap oluştur',
@@ -833,6 +873,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: '没有账户？',
     createAccount: '创建新账户',
     loginError: '用户名或密码无效',
+    usernameRequired: '用户名必填',
+    passwordRequired: '密码必填',
+    loginSuccess: '登录成功',
+    registerSuccess: '账户创建成功',
+    welcomeMessage: '欢迎来到Shouma!',
+    error: '错误',
+    tryAgain: '发生错误，请重试',
+    loading: '加载中...',
     
     // Register Page
     createNewAccount: '创建新账户',
@@ -989,6 +1037,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: 'アカウントをお持ちでないですか？',
     createAccount: '新規アカウント作成',
     loginError: 'ユーザー名またはパスワードが無効です',
+    usernameRequired: 'ユーザー名が必要です',
+    passwordRequired: 'パスワードが必要です',
+    loginSuccess: 'ログイン成功',
+    registerSuccess: 'アカウントが作成されました',
+    welcomeMessage: 'Shoumaへようこそ!',
+    error: 'エラー',
+    tryAgain: 'エラーが発生しました。もう一度お試しください',
+    loading: '読み込み中...',
     
     // Register Page
     createNewAccount: '新規アカウント作成',
@@ -1145,6 +1201,14 @@ export const translations: Record<Language, Record<string, string>> = {
     noAccount: 'حساب کاربری ندارید؟',
     createAccount: 'ایجاد حساب جدید',
     loginError: 'نام کاربری یا رمز عبور نامعتبر',
+    usernameRequired: 'نام کاربری الزامی است',
+    passwordRequired: 'رمز عبور الزامی است',
+    loginSuccess: 'ورود موفقیت‌آمیز',
+    registerSuccess: 'حساب با موفقیت ایجاد شد',
+    welcomeMessage: 'به شوما خوش آمدید!',
+    error: 'خطا',
+    tryAgain: 'خطایی رخ داد، لطفاً دوباره تلاش کنید',
+    loading: 'در حال بارگذاری...',
     
     // Register Page
     createNewAccount: 'ایجاد حساب جدید',

@@ -31,10 +31,10 @@ export default function LoginPage() {
       const fieldErrors: { username?: string; password?: string } = {};
       result.error.errors.forEach((err) => {
         if (err.path[0] === "username") {
-          fieldErrors.username = "اسم المستخدم مطلوب";
+          fieldErrors.username = t('usernameRequired');
         }
         if (err.path[0] === "password") {
-          fieldErrors.password = "كلمة المرور مطلوبة";
+          fieldErrors.password = t('passwordRequired');
         }
       });
       setErrors(fieldErrors);
@@ -51,15 +51,15 @@ export default function LoginPage() {
     },
     onSuccess: () => {
       toast({
-        title: isLogin ? "تم تسجيل الدخول بنجاح" : "تم إنشاء الحساب بنجاح",
-        description: "مرحباً بك في شومة!",
+        title: isLogin ? t('loginSuccess') : t('registerSuccess'),
+        description: t('welcomeMessage'),
       });
       setLocation("/home");
     },
     onError: (error: Error) => {
       toast({
-        title: "خطأ",
-        description: error.message || "حدث خطأ، يرجى المحاولة مرة أخرى",
+        title: t('error'),
+        description: error.message || t('tryAgain'),
         variant: "destructive",
       });
     },
@@ -171,7 +171,7 @@ export default function LoginPage() {
                   disabled={loginMutation.isPending}
                 >
                   {loginMutation.isPending 
-                    ? "..." 
+                    ? t('loading')
                     : isLogin ? t('login') : t('register')
                   }
                 </Button>

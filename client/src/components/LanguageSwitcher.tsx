@@ -40,7 +40,7 @@ export default function LanguageSwitcher() {
             className="flex items-center justify-between cursor-pointer"
           >
             <div className="flex items-center gap-2">
-              <span className="text-lg">{lang.flag}</span>
+              <span className="text-xs font-bold bg-muted px-1.5 py-0.5 rounded">{lang.flag}</span>
               <span>{lang.nativeName}</span>
             </div>
             {language === lang.code && (

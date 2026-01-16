@@ -21,23 +21,45 @@ import {
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 
+const SPEC_KEYS = ['all', 'historicalCultural', 'adventureNature', 'desert', 'photography', 'marine', 'family'] as const;
+const CITY_KEYS = ['all', 'muscat', 'nizwa', 'salalah', 'musandam', 'sohar'] as const;
+
+type SpecKey = typeof SPEC_KEYS[number];
+type CityKey = typeof CITY_KEYS[number];
+
+const specEnToKey: Record<string, SpecKey> = {
+  'Historical & Cultural Tours': 'historicalCultural',
+  'Adventure & Nature Tours': 'adventureNature',
+  'Desert Safari Tours': 'desert',
+  'Photography Tours': 'photography',
+  'Marine & Diving Tours': 'marine',
+  'Family & Group Tours': 'family',
+};
+
+const cityToKey: Record<string, CityKey> = {
+  'مسقط': 'muscat',
+  'نزوى': 'nizwa',
+  'صلالة': 'salalah',
+  'مسندم': 'musandam',
+  'صحار': 'sohar',
+};
+
 export default function TourGuidesPage() {
   const [, setLocation] = useLocation();
   const { t, isRTL } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSpec, setSelectedSpec] = useState(t('all'));
-  const [selectedCity, setSelectedCity] = useState(t('all'));
-  
-  const specializations = [t('all'), t('historicalCultural'), t('adventureNature'), t('desert'), t('photography'), t('marine'), t('family')];
-  const cities = [t('all'), t('muscat'), t('nizwa'), t('salalah'), t('musandam'), t('sohar')];
+  const [selectedSpecKey, setSelectedSpecKey] = useState<SpecKey>('all');
+  const [selectedCityKey, setSelectedCityKey] = useState<CityKey>('all');
 
   const filteredGuides = tourGuides.filter((guide) => {
     const matchesSearch = guide.nameAr.includes(searchQuery) || 
                           guide.name.includes(searchQuery) ||
                           guide.description.includes(searchQuery) ||
                           guide.specializationAr.includes(searchQuery);
-    const matchesSpec = selectedSpec === t('all') || guide.specializationAr.includes(selectedSpec) || guide.specialization.toLowerCase().includes(selectedSpec.toLowerCase());
-    const matchesCity = selectedCity === t('all') || guide.city === selectedCity || guide.city.includes(selectedCity);
+    const guideSpecKey = specEnToKey[guide.specialization] || 'all';
+    const guideCityKey = cityToKey[guide.city] || 'all';
+    const matchesSpec = selectedSpecKey === 'all' || guideSpecKey === selectedSpecKey;
+    const matchesCity = selectedCityKey === 'all' || guideCityKey === selectedCityKey;
     return matchesSearch && matchesSpec && matchesCity;
   });
 
@@ -112,32 +134,32 @@ export default function TourGuidesPage() {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0">
-                {specializations.map((spec) => (
+                {SPEC_KEYS.map((specKey) => (
                   <Button
-                    key={spec}
-                    data-testid={`button-spec-${spec}`}
-                    variant={selectedSpec === spec ? "default" : "outline"}
+                    key={specKey}
+                    data-testid={`button-spec-${specKey}`}
+                    variant={selectedSpecKey === specKey ? "default" : "outline"}
                     size="sm"
-                    onClick={() => setSelectedSpec(spec)}
+                    onClick={() => setSelectedSpecKey(specKey)}
                     className="whitespace-nowrap"
                   >
-                    {spec}
+                    {t(specKey)}
                   </Button>
                 ))}
               </div>
               
               <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0">
-                {cities.map((city) => (
+                {CITY_KEYS.map((cityKey) => (
                   <Button
-                    key={city}
-                    data-testid={`button-city-${city}`}
-                    variant={selectedCity === city ? "secondary" : "ghost"}
+                    key={cityKey}
+                    data-testid={`button-city-${cityKey}`}
+                    variant={selectedCityKey === cityKey ? "secondary" : "ghost"}
                     size="sm"
-                    onClick={() => setSelectedCity(city)}
+                    onClick={() => setSelectedCityKey(cityKey)}
                     className="whitespace-nowrap"
                   >
-                    <MapPin className="w-3 h-3 ml-1" />
-                    {city}
+                    <MapPin className={`w-3 h-3 ${isRTL ? 'ml-1' : 'mr-1'}`} />
+                    {t(cityKey)}
                   </Button>
                 ))}
               </div>
