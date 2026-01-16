@@ -26,8 +26,6 @@ export const categories = [
   { id: "heritage", nameAr: "الأماكن التراثية" },
   { id: "nature", nameAr: "الأماكن الطبيعية" },
   { id: "wadis", nameAr: "الأودية" },
-  { id: "hotels", nameAr: "الفنادق" },
-  { id: "restaurants", nameAr: "المطاعم" },
 ];
 
 export const wilayatsByGovernorate: Record<string, string[]> = {
@@ -86,32 +84,6 @@ export const attractions: Attraction[] = [
   },
   {
     id: "4",
-    name: "فندق أفاني مسقط",
-    nameAr: "فندق أفاني مسقط",
-    description: "فندق 4 نجوم محلي مرموق صُمِّم على الطراز العُماني الأنيق. فندق يحرص على تقديم ضيافة عمانية أصيلة مع خدمات حديثة.",
-    governorate: "محافظة مسقط",
-    governorateId: "muscat",
-    wilayat: "ولاية السيب",
-    category: "hotels",
-    image: "",
-    mapUrl: null,
-    rating: "4.4"
-  },
-  {
-    id: "5",
-    name: "مطعم كارجين",
-    nameAr: "مطعم كارجين",
-    description: "مطعم محلي مشهور بأجوائه العُمانية التقليدية، ويقدم المأكولات المصنوعة منزليًا بنكهات عمانية أصيلة.",
-    governorate: "محافظة مسقط",
-    governorateId: "muscat",
-    wilayat: "ولاية مسقط",
-    category: "restaurants",
-    image: "",
-    mapUrl: null,
-    rating: "4.6"
-  },
-  {
-    id: "6",
     name: "منتزه القرم الطبيعي",
     nameAr: "منتزه القرم الطبيعي",
     description: "أكبر حديقة عامة في مسقط. يجمع بين المناظر الخضراء الشاسعة والهندسة المعمارية الجمالية. مكان مثالي للعائلات.",
@@ -124,7 +96,7 @@ export const attractions: Attraction[] = [
     rating: "4.7"
   },
   {
-    id: "7",
+    id: "5",
     name: "قلعة مطرح",
     nameAr: "قلعة مطرح",
     description: "قلعة تاريخية تراثية تقع على تلال جبال الحجر المطلة على ميناء السلطان قابوس. تعكس التاريخ العريق لسلطنة عُمان.",
@@ -137,7 +109,7 @@ export const attractions: Attraction[] = [
     rating: "4.5"
   },
   {
-    id: "8",
+    id: "6",
     name: "جبل الأخضر",
     nameAr: "جبل الأخضر",
     description: "أعلى جبل في محافظة الداخلية. يتميّز بجوه المعتدل وطبيعته الخضراء وثماره المميزة كالرمان والورد.",
@@ -150,7 +122,7 @@ export const attractions: Attraction[] = [
     rating: "4.9"
   },
   {
-    id: "9",
+    id: "7",
     name: "قلعة نزوى",
     nameAr: "قلعة نزوى",
     description: "حصن تاريخي ضخم في مركز مدينة نزوى. يتوسط سوق نزوى التقليدي الشعبي المعروف بصناعاته الحرفية.",
@@ -163,7 +135,7 @@ export const attractions: Attraction[] = [
     rating: "4.8"
   },
   {
-    id: "10",
+    id: "8",
     name: "وادي الغول",
     nameAr: "وادي الغول",
     description: "أحد أجمل المعالم الطبيعية في الداخلية. يمتاز بمناظره الخلابة وضخامة تضاريسه الجبلية.",
@@ -176,7 +148,7 @@ export const attractions: Attraction[] = [
     rating: "4.7"
   },
   {
-    id: "11",
+    id: "9",
     name: "سوق نزوى التقليدي",
     nameAr: "سوق نزوى التقليدي",
     description: "سوق شعبي تاريخي، يمتاز بمحلاته الشعبية والصناعات الحرفية التقليدية العُمانية.",
@@ -189,7 +161,7 @@ export const attractions: Attraction[] = [
     rating: "4.6"
   },
   {
-    id: "12",
+    id: "10",
     name: "حديقة نزوى العامة",
     nameAr: "حديقة نزوى العامة",
     description: "متنزه حضري حديث في قلب نزوى. يحتوي على بحيرة اصطناعية ومسرح مفتوح ومناطق ألعاب للأطفال.",
