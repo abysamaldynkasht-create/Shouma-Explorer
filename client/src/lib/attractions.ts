@@ -20,6 +20,14 @@ export const governorates = [
   { id: "buraimi", nameAr: "محافظة البريمي" },
 ];
 
+export const categories = [
+  { id: "markets", nameAr: "الأسواق التجارية" },
+  { id: "entertainment", nameAr: "الأماكن الترفيهية" },
+  { id: "heritage", nameAr: "الأماكن التراثية" },
+  { id: "nature", nameAr: "الأماكن الطبيعية" },
+  { id: "wadis", nameAr: "الأودية" },
+];
+
 export const wilayatsByGovernorate: Record<string, string[]> = {
   muscat: ["ولاية مسقط", "ولاية مطرح", "ولاية بوشر", "ولاية السيب", "ولاية العامرات", "ولاية قريات"],
   dakhiliyah: ["ولاية نزوى", "ولاية بهلاء", "ولاية منح", "ولاية سمائل", "ولاية إزكي", "ولاية ادم", "ولاية الحمراء", "ولاية الجبل الاخضر"],
