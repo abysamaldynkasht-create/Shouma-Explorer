@@ -1,0 +1,1270 @@
+export type Language = 'ar' | 'en' | 'fr' | 'es' | 'tr' | 'zh' | 'ja' | 'fa';
+
+export interface LanguageInfo {
+  code: Language;
+  name: string;
+  nativeName: string;
+  direction: 'rtl' | 'ltr';
+  flag: string;
+}
+
+export const languages: LanguageInfo[] = [
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية', direction: 'rtl', flag: '🇴🇲' },
+  { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr', flag: '🇬🇧' },
+  { code: 'fr', name: 'French', nativeName: 'Français', direction: 'ltr', flag: '🇫🇷' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', direction: 'ltr', flag: '🇪🇸' },
+  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', direction: 'ltr', flag: '🇹🇷' },
+  { code: 'zh', name: 'Chinese', nativeName: '中文', direction: 'ltr', flag: '🇨🇳' },
+  { code: 'ja', name: 'Japanese', nativeName: '日本語', direction: 'ltr', flag: '🇯🇵' },
+  { code: 'fa', name: 'Persian', nativeName: 'فارسی', direction: 'rtl', flag: '🇮🇷' },
+];
+
+export const translations: Record<Language, Record<string, string>> = {
+  ar: {
+    // Common
+    appName: 'شومة',
+    back: 'رجوع',
+    search: 'بحث',
+    all: 'الكل',
+    available: 'متاح',
+    unavailable: 'غير متاح',
+    noResults: 'لا توجد نتائج',
+    tryDifferentSearch: 'جرب البحث بكلمات مختلفة',
+    copyright: 'جميع الحقوق محفوظة',
+    perDay: 'السعر اليومي',
+    perKm: 'للكيلومتر',
+    perNight: 'لليلة',
+    years: 'سنوات',
+    call: 'اتصال',
+    whatsapp: 'واتساب',
+    book: 'احجز الآن',
+    viewDetails: 'عرض التفاصيل',
+    location: 'الموقع',
+    rating: 'التقييم',
+    reviews: 'تقييم',
+    featured: 'مميز',
+    
+    // Login Page
+    welcomeBack: 'مرحباً بعودتك',
+    loginSubtitle: 'سجل دخولك لاستكشاف عُمان',
+    username: 'اسم المستخدم',
+    password: 'كلمة المرور',
+    login: 'تسجيل الدخول',
+    noAccount: 'ليس لديك حساب؟',
+    createAccount: 'إنشاء حساب جديد',
+    loginError: 'اسم المستخدم أو كلمة المرور غير صحيحة',
+    
+    // Register Page
+    createNewAccount: 'إنشاء حساب جديد',
+    registerSubtitle: 'انضم إلينا واكتشف عُمان',
+    confirmPassword: 'تأكيد كلمة المرور',
+    register: 'إنشاء حساب',
+    haveAccount: 'لديك حساب بالفعل؟',
+    loginHere: 'سجل دخولك هنا',
+    
+    // Home Page
+    welcomeToShouma: 'مرحباً بك في شومة',
+    homeSubtitle: 'دليلك الشامل لاكتشاف أجمل الوجهات السياحية والتجارب الفريدة',
+    searchPlaceholder: 'ابحث عن وجهتك المفضلة...',
+    startJourney: 'ابدأ رحلتك مع شومتك',
+    discoverServices: 'اكتشف خدماتنا',
+    servicesSubtitle: 'نقدم لك مجموعة شاملة من الخدمات لتجعل رحلتك مميزة',
+    shoumatakTitle: 'شومتك - مخطط رحلتك الذكي',
+    shoumatakDesc: 'أجب على بضعة أسئلة بسيطة وسنقوم بإنشاء جدول سياحي مخصص لك بناءً على تفضيلاتك وميزانيتك',
+    tryShoumatak: 'جرب شومتك الآن',
+    
+    // Categories
+    attractions: 'الأماكن السياحية',
+    attractionsDesc: 'اكتشف أجمل المعالم السياحية',
+    hotels: 'الفنادق',
+    hotelsDesc: 'أفضل أماكن الإقامة',
+    restaurants: 'المطاعم',
+    restaurantsDesc: 'تذوق ألذ المأكولات',
+    hiking: 'رحلات الهايكنق',
+    hikingDesc: 'مغامرات في الطبيعة',
+    taxis: 'سيارات الأجرة',
+    taxisDesc: 'تنقل بسهولة وراحة',
+    hospitals: 'المستشفيات',
+    hospitalsDesc: 'مراكز صحية ومستشفيات',
+    tourGuides: 'المرشدين السياحيين',
+    tourGuidesDesc: 'مرشدين محترفين لجولاتك',
+    shoumatak: 'شومتك',
+    shoumatakDescShort: 'خطط رحلتك المثالية',
+    
+    // Tour Guides
+    tourGuidesTitle: 'المرشدين السياحيين',
+    tourGuidesSubtitle: 'اكتشف عُمان مع مرشدين محترفين وخبراء محليين',
+    searchGuide: 'ابحث عن مرشد سياحي...',
+    guideCount: 'مرشد سياحي',
+    historicalCultural: 'تاريخية وثقافية',
+    adventureNature: 'مغامرة وطبيعة',
+    desert: 'صحراء',
+    photography: 'تصوير',
+    marine: 'بحرية',
+    family: 'عائلية',
+    
+    // Hotels
+    hotelsTitle: 'الفنادق في عُمان',
+    hotelsSubtitle: 'اكتشف أفضل الفنادق والمنتجعات',
+    searchHotel: 'ابحث عن فندق...',
+    hotelCount: 'فندق',
+    selectRoom: 'اختر الغرفة',
+    roomOptions: 'خيارات الغرف',
+    maxGuests: 'الحد الأقصى للضيوف',
+    amenities: 'المرافق',
+    
+    // Attractions
+    attractionsTitle: 'الأماكن السياحية في عُمان',
+    attractionsSubtitle: 'اكتشف أجمل المعالم السياحية والوجهات',
+    searchAttraction: 'ابحث عن مكان سياحي...',
+    attractionCount: 'مكان سياحي',
+    
+    // Restaurants
+    restaurantsTitle: 'المطاعم في عُمان',
+    restaurantsSubtitle: 'تذوق أشهى المأكولات العُمانية والعالمية',
+    searchRestaurant: 'ابحث عن مطعم...',
+    restaurantCount: 'مطعم',
+    
+    // Taxis
+    taxisTitle: 'خدمات النقل في عُمان',
+    taxisSubtitle: 'اختر وسيلة النقل المناسبة لرحلتك',
+    searchTaxi: 'ابحث عن خدمة نقل...',
+    taxiCount: 'خدمة نقل',
+    
+    // Hiking
+    hikingTitle: 'رحلات الهايكنق في عُمان',
+    hikingSubtitle: 'استكشف أجمل المسارات الجبلية والوديان',
+    searchHiking: 'ابحث عن رحلة هايكنق...',
+    hikingCount: 'رحلة هايكنق',
+    
+    // Hospitals
+    hospitalsTitle: 'المستشفيات والمراكز الصحية',
+    hospitalsSubtitle: 'رعاية صحية متميزة في جميع أنحاء عُمان',
+    searchHospital: 'ابحث عن مستشفى...',
+    hospitalCount: 'مستشفى',
+    
+    // Customer Service
+    customerService: 'خدمة العملاء',
+    callUs: 'اتصل بنا',
+    whatsappUs: 'راسلنا واتساب',
+    emailUs: 'راسلنا بريدياً',
+    
+    // Accessibility
+    accessibilityTitle: 'مساعد الوصول',
+    fontSize: 'حجم الخط',
+    highContrast: 'تباين عالي',
+    reduceMotion: 'تقليل الحركة',
+    
+    // Cities
+    muscat: 'مسقط',
+    nizwa: 'نزوى',
+    salalah: 'صلالة',
+    musandam: 'مسندم',
+    sohar: 'صحار',
+    
+    // Shoumatak Questionnaire
+    tripDuration: 'ما هي مدة رحلتك؟',
+    budget: 'ما هي ميزانيتك؟',
+    interests: 'ما هي اهتماماتك؟',
+    groupSize: 'كم عدد المسافرين؟',
+    activities: 'ما الأنشطة التي تفضلها؟',
+    accommodation: 'نوع الإقامة المفضل؟',
+    meals: 'تفضيلات الطعام؟',
+    specialNeeds: 'هل لديك احتياجات خاصة؟',
+    generateItinerary: 'إنشاء الجدول السياحي',
+    next: 'التالي',
+    previous: 'السابق',
+  },
+  
+  en: {
+    // Common
+    appName: 'Shouma',
+    back: 'Back',
+    search: 'Search',
+    all: 'All',
+    available: 'Available',
+    unavailable: 'Unavailable',
+    noResults: 'No results found',
+    tryDifferentSearch: 'Try searching with different words',
+    copyright: 'All rights reserved',
+    perDay: 'Per Day',
+    perKm: 'Per Km',
+    perNight: 'Per Night',
+    years: 'years',
+    call: 'Call',
+    whatsapp: 'WhatsApp',
+    book: 'Book Now',
+    viewDetails: 'View Details',
+    location: 'Location',
+    rating: 'Rating',
+    reviews: 'reviews',
+    featured: 'Featured',
+    
+    // Login Page
+    welcomeBack: 'Welcome Back',
+    loginSubtitle: 'Login to explore Oman',
+    username: 'Username',
+    password: 'Password',
+    login: 'Login',
+    noAccount: "Don't have an account?",
+    createAccount: 'Create new account',
+    loginError: 'Invalid username or password',
+    
+    // Register Page
+    createNewAccount: 'Create New Account',
+    registerSubtitle: 'Join us and discover Oman',
+    confirmPassword: 'Confirm Password',
+    register: 'Register',
+    haveAccount: 'Already have an account?',
+    loginHere: 'Login here',
+    
+    // Home Page
+    welcomeToShouma: 'Welcome to Shouma',
+    homeSubtitle: 'Your complete guide to discovering the most beautiful destinations and unique experiences',
+    searchPlaceholder: 'Search for your favorite destination...',
+    startJourney: 'Start your journey with Shoumatak',
+    discoverServices: 'Discover Our Services',
+    servicesSubtitle: 'We offer a comprehensive range of services to make your trip special',
+    shoumatakTitle: 'Shoumatak - Your Smart Trip Planner',
+    shoumatakDesc: 'Answer a few simple questions and we will create a customized itinerary based on your preferences and budget',
+    tryShoumatak: 'Try Shoumatak Now',
+    
+    // Categories
+    attractions: 'Tourist Places',
+    attractionsDesc: 'Discover the most beautiful landmarks',
+    hotels: 'Hotels',
+    hotelsDesc: 'Best accommodation options',
+    restaurants: 'Restaurants',
+    restaurantsDesc: 'Taste the finest cuisine',
+    hiking: 'Hiking Trips',
+    hikingDesc: 'Adventures in nature',
+    taxis: 'Taxis',
+    taxisDesc: 'Travel easily and comfortably',
+    hospitals: 'Hospitals',
+    hospitalsDesc: 'Health centers and hospitals',
+    tourGuides: 'Tour Guides',
+    tourGuidesDesc: 'Professional guides for your tours',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: 'Plan your perfect trip',
+    
+    // Tour Guides
+    tourGuidesTitle: 'Tour Guides',
+    tourGuidesSubtitle: 'Discover Oman with professional guides and local experts',
+    searchGuide: 'Search for a tour guide...',
+    guideCount: 'tour guides',
+    historicalCultural: 'Historical & Cultural',
+    adventureNature: 'Adventure & Nature',
+    desert: 'Desert',
+    photography: 'Photography',
+    marine: 'Marine',
+    family: 'Family',
+    
+    // Hotels
+    hotelsTitle: 'Hotels in Oman',
+    hotelsSubtitle: 'Discover the best hotels and resorts',
+    searchHotel: 'Search for a hotel...',
+    hotelCount: 'hotels',
+    selectRoom: 'Select Room',
+    roomOptions: 'Room Options',
+    maxGuests: 'Max Guests',
+    amenities: 'Amenities',
+    
+    // Attractions
+    attractionsTitle: 'Tourist Places in Oman',
+    attractionsSubtitle: 'Discover the most beautiful landmarks and destinations',
+    searchAttraction: 'Search for a tourist place...',
+    attractionCount: 'tourist places',
+    
+    // Restaurants
+    restaurantsTitle: 'Restaurants in Oman',
+    restaurantsSubtitle: 'Taste the finest Omani and international cuisine',
+    searchRestaurant: 'Search for a restaurant...',
+    restaurantCount: 'restaurants',
+    
+    // Taxis
+    taxisTitle: 'Transportation Services in Oman',
+    taxisSubtitle: 'Choose the right transportation for your trip',
+    searchTaxi: 'Search for transportation...',
+    taxiCount: 'services',
+    
+    // Hiking
+    hikingTitle: 'Hiking Trips in Oman',
+    hikingSubtitle: 'Explore the most beautiful mountain trails and valleys',
+    searchHiking: 'Search for a hiking trip...',
+    hikingCount: 'hiking trips',
+    
+    // Hospitals
+    hospitalsTitle: 'Hospitals and Health Centers',
+    hospitalsSubtitle: 'Outstanding healthcare across Oman',
+    searchHospital: 'Search for a hospital...',
+    hospitalCount: 'hospitals',
+    
+    // Customer Service
+    customerService: 'Customer Service',
+    callUs: 'Call Us',
+    whatsappUs: 'WhatsApp Us',
+    emailUs: 'Email Us',
+    
+    // Accessibility
+    accessibilityTitle: 'Accessibility Assistant',
+    fontSize: 'Font Size',
+    highContrast: 'High Contrast',
+    reduceMotion: 'Reduce Motion',
+    
+    // Cities
+    muscat: 'Muscat',
+    nizwa: 'Nizwa',
+    salalah: 'Salalah',
+    musandam: 'Musandam',
+    sohar: 'Sohar',
+    
+    // Shoumatak Questionnaire
+    tripDuration: 'What is your trip duration?',
+    budget: 'What is your budget?',
+    interests: 'What are your interests?',
+    groupSize: 'How many travelers?',
+    activities: 'What activities do you prefer?',
+    accommodation: 'Preferred accommodation type?',
+    meals: 'Food preferences?',
+    specialNeeds: 'Any special needs?',
+    generateItinerary: 'Generate Itinerary',
+    next: 'Next',
+    previous: 'Previous',
+  },
+  
+  fr: {
+    // Common
+    appName: 'Shouma',
+    back: 'Retour',
+    search: 'Rechercher',
+    all: 'Tous',
+    available: 'Disponible',
+    unavailable: 'Indisponible',
+    noResults: 'Aucun résultat trouvé',
+    tryDifferentSearch: 'Essayez avec des mots différents',
+    copyright: 'Tous droits réservés',
+    perDay: 'Par jour',
+    perKm: 'Par km',
+    perNight: 'Par nuit',
+    years: 'ans',
+    call: 'Appeler',
+    whatsapp: 'WhatsApp',
+    book: 'Réserver',
+    viewDetails: 'Voir les détails',
+    location: 'Emplacement',
+    rating: 'Évaluation',
+    reviews: 'avis',
+    featured: 'En vedette',
+    
+    // Login Page
+    welcomeBack: 'Bienvenue',
+    loginSubtitle: 'Connectez-vous pour explorer Oman',
+    username: "Nom d'utilisateur",
+    password: 'Mot de passe',
+    login: 'Connexion',
+    noAccount: "Vous n'avez pas de compte?",
+    createAccount: 'Créer un nouveau compte',
+    loginError: "Nom d'utilisateur ou mot de passe invalide",
+    
+    // Register Page
+    createNewAccount: 'Créer un nouveau compte',
+    registerSubtitle: 'Rejoignez-nous et découvrez Oman',
+    confirmPassword: 'Confirmer le mot de passe',
+    register: "S'inscrire",
+    haveAccount: 'Vous avez déjà un compte?',
+    loginHere: 'Connectez-vous ici',
+    
+    // Home Page
+    welcomeToShouma: 'Bienvenue à Shouma',
+    homeSubtitle: 'Votre guide complet pour découvrir les plus belles destinations',
+    searchPlaceholder: 'Rechercher votre destination...',
+    startJourney: 'Commencez votre voyage avec Shoumatak',
+    discoverServices: 'Découvrez nos services',
+    servicesSubtitle: 'Nous offrons une gamme complète de services pour rendre votre voyage spécial',
+    shoumatakTitle: 'Shoumatak - Votre planificateur intelligent',
+    shoumatakDesc: 'Répondez à quelques questions et nous créerons un itinéraire personnalisé',
+    tryShoumatak: 'Essayer Shoumatak',
+    
+    // Categories
+    attractions: 'Lieux touristiques',
+    attractionsDesc: 'Découvrez les plus beaux sites',
+    hotels: 'Hôtels',
+    hotelsDesc: "Meilleures options d'hébergement",
+    restaurants: 'Restaurants',
+    restaurantsDesc: 'Goûtez la meilleure cuisine',
+    hiking: 'Randonnées',
+    hikingDesc: 'Aventures dans la nature',
+    taxis: 'Taxis',
+    taxisDesc: 'Voyagez facilement',
+    hospitals: 'Hôpitaux',
+    hospitalsDesc: 'Centres de santé',
+    tourGuides: 'Guides touristiques',
+    tourGuidesDesc: 'Guides professionnels',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: 'Planifiez votre voyage',
+    
+    // Tour Guides
+    tourGuidesTitle: 'Guides touristiques',
+    tourGuidesSubtitle: 'Découvrez Oman avec des guides professionnels',
+    searchGuide: 'Rechercher un guide...',
+    guideCount: 'guides',
+    historicalCultural: 'Historique et culturel',
+    adventureNature: 'Aventure et nature',
+    desert: 'Désert',
+    photography: 'Photographie',
+    marine: 'Maritime',
+    family: 'Famille',
+    
+    // Hotels
+    hotelsTitle: 'Hôtels à Oman',
+    hotelsSubtitle: 'Découvrez les meilleurs hôtels et resorts',
+    searchHotel: 'Rechercher un hôtel...',
+    hotelCount: 'hôtels',
+    selectRoom: 'Sélectionner chambre',
+    roomOptions: 'Options de chambre',
+    maxGuests: 'Max invités',
+    amenities: 'Équipements',
+    
+    // Attractions
+    attractionsTitle: 'Lieux touristiques à Oman',
+    attractionsSubtitle: 'Découvrez les plus beaux sites et destinations',
+    searchAttraction: 'Rechercher un lieu...',
+    attractionCount: 'lieux',
+    
+    // Restaurants
+    restaurantsTitle: 'Restaurants à Oman',
+    restaurantsSubtitle: 'Goûtez la cuisine omanaise et internationale',
+    searchRestaurant: 'Rechercher un restaurant...',
+    restaurantCount: 'restaurants',
+    
+    // Taxis
+    taxisTitle: 'Services de transport à Oman',
+    taxisSubtitle: 'Choisissez le bon transport',
+    searchTaxi: 'Rechercher transport...',
+    taxiCount: 'services',
+    
+    // Hiking
+    hikingTitle: 'Randonnées à Oman',
+    hikingSubtitle: 'Explorez les sentiers de montagne',
+    searchHiking: 'Rechercher randonnée...',
+    hikingCount: 'randonnées',
+    
+    // Hospitals
+    hospitalsTitle: 'Hôpitaux et centres de santé',
+    hospitalsSubtitle: 'Soins de santé exceptionnels',
+    searchHospital: 'Rechercher hôpital...',
+    hospitalCount: 'hôpitaux',
+    
+    // Customer Service
+    customerService: 'Service client',
+    callUs: 'Appelez-nous',
+    whatsappUs: 'WhatsApp',
+    emailUs: 'Envoyez-nous un email',
+    
+    // Accessibility
+    accessibilityTitle: "Assistant d'accessibilité",
+    fontSize: 'Taille de police',
+    highContrast: 'Contraste élevé',
+    reduceMotion: 'Réduire le mouvement',
+    
+    // Cities
+    muscat: 'Mascate',
+    nizwa: 'Nizwa',
+    salalah: 'Salalah',
+    musandam: 'Musandam',
+    sohar: 'Sohar',
+    
+    // Shoumatak Questionnaire
+    tripDuration: 'Quelle est la durée de votre voyage?',
+    budget: 'Quel est votre budget?',
+    interests: 'Quels sont vos intérêts?',
+    groupSize: 'Combien de voyageurs?',
+    activities: 'Quelles activités préférez-vous?',
+    accommodation: "Type d'hébergement préféré?",
+    meals: 'Préférences alimentaires?',
+    specialNeeds: 'Besoins spéciaux?',
+    generateItinerary: "Générer l'itinéraire",
+    next: 'Suivant',
+    previous: 'Précédent',
+  },
+  
+  es: {
+    // Common
+    appName: 'Shouma',
+    back: 'Volver',
+    search: 'Buscar',
+    all: 'Todos',
+    available: 'Disponible',
+    unavailable: 'No disponible',
+    noResults: 'No se encontraron resultados',
+    tryDifferentSearch: 'Intenta con palabras diferentes',
+    copyright: 'Todos los derechos reservados',
+    perDay: 'Por día',
+    perKm: 'Por km',
+    perNight: 'Por noche',
+    years: 'años',
+    call: 'Llamar',
+    whatsapp: 'WhatsApp',
+    book: 'Reservar',
+    viewDetails: 'Ver detalles',
+    location: 'Ubicación',
+    rating: 'Calificación',
+    reviews: 'reseñas',
+    featured: 'Destacado',
+    
+    // Login Page
+    welcomeBack: 'Bienvenido',
+    loginSubtitle: 'Inicia sesión para explorar Omán',
+    username: 'Nombre de usuario',
+    password: 'Contraseña',
+    login: 'Iniciar sesión',
+    noAccount: '¿No tienes cuenta?',
+    createAccount: 'Crear nueva cuenta',
+    loginError: 'Usuario o contraseña inválidos',
+    
+    // Register Page
+    createNewAccount: 'Crear nueva cuenta',
+    registerSubtitle: 'Únete y descubre Omán',
+    confirmPassword: 'Confirmar contraseña',
+    register: 'Registrarse',
+    haveAccount: '¿Ya tienes cuenta?',
+    loginHere: 'Inicia sesión aquí',
+    
+    // Home Page
+    welcomeToShouma: 'Bienvenido a Shouma',
+    homeSubtitle: 'Tu guía completa para descubrir los destinos más hermosos',
+    searchPlaceholder: 'Busca tu destino favorito...',
+    startJourney: 'Comienza tu viaje con Shoumatak',
+    discoverServices: 'Descubre nuestros servicios',
+    servicesSubtitle: 'Ofrecemos servicios completos para hacer tu viaje especial',
+    shoumatakTitle: 'Shoumatak - Tu planificador inteligente',
+    shoumatakDesc: 'Responde algunas preguntas y crearemos un itinerario personalizado',
+    tryShoumatak: 'Prueba Shoumatak',
+    
+    // Categories
+    attractions: 'Lugares turísticos',
+    attractionsDesc: 'Descubre los lugares más hermosos',
+    hotels: 'Hoteles',
+    hotelsDesc: 'Mejores opciones de alojamiento',
+    restaurants: 'Restaurantes',
+    restaurantsDesc: 'Prueba la mejor cocina',
+    hiking: 'Senderismo',
+    hikingDesc: 'Aventuras en la naturaleza',
+    taxis: 'Taxis',
+    taxisDesc: 'Viaja fácilmente',
+    hospitals: 'Hospitales',
+    hospitalsDesc: 'Centros de salud',
+    tourGuides: 'Guías turísticos',
+    tourGuidesDesc: 'Guías profesionales',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: 'Planifica tu viaje perfecto',
+    
+    // Tour Guides
+    tourGuidesTitle: 'Guías turísticos',
+    tourGuidesSubtitle: 'Descubre Omán con guías profesionales',
+    searchGuide: 'Buscar guía...',
+    guideCount: 'guías',
+    historicalCultural: 'Histórico y cultural',
+    adventureNature: 'Aventura y naturaleza',
+    desert: 'Desierto',
+    photography: 'Fotografía',
+    marine: 'Marítimo',
+    family: 'Familiar',
+    
+    // Hotels
+    hotelsTitle: 'Hoteles en Omán',
+    hotelsSubtitle: 'Descubre los mejores hoteles y resorts',
+    searchHotel: 'Buscar hotel...',
+    hotelCount: 'hoteles',
+    selectRoom: 'Seleccionar habitación',
+    roomOptions: 'Opciones de habitación',
+    maxGuests: 'Máx huéspedes',
+    amenities: 'Comodidades',
+    
+    // Attractions
+    attractionsTitle: 'Lugares turísticos en Omán',
+    attractionsSubtitle: 'Descubre los lugares más hermosos',
+    searchAttraction: 'Buscar lugar...',
+    attractionCount: 'lugares',
+    
+    // Restaurants
+    restaurantsTitle: 'Restaurantes en Omán',
+    restaurantsSubtitle: 'Prueba la cocina omaní e internacional',
+    searchRestaurant: 'Buscar restaurante...',
+    restaurantCount: 'restaurantes',
+    
+    // Taxis
+    taxisTitle: 'Servicios de transporte en Omán',
+    taxisSubtitle: 'Elige el transporte adecuado',
+    searchTaxi: 'Buscar transporte...',
+    taxiCount: 'servicios',
+    
+    // Hiking
+    hikingTitle: 'Senderismo en Omán',
+    hikingSubtitle: 'Explora los senderos de montaña',
+    searchHiking: 'Buscar senderismo...',
+    hikingCount: 'rutas',
+    
+    // Hospitals
+    hospitalsTitle: 'Hospitales y centros de salud',
+    hospitalsSubtitle: 'Atención médica excepcional',
+    searchHospital: 'Buscar hospital...',
+    hospitalCount: 'hospitales',
+    
+    // Customer Service
+    customerService: 'Servicio al cliente',
+    callUs: 'Llámanos',
+    whatsappUs: 'WhatsApp',
+    emailUs: 'Envíanos un email',
+    
+    // Accessibility
+    accessibilityTitle: 'Asistente de accesibilidad',
+    fontSize: 'Tamaño de fuente',
+    highContrast: 'Alto contraste',
+    reduceMotion: 'Reducir movimiento',
+    
+    // Cities
+    muscat: 'Mascate',
+    nizwa: 'Nizwa',
+    salalah: 'Salalah',
+    musandam: 'Musandam',
+    sohar: 'Sohar',
+    
+    // Shoumatak Questionnaire
+    tripDuration: '¿Cuál es la duración de tu viaje?',
+    budget: '¿Cuál es tu presupuesto?',
+    interests: '¿Cuáles son tus intereses?',
+    groupSize: '¿Cuántos viajeros?',
+    activities: '¿Qué actividades prefieres?',
+    accommodation: '¿Tipo de alojamiento preferido?',
+    meals: '¿Preferencias alimentarias?',
+    specialNeeds: '¿Necesidades especiales?',
+    generateItinerary: 'Generar itinerario',
+    next: 'Siguiente',
+    previous: 'Anterior',
+  },
+  
+  tr: {
+    // Common
+    appName: 'Shouma',
+    back: 'Geri',
+    search: 'Ara',
+    all: 'Tümü',
+    available: 'Mevcut',
+    unavailable: 'Mevcut değil',
+    noResults: 'Sonuç bulunamadı',
+    tryDifferentSearch: 'Farklı kelimelerle deneyin',
+    copyright: 'Tüm hakları saklıdır',
+    perDay: 'Günlük',
+    perKm: 'Km başına',
+    perNight: 'Gecelik',
+    years: 'yıl',
+    call: 'Ara',
+    whatsapp: 'WhatsApp',
+    book: 'Rezervasyon',
+    viewDetails: 'Detayları gör',
+    location: 'Konum',
+    rating: 'Değerlendirme',
+    reviews: 'yorum',
+    featured: 'Öne çıkan',
+    
+    // Login Page
+    welcomeBack: 'Hoş geldiniz',
+    loginSubtitle: 'Umman\'ı keşfetmek için giriş yapın',
+    username: 'Kullanıcı adı',
+    password: 'Şifre',
+    login: 'Giriş yap',
+    noAccount: 'Hesabınız yok mu?',
+    createAccount: 'Yeni hesap oluştur',
+    loginError: 'Geçersiz kullanıcı adı veya şifre',
+    
+    // Register Page
+    createNewAccount: 'Yeni hesap oluştur',
+    registerSubtitle: 'Bize katılın ve Umman\'ı keşfedin',
+    confirmPassword: 'Şifreyi onayla',
+    register: 'Kayıt ol',
+    haveAccount: 'Zaten hesabınız var mı?',
+    loginHere: 'Buradan giriş yapın',
+    
+    // Home Page
+    welcomeToShouma: 'Shouma\'ya hoş geldiniz',
+    homeSubtitle: 'En güzel destinasyonları keşfetmek için tam rehberiniz',
+    searchPlaceholder: 'Favori destinasyonunuzu arayın...',
+    startJourney: 'Shoumatak ile yolculuğunuza başlayın',
+    discoverServices: 'Hizmetlerimizi Keşfedin',
+    servicesSubtitle: 'Seyahatinizi özel kılmak için kapsamlı hizmetler sunuyoruz',
+    shoumatakTitle: 'Shoumatak - Akıllı Seyahat Planlayıcınız',
+    shoumatakDesc: 'Birkaç soruyu yanıtlayın, tercihlerinize göre özel bir program oluşturalım',
+    tryShoumatak: 'Shoumatak\'ı Deneyin',
+    
+    // Categories
+    attractions: 'Turistik yerler',
+    attractionsDesc: 'En güzel yerleri keşfedin',
+    hotels: 'Oteller',
+    hotelsDesc: 'En iyi konaklama seçenekleri',
+    restaurants: 'Restoranlar',
+    restaurantsDesc: 'En iyi mutfağı tadın',
+    hiking: 'Yürüyüş gezileri',
+    hikingDesc: 'Doğada macera',
+    taxis: 'Taksiler',
+    taxisDesc: 'Rahat seyahat edin',
+    hospitals: 'Hastaneler',
+    hospitalsDesc: 'Sağlık merkezleri',
+    tourGuides: 'Tur rehberleri',
+    tourGuidesDesc: 'Profesyonel rehberler',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: 'Mükemmel seyahatinizi planlayın',
+    
+    // Tour Guides
+    tourGuidesTitle: 'Tur Rehberleri',
+    tourGuidesSubtitle: 'Profesyonel rehberlerle Umman\'ı keşfedin',
+    searchGuide: 'Rehber ara...',
+    guideCount: 'rehber',
+    historicalCultural: 'Tarihi ve kültürel',
+    adventureNature: 'Macera ve doğa',
+    desert: 'Çöl',
+    photography: 'Fotoğrafçılık',
+    marine: 'Denizcilik',
+    family: 'Aile',
+    
+    // Hotels
+    hotelsTitle: 'Umman\'da Oteller',
+    hotelsSubtitle: 'En iyi otel ve tatil köylerini keşfedin',
+    searchHotel: 'Otel ara...',
+    hotelCount: 'otel',
+    selectRoom: 'Oda seç',
+    roomOptions: 'Oda seçenekleri',
+    maxGuests: 'Maks misafir',
+    amenities: 'Olanaklar',
+    
+    // Attractions
+    attractionsTitle: 'Umman\'da Turistik Yerler',
+    attractionsSubtitle: 'En güzel yerleri keşfedin',
+    searchAttraction: 'Yer ara...',
+    attractionCount: 'yer',
+    
+    // Restaurants
+    restaurantsTitle: 'Umman\'da Restoranlar',
+    restaurantsSubtitle: 'Umman ve dünya mutfağını tadın',
+    searchRestaurant: 'Restoran ara...',
+    restaurantCount: 'restoran',
+    
+    // Taxis
+    taxisTitle: 'Umman\'da Ulaşım Hizmetleri',
+    taxisSubtitle: 'Doğru ulaşımı seçin',
+    searchTaxi: 'Ulaşım ara...',
+    taxiCount: 'hizmet',
+    
+    // Hiking
+    hikingTitle: 'Umman\'da Yürüyüş Gezileri',
+    hikingSubtitle: 'Dağ yollarını keşfedin',
+    searchHiking: 'Yürüyüş ara...',
+    hikingCount: 'gezi',
+    
+    // Hospitals
+    hospitalsTitle: 'Hastaneler ve Sağlık Merkezleri',
+    hospitalsSubtitle: 'Olağanüstü sağlık hizmeti',
+    searchHospital: 'Hastane ara...',
+    hospitalCount: 'hastane',
+    
+    // Customer Service
+    customerService: 'Müşteri Hizmetleri',
+    callUs: 'Bizi arayın',
+    whatsappUs: 'WhatsApp',
+    emailUs: 'E-posta gönderin',
+    
+    // Accessibility
+    accessibilityTitle: 'Erişilebilirlik Asistanı',
+    fontSize: 'Yazı boyutu',
+    highContrast: 'Yüksek kontrast',
+    reduceMotion: 'Hareketi azalt',
+    
+    // Cities
+    muscat: 'Maskat',
+    nizwa: 'Nizwa',
+    salalah: 'Salalah',
+    musandam: 'Musandam',
+    sohar: 'Sohar',
+    
+    // Shoumatak Questionnaire
+    tripDuration: 'Seyahat süreniz ne kadar?',
+    budget: 'Bütçeniz nedir?',
+    interests: 'İlgi alanlarınız neler?',
+    groupSize: 'Kaç kişi seyahat edecek?',
+    activities: 'Hangi aktiviteleri tercih edersiniz?',
+    accommodation: 'Tercih ettiğiniz konaklama türü?',
+    meals: 'Yemek tercihleri?',
+    specialNeeds: 'Özel ihtiyaçlar?',
+    generateItinerary: 'Program oluştur',
+    next: 'Sonraki',
+    previous: 'Önceki',
+  },
+  
+  zh: {
+    // Common
+    appName: 'Shouma',
+    back: '返回',
+    search: '搜索',
+    all: '全部',
+    available: '可用',
+    unavailable: '不可用',
+    noResults: '未找到结果',
+    tryDifferentSearch: '尝试不同的关键词',
+    copyright: '版权所有',
+    perDay: '每天',
+    perKm: '每公里',
+    perNight: '每晚',
+    years: '年',
+    call: '拨打',
+    whatsapp: 'WhatsApp',
+    book: '立即预订',
+    viewDetails: '查看详情',
+    location: '位置',
+    rating: '评分',
+    reviews: '评论',
+    featured: '精选',
+    
+    // Login Page
+    welcomeBack: '欢迎回来',
+    loginSubtitle: '登录探索阿曼',
+    username: '用户名',
+    password: '密码',
+    login: '登录',
+    noAccount: '没有账户？',
+    createAccount: '创建新账户',
+    loginError: '用户名或密码无效',
+    
+    // Register Page
+    createNewAccount: '创建新账户',
+    registerSubtitle: '加入我们，探索阿曼',
+    confirmPassword: '确认密码',
+    register: '注册',
+    haveAccount: '已有账户？',
+    loginHere: '在此登录',
+    
+    // Home Page
+    welcomeToShouma: '欢迎来到Shouma',
+    homeSubtitle: '您探索最美目的地的完整指南',
+    searchPlaceholder: '搜索您喜欢的目的地...',
+    startJourney: '使用Shoumatak开始您的旅程',
+    discoverServices: '发现我们的服务',
+    servicesSubtitle: '我们提供全面的服务，让您的旅行特别',
+    shoumatakTitle: 'Shoumatak - 您的智能旅行规划师',
+    shoumatakDesc: '回答几个简单的问题，我们将根据您的偏好创建定制行程',
+    tryShoumatak: '立即试用Shoumatak',
+    
+    // Categories
+    attractions: '旅游景点',
+    attractionsDesc: '发现最美的地标',
+    hotels: '酒店',
+    hotelsDesc: '最佳住宿选择',
+    restaurants: '餐厅',
+    restaurantsDesc: '品尝最佳美食',
+    hiking: '徒步旅行',
+    hikingDesc: '自然探险',
+    taxis: '出租车',
+    taxisDesc: '轻松出行',
+    hospitals: '医院',
+    hospitalsDesc: '医疗中心',
+    tourGuides: '导游',
+    tourGuidesDesc: '专业导游服务',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: '规划完美旅行',
+    
+    // Tour Guides
+    tourGuidesTitle: '导游',
+    tourGuidesSubtitle: '与专业导游一起探索阿曼',
+    searchGuide: '搜索导游...',
+    guideCount: '位导游',
+    historicalCultural: '历史文化',
+    adventureNature: '探险自然',
+    desert: '沙漠',
+    photography: '摄影',
+    marine: '海洋',
+    family: '家庭',
+    
+    // Hotels
+    hotelsTitle: '阿曼酒店',
+    hotelsSubtitle: '发现最佳酒店和度假村',
+    searchHotel: '搜索酒店...',
+    hotelCount: '家酒店',
+    selectRoom: '选择房间',
+    roomOptions: '房间选项',
+    maxGuests: '最多客人',
+    amenities: '设施',
+    
+    // Attractions
+    attractionsTitle: '阿曼旅游景点',
+    attractionsSubtitle: '发现最美的地标和目的地',
+    searchAttraction: '搜索景点...',
+    attractionCount: '个景点',
+    
+    // Restaurants
+    restaurantsTitle: '阿曼餐厅',
+    restaurantsSubtitle: '品尝阿曼和国际美食',
+    searchRestaurant: '搜索餐厅...',
+    restaurantCount: '家餐厅',
+    
+    // Taxis
+    taxisTitle: '阿曼交通服务',
+    taxisSubtitle: '选择合适的交通方式',
+    searchTaxi: '搜索交通...',
+    taxiCount: '项服务',
+    
+    // Hiking
+    hikingTitle: '阿曼徒步旅行',
+    hikingSubtitle: '探索最美的山路和山谷',
+    searchHiking: '搜索徒步...',
+    hikingCount: '条路线',
+    
+    // Hospitals
+    hospitalsTitle: '医院和医疗中心',
+    hospitalsSubtitle: '卓越的医疗服务',
+    searchHospital: '搜索医院...',
+    hospitalCount: '家医院',
+    
+    // Customer Service
+    customerService: '客户服务',
+    callUs: '致电我们',
+    whatsappUs: 'WhatsApp联系',
+    emailUs: '发送邮件',
+    
+    // Accessibility
+    accessibilityTitle: '无障碍助手',
+    fontSize: '字体大小',
+    highContrast: '高对比度',
+    reduceMotion: '减少动画',
+    
+    // Cities
+    muscat: '马斯喀特',
+    nizwa: '尼兹瓦',
+    salalah: '萨拉拉',
+    musandam: '穆桑代姆',
+    sohar: '苏哈尔',
+    
+    // Shoumatak Questionnaire
+    tripDuration: '您的旅行时长是多少？',
+    budget: '您的预算是多少？',
+    interests: '您的兴趣是什么？',
+    groupSize: '有多少旅行者？',
+    activities: '您喜欢什么活动？',
+    accommodation: '首选住宿类型？',
+    meals: '饮食偏好？',
+    specialNeeds: '有特殊需求吗？',
+    generateItinerary: '生成行程',
+    next: '下一步',
+    previous: '上一步',
+  },
+  
+  ja: {
+    // Common
+    appName: 'Shouma',
+    back: '戻る',
+    search: '検索',
+    all: 'すべて',
+    available: '利用可能',
+    unavailable: '利用不可',
+    noResults: '結果が見つかりません',
+    tryDifferentSearch: '別のキーワードで試してください',
+    copyright: 'All rights reserved',
+    perDay: '1日あたり',
+    perKm: '1kmあたり',
+    perNight: '1泊あたり',
+    years: '年',
+    call: '電話',
+    whatsapp: 'WhatsApp',
+    book: '今すぐ予約',
+    viewDetails: '詳細を見る',
+    location: '場所',
+    rating: '評価',
+    reviews: 'レビュー',
+    featured: '注目',
+    
+    // Login Page
+    welcomeBack: 'お帰りなさい',
+    loginSubtitle: 'オマーンを探索するためにログイン',
+    username: 'ユーザー名',
+    password: 'パスワード',
+    login: 'ログイン',
+    noAccount: 'アカウントをお持ちでないですか？',
+    createAccount: '新規アカウント作成',
+    loginError: 'ユーザー名またはパスワードが無効です',
+    
+    // Register Page
+    createNewAccount: '新規アカウント作成',
+    registerSubtitle: '参加してオマーンを発見',
+    confirmPassword: 'パスワード確認',
+    register: '登録',
+    haveAccount: 'すでにアカウントをお持ちですか？',
+    loginHere: 'こちらからログイン',
+    
+    // Home Page
+    welcomeToShouma: 'Shoumaへようこそ',
+    homeSubtitle: '最も美しい目的地を発見するための完全ガイド',
+    searchPlaceholder: 'お気に入りの目的地を検索...',
+    startJourney: 'Shoumatakで旅を始めましょう',
+    discoverServices: 'サービスを発見',
+    servicesSubtitle: '特別な旅行にするための総合サービスを提供',
+    shoumatakTitle: 'Shoumatak - スマート旅行プランナー',
+    shoumatakDesc: 'いくつかの質問に答えるだけでカスタマイズされた旅程を作成',
+    tryShoumatak: 'Shoumatakを試す',
+    
+    // Categories
+    attractions: '観光地',
+    attractionsDesc: '最も美しいランドマークを発見',
+    hotels: 'ホテル',
+    hotelsDesc: '最高の宿泊施設',
+    restaurants: 'レストラン',
+    restaurantsDesc: '最高の料理を味わう',
+    hiking: 'ハイキング',
+    hikingDesc: '自然の冒険',
+    taxis: 'タクシー',
+    taxisDesc: '快適な移動',
+    hospitals: '病院',
+    hospitalsDesc: '医療センター',
+    tourGuides: 'ツアーガイド',
+    tourGuidesDesc: 'プロのガイド',
+    shoumatak: 'Shoumatak',
+    shoumatakDescShort: '完璧な旅を計画',
+    
+    // Tour Guides
+    tourGuidesTitle: 'ツアーガイド',
+    tourGuidesSubtitle: 'プロのガイドと一緒にオマーンを発見',
+    searchGuide: 'ガイドを検索...',
+    guideCount: '人のガイド',
+    historicalCultural: '歴史と文化',
+    adventureNature: '冒険と自然',
+    desert: '砂漠',
+    photography: '写真撮影',
+    marine: '海洋',
+    family: 'ファミリー',
+    
+    // Hotels
+    hotelsTitle: 'オマーンのホテル',
+    hotelsSubtitle: '最高のホテルとリゾートを発見',
+    searchHotel: 'ホテルを検索...',
+    hotelCount: '軒のホテル',
+    selectRoom: '部屋を選択',
+    roomOptions: '部屋オプション',
+    maxGuests: '最大ゲスト数',
+    amenities: 'アメニティ',
+    
+    // Attractions
+    attractionsTitle: 'オマーンの観光地',
+    attractionsSubtitle: '最も美しいランドマークを発見',
+    searchAttraction: '観光地を検索...',
+    attractionCount: '箇所',
+    
+    // Restaurants
+    restaurantsTitle: 'オマーンのレストラン',
+    restaurantsSubtitle: 'オマーンと世界の料理を味わう',
+    searchRestaurant: 'レストランを検索...',
+    restaurantCount: '軒のレストラン',
+    
+    // Taxis
+    taxisTitle: 'オマーンの交通サービス',
+    taxisSubtitle: '適切な交通手段を選択',
+    searchTaxi: '交通を検索...',
+    taxiCount: '件のサービス',
+    
+    // Hiking
+    hikingTitle: 'オマーンのハイキング',
+    hikingSubtitle: '最も美しい山道と渓谷を探索',
+    searchHiking: 'ハイキングを検索...',
+    hikingCount: 'コース',
+    
+    // Hospitals
+    hospitalsTitle: '病院と医療センター',
+    hospitalsSubtitle: '優れた医療サービス',
+    searchHospital: '病院を検索...',
+    hospitalCount: '軒の病院',
+    
+    // Customer Service
+    customerService: 'カスタマーサービス',
+    callUs: 'お電話ください',
+    whatsappUs: 'WhatsApp',
+    emailUs: 'メールを送る',
+    
+    // Accessibility
+    accessibilityTitle: 'アクセシビリティアシスタント',
+    fontSize: 'フォントサイズ',
+    highContrast: 'ハイコントラスト',
+    reduceMotion: 'モーションを減らす',
+    
+    // Cities
+    muscat: 'マスカット',
+    nizwa: 'ニズワ',
+    salalah: 'サラーラ',
+    musandam: 'ムサンダム',
+    sohar: 'ソハール',
+    
+    // Shoumatak Questionnaire
+    tripDuration: '旅行期間は？',
+    budget: '予算は？',
+    interests: '興味は？',
+    groupSize: '旅行者数は？',
+    activities: '好きな活動は？',
+    accommodation: '希望の宿泊タイプは？',
+    meals: '食事の好みは？',
+    specialNeeds: '特別なニーズは？',
+    generateItinerary: '旅程を作成',
+    next: '次へ',
+    previous: '前へ',
+  },
+  
+  fa: {
+    // Common
+    appName: 'شوما',
+    back: 'بازگشت',
+    search: 'جستجو',
+    all: 'همه',
+    available: 'موجود',
+    unavailable: 'ناموجود',
+    noResults: 'نتیجه‌ای یافت نشد',
+    tryDifferentSearch: 'با کلمات دیگر جستجو کنید',
+    copyright: 'تمامی حقوق محفوظ است',
+    perDay: 'در روز',
+    perKm: 'در کیلومتر',
+    perNight: 'در شب',
+    years: 'سال',
+    call: 'تماس',
+    whatsapp: 'واتساپ',
+    book: 'رزرو کنید',
+    viewDetails: 'مشاهده جزئیات',
+    location: 'موقعیت',
+    rating: 'امتیاز',
+    reviews: 'نظر',
+    featured: 'ویژه',
+    
+    // Login Page
+    welcomeBack: 'خوش آمدید',
+    loginSubtitle: 'برای کاوش عمان وارد شوید',
+    username: 'نام کاربری',
+    password: 'رمز عبور',
+    login: 'ورود',
+    noAccount: 'حساب کاربری ندارید؟',
+    createAccount: 'ایجاد حساب جدید',
+    loginError: 'نام کاربری یا رمز عبور نامعتبر',
+    
+    // Register Page
+    createNewAccount: 'ایجاد حساب جدید',
+    registerSubtitle: 'به ما بپیوندید و عمان را کشف کنید',
+    confirmPassword: 'تأیید رمز عبور',
+    register: 'ثبت نام',
+    haveAccount: 'قبلاً حساب دارید؟',
+    loginHere: 'اینجا وارد شوید',
+    
+    // Home Page
+    welcomeToShouma: 'به شوما خوش آمدید',
+    homeSubtitle: 'راهنمای کامل شما برای کشف زیباترین مقاصد',
+    searchPlaceholder: 'مقصد مورد علاقه خود را جستجو کنید...',
+    startJourney: 'سفر خود را با شوماتک شروع کنید',
+    discoverServices: 'خدمات ما را کشف کنید',
+    servicesSubtitle: 'خدمات جامعی برای ویژه کردن سفر شما ارائه می‌دهیم',
+    shoumatakTitle: 'شوماتک - برنامه‌ریز هوشمند سفر',
+    shoumatakDesc: 'به چند سوال ساده پاسخ دهید و برنامه سفر شخصی‌سازی شده دریافت کنید',
+    tryShoumatak: 'شوماتک را امتحان کنید',
+    
+    // Categories
+    attractions: 'جاذبه‌های گردشگری',
+    attractionsDesc: 'زیباترین نقاط دیدنی را کشف کنید',
+    hotels: 'هتل‌ها',
+    hotelsDesc: 'بهترین گزینه‌های اقامت',
+    restaurants: 'رستوران‌ها',
+    restaurantsDesc: 'بهترین غذاها را بچشید',
+    hiking: 'پیاده‌روی',
+    hikingDesc: 'ماجراجویی در طبیعت',
+    taxis: 'تاکسی',
+    taxisDesc: 'سفر راحت',
+    hospitals: 'بیمارستان‌ها',
+    hospitalsDesc: 'مراکز بهداشتی',
+    tourGuides: 'راهنمایان گردشگری',
+    tourGuidesDesc: 'راهنمایان حرفه‌ای',
+    shoumatak: 'شوماتک',
+    shoumatakDescShort: 'سفر کامل خود را برنامه‌ریزی کنید',
+    
+    // Tour Guides
+    tourGuidesTitle: 'راهنمایان گردشگری',
+    tourGuidesSubtitle: 'عمان را با راهنمایان حرفه‌ای کشف کنید',
+    searchGuide: 'جستجوی راهنما...',
+    guideCount: 'راهنما',
+    historicalCultural: 'تاریخی و فرهنگی',
+    adventureNature: 'ماجراجویی و طبیعت',
+    desert: 'صحرا',
+    photography: 'عکاسی',
+    marine: 'دریایی',
+    family: 'خانوادگی',
+    
+    // Hotels
+    hotelsTitle: 'هتل‌های عمان',
+    hotelsSubtitle: 'بهترین هتل‌ها و استراحتگاه‌ها را کشف کنید',
+    searchHotel: 'جستجوی هتل...',
+    hotelCount: 'هتل',
+    selectRoom: 'انتخاب اتاق',
+    roomOptions: 'گزینه‌های اتاق',
+    maxGuests: 'حداکثر مهمان',
+    amenities: 'امکانات',
+    
+    // Attractions
+    attractionsTitle: 'جاذبه‌های گردشگری عمان',
+    attractionsSubtitle: 'زیباترین نقاط دیدنی را کشف کنید',
+    searchAttraction: 'جستجوی مکان...',
+    attractionCount: 'مکان',
+    
+    // Restaurants
+    restaurantsTitle: 'رستوران‌های عمان',
+    restaurantsSubtitle: 'غذاهای عمانی و بین‌المللی را بچشید',
+    searchRestaurant: 'جستجوی رستوران...',
+    restaurantCount: 'رستوران',
+    
+    // Taxis
+    taxisTitle: 'خدمات حمل و نقل عمان',
+    taxisSubtitle: 'وسیله نقلیه مناسب را انتخاب کنید',
+    searchTaxi: 'جستجوی حمل و نقل...',
+    taxiCount: 'خدمات',
+    
+    // Hiking
+    hikingTitle: 'پیاده‌روی در عمان',
+    hikingSubtitle: 'زیباترین مسیرهای کوهستانی را کشف کنید',
+    searchHiking: 'جستجوی پیاده‌روی...',
+    hikingCount: 'مسیر',
+    
+    // Hospitals
+    hospitalsTitle: 'بیمارستان‌ها و مراکز بهداشتی',
+    hospitalsSubtitle: 'خدمات بهداشتی برجسته',
+    searchHospital: 'جستجوی بیمارستان...',
+    hospitalCount: 'بیمارستان',
+    
+    // Customer Service
+    customerService: 'خدمات مشتریان',
+    callUs: 'با ما تماس بگیرید',
+    whatsappUs: 'واتساپ',
+    emailUs: 'ایمیل بفرستید',
+    
+    // Accessibility
+    accessibilityTitle: 'دستیار دسترسی',
+    fontSize: 'اندازه فونت',
+    highContrast: 'کنتراست بالا',
+    reduceMotion: 'کاهش حرکت',
+    
+    // Cities
+    muscat: 'مسقط',
+    nizwa: 'نزوا',
+    salalah: 'صلاله',
+    musandam: 'مسندم',
+    sohar: 'صحار',
+    
+    // Shoumatak Questionnaire
+    tripDuration: 'مدت سفر شما چقدر است؟',
+    budget: 'بودجه شما چقدر است؟',
+    interests: 'علایق شما چیست؟',
+    groupSize: 'چند مسافر؟',
+    activities: 'چه فعالیت‌هایی را ترجیح می‌دهید؟',
+    accommodation: 'نوع اقامت ترجیحی؟',
+    meals: 'ترجیحات غذایی؟',
+    specialNeeds: 'نیازهای خاص؟',
+    generateItinerary: 'ایجاد برنامه سفر',
+    next: 'بعدی',
+    previous: 'قبلی',
+  },
+};
