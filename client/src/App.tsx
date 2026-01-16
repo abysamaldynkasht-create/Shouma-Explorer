@@ -20,6 +20,7 @@ import HikingPage from "@/pages/hiking";
 import HikingDetailPage from "@/pages/hiking-detail";
 import HospitalsPage from "@/pages/hospitals";
 import HospitalDetailPage from "@/pages/hospital-detail";
+import TourGuidesPage from "@/pages/tour-guides";
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 import CustomerService from "@/components/CustomerService";
 
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/hiking/:id" component={HikingDetailPage} />
       <Route path="/hospitals" component={HospitalsPage} />
       <Route path="/hospitals/:id" component={HospitalDetailPage} />
+      <Route path="/tour-guides" component={TourGuidesPage} />
       <Route component={NotFound} />
     </Switch>
   );

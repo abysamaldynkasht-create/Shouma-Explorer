@@ -50,6 +50,14 @@ export const categories: Category[] = [
     color: "from-red-600/80 to-red-800/90",
   },
   {
+    id: "tour-guides",
+    title: "Tour Guides",
+    titleAr: "المرشدين السياحيين",
+    icon: "UserCheck",
+    description: "مرشدين محترفين لجولاتك",
+    color: "from-teal-600/80 to-teal-800/90",
+  },
+  {
     id: "shoumatak",
     title: "Shoumatak",
     titleAr: "شومتك",
