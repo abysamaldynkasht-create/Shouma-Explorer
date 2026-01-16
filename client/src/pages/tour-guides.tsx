@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { tourGuides } from "@/lib/tour-guides";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { 
   UserCheck, 
+  ArrowLeft,
   ArrowRight,
   MapPin,
   Star,
@@ -16,22 +18,26 @@ import {
   Languages,
   Clock
 } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const specializations = ["الكل", "تاريخية وثقافية", "مغامرة وطبيعة", "صحراء", "تصوير", "بحرية", "عائلية"];
-const cities = ["الكل", "مسقط", "نزوى", "صلالة", "مسندم", "صحار"];
 
 export default function TourGuidesPage() {
   const [, setLocation] = useLocation();
+  const { t, isRTL } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSpec, setSelectedSpec] = useState("الكل");
-  const [selectedCity, setSelectedCity] = useState("الكل");
+  const [selectedSpec, setSelectedSpec] = useState(t('all'));
+  const [selectedCity, setSelectedCity] = useState(t('all'));
+  
+  const specializations = [t('all'), t('historicalCultural'), t('adventureNature'), t('desert'), t('photography'), t('marine'), t('family')];
+  const cities = [t('all'), t('muscat'), t('nizwa'), t('salalah'), t('musandam'), t('sohar')];
 
   const filteredGuides = tourGuides.filter((guide) => {
     const matchesSearch = guide.nameAr.includes(searchQuery) || 
+                          guide.name.includes(searchQuery) ||
                           guide.description.includes(searchQuery) ||
                           guide.specializationAr.includes(searchQuery);
-    const matchesSpec = selectedSpec === "الكل" || guide.specializationAr.includes(selectedSpec);
-    const matchesCity = selectedCity === "الكل" || guide.city === selectedCity;
+    const matchesSpec = selectedSpec === t('all') || guide.specializationAr.includes(selectedSpec) || guide.specialization.toLowerCase().includes(selectedSpec.toLowerCase());
+    const matchesCity = selectedCity === t('all') || guide.city === selectedCity || guide.city.includes(selectedCity);
     return matchesSearch && matchesSpec && matchesCity;
   });
 
@@ -54,18 +60,18 @@ export default function TourGuidesPage() {
               onClick={() => setLocation("/home")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              {isRTL ? <ArrowRight className="w-5 h-5" /> : <ArrowLeft className="w-5 h-5" />}
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <UserCheck className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">المرشدين السياحيين</span>
+              <span className="text-lg font-bold">{t('tourGuides')}</span>
             </div>
 
-            <div className="w-16" />
+            <LanguageSwitcher />
           </div>
         </div>
       </header>
@@ -81,10 +87,10 @@ export default function TourGuidesPage() {
         
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg" data-testid="text-page-title">
-            المرشدين السياحيين
+            {t('tourGuidesTitle')}
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mb-6 drop-shadow" data-testid="text-page-subtitle">
-            اكتشف عُمان مع مرشدين محترفين وخبراء محليين
+            {t('tourGuidesSubtitle')}
           </p>
         </div>
       </section>
@@ -96,10 +102,10 @@ export default function TourGuidesPage() {
               <Input
                 data-testid="input-search"
                 type="search"
-                placeholder="ابحث عن مرشد سياحي..."
+                placeholder={t('searchGuide')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-12 pr-5 pl-12"
+                className={`h-12 ${isRTL ? 'pr-5 pl-12' : 'pl-5 pr-12'}`}
               />
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             </div>
@@ -144,15 +150,15 @@ export default function TourGuidesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-foreground" data-testid="text-results-count">
-              {filteredGuides.length} مرشد سياحي
+              {filteredGuides.length} {t('guideCount')}
             </h2>
           </div>
 
           {filteredGuides.length === 0 ? (
             <div className="text-center py-16">
               <UserCheck className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">لا توجد نتائج</h3>
-              <p className="text-muted-foreground">جرب البحث بكلمات مختلفة</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t('noResults')}</h3>
+              <p className="text-muted-foreground">{t('tryDifferentSearch')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,7 +181,7 @@ export default function TourGuidesPage() {
                         variant={guide.availability ? "default" : "secondary"} 
                         className={guide.availability ? "bg-green-600" : "bg-gray-500"}
                       >
-                        {guide.availability ? "متاح" : "غير متاح"}
+                        {guide.availability ? t('available') : t('unavailable')}
                       </Badge>
                     </div>
                     <div className="absolute top-3 left-3 flex items-center gap-1 bg-black/60 text-white px-2 py-1 rounded-full text-sm">
@@ -223,8 +229,8 @@ export default function TourGuidesPage() {
                     </div>
                     
                     <div className="flex items-center justify-between pt-3 border-t border-border mb-4">
-                      <span className="text-sm text-muted-foreground">السعر اليومي</span>
-                      <span className="text-lg font-bold text-primary">{guide.pricePerDay} ر.ع</span>
+                      <span className="text-sm text-muted-foreground">{t('perDay')}</span>
+                      <span className="text-lg font-bold text-primary">{guide.pricePerDay} OMR</span>
                     </div>
                     
                     <div className="flex gap-2">
@@ -235,8 +241,8 @@ export default function TourGuidesPage() {
                         className="flex-1"
                         onClick={() => handleCall(guide.phone)}
                       >
-                        <Phone className="w-4 h-4 ml-1" />
-                        اتصال
+                        <Phone className={`w-4 h-4 ${isRTL ? 'ml-1' : 'mr-1'}`} />
+                        {t('call')}
                       </Button>
                       <Button 
                         data-testid={`button-whatsapp-${guide.id}`}
@@ -244,8 +250,8 @@ export default function TourGuidesPage() {
                         className="flex-1 bg-green-600 hover:bg-green-700"
                         onClick={() => handleWhatsApp(guide.whatsapp, guide.nameAr)}
                       >
-                        <MessageCircle className="w-4 h-4 ml-1" />
-                        واتساب
+                        <MessageCircle className={`w-4 h-4 ${isRTL ? 'ml-1' : 'mr-1'}`} />
+                        {t('whatsapp')}
                       </Button>
                     </div>
                   </CardContent>
@@ -259,7 +265,7 @@ export default function TourGuidesPage() {
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
+            {t('copyright')} © {new Date().getFullYear()} {t('appName')}
           </p>
         </div>
       </footer>

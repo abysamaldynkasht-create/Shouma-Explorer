@@ -1,5 +1,6 @@
 import { useLocation } from "wouter";
 import { categories } from "@/lib/categories";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { 
   MapPin, 
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const iconMap: Record<string, React.ReactNode> = {
   MapPin: <MapPin className="w-8 h-8" />,
@@ -29,6 +31,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
+  const { t, isRTL } = useLanguage();
 
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === "shoumatak") {
@@ -68,15 +71,18 @@ export default function HomePage() {
               />
             </div>
 
-            <Button 
-              variant="ghost" 
-              size="icon"
-              data-testid="button-logout"
-              onClick={handleLogout}
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <LogOut className="w-5 h-5" />
-            </Button>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <Button 
+                variant="ghost" 
+                size="icon"
+                data-testid="button-logout"
+                onClick={handleLogout}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <LogOut className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -92,10 +98,10 @@ export default function HomePage() {
         
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg" data-testid="text-welcome">
-            مرحباً بك في شومة
+            {t('welcomeToShouma')}
           </h1>
           <p className="text-lg sm:text-xl text-white/90 max-w-2xl mb-8 drop-shadow" data-testid="text-subtitle">
-            دليلك الشامل لاكتشاف أجمل الوجهات السياحية والتجارب الفريدة
+            {t('homeSubtitle')}
           </p>
           
           <div className="w-full max-w-xl">
@@ -103,8 +109,8 @@ export default function HomePage() {
               <Input
                 data-testid="input-search"
                 type="search"
-                placeholder="ابحث عن وجهتك المفضلة..."
-                className="h-14 text-base pr-5 pl-14 bg-white/95 backdrop-blur border-0 shadow-xl rounded-full"
+                placeholder={t('searchPlaceholder')}
+                className={`h-14 text-base bg-white/95 backdrop-blur border-0 shadow-xl rounded-full ${isRTL ? 'pr-5 pl-14' : 'pl-5 pr-14'}`}
               />
               <div className="absolute left-4 top-1/2 -translate-y-1/2">
                 <Search className="w-6 h-6 text-muted-foreground" />
@@ -117,8 +123,8 @@ export default function HomePage() {
             onClick={() => setLocation("/shoumatak")}
             className="mt-6 h-12 px-8 text-base font-semibold rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 transition-all"
           >
-            <Sparkles className="w-5 h-5 ml-2" />
-            ابدأ رحلتك مع شومتك
+            <Sparkles className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+            {t('startJourney')}
           </Button>
         </div>
       </section>
@@ -127,10 +133,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-services-title">
-              اكتشف خدماتنا
+              {t('discoverServices')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-services-subtitle">
-              نقدم لك مجموعة شاملة من الخدمات لتجعل رحلتك مميزة
+              {t('servicesSubtitle')}
             </p>
           </div>
 
@@ -150,22 +156,22 @@ export default function HomePage() {
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${category.color}`} />
                 
-                <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white">
+                <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white`}>
                   {iconMap[category.icon]}
                 </div>
 
-                <div className="absolute bottom-0 right-0 left-0 p-6 text-right">
+                <div className={`absolute bottom-0 right-0 left-0 p-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                   <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg" data-testid={`text-category-title-${category.id}`}>
-                    {category.titleAr}
+                    {getCategoryTitle(category.id, t)}
                   </h3>
                   <p className="text-white/90 text-sm drop-shadow" data-testid={`text-category-desc-${category.id}`}>
-                    {category.description}
+                    {getCategoryDesc(category.id, t)}
                   </p>
                 </div>
 
                 {category.id === "shoumatak" && (
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full">
-                    <span className="text-xs font-medium text-white" data-testid="badge-featured">مميز</span>
+                  <div className={`absolute top-4 ${isRTL ? 'right-4' : 'left-4'} px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full`}>
+                    <span className="text-xs font-medium text-white" data-testid="badge-featured">{t('featured')}</span>
                   </div>
                 )}
               </button>
@@ -180,10 +186,10 @@ export default function HomePage() {
             <Sparkles className="w-10 h-10 text-primary" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-shoumatak-title">
-            شومتك - مخطط رحلتك الذكي
+            {t('shoumatakTitle')}
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto" data-testid="text-shoumatak-desc">
-            أجب على بضعة أسئلة بسيطة وسنقوم بإنشاء جدول سياحي مخصص لك بناءً على تفضيلاتك وميزانيتك
+            {t('shoumatakDesc')}
           </p>
           <Button 
             data-testid="button-try-shoumatak"
@@ -191,8 +197,8 @@ export default function HomePage() {
             size="lg"
             className="h-14 px-10 text-lg font-semibold rounded-full"
           >
-            جرب شومتك الآن
-            <Sparkles className="w-5 h-5 mr-2" />
+            {t('tryShoumatak')}
+            <Sparkles className={`w-5 h-5 ${isRTL ? 'mr-2' : 'ml-2'}`} />
           </Button>
         </div>
       </section>
@@ -207,7 +213,7 @@ export default function HomePage() {
             />
           </div>
           <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
+            {t('copyright')} © {new Date().getFullYear()} {t('appName')}
           </p>
         </div>
       </footer>
@@ -227,4 +233,32 @@ function getCategoryImage(id: string): string {
     shoumatak: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800",
   };
   return images[id] || images.attractions;
+}
+
+function getCategoryTitle(id: string, t: (key: string) => string): string {
+  const titles: Record<string, string> = {
+    attractions: t('attractions'),
+    hotels: t('hotels'),
+    restaurants: t('restaurants'),
+    hiking: t('hiking'),
+    taxis: t('taxis'),
+    hospitals: t('hospitals'),
+    "tour-guides": t('tourGuides'),
+    shoumatak: t('shoumatak'),
+  };
+  return titles[id] || id;
+}
+
+function getCategoryDesc(id: string, t: (key: string) => string): string {
+  const descs: Record<string, string> = {
+    attractions: t('attractionsDesc'),
+    hotels: t('hotelsDesc'),
+    restaurants: t('restaurantsDesc'),
+    hiking: t('hikingDesc'),
+    taxis: t('taxisDesc'),
+    hospitals: t('hospitalsDesc'),
+    "tour-guides": t('tourGuidesDesc'),
+    shoumatak: t('shoumatakDescShort'),
+  };
+  return descs[id] || '';
 }

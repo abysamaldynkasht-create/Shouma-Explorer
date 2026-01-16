@@ -10,10 +10,13 @@ import { apiRequest } from "@/lib/queryClient";
 import { Eye, EyeOff } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { insertUserSchema } from "@shared/schema";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function LoginPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { t, isRTL } = useLanguage();
   const [showPassword, setShowPassword] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
@@ -72,19 +75,23 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
+      <div className="absolute top-4 left-4 z-50">
+        <LanguageSwitcher />
+      </div>
+      
       <div className="hidden lg:flex lg:w-3/5 relative overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 dark:from-amber-950 dark:via-stone-900 dark:to-amber-900">
         <div className="absolute inset-0 flex flex-col items-center justify-center p-12">
           <img 
             src={shoumaLogo} 
-            alt="شومة" 
+            alt={t('appName')}
             className="w-80 h-auto mb-8 drop-shadow-2xl"
             data-testid="logo-login"
           />
           <h1 className="text-4xl font-bold text-foreground mb-4 text-center" data-testid="text-hero-title">
-            اكتشف جمال الوجهات السياحية
+            {t('welcomeToShouma')}
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl text-center" data-testid="text-hero-subtitle">
-            رحلتك المثالية تبدأ من هنا. اكتشف أجمل الأماكن، أفضل الفنادق، وألذ المطاعم في مكان واحد.
+            {t('homeSubtitle')}
           </p>
         </div>
       </div>
@@ -103,26 +110,23 @@ export default function LoginPage() {
           <Card className="border-card-border shadow-lg" data-testid="card-login">
             <CardHeader className="space-y-2 text-center pb-6">
               <CardTitle className="text-2xl font-bold" data-testid="text-form-title">
-                {isLogin ? "تسجيل الدخول" : "إنشاء حساب جديد"}
+                {isLogin ? t('welcomeBack') : t('createNewAccount')}
               </CardTitle>
               <CardDescription className="text-muted-foreground" data-testid="text-form-subtitle">
-                {isLogin 
-                  ? "أدخل بياناتك للوصول إلى حسابك"
-                  : "أنشئ حساباً جديداً للبدء في استكشاف العالم"
-                }
+                {isLogin ? t('loginSubtitle') : t('registerSubtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <Label htmlFor="username" className="text-sm font-medium">
-                    اسم المستخدم
+                    {t('username')}
                   </Label>
                   <Input
                     id="username"
                     data-testid="input-username"
                     type="text"
-                    placeholder="أدخل اسم المستخدم"
+                    placeholder={t('username')}
                     value={formData.username}
                     onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                     className={`h-12 text-base ${errors.username ? "border-destructive" : ""}`}
@@ -134,23 +138,23 @@ export default function LoginPage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="password" className="text-sm font-medium">
-                    كلمة المرور
+                    {t('password')}
                   </Label>
                   <div className="relative">
                     <Input
                       id="password"
                       data-testid="input-password"
                       type={showPassword ? "text" : "password"}
-                      placeholder="أدخل كلمة المرور"
+                      placeholder={t('password')}
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className={`h-12 text-base pl-12 ${errors.password ? "border-destructive" : ""}`}
+                      className={`h-12 text-base ${isRTL ? 'pl-12' : 'pr-12'} ${errors.password ? "border-destructive" : ""}`}
                     />
                     <button
                       type="button"
                       data-testid="button-toggle-password"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                      className={`absolute ${isRTL ? 'left-3' : 'right-3'} top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors`}
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
@@ -167,8 +171,8 @@ export default function LoginPage() {
                   disabled={loginMutation.isPending}
                 >
                   {loginMutation.isPending 
-                    ? "جاري التحميل..." 
-                    : isLogin ? "تسجيل الدخول" : "إنشاء الحساب"
+                    ? "..." 
+                    : isLogin ? t('login') : t('register')
                   }
                 </Button>
 
@@ -183,8 +187,8 @@ export default function LoginPage() {
                     className="text-sm text-primary hover:underline font-medium"
                   >
                     {isLogin 
-                      ? "ليس لديك حساب؟ سجل الآن"
-                      : "لديك حساب بالفعل؟ سجل دخولك"
+                      ? `${t('noAccount')} ${t('createAccount')}`
+                      : `${t('haveAccount')} ${t('loginHere')}`
                     }
                   </button>
                 </div>
