@@ -10,6 +10,7 @@ import wadiGhoulImg from "@/assets/wadi-ghoul.png";
 import nizwaSouqImg from "@/assets/nizwa-souq.png";
 import nizwaParkImg from "@/assets/nizwa-park.png";
 import barHikmanImg from "@/assets/bar-hikman.png";
+import soharFortImg from "@/assets/sohar-fort.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -259,7 +260,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_batinah",
     wilayat: "ولاية صحار",
     category: "heritage",
-    image: "",
+    image: soharFortImg,
     mapUrl: null,
     rating: "4.7",
     lat: 24.3472,
