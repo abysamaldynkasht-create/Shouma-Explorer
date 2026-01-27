@@ -851,7 +851,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صلالة",
     category: "entertainment",
     image: alHadabiComplexImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/5TKeyAAVJ9H2ZdNTA?g_st=ic",
     rating: "4.2",
     lat: 17.0180,
     lng: 54.0850
