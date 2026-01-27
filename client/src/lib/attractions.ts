@@ -323,7 +323,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صحار",
     category: "markets",
     image: soharSouqImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/bLbHQatL94GELw91A?g_st=ic",
     rating: "4.5"
   },
   {
