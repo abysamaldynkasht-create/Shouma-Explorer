@@ -51,6 +51,7 @@ import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
 import biladSurFortImg from "@/assets/bilad-sur-fort.png";
 import wadiHawerImg from "@/assets/wadi-hawer.png";
 import ibraSouqImg from "@/assets/ibra-souq.png";
+import wahibaSandsImg from "@/assets/wahiba-sands.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -687,7 +688,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_sharqiyah",
     wilayat: "ولاية بدية",
     category: "entertainment",
-    image: "",
+    image: wahibaSandsImg,
     mapUrl: null,
     rating: "4.8"
   },
