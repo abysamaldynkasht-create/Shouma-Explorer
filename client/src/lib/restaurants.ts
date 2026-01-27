@@ -1,5 +1,6 @@
 import type { Restaurant } from "@shared/schema";
 import alburjCafeImg from "@/assets/alburj-cafe.png";
+import lagunaCafeImg from "@/assets/laguna-cafe.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -119,5 +120,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.7,
     features: ["قهوة عمانية", "حلويات", "أجواء تراثية", "إطلالة تاريخية"],
     mapUrl: "https://maps.app.goo.gl/XhPr7YVE4UKRUvG26",
+  },
+  {
+    id: "10",
+    name: "Laguna",
+    nameAr: "لاجونا",
+    description: "يُعد لاجونا وجهة عصرية وشهيرة، ويُعرف بكونه مطعماً ومقهى يقدم تشكيلة متنوعة من المأكولات والمشروبات، بما في ذلك الحلويات والوجبات الخفيفة والقهوة المختصة. يتميز المكان بجلساته المريحة وتصميمه الجذاب، مما يجعله مكاناً مفضلاً للقاءات الأصدقاء والعائلات، خاصة في الفترة المسائية.",
+    city: "ولاية السيب",
+    region: "محافظة مسقط",
+    image: lagunaCafeImg,
+    cuisine: "مقهى عصري",
+    priceRange: "moderate",
+    rating: 4.6,
+    features: ["قهوة مختصة", "حلويات", "جلسات مريحة", "تصميم عصري"],
+    mapUrl: "https://maps.app.goo.gl/4FfHKFAkuqNZp16T6",
   },
 ];
