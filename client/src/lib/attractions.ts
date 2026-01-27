@@ -11,6 +11,8 @@ import nizwaSouqImg from "@/assets/nizwa-souq.png";
 import nizwaParkImg from "@/assets/nizwa-park.png";
 import barHikmanImg from "@/assets/bar-hikman.png";
 import soharFortImg from "@/assets/sohar-fort.png";
+import jubileeParkImg from "@/assets/jubilee-park.png";
+import soharMallImg from "@/assets/sohar-mall.png";
 
 const imageMap: Record<string, string> = {};
 
