@@ -9,6 +9,8 @@ import ihyaLodgeRoomImg from "@/assets/ihya-lodge-room.png";
 import crownePlazaImg from "@/assets/crowne-plaza-duqm.png";
 import crownePlazaImg2 from "@/assets/crowne-plaza-duqm-2.png";
 import crownePlazaImg3 from "@/assets/crowne-plaza-duqm-3.png";
+import alsalamGrandImg from "@/assets/alsalam-grand-resort.png";
+import alsalamGrandImg2 from "@/assets/alsalam-grand-resort-2.png";
 
 export const hotels: Hotel[] = [
   {
@@ -149,5 +151,22 @@ export const hotels: Hotel[] = [
       { id: "r12", userName: "هدى علي", rating: 5, comment: "فندق فخم جداً، الخدمة ممتازة والموقع على الشاطئ مباشرة.", date: "2025-01-17" },
       { id: "r13", userName: "أسامة محمد", rating: 5, comment: "المطاعم متنوعة والمسبح رائع، أنصح به لرحلات العمل والاستجمام.", date: "2025-01-09" }
     ]
+  },
+  {
+    id: "8",
+    name: "منتجع السلام جراند",
+    nameAr: "منتجع السلام جراند",
+    description: "يعتبر منتجع السلام جراند من المنتجعات الفاخرة والمميزة في منطقة البريمي. يوفر المنتجع إقامة مريحة في غرف وأجنحة واسعة ومجهزة بأحدث المرافق. يضم المنتجع مرافق ترفيهية متنوعة تشمل مسبحاً خارجياً كبيراً، وصالة رياضية، ومنطقة ألعاب للأطفال، بالإضافة إلى مطعم يقدم تشكيلة من المأكولات العالمية والمحلية، مما يجعله وجهة مثالية للعائلات والمسافرين الباحثين عن الهدوء والخصوصية.",
+    city: "ولاية البريمي",
+    region: "محافظة البريمي",
+    image: alsalamGrandImg,
+    gallery: [alsalamGrandImg2],
+    amenities: ["مسبح خارجي", "صالة رياضية", "منطقة ألعاب أطفال", "مطعم", "واي فاي"],
+    rating: 4,
+    pricePerNight: 120,
+    stars: 4,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/Ds2Cnbf94pAr1Atz6",
+    reviews: []
   }
 ];
