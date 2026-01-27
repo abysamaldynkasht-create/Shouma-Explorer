@@ -1,6 +1,7 @@
 import type { Restaurant } from "@shared/schema";
 import alburjCafeImg from "@/assets/alburj-cafe.png";
 import lagunaCafeImg from "@/assets/laguna-cafe.png";
+import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -134,5 +135,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.6,
     features: ["قهوة مختصة", "حلويات", "جلسات مريحة", "تصميم عصري"],
     mapUrl: "https://maps.app.goo.gl/4FfHKFAkuqNZp16T6",
+  },
+  {
+    id: "11",
+    name: "Bait Al Madhgoot",
+    nameAr: "بيت المضغوط",
+    description: "يعتبر مطعم بيت المضغوط في البريمي وجهة مفضلة لمحبي الأكلات الشعبية، حيث يتخصص في تقديم طبق \"المضغوط\" بطعمه الأصيل. يتميز المطعم بجودة مكوناته من اللحوم والأرز واستخدام التوابل التقليدية التي تمنحه مذاقاً خاصاً. كما يشتهر المطعم بنظافته وخدمته السريعة، مما يجعله خياراً ممتازاً للوجبات العائلية أو الولائم.",
+    city: "ولاية البريمي",
+    region: "محافظة البريمي",
+    image: baitAlmadghootImg,
+    cuisine: "عُماني شعبي",
+    priceRange: "budget",
+    rating: 4.5,
+    features: ["مضغوط أصيل", "خدمة سريعة", "مناسب للعائلات", "نظافة عالية"],
+    mapUrl: "https://maps.app.goo.gl/NCRTT4jLr9gkwPgw7",
   },
 ];
