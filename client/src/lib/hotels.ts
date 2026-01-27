@@ -1,6 +1,7 @@
 import type { Hotel } from "@shared/schema";
 import sixSensesImg from "@/assets/six-senses-hotel.png";
 import thousandNightsImg from "@/assets/thousand-nights-camp.png";
+import danaBeachImg from "@/assets/dana-beach-resort.png";
 
 export const hotels: Hotel[] = [
   {
@@ -34,5 +35,21 @@ export const hotels: Hotel[] = [
     stars: 4,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/g624hiFDU7bdyNim6?g_st=ic"
+  },
+  {
+    id: "3",
+    name: "منتجع شاطئ الدانة - الأشخرة",
+    nameAr: "منتجع شاطئ الدانة - الأشخرة",
+    description: "منتجع شاطئ الدانة - الأشخرة هو وجهة هادئة ومميزة تقع على ساحل بحر العرب. يشتهر المكان بالأجواء اللطيفة والمعتدلة خاصة في فصل الصيف، مما يجعله ملاذاً مثالياً للهروب من الحرارة. يتميز المنتجع بإطلالات مباشرة على المحيط، ويوفر غرفاً وشاليهات مريحة تناسب العائلات والأفراد الباحثين عن الاسترخاء بين صوت الأمواج والرمال الناعمة.",
+    city: "ولاية جعلان بني بو علي",
+    region: "محافظة جنوب الشرقية",
+    image: danaBeachImg,
+    gallery: [],
+    amenities: ["شاطئ خاص", "شاليهات", "إطلالة على المحيط", "مناسب للعائلات"],
+    rating: 4,
+    pricePerNight: 150,
+    stars: 4,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/D68DxdxgBKmf1hwJ7?g_st=ic"
   }
 ];
