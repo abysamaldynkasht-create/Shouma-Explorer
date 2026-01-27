@@ -453,15 +453,15 @@ export const attractions: Attraction[] = [
   },
   {
     id: "25",
-    name: "نافورة المغسيل",
-    nameAr: "نافورة المغسيل",
+    name: "شاطئ المغسيل",
+    nameAr: "شاطئ المغسيل",
     description: "ظاهرة طبيعية فريدة حيث تندفع المياه من الصخور بشكل مذهل، من أشهر المعالم السياحية في صلالة.",
     governorate: "محافظة ظفار",
     governorateId: "dhofar",
     wilayat: "ولاية صلالة",
     category: "nature",
     image: mughsailBeachImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/YWk2hPQAELHzNn8Q9?g_st=ic",
     rating: "4.8"
   },
   {
