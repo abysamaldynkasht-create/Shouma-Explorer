@@ -43,6 +43,7 @@ import hisnHazmImg from "@/assets/hisn-hazm.png";
 import ibriSouqImg from "@/assets/ibri-souq.png";
 import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
+import mahyulDamImg from "@/assets/mahyul-dam.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -575,7 +576,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhahirah",
     wilayat: "ولاية عبري",
     category: "heritage",
-    image: "",
+    image: mahyulDamImg,
     mapUrl: null,
     rating: "4.3"
   },
