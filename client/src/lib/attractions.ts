@@ -418,7 +418,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صلالة",
     category: "wadis",
     image: wadiDarbatImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/TXxLJ8ShRuJmPyX56?g_st=ic",
     rating: "4.9",
     lat: 17.1150,
     lng: 54.4370
