@@ -6,6 +6,7 @@ import qurumParkImg from "@/assets/qurum-park.png";
 import mutrahFortImg from "@/assets/mutrah-fort.png";
 import jebelAkhdarImg from "@/assets/jebel-akhdar.png";
 import nizwaFortImg from "@/assets/nizwa-fort.png";
+import wadiGhoulImg from "@/assets/wadi-ghoul.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -165,7 +166,7 @@ export const attractions: Attraction[] = [
     governorateId: "dakhiliyah",
     wilayat: "ولاية الحمراء",
     category: "wadis",
-    image: "",
+    image: wadiGhoulImg,
     mapUrl: "https://maps.app.goo.gl/Ch5n2k9sDgediE4p7",
     rating: "4.7",
     lat: 23.1250,
