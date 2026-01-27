@@ -539,7 +539,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية الرستاق",
     category: "wadis",
     image: wadiHoqainImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/hk2ryZZPooWQDq3VA?g_st=ic",
     rating: "4.8"
   },
   {
