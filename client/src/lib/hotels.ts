@@ -1,5 +1,6 @@
 import type { Hotel } from "@shared/schema";
 import sixSensesImg from "@/assets/six-senses-hotel.png";
+import thousandNightsImg from "@/assets/thousand-nights-camp.png";
 
 export const hotels: Hotel[] = [
   {
@@ -17,5 +18,21 @@ export const hotels: Hotel[] = [
     stars: 5,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/4ASSWXq1DQiQcuds6?g_st=ic"
+  },
+  {
+    id: "2",
+    name: "مخيم ألف ليلة",
+    nameAr: "مخيم ألف ليلة",
+    description: "يُعد مخيم ألف ليلة تجربة بدوية فاخرة في قلب رمال الشرقية. يوفر المخيم إقامة فريدة تجمع بين بساطة الحياة الصحراوية ووسائل الراحة الحديثة، حيث يضم خياماً على الطراز العربي التقليدي (الشيخ) وغرفاً زجاجية تتيح رؤية النجوم. يوفر المخيم أنشطة مثل ركوب الجمال، والتزلج على الرمال، والسباحة في مسبح وسط الكثبان الرملية، بالإضافة إلى عروض موسيقية شعبية في المساء.",
+    city: "ولاية بدية",
+    region: "محافظة شمال الشرقية",
+    image: thousandNightsImg,
+    gallery: [],
+    amenities: ["ركوب الجمال", "التزلج على الرمال", "مسبح", "عروض موسيقية", "خيام فاخرة"],
+    rating: 5,
+    pricePerNight: 200,
+    stars: 4,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/g624hiFDU7bdyNim6?g_st=ic"
   }
 ];
