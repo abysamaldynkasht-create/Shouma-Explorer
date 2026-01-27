@@ -362,7 +362,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صحار",
     category: "entertainment",
     image: jubileeParkImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/8dYG8Xj2YnwijJWq6?g_st=ic",
     rating: "4.3"
   },
   {
