@@ -1,4 +1,5 @@
 import type { Attraction } from "@shared/schema";
+import qurumBeachImg from "@/assets/qurum-beach.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -53,7 +54,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية بوشر",
     category: "nature",
-    image: "",
+    image: qurumBeachImg,
     mapUrl: "https://maps.app.goo.gl/4YyuXLLuBvA9qLXG9",
     rating: "4.5",
     lat: 23.6071,
