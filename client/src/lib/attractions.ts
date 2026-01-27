@@ -36,6 +36,7 @@ import wadiHayoolImg from "@/assets/wadi-hayool.png";
 import ainBuiHawjaaImg from "@/assets/ain-bui-hawjaa.png";
 import soharSouqImg from "@/assets/sohar-souq.png";
 import wadiJiziImg from "@/assets/wadi-jizi.png";
+import sahlAtinImg from "@/assets/sahl-atin.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -859,5 +860,18 @@ export const attractions: Attraction[] = [
     image: wadiHayoolImg,
     mapUrl: null,
     rating: "4.6"
+  },
+  {
+    id: "57",
+    name: "سهل اتين",
+    nameAr: "سهل اتين",
+    description: "سهل أخضر ساحر في ظفار يكتسي بالخضرة خلال موسم الخريف، يوفر مناظر طبيعية خلابة وأجواء ضبابية ساحرة.",
+    governorate: "محافظة ظفار",
+    governorateId: "dhofar",
+    wilayat: "ولاية صلالة",
+    category: "nature",
+    image: sahlAtinImg,
+    mapUrl: null,
+    rating: "4.7"
   }
 ];
