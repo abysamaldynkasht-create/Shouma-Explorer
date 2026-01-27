@@ -390,7 +390,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صلالة",
     category: "heritage",
     image: alBaleedParkImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/PCiWx9nSvcvqy9LZ6?g_st=ic",
     rating: "4.8",
     lat: 17.0090,
     lng: 54.1250
