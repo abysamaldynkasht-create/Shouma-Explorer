@@ -31,6 +31,8 @@ import wadiKhabShamsiImg from "@/assets/wadi-khab-shamsi.png";
 import buraimiMallImg from "@/assets/buraimi-mall.png";
 import saaraOasisImg from "@/assets/saara-oasis.png";
 import buraimiParkImg from "@/assets/buraimi-park.png";
+import hisnKhandaqImg from "@/assets/hisn-khandaq.png";
+import wadiHayoolImg from "@/assets/wadi-hayool.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -823,7 +825,7 @@ export const attractions: Attraction[] = [
     governorateId: "buraimi",
     wilayat: "ولاية البريمي",
     category: "heritage",
-    image: "",
+    image: hisnKhandaqImg,
     mapUrl: null,
     rating: "4.6"
   },
@@ -841,5 +843,18 @@ export const attractions: Attraction[] = [
     rating: "4.2",
     lat: 17.0180,
     lng: 54.0850
+  },
+  {
+    id: "56",
+    name: "وادي الحيول",
+    nameAr: "وادي الحيول",
+    description: "وادٍ طبيعي خلاب محاط بالجبال الشاهقة، يتميز بمناظره الطبيعية الساحرة والنخيل الأخضر وسط الجبال الصخرية.",
+    governorate: "محافظة البريمي",
+    governorateId: "buraimi",
+    wilayat: "ولاية البريمي",
+    category: "wadis",
+    image: wadiHayoolImg,
+    mapUrl: null,
+    rating: "4.6"
   }
 ];
