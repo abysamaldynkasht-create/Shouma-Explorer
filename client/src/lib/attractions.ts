@@ -13,6 +13,7 @@ import barHikmanImg from "@/assets/bar-hikman.png";
 import soharFortImg from "@/assets/sohar-fort.png";
 import jubileeParkImg from "@/assets/jubilee-park.png";
 import soharMallImg from "@/assets/sohar-mall.png";
+import soharBeachImg from "@/assets/sohar-beach.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -247,7 +248,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_batinah",
     wilayat: "ولاية صحار",
     category: "entertainment",
-    image: "",
+    image: soharMallImg,
     mapUrl: null,
     rating: "4.3",
     lat: 24.3650,
@@ -290,7 +291,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_batinah",
     wilayat: "ولاية صحار",
     category: "nature",
-    image: "",
+    image: soharBeachImg,
     mapUrl: null,
     rating: "4.4"
   },
@@ -316,7 +317,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_batinah",
     wilayat: "ولاية صحار",
     category: "entertainment",
-    image: "",
+    image: jubileeParkImg,
     mapUrl: null,
     rating: "4.3"
   },
