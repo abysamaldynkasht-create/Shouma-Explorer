@@ -2,6 +2,7 @@ import type { Attraction } from "@shared/schema";
 import qurumBeachImg from "@/assets/qurum-beach.png";
 import mutrahSouqImg from "@/assets/mutrah-souq.png";
 import wadiKhoudImg from "@/assets/wadi-khoud.png";
+import qurumParkImg from "@/assets/qurum-park.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -101,7 +102,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية بوشر",
     category: "entertainment",
-    image: "",
+    image: qurumParkImg,
     mapUrl: "https://maps.app.goo.gl/8in1t2GTgnyJxLjA9",
     rating: "4.7",
     lat: 23.5992,
