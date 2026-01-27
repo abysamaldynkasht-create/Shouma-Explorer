@@ -50,6 +50,7 @@ import marahLandImg from "@/assets/marah-land.png";
 import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
 import biladSurFortImg from "@/assets/bilad-sur-fort.png";
 import wadiHawerImg from "@/assets/wadi-hawer.png";
+import ibraSouqImg from "@/assets/ibra-souq.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -673,7 +674,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_sharqiyah",
     wilayat: "ولاية إبراء",
     category: "markets",
-    image: "",
+    image: ibraSouqImg,
     mapUrl: null,
     rating: "4.5"
   },
