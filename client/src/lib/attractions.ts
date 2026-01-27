@@ -54,6 +54,7 @@ import ibraSouqImg from "@/assets/ibra-souq.png";
 import wahibaSandsImg from "@/assets/wahiba-sands.png";
 import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 import baitDarwazaImg from "@/assets/bait-darwaza.png";
+import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -729,7 +730,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_sharqiyah",
     wilayat: "ولاية بني خالد",
     category: "wadis",
-    image: "",
+    image: wadiBaniKhalidImg,
     mapUrl: null,
     rating: "4.9"
   },
