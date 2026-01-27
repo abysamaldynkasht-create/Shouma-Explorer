@@ -10,7 +10,6 @@ import {
   Car, 
   Sparkles,
   LogOut,
-  Search,
   Hospital,
   UserCheck,
   Navigation
@@ -108,20 +107,6 @@ export default function HomePage() {
             {t('homeSubtitle')}
           </p>
           
-          <div className="w-full max-w-xl">
-            <div className="relative">
-              <Input
-                data-testid="input-search"
-                type="search"
-                placeholder={t('searchPlaceholder')}
-                className={`h-14 text-base bg-white/95 backdrop-blur border-0 shadow-xl rounded-full ${isRTL ? 'pr-5 pl-14' : 'pl-5 pr-14'}`}
-              />
-              <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                <Search className="w-6 h-6 text-muted-foreground" />
-              </div>
-            </div>
-          </div>
-
           <Button 
             data-testid="button-start-journey"
             onClick={() => setLocation("/shoumatak")}
