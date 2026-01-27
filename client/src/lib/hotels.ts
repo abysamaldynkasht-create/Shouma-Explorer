@@ -3,6 +3,7 @@ import sixSensesImg from "@/assets/six-senses-hotel.png";
 import thousandNightsImg from "@/assets/thousand-nights-camp.png";
 import danaBeachImg from "@/assets/dana-beach-resort.png";
 import alNebrasImg from "@/assets/al-nebras-hotel.png";
+import avaniImg from "@/assets/avani-hotel.png";
 
 export const hotels: Hotel[] = [
   {
@@ -68,5 +69,21 @@ export const hotels: Hotel[] = [
     stars: 3,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/ivxPyTRSnKJtKCWg9?g_st=ic"
+  },
+  {
+    id: "5",
+    name: "فندق أفاني مسقط",
+    nameAr: "فندق أفاني مسقط",
+    description: "يُعد فندق أفاني مسقط من الفنادق العصرية والحديثة التي تجمع بين الراحة والأناقة. يقع في منطقة حيوية وبالقرب من مراكز التسوق الكبرى (مثل سيتي سنتر السيب). يتميز بتصميمه الداخلي الأنيق، ويضم مرافق متنوعة تشمل مسبحاً خارجياً، صالة لياقة بدنية، ومطاعم تقدم أطباقاً عالمية، مما يجعله وجهة مثالية للمسافرين بقصد العمل أو السياحة.",
+    city: "ولاية السيب",
+    region: "محافظة مسقط",
+    image: avaniImg,
+    gallery: [],
+    amenities: ["مسبح خارجي", "صالة لياقة", "مطاعم عالمية", "واي فاي", "قريب من مراكز التسوق"],
+    rating: 4,
+    pricePerNight: 120,
+    stars: 4,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/ijURp6fbdT9HgDVe7?g_st=ic"
   }
 ];
