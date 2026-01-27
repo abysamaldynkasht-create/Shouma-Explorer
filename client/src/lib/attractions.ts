@@ -19,6 +19,7 @@ import salalahMallImg from "@/assets/salalah-grand-mall.png";
 import alBaleedParkImg from "@/assets/al-baleed-park.png";
 import souqAlHaffaImg from "@/assets/souq-al-haffa.png";
 import mughsailBeachImg from "@/assets/mughsail-beach.png";
+import alHadabiComplexImg from "@/assets/al-hadabi-complex.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -814,5 +815,20 @@ export const attractions: Attraction[] = [
     image: "",
     mapUrl: null,
     rating: "4.6"
+  },
+  {
+    id: "51",
+    name: "مجمع الهدابي",
+    nameAr: "مجمع الهدابي",
+    description: "مجمع تجاري متنوع في صلالة يضم محلات تجارية ومطاعم وخدمات متعددة للزوار.",
+    governorate: "محافظة ظفار",
+    governorateId: "dhofar",
+    wilayat: "ولاية صلالة",
+    category: "entertainment",
+    image: alHadabiComplexImg,
+    mapUrl: null,
+    rating: "4.2",
+    lat: 17.0180,
+    lng: 54.0850
   }
 ];
