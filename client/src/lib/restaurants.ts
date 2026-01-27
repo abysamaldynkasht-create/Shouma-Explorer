@@ -3,6 +3,7 @@ import alburjCafeImg from "@/assets/alburj-cafe.png";
 import lagunaCafeImg from "@/assets/laguna-cafe.png";
 import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
 import musandamFanrImg from "@/assets/musandam-fanr.png";
+import tamraNizwaImg from "@/assets/tamra-nizwa.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -164,5 +165,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.5,
     features: ["أسماك طازجة", "قريب من الميناء", "أطباق آسيوية", "نظافة عالية"],
     mapUrl: "https://maps.app.goo.gl/qAJm51We5uRj9oeo8",
+  },
+  {
+    id: "13",
+    name: "Tamra Restaurant & Cafe",
+    nameAr: "مطعم ومقهى تمرة",
+    description: "يُعد مطعم ومقهى تمرة وجهة سياحية وتراثية رائعة، حيث يتميز بموقعه الاستراتيجي المقابل لقلعة نزوى التاريخية. يقدم المطعم تجربة طعام عمانية وعالمية في أجواء تمزج بين الحداثة والتراث، ويشتهر بإطلالته الخلابة على سوق وقلعة نزوى من الشرفة (السطح)، مما يجعله مكاناً مثالية لتناول القهوة العمانية أو وجبات الغداء والعشاء أثناء زيارة المعالم الأثرية.",
+    city: "ولاية نزوى",
+    region: "محافظة الداخلية",
+    image: tamraNizwaImg,
+    cuisine: "عُماني وعالمي",
+    priceRange: "moderate",
+    rating: 4.7,
+    features: ["إطلالة على قلعة نزوى", "شرفة سطحية", "قهوة عمانية", "أجواء تراثية"],
+    mapUrl: "https://maps.app.goo.gl/3nKC2yPaLDiJFXgi6",
   },
 ];
