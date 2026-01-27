@@ -6,6 +6,9 @@ import alNebrasImg from "@/assets/al-nebras-hotel.png";
 import avaniImg from "@/assets/avani-hotel.png";
 import ihyaLodgeImg from "@/assets/ihya-lodge.png";
 import ihyaLodgeRoomImg from "@/assets/ihya-lodge-room.png";
+import crownePlazaImg from "@/assets/crowne-plaza-duqm.png";
+import crownePlazaImg2 from "@/assets/crowne-plaza-duqm-2.png";
+import crownePlazaImg3 from "@/assets/crowne-plaza-duqm-3.png";
 
 export const hotels: Hotel[] = [
   {
@@ -103,5 +106,21 @@ export const hotels: Hotel[] = [
     stars: 4,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/YjoDQXuPkBVfctkM9?g_st=ic"
+  },
+  {
+    id: "7",
+    name: "فندق كراون بلازا الدقم",
+    nameAr: "فندق كراون بلازا الدقم",
+    description: "يُعد فندق كراون بلازا الدقم فندقاً أنيقاً يقع مباشرة على الشاطئ، ويجمع بين الرفاهية والراحة. يضم الفندق 4 خيارات متنوعة لتناول الطعام، بالإضافة إلى مركز للياقة البدنية ومسابح داخلية وخارجية. صُمم الفندق ليلبي احتياجات المسافرين من أجل العمل بفضل موقعه القريب من المنطقة الاقتصادية بالدقم، كما يوفر أجواءً مثالية للاسترخاء والتمتع بجمال الساحل للباحثين عن الاستجمام.",
+    city: "ولاية الدقم",
+    region: "محافظة الوسطى",
+    image: crownePlazaImg,
+    gallery: [crownePlazaImg2, crownePlazaImg3],
+    amenities: ["شاطئ خاص", "مسبح داخلي وخارجي", "صالة لياقة", "4 مطاعم", "واي فاي"],
+    rating: 5,
+    pricePerNight: 180,
+    stars: 5,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/DsKGZKDxVh9jkPc58?g_st=ic"
   }
 ];
