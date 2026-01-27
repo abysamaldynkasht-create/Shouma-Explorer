@@ -25,6 +25,7 @@ import ainAlKasfaImg from "@/assets/ain-al-kasfa.png";
 import rustaqSouqImg from "@/assets/rustaq-souq.png";
 import wadiHoqainImg from "@/assets/wadi-hoqain.png";
 import khairanBoatsImg from "@/assets/khairan-boats.png";
+import khorShamImg from "@/assets/khor-sham.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -739,7 +740,7 @@ export const attractions: Attraction[] = [
     governorateId: "musandam",
     wilayat: "ولاية خصب",
     category: "nature",
-    image: "",
+    image: khorShamImg,
     mapUrl: null,
     rating: "4.9"
   },
