@@ -53,6 +53,7 @@ import wadiHawerImg from "@/assets/wadi-hawer.png";
 import ibraSouqImg from "@/assets/ibra-souq.png";
 import wahibaSandsImg from "@/assets/wahiba-sands.png";
 import wadiTiwiImg from "@/assets/wadi-tiwi.png";
+import baitDarwazaImg from "@/assets/bait-darwaza.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -715,7 +716,7 @@ export const attractions: Attraction[] = [
     governorateId: "north_sharqiyah",
     wilayat: "ولاية إبراء",
     category: "heritage",
-    image: "",
+    image: baitDarwazaImg,
     mapUrl: null,
     rating: "4.6"
   },
