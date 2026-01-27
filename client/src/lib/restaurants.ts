@@ -2,6 +2,7 @@ import type { Restaurant } from "@shared/schema";
 import alburjCafeImg from "@/assets/alburj-cafe.png";
 import lagunaCafeImg from "@/assets/laguna-cafe.png";
 import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
+import musandamFanrImg from "@/assets/musandam-fanr.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -149,5 +150,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.5,
     features: ["مضغوط أصيل", "خدمة سريعة", "مناسب للعائلات", "نظافة عالية"],
     mapUrl: "https://maps.app.goo.gl/NCRTT4jLr9gkwPgw7",
+  },
+  {
+    id: "12",
+    name: "Musandam Fanr Restaurant",
+    nameAr: "مطعم فنر مسندم",
+    description: "يُعد مطعم فنر مسندم من المطاعم المعروفة في مدينة خصب، ويشتهر بتقديم تشكيلة متنوعة من المأكولات، وخاصة الأطباق البحرية الطازجة التي تشتهر بها المنطقة، بالإضافة إلى الأطباق العربية والآسيوية. يتميز المطعم بموقعه القريب من الميناء والخدمات السياحية، ويحظى بتقييمات جيدة لنظافته وجودة طعمه، مما يجعله وجهة مفضلة للسياح الراغبين في تجربة المذاق المحلي بعد جولات القوارب في أخوار مسندم.",
+    city: "ولاية خصب",
+    region: "محافظة مسندم",
+    image: musandamFanrImg,
+    cuisine: "مأكولات بحرية",
+    priceRange: "moderate",
+    rating: 4.5,
+    features: ["أسماك طازجة", "قريب من الميناء", "أطباق آسيوية", "نظافة عالية"],
+    mapUrl: "https://maps.app.goo.gl/qAJm51We5uRj9oeo8",
   },
 ];
