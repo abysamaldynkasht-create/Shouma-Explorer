@@ -46,6 +46,7 @@ import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
 import wadiDammImg from "@/assets/wadi-damm.png";
 import surSouqImg from "@/assets/sur-souq.png";
+import marahLandImg from "@/assets/marah-land.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -617,7 +618,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_sharqiyah",
     wilayat: "ولاية صور",
     category: "entertainment",
-    image: "",
+    image: marahLandImg,
     mapUrl: null,
     rating: "4.3"
   },
