@@ -799,7 +799,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية البريمي",
     category: "markets",
     image: buraimiMallImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/Noc2jagwaWj5SGYAA",
     rating: "4.2"
   },
   {
@@ -812,7 +812,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية البريمي",
     category: "entertainment",
     image: buraimiParkImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/EoFt3hNNpFAHZJKRA",
     rating: "4.4"
   },
   {
@@ -825,7 +825,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية البريمي",
     category: "nature",
     image: saaraOasisImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/4ei3AtWQXNxavkeP6",
     rating: "4.5"
   },
   {
@@ -838,7 +838,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية البريمي",
     category: "heritage",
     image: hisnKhandaqImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/5f6LGS8tVnG9sX28A",
     rating: "4.6"
   },
   {
