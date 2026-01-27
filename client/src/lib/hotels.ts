@@ -4,6 +4,8 @@ import thousandNightsImg from "@/assets/thousand-nights-camp.png";
 import danaBeachImg from "@/assets/dana-beach-resort.png";
 import alNebrasImg from "@/assets/al-nebras-hotel.png";
 import avaniImg from "@/assets/avani-hotel.png";
+import ihyaLodgeImg from "@/assets/ihya-lodge.png";
+import ihyaLodgeRoomImg from "@/assets/ihya-lodge-room.png";
 
 export const hotels: Hotel[] = [
   {
@@ -85,5 +87,21 @@ export const hotels: Hotel[] = [
     stars: 4,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/ijURp6fbdT9HgDVe7?g_st=ic"
+  },
+  {
+    id: "6",
+    name: "نزل إحياء",
+    nameAr: "نزل إحياء",
+    description: "يُعد \"نُزل إحياء\" تجربة سياحية تراثية فريدة، حيث تم ترميم وتحويل بيوت قديمة في حارة أثرية إلى نزل فندقي يجمع بين عبق الماضي ورفاهية الحاضر. يتميز المكان بتصميمه المعماري العماني التقليدي باستخدام الطين والأخشاب، ويمنح الزوار فرصة للعيش في قلب التاريخ العماني مع الاستمتاع بإطلالات خلابة على المزارع والجبال المحيطة.",
+    city: "ولاية نزوى",
+    region: "محافظة الداخلية",
+    image: ihyaLodgeImg,
+    gallery: [ihyaLodgeRoomImg],
+    amenities: ["تراث عماني", "إطلالات جبلية", "تصميم تقليدي", "بيئة هادئة"],
+    rating: 5,
+    pricePerNight: 100,
+    stars: 4,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/YjoDQXuPkBVfctkM9?g_st=ic"
   }
 ];
