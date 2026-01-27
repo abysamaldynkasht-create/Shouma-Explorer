@@ -9,6 +9,7 @@ import nizwaFortImg from "@/assets/nizwa-fort.png";
 import wadiGhoulImg from "@/assets/wadi-ghoul.png";
 import nizwaSouqImg from "@/assets/nizwa-souq.png";
 import nizwaParkImg from "@/assets/nizwa-park.png";
+import barHikmanImg from "@/assets/bar-hikman.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -213,7 +214,7 @@ export const attractions: Attraction[] = [
     governorateId: "wusta",
     wilayat: "ولاية محوت",
     category: "nature",
-    image: "",
+    image: barHikmanImg,
     mapUrl: "https://maps.app.goo.gl/EmekuatAbuASqSaXA",
     rating: "4.6",
     lat: 20.2670,
