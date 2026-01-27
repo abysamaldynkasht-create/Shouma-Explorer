@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useParams } from "wouter";
 import { hotels } from "@/lib/hotels";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import PaymentModal from "@/components/PaymentModal";
-import type { RoomOption } from "@shared/schema";
+import type { RoomOption, HotelReview } from "@shared/schema";
 import { 
   Building2, 
   ArrowRight,
@@ -22,16 +24,29 @@ import {
   Phone,
   Users,
   Bed,
-  Navigation
+  Navigation,
+  MessageSquare,
+  User,
+  Send
 } from "lucide-react";
 
 export default function HotelDetailPage() {
   const [, setLocation] = useLocation();
   const [paymentOpen, setPaymentOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<RoomOption | null>(null);
+  const [reviews, setReviews] = useState<HotelReview[]>([]);
+  const [newReview, setNewReview] = useState({ userName: "", rating: 5, comment: "" });
+  const [showReviewForm, setShowReviewForm] = useState(false);
   const params = useParams<{ id: string }>();
   
   const hotel = hotels.find((h) => h.id === params.id);
+  
+  // Initialize reviews from hotel data
+  useEffect(() => {
+    if (hotel?.reviews) {
+      setReviews(hotel.reviews);
+    }
+  }, [hotel]);
 
   const renderStars = (count: number) => {
     return Array.from({ length: count }, (_, i) => (
@@ -248,6 +263,143 @@ export default function HotelDetailPage() {
                 </div>
               </section>
             )}
+
+            <section>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <MessageSquare className="w-6 h-6 text-primary" />
+                  <h2 className="text-2xl font-bold text-foreground">
+                    التقييمات والتعليقات
+                  </h2>
+                  <Badge variant="secondary">{reviews.length}</Badge>
+                </div>
+                <Button
+                  variant="outline"
+                  onClick={() => setShowReviewForm(!showReviewForm)}
+                  data-testid="button-add-review"
+                >
+                  {showReviewForm ? "إلغاء" : "أضف تقييمك"}
+                </Button>
+              </div>
+
+              {showReviewForm && (
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-bold text-lg mb-4">أضف تقييمك</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">اسمك</label>
+                        <Input
+                          data-testid="input-review-name"
+                          placeholder="أدخل اسمك"
+                          value={newReview.userName}
+                          onChange={(e) => setNewReview({ ...newReview, userName: e.target.value })}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">التقييم</label>
+                        <div className="flex gap-2">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <button
+                              key={star}
+                              type="button"
+                              onClick={() => setNewReview({ ...newReview, rating: star })}
+                              className="p-1"
+                              data-testid={`button-star-${star}`}
+                            >
+                              <Star
+                                className={`w-8 h-8 ${
+                                  star <= newReview.rating
+                                    ? "fill-yellow-400 text-yellow-400"
+                                    : "text-muted-foreground"
+                                }`}
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">تعليقك</label>
+                        <Textarea
+                          data-testid="input-review-comment"
+                          placeholder="شاركنا تجربتك..."
+                          rows={4}
+                          value={newReview.comment}
+                          onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                        />
+                      </div>
+                      <Button
+                        className="w-full"
+                        onClick={() => {
+                          if (newReview.userName && newReview.comment) {
+                            const review: HotelReview = {
+                              id: Date.now().toString(),
+                              userName: newReview.userName,
+                              rating: newReview.rating,
+                              comment: newReview.comment,
+                              date: new Date().toLocaleDateString("ar-OM"),
+                            };
+                            setReviews([review, ...reviews]);
+                            setNewReview({ userName: "", rating: 5, comment: "" });
+                            setShowReviewForm(false);
+                          }
+                        }}
+                        data-testid="button-submit-review"
+                      >
+                        <Send className="w-4 h-4 ml-2" />
+                        إرسال التقييم
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {reviews.length === 0 ? (
+                <Card>
+                  <CardContent className="py-12 text-center">
+                    <MessageSquare className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="font-semibold text-lg mb-2">لا توجد تقييمات بعد</h3>
+                    <p className="text-muted-foreground mb-4">كن أول من يشارك تجربته!</p>
+                    <Button variant="outline" onClick={() => setShowReviewForm(true)}>
+                      أضف أول تقييم
+                    </Button>
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="space-y-4">
+                  {reviews.map((review) => (
+                    <Card key={review.id} data-testid={`card-review-${review.id}`}>
+                      <CardContent className="p-5">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <User className="w-6 h-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-2">
+                              <h4 className="font-bold">{review.userName}</h4>
+                              <span className="text-sm text-muted-foreground">{review.date}</span>
+                            </div>
+                            <div className="flex gap-0.5 mb-3">
+                              {Array.from({ length: 5 }, (_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${
+                                    i < review.rating
+                                      ? "fill-yellow-400 text-yellow-400"
+                                      : "text-muted-foreground"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed">{review.comment}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </section>
           </div>
 
           <div className="space-y-6">

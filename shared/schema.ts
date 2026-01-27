@@ -83,6 +83,14 @@ export interface RoomOption {
   amenities: string[];
 }
 
+export interface HotelReview {
+  id: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
 export interface Hotel {
   id: string;
   name: string;
@@ -99,6 +107,7 @@ export interface Hotel {
   phone: string;
   mapUrl?: string;
   roomOptions?: RoomOption[];
+  reviews?: HotelReview[];
 }
 
 export interface Restaurant {

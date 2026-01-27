@@ -25,7 +25,12 @@ export const hotels: Hotel[] = [
     pricePerNight: 500,
     stars: 5,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/4ASSWXq1DQiQcuds6?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/4ASSWXq1DQiQcuds6?g_st=ic",
+    reviews: [
+      { id: "r1", userName: "أحمد محمد", rating: 5, comment: "تجربة لا تُنسى! الخدمة ممتازة والمناظر خلابة. أنصح الجميع بزيارته.", date: "2025-01-15" },
+      { id: "r2", userName: "فاطمة علي", rating: 5, comment: "منتجع راقي جداً، الغرف واسعة ونظيفة والطعام لذيذ.", date: "2025-01-10" },
+      { id: "r3", userName: "خالد سعيد", rating: 4, comment: "مكان رائع للاسترخاء، السبا ممتاز والموظفون محترفون.", date: "2025-01-05" }
+    ]
   },
   {
     id: "2",
@@ -41,7 +46,11 @@ export const hotels: Hotel[] = [
     pricePerNight: 200,
     stars: 4,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/g624hiFDU7bdyNim6?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/g624hiFDU7bdyNim6?g_st=ic",
+    reviews: [
+      { id: "r4", userName: "سارة أحمد", rating: 5, comment: "تجربة الصحراء كانت مذهلة! الليل تحت النجوم شيء لا يوصف.", date: "2025-01-18" },
+      { id: "r5", userName: "محمود عبدالله", rating: 5, comment: "ركوب الجمال والتزلج على الرمال كانا ممتعين جداً للأطفال.", date: "2025-01-12" }
+    ]
   },
   {
     id: "3",
@@ -57,7 +66,10 @@ export const hotels: Hotel[] = [
     pricePerNight: 150,
     stars: 4,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/D68DxdxgBKmf1hwJ7?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/D68DxdxgBKmf1hwJ7?g_st=ic",
+    reviews: [
+      { id: "r6", userName: "نورة محمد", rating: 4, comment: "شاطئ جميل وهادئ، مثالي للاسترخاء بعيداً عن الزحام.", date: "2025-01-20" }
+    ]
   },
   {
     id: "4",
@@ -73,7 +85,10 @@ export const hotels: Hotel[] = [
     pricePerNight: 80,
     stars: 3,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/ivxPyTRSnKJtKCWg9?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/ivxPyTRSnKJtKCWg9?g_st=ic",
+    reviews: [
+      { id: "r7", userName: "علي حسن", rating: 4, comment: "فندق نظيف ومريح، الموقع ممتاز والأسعار معقولة.", date: "2025-01-16" }
+    ]
   },
   {
     id: "5",
@@ -89,7 +104,11 @@ export const hotels: Hotel[] = [
     pricePerNight: 120,
     stars: 4,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/ijURp6fbdT9HgDVe7?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/ijURp6fbdT9HgDVe7?g_st=ic",
+    reviews: [
+      { id: "r8", userName: "ريم سالم", rating: 4, comment: "فندق عصري وأنيق، قريب من مراكز التسوق.", date: "2025-01-14" },
+      { id: "r9", userName: "يوسف ناصر", rating: 4, comment: "المسبح رائع والإفطار متنوع ولذيذ.", date: "2025-01-08" }
+    ]
   },
   {
     id: "6",
@@ -105,7 +124,11 @@ export const hotels: Hotel[] = [
     pricePerNight: 100,
     stars: 4,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/YjoDQXuPkBVfctkM9?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/YjoDQXuPkBVfctkM9?g_st=ic",
+    reviews: [
+      { id: "r10", userName: "مريم خالد", rating: 5, comment: "تجربة تراثية رائعة! العيش في بيت عماني تقليدي كان مميزاً جداً.", date: "2025-01-19" },
+      { id: "r11", userName: "عبدالرحمن سليم", rating: 5, comment: "المكان ساحر والإطلالات خلابة على الجبال والمزارع.", date: "2025-01-11" }
+    ]
   },
   {
     id: "7",
@@ -121,6 +144,10 @@ export const hotels: Hotel[] = [
     pricePerNight: 180,
     stars: 5,
     phone: "",
-    mapUrl: "https://maps.app.goo.gl/DsKGZKDxVh9jkPc58?g_st=ic"
+    mapUrl: "https://maps.app.goo.gl/DsKGZKDxVh9jkPc58?g_st=ic",
+    reviews: [
+      { id: "r12", userName: "هدى علي", rating: 5, comment: "فندق فخم جداً، الخدمة ممتازة والموقع على الشاطئ مباشرة.", date: "2025-01-17" },
+      { id: "r13", userName: "أسامة محمد", rating: 5, comment: "المطاعم متنوعة والمسبح رائع، أنصح به لرحلات العمل والاستجمام.", date: "2025-01-09" }
+    ]
   }
 ];
