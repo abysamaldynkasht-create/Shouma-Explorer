@@ -52,6 +52,7 @@ import biladSurFortImg from "@/assets/bilad-sur-fort.png";
 import wadiHawerImg from "@/assets/wadi-hawer.png";
 import ibraSouqImg from "@/assets/ibra-souq.png";
 import wahibaSandsImg from "@/assets/wahiba-sands.png";
+import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -694,14 +695,14 @@ export const attractions: Attraction[] = [
   },
   {
     id: "44",
-    name: "وادي تيوي",
-    nameAr: "وادي تيوي",
+    name: "وادي طيوي",
+    nameAr: "وادي طيوي",
     description: "وادٍ خلاب يتميز بقراه الجبلية المعلقة ومزارع النخيل ومياهه الجارية.",
     governorate: "محافظة شمال الشرقية",
     governorateId: "north_sharqiyah",
     wilayat: "ولاية صور",
     category: "nature",
-    image: "",
+    image: wadiTiwiImg,
     mapUrl: null,
     rating: "4.7"
   },
