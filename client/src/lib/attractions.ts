@@ -760,7 +760,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية خصب",
     category: "nature",
     image: khorShamImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/bQ37DaeZcYpyou5z5",
     rating: "4.9"
   },
   {
@@ -773,7 +773,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية خصب",
     category: "heritage",
     image: khasabFortImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/6YmhAYxbjxCrztxj8",
     rating: "4.6"
   },
   {
