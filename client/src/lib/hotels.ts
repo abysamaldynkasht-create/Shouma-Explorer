@@ -2,6 +2,7 @@ import type { Hotel } from "@shared/schema";
 import sixSensesImg from "@/assets/six-senses-hotel.png";
 import thousandNightsImg from "@/assets/thousand-nights-camp.png";
 import danaBeachImg from "@/assets/dana-beach-resort.png";
+import alNebrasImg from "@/assets/al-nebras-hotel.png";
 
 export const hotels: Hotel[] = [
   {
@@ -51,5 +52,21 @@ export const hotels: Hotel[] = [
     stars: 4,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/D68DxdxgBKmf1hwJ7?g_st=ic"
+  },
+  {
+    id: "4",
+    name: "فندق النبراس",
+    nameAr: "فندق النبراس",
+    description: "يُعد فندق النبراس من المنشآت الفندقية المريحة والحديثة في المنطقة. يقدم خدمات إقامة متكاملة للزوار والمسافرين، ويتميز بموقعه الذي يسهل الوصول منه إلى الخدمات الأساسية في المدينة، مما يجعله خياراً مناسباً لرجال الأعمال والسياح العابرين للمنطقة.",
+    city: "ولاية عبري",
+    region: "محافظة الظاهرة",
+    image: alNebrasImg,
+    gallery: [],
+    amenities: ["واي فاي", "موقف سيارات", "خدمة الغرف", "استقبال 24 ساعة"],
+    rating: 4,
+    pricePerNight: 80,
+    stars: 3,
+    phone: "",
+    mapUrl: "https://maps.app.goo.gl/ivxPyTRSnKJtKCWg9?g_st=ic"
   }
 ];
