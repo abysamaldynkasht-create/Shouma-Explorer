@@ -17,6 +17,8 @@ import soharBeachImg from "@/assets/sohar-beach.png";
 import wadiDarbatImg from "@/assets/wadi-darbat.png";
 import salalahMallImg from "@/assets/salalah-grand-mall.png";
 import alBaleedParkImg from "@/assets/al-baleed-park.png";
+import souqAlHaffaImg from "@/assets/souq-al-haffa.png";
+import mughsailBeachImg from "@/assets/mughsail-beach.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -363,7 +365,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhofar",
     wilayat: "ولاية صلالة",
     category: "markets",
-    image: "",
+    image: souqAlHaffaImg,
     mapUrl: null,
     rating: "4.6"
   },
@@ -419,7 +421,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhofar",
     wilayat: "ولاية صلالة",
     category: "nature",
-    image: "",
+    image: mughsailBeachImg,
     mapUrl: null,
     rating: "4.8"
   },
