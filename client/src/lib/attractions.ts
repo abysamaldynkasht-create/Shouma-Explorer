@@ -57,6 +57,7 @@ import baitDarwazaImg from "@/assets/bait-darwaza.png";
 import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
 import mallOfOmanImg from "@/assets/mall-of-oman.png";
+import squSquareImg from "@/assets/squ-square.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -906,5 +907,18 @@ export const attractions: Attraction[] = [
     image: mallOfOmanImg,
     mapUrl: "https://share.google/So1rYINaPFC5bZUpe",
     rating: "4.7"
+  },
+  {
+    id: "60",
+    name: "SQU Square",
+    nameAr: "إس كيو يو سكوير",
+    description: "مجمع متعدد الاستخدامات: يجمع بين التسوق في الهواء الطلق، والمطاعم، والمقاهي، بالإضافة إلى مركز أعمال يضم مكاتب فاخرة.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "markets",
+    image: squSquareImg,
+    mapUrl: "https://share.google/pGvy4FreyxyjffxKS",
+    rating: "4.5"
   }
 ];
