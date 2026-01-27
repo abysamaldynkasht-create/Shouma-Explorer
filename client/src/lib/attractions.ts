@@ -47,6 +47,7 @@ import mahyulDamImg from "@/assets/mahyul-dam.png";
 import wadiDammImg from "@/assets/wadi-damm.png";
 import surSouqImg from "@/assets/sur-souq.png";
 import marahLandImg from "@/assets/marah-land.png";
+import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -631,7 +632,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_sharqiyah",
     wilayat: "ولاية جعلان بني بو علي",
     category: "nature",
-    image: "",
+    image: ashkharahBeachImg,
     mapUrl: null,
     rating: "4.6"
   },
