@@ -293,7 +293,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صحار",
     category: "entertainment",
     image: soharMallImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/zApbwDDtJf2U7GMV9?g_st=ic",
     rating: "4.3",
     lat: 24.3650,
     lng: 56.7420
