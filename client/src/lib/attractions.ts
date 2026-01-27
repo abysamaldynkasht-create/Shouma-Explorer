@@ -20,6 +20,7 @@ import alBaleedParkImg from "@/assets/al-baleed-park.png";
 import souqAlHaffaImg from "@/assets/souq-al-haffa.png";
 import mughsailBeachImg from "@/assets/mughsail-beach.png";
 import alHadabiComplexImg from "@/assets/al-hadabi-complex.png";
+import rustaqFortImg from "@/assets/rustaq-fort.png";
 
 const imageMap: Record<string, string> = {};
 
