@@ -45,6 +45,7 @@ import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
 import wadiDammImg from "@/assets/wadi-damm.png";
+import surSouqImg from "@/assets/sur-souq.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -603,7 +604,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_sharqiyah",
     wilayat: "ولاية صور",
     category: "markets",
-    image: "",
+    image: surSouqImg,
     mapUrl: null,
     rating: "4.4"
   },
