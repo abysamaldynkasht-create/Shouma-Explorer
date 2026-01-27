@@ -39,6 +39,7 @@ import wadiJiziImg from "@/assets/wadi-jizi.png";
 import sahlAtinImg from "@/assets/sahl-atin.png";
 import ainJarzizImg from "@/assets/ain-jarziz.png";
 import wahaMallImg from "@/assets/waha-mall.png";
+import hisnHazmImg from "@/assets/hisn-hazm.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -480,7 +481,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_batinah",
     wilayat: "ولاية الرستاق",
     category: "heritage",
-    image: "",
+    image: hisnHazmImg,
     mapUrl: null,
     rating: "4.8"
   },
