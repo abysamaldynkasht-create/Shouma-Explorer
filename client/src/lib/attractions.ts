@@ -48,6 +48,7 @@ import wadiDammImg from "@/assets/wadi-damm.png";
 import surSouqImg from "@/assets/sur-souq.png";
 import marahLandImg from "@/assets/marah-land.png";
 import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
+import biladSurFortImg from "@/assets/bilad-sur-fort.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -645,7 +646,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_sharqiyah",
     wilayat: "ولاية صور",
     category: "heritage",
-    image: "",
+    image: biladSurFortImg,
     mapUrl: null,
     rating: "4.5"
   },
