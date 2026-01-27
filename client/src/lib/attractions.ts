@@ -37,6 +37,7 @@ import ainBuiHawjaaImg from "@/assets/ain-bui-hawjaa.png";
 import soharSouqImg from "@/assets/sohar-souq.png";
 import wadiJiziImg from "@/assets/wadi-jizi.png";
 import sahlAtinImg from "@/assets/sahl-atin.png";
+import ainJarzizImg from "@/assets/ain-jarziz.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -424,7 +425,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhofar",
     wilayat: "ولاية صلالة",
     category: "springs",
-    image: "",
+    image: ainJarzizImg,
     mapUrl: null,
     rating: "4.6",
     lat: 17.1070,
