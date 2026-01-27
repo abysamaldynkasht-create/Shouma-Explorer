@@ -4,6 +4,7 @@ import lagunaCafeImg from "@/assets/laguna-cafe.png";
 import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
 import musandamFanrImg from "@/assets/musandam-fanr.png";
 import tamraNizwaImg from "@/assets/tamra-nizwa.png";
+import greekHouseImg from "@/assets/greek-house.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -179,5 +180,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.7,
     features: ["إطلالة على قلعة نزوى", "شرفة سطحية", "قهوة عمانية", "أجواء تراثية"],
     mapUrl: "https://maps.app.goo.gl/3nKC2yPaLDiJFXgi6",
+  },
+  {
+    id: "14",
+    name: "Greek House Restaurant",
+    nameAr: "مطعم البيت اليوناني",
+    description: "يُعد مطعم البيت اليوناني من المطاعم المميزة والفريدة في المنطقة، حيث يقدم تجربة طعام مستوحاة من المطبخ اليوناني والمتوسطي في قلب البيئة الصحراوية. يشتهر بتقديم أطباق المشاوي، السلطات اليونانية، والمأكولات المطهوة بطرق تقليدية تحافظ على النكهة الأصلية. يتميز المطعم بتصميمه البسيط والجميل الذي يمنح الزوار أجواءً هادئة ومريحة، وهو محطة مفضلة للسياح المتوجهين إلى رمال الشرقية.",
+    city: "ولاية بدية",
+    region: "محافظة شمال الشرقية",
+    image: greekHouseImg,
+    cuisine: "يوناني ومتوسطي",
+    priceRange: "moderate",
+    rating: 4.6,
+    features: ["مشاوي يونانية", "سلطات طازجة", "أجواء هادئة", "قريب من رمال الشرقية"],
+    mapUrl: "https://maps.app.goo.gl/8ewFUZDCzfnXuDc17",
   },
 ];
