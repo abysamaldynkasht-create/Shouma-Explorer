@@ -22,6 +22,7 @@ import mughsailBeachImg from "@/assets/mughsail-beach.png";
 import alHadabiComplexImg from "@/assets/al-hadabi-complex.png";
 import rustaqFortImg from "@/assets/rustaq-fort.png";
 import ainAlKasfaImg from "@/assets/ain-al-kasfa.png";
+import rustaqSouqImg from "@/assets/rustaq-souq.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -476,7 +477,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_batinah",
     wilayat: "ولاية الرستاق",
     category: "markets",
-    image: "",
+    image: rustaqSouqImg,
     mapUrl: null,
     rating: "4.5"
   },
