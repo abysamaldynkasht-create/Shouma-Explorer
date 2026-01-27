@@ -122,6 +122,7 @@ export interface Restaurant {
   priceRange: "budget" | "moderate" | "expensive" | "luxury";
   rating: number;
   features: string[];
+  mapUrl?: string;
 }
 
 export interface Taxi {

@@ -1,4 +1,5 @@
 import type { Restaurant } from "@shared/schema";
+import alburjCafeImg from "@/assets/alburj-cafe.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -104,5 +105,19 @@ export const restaurants: Restaurant[] = [
     priceRange: "moderate",
     rating: 4.6,
     features: ["مطبخ ظفاري", "أسماك طازجة", "أجواء عائلية", "أسعار معقولة"],
+  },
+  {
+    id: "9",
+    name: "Al Burj Cafe",
+    nameAr: "قهوة البرج",
+    description: "يُعد قهوة البرج من الوجهات المميزة التي تجمع بين عبق الماضي والجمال المعماري، حيث يقع في قلب المعالم التاريخية. يشتهر بتقديم القهوة العمانية الأصيلة والوجبات الخفيفة والحلويات في أجواء تراثية ساحرة، مما يجعله محطة رائعة للزوار الراغبين في الاستراحة أثناء استكشاف المعالم التاريخية المحيطة.",
+    city: "ولاية الرستاق",
+    region: "محافظة جنوب الباطنة",
+    image: alburjCafeImg,
+    cuisine: "مقهى تراثي",
+    priceRange: "moderate",
+    rating: 4.7,
+    features: ["قهوة عمانية", "حلويات", "أجواء تراثية", "إطلالة تاريخية"],
+    mapUrl: "https://maps.app.goo.gl/XhPr7YVE4UKRUvG26",
   },
 ];
