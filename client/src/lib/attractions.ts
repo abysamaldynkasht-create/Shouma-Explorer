@@ -1,6 +1,7 @@
 import type { Attraction } from "@shared/schema";
 import qurumBeachImg from "@/assets/qurum-beach.png";
 import mutrahSouqImg from "@/assets/mutrah-souq.png";
+import wadiKhoudImg from "@/assets/wadi-khoud.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -85,7 +86,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية السيب",
     category: "wadis",
-    image: "",
+    image: wadiKhoudImg,
     mapUrl: "https://maps.app.goo.gl/zWP2ztmNNAz6CB7y5",
     rating: "4.3",
     lat: 23.5451,
