@@ -30,6 +30,7 @@ import khasabFortImg from "@/assets/khasab-fort.png";
 import wadiKhabShamsiImg from "@/assets/wadi-khab-shamsi.png";
 import buraimiMallImg from "@/assets/buraimi-mall.png";
 import saaraOasisImg from "@/assets/saara-oasis.png";
+import buraimiParkImg from "@/assets/buraimi-park.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -796,7 +797,7 @@ export const attractions: Attraction[] = [
     governorateId: "buraimi",
     wilayat: "ولاية البريمي",
     category: "entertainment",
-    image: "",
+    image: buraimiParkImg,
     mapUrl: null,
     rating: "4.4"
   },
