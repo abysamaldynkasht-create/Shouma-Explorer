@@ -487,7 +487,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية الرستاق",
     category: "heritage",
     image: rustaqFortImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/wy6SKmuNzDKrs9Lo9?g_st=ic",
     rating: "4.7"
   },
   {
