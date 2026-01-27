@@ -526,7 +526,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية الرستاق",
     category: "springs",
     image: ainAlKasfaImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/Noye6oxoReoRh52H8?g_st=ic",
     rating: "4.6"
   },
   {
