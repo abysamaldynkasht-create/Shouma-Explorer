@@ -44,6 +44,7 @@ import ibriSouqImg from "@/assets/ibri-souq.png";
 import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
+import wadiDammImg from "@/assets/wadi-damm.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -589,7 +590,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhahirah",
     wilayat: "ولاية ضنك",
     category: "wadis",
-    image: "",
+    image: wadiDammImg,
     mapUrl: null,
     rating: "4.5"
   },
