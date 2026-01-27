@@ -4,6 +4,7 @@ import mutrahSouqImg from "@/assets/mutrah-souq.png";
 import wadiKhoudImg from "@/assets/wadi-khoud.png";
 import qurumParkImg from "@/assets/qurum-park.png";
 import mutrahFortImg from "@/assets/mutrah-fort.png";
+import jebelAkhdarImg from "@/assets/jebel-akhdar.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -133,7 +134,7 @@ export const attractions: Attraction[] = [
     governorateId: "dakhiliyah",
     wilayat: "ولاية الجبل الاخضر",
     category: "nature",
-    image: "",
+    image: jebelAkhdarImg,
     mapUrl: "https://maps.app.goo.gl/ZpensdHeBvouYugX8",
     rating: "4.9",
     lat: 23.0742,
