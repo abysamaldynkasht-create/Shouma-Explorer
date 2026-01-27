@@ -405,7 +405,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صلالة",
     category: "markets",
     image: souqAlHaffaImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/z6c9y5d8WSHFwcXZ7?g_st=ic",
     rating: "4.6"
   },
   {
