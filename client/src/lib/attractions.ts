@@ -42,6 +42,7 @@ import wahaMallImg from "@/assets/waha-mall.png";
 import hisnHazmImg from "@/assets/hisn-hazm.png";
 import ibriSouqImg from "@/assets/ibri-souq.png";
 import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
+import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -561,7 +562,7 @@ export const attractions: Attraction[] = [
     governorateId: "dakhiliyah",
     wilayat: "ولاية الحمراء",
     category: "nature",
-    image: "",
+    image: misfatAbriyyinImg,
     mapUrl: null,
     rating: "4.7"
   },
