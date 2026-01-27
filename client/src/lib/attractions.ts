@@ -27,6 +27,7 @@ import wadiHoqainImg from "@/assets/wadi-hoqain.png";
 import khairanBoatsImg from "@/assets/khairan-boats.png";
 import khorShamImg from "@/assets/khor-sham.png";
 import khasabFortImg from "@/assets/khasab-fort.png";
+import wadiKhabShamsiImg from "@/assets/wadi-khab-shamsi.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -767,7 +768,7 @@ export const attractions: Attraction[] = [
     governorateId: "musandam",
     wilayat: "ولاية دبا",
     category: "wadis",
-    image: "",
+    image: wadiKhabShamsiImg,
     mapUrl: null,
     rating: "4.5"
   },
