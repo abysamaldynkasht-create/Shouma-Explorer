@@ -349,7 +349,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية صحار",
     category: "wadis",
     image: wadiJiziImg,
-    mapUrl: null,
+    mapUrl: "https://maps.app.goo.gl/9m14gaR9mwVtgJN6A",
     rating: "4.6"
   },
   {
