@@ -26,6 +26,7 @@ import rustaqSouqImg from "@/assets/rustaq-souq.png";
 import wadiHoqainImg from "@/assets/wadi-hoqain.png";
 import khairanBoatsImg from "@/assets/khairan-boats.png";
 import khorShamImg from "@/assets/khor-sham.png";
+import khasabFortImg from "@/assets/khasab-fort.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -753,7 +754,7 @@ export const attractions: Attraction[] = [
     governorateId: "musandam",
     wilayat: "ولاية خصب",
     category: "heritage",
-    image: "",
+    image: khasabFortImg,
     mapUrl: null,
     rating: "4.6"
   },
