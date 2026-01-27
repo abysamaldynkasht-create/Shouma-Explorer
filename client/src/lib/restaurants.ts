@@ -6,6 +6,7 @@ import musandamFanrImg from "@/assets/musandam-fanr.png";
 import tamraNizwaImg from "@/assets/tamra-nizwa.png";
 import greekHouseImg from "@/assets/greek-house.png";
 import alhawashImg from "@/assets/alhawash.png";
+import souqDuqmImg from "@/assets/souq-duqm.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -209,5 +210,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.8,
     features: ["بيت أثري", "إطلالة بحرية", "فطور عماني", "حلويات محلية"],
     mapUrl: "https://maps.app.goo.gl/q14JDhMGDtD8jpFy8",
+  },
+  {
+    id: "16",
+    name: "Souq Restaurant - Duqm",
+    nameAr: "مطعم سوق - الدقم",
+    description: "يُعد مطعم سوق أحد المطاعم الرئيسية في ولاية الدقم، ويتميز بتصميمه الذي يحاكي الأسواق العمانية التقليدية. يقدم المطعم تجربة طعام متنوعة تشمل بوفيهات عالمية ومحلية، ويشتهر بتقديم وجبات الإفطار والغداء والعشاء في أجواء مريحة وراقية. يقع المطعم ضمن مرافق فندقية كبرى، مما يجعله وجهة مفضلة للعاملين في المنطقة والسياح.",
+    city: "ولاية الدقم",
+    region: "محافظة الوسطى",
+    image: souqDuqmImg,
+    cuisine: "عالمي ومحلي",
+    priceRange: "moderate",
+    rating: 4.5,
+    features: ["تصميم السوق التقليدي", "بوفيهات متنوعة", "أجواء راقية", "مرافق فندقية"],
+    mapUrl: "https://maps.app.goo.gl/EPaDZpoEgWrp7sjk7",
   },
 ];
