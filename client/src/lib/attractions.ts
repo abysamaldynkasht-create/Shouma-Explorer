@@ -7,6 +7,7 @@ import mutrahFortImg from "@/assets/mutrah-fort.png";
 import jebelAkhdarImg from "@/assets/jebel-akhdar.png";
 import nizwaFortImg from "@/assets/nizwa-fort.png";
 import wadiGhoulImg from "@/assets/wadi-ghoul.png";
+import nizwaSouqImg from "@/assets/nizwa-souq.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -181,7 +182,7 @@ export const attractions: Attraction[] = [
     governorateId: "dakhiliyah",
     wilayat: "ولاية نزوى",
     category: "markets",
-    image: "",
+    image: nizwaSouqImg,
     mapUrl: "https://maps.app.goo.gl/HmAB16MB7HbAdNuTA",
     rating: "4.6",
     lat: 22.9315,
