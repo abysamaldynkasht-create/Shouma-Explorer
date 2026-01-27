@@ -16,6 +16,7 @@ import soharMallImg from "@/assets/sohar-mall.png";
 import soharBeachImg from "@/assets/sohar-beach.png";
 import wadiDarbatImg from "@/assets/wadi-darbat.png";
 import salalahMallImg from "@/assets/salalah-grand-mall.png";
+import alBaleedParkImg from "@/assets/al-baleed-park.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -347,7 +348,7 @@ export const attractions: Attraction[] = [
     governorateId: "dhofar",
     wilayat: "ولاية صلالة",
     category: "heritage",
-    image: "",
+    image: alBaleedParkImg,
     mapUrl: null,
     rating: "4.8",
     lat: 17.0090,
