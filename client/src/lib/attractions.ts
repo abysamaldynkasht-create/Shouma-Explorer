@@ -33,6 +33,7 @@ import saaraOasisImg from "@/assets/saara-oasis.png";
 import buraimiParkImg from "@/assets/buraimi-park.png";
 import hisnKhandaqImg from "@/assets/hisn-khandaq.png";
 import wadiHayoolImg from "@/assets/wadi-hayool.png";
+import ainBuiHawjaaImg from "@/assets/ain-bui-hawjaa.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -252,7 +253,7 @@ export const attractions: Attraction[] = [
     governorateId: "wusta",
     wilayat: "ولاية هيما",
     category: "springs",
-    image: "",
+    image: ainBuiHawjaaImg,
     mapUrl: null,
     rating: "4.5",
     lat: 19.9500,
