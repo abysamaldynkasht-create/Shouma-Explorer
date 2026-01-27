@@ -23,6 +23,7 @@ import alHadabiComplexImg from "@/assets/al-hadabi-complex.png";
 import rustaqFortImg from "@/assets/rustaq-fort.png";
 import ainAlKasfaImg from "@/assets/ain-al-kasfa.png";
 import rustaqSouqImg from "@/assets/rustaq-souq.png";
+import wadiHoqainImg from "@/assets/wadi-hoqain.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -503,7 +504,7 @@ export const attractions: Attraction[] = [
     governorateId: "south_batinah",
     wilayat: "ولاية الرستاق",
     category: "wadis",
-    image: "",
+    image: wadiHoqainImg,
     mapUrl: null,
     rating: "4.8"
   },
