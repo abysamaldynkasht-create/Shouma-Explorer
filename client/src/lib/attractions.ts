@@ -734,20 +734,7 @@ export const attractions: Attraction[] = [
     mapUrl: null,
     rating: "4.9"
   },
-  {
-    id: "47",
-    name: "مركز زاد المدينة للتسوق",
-    nameAr: "مركز زاد المدينة للتسوق",
-    description: "مركز تسوق وسوبرماركت في ولاية خصب، يوفر خيارات متنوعة من البضائع الأساسية والاحتياجات اليومية في بيئة نظيفة ومنظمة.",
-    governorate: "محافظة مسندم",
-    governorateId: "musandam",
-    wilayat: "ولاية خصب",
-    category: "markets",
-    image: "",
-    mapUrl: null,
-    rating: "4.3"
-  },
-  {
+    {
     id: "48",
     name: "الرحلات البحرية في الخيران",
     nameAr: "الرحلات البحرية في الخيران",
