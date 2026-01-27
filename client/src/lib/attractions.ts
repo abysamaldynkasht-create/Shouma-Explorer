@@ -56,6 +56,7 @@ import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 import baitDarwazaImg from "@/assets/bait-darwaza.png";
 import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
+import mallOfOmanImg from "@/assets/mall-of-oman.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -892,5 +893,18 @@ export const attractions: Attraction[] = [
     image: muscatMallImg,
     mapUrl: "https://share.google/H2hts3pJur5ZL6ywj",
     rating: "4.5"
+  },
+  {
+    id: "59",
+    name: "عمان مول",
+    nameAr: "عمان مول",
+    description: "يعتبر مول عُمان (Mall of Oman) الوجهة الأكبر والأبرز للتسوق والترفيه في سلطنة عُمان، حيث يقع في منطقة بوشر بمحافظة مسقط. تم افتتاحه رسمياً من قبل شركة ماجد الفطيم في فبراير 2023 ليقدم تجربة متكاملة تجمع بين العلامات التجارية العالمية والترفيه العائلي المبتكر.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "markets",
+    image: mallOfOmanImg,
+    mapUrl: "https://share.google/So1rYINaPFC5bZUpe",
+    rating: "4.7"
   }
 ];
