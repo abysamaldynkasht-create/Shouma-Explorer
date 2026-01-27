@@ -3,6 +3,7 @@ import qurumBeachImg from "@/assets/qurum-beach.png";
 import mutrahSouqImg from "@/assets/mutrah-souq.png";
 import wadiKhoudImg from "@/assets/wadi-khoud.png";
 import qurumParkImg from "@/assets/qurum-park.png";
+import mutrahFortImg from "@/assets/mutrah-fort.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -117,7 +118,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية مطرح",
     category: "heritage",
-    image: "",
+    image: mutrahFortImg,
     mapUrl: "https://maps.app.goo.gl/NNR1WgRHypcg5Fst7",
     rating: "4.5",
     lat: 23.6225,
