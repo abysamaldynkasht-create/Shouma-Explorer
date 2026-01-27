@@ -5,6 +5,7 @@ import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
 import musandamFanrImg from "@/assets/musandam-fanr.png";
 import tamraNizwaImg from "@/assets/tamra-nizwa.png";
 import greekHouseImg from "@/assets/greek-house.png";
+import alhawashImg from "@/assets/alhawash.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -194,5 +195,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.6,
     features: ["مشاوي يونانية", "سلطات طازجة", "أجواء هادئة", "قريب من رمال الشرقية"],
     mapUrl: "https://maps.app.goo.gl/8ewFUZDCzfnXuDc17",
+  },
+  {
+    id: "15",
+    name: "Al Hawash Restaurant",
+    nameAr: "مطعم الحوش",
+    description: "يُعد مطعم الحوش تجربة ثقافية وغذائية فريدة، حيث يقع في بيت أثري قديم تم ترميمه ليصبح مطعماً يقدم الأكلات العمانية التقليدية بلمسة عصرية. يتميز المكان بجلساته التراثية الرائعة التي تطل مباشرة على البحر (خور البطح)، مما يوفر أجواءً ساحرة للزوار. يشتهر المطعم بتقديم وجبات الفطور العماني المبتكر، والمشاوي، والحلويات المحلية، ويعتبر من الوجهات السياحية الأبرز في المنطقة لمحبي التاريخ والطعام الأصيل.",
+    city: "ولاية صور",
+    region: "محافظة جنوب الشرقية",
+    image: alhawashImg,
+    cuisine: "عُماني تقليدي",
+    priceRange: "moderate",
+    rating: 4.8,
+    features: ["بيت أثري", "إطلالة بحرية", "فطور عماني", "حلويات محلية"],
+    mapUrl: "https://maps.app.goo.gl/q14JDhMGDtD8jpFy8",
   },
 ];
