@@ -55,6 +55,7 @@ import wahibaSandsImg from "@/assets/wahiba-sands.png";
 import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 import baitDarwazaImg from "@/assets/bait-darwaza.png";
 import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
+import muscatMallImg from "@/assets/muscat-mall.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -878,5 +879,18 @@ export const attractions: Attraction[] = [
     image: sahlAtinImg,
     mapUrl: null,
     rating: "4.7"
+  },
+  {
+    id: "58",
+    name: "مسقط مول",
+    nameAr: "مسقط مول",
+    description: "أحد أكبر المراكز التجارية في مسقط، يضم مجموعة واسعة من المحلات التجارية والمطاعم ودور السينما وأماكن الترفيه العائلية.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "markets",
+    image: muscatMallImg,
+    mapUrl: "https://share.google/H2hts3pJur5ZL6ywj",
+    rating: "4.5"
   }
 ];
