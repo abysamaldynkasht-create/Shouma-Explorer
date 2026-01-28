@@ -22,6 +22,7 @@ import {
   Navigation
 } from "lucide-react";
 import logoUrl from "@assets/شومة_1768320219408.jpg";
+import mutrahSouqHeroImg from "@/assets/mutrah-souq.png";
 
 export default function AttractionsPage() {
   const [, setLocation] = useLocation();
@@ -90,7 +91,7 @@ export default function AttractionsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=2070')`,
+            backgroundImage: `url('${mutrahSouqHeroImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -155,8 +156,8 @@ export default function AttractionsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">جميع الولايات</SelectItem>
-                  {availableWilayats.map((wilayat) => (
-                    <SelectItem key={wilayat} value={wilayat}>
+                  {availableWilayats.map((wilayat, index) => (
+                    <SelectItem key={`${wilayat}-${index}`} value={wilayat}>
                       {wilayat}
                     </SelectItem>
                   ))}
@@ -175,8 +176,8 @@ export default function AttractionsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">جميع التصنيفات</SelectItem>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat} value={cat}>
+                  {categories.map((cat, index) => (
+                    <SelectItem key={`${cat}-${index}`} value={cat}>
                       {cat}
                     </SelectItem>
                   ))}

@@ -15,6 +15,7 @@ import {
   Waves,
   UtensilsCrossed
 } from "lucide-react";
+import sixSensesHeroImg from "@/assets/six-senses-hotel.png";
 
 const regions = ["الكل", "مسقط", "الداخلية", "ظفار", "شمال الشرقية"];
 
@@ -67,7 +68,7 @@ export default function HotelsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070')`,
+            backgroundImage: `url('${sixSensesHeroImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

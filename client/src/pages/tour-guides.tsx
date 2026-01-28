@@ -19,6 +19,7 @@ import {
   Clock
 } from "lucide-react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import misfatAbriyyinHeroImg from "@/assets/misfat-abriyyin.png";
 
 
 const SPEC_KEYS = ['all', 'historicalCultural', 'adventureNature', 'desert', 'photography', 'marine', 'family'] as const;
@@ -102,7 +103,7 @@ export default function TourGuidesPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070')`,
+            backgroundImage: `url('${misfatAbriyyinHeroImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

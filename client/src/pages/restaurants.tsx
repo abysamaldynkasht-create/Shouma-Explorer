@@ -15,6 +15,7 @@ import {
   Star,
   Search
 } from "lucide-react";
+import baitAlmadghootHeroImg from "@/assets/bait-almadghoot.png";
 
 export default function RestaurantsPage() {
   const [, setLocation] = useLocation();
@@ -95,7 +96,7 @@ export default function RestaurantsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070')`,
+            backgroundImage: `url('${baitAlmadghootHeroImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

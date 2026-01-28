@@ -13,6 +13,7 @@ import {
   Search,
   Phone
 } from "lucide-react";
+import mutrahSouqHeroImg from "@/assets/mutrah-souq.png";
 
 const vehicleTypes = ["الكل", "سيدان", "SUV", "فان", "ليموزين", "4x4"];
 
@@ -59,7 +60,7 @@ export default function TaxisPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070')`,
+            backgroundImage: `url('${mutrahSouqHeroImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
