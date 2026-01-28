@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Compass } from "lucide-react";
+import { ArrowRight, ArrowLeft, Compass, MapPin, Star, Clock, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { activities } from "@/lib/activities";
 import { Card, CardContent } from "@/components/ui/card";
@@ -51,8 +51,7 @@ export default function ActivitiesPage() {
             {activities.map((activity) => (
               <Card
                 key={activity.id}
-                className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => setLocation(`/activities/${activity.id}`)}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
                 data-testid={`card-activity-${activity.id}`}
               >
                 <div className="aspect-video relative">
@@ -61,14 +60,40 @@ export default function ActivitiesPage() {
                     alt={isRTL ? activity.nameAr : activity.name}
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                    <span className="text-sm font-medium">{activity.rating}</span>
+                  </div>
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold text-foreground mb-1">
+                  <h3 className="text-lg font-bold text-foreground mb-2">
                     {isRTL ? activity.nameAr : activity.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>{activity.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
+                    <Clock className="w-4 h-4" />
+                    <span>{activity.duration}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
                     {isRTL ? activity.descriptionAr : activity.description}
                   </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-bold text-primary">{activity.price}</span>
+                    {activity.mapUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => window.open(activity.mapUrl, '_blank')}
+                        data-testid={`button-map-${activity.id}`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span className={isRTL ? 'mr-2' : 'ml-2'}>{t('viewOnMap')}</span>
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
