@@ -91,7 +91,7 @@ export const restaurants: Restaurant[] = [
     priceRange: "moderate",
     rating: 4.6,
     features: ["مشاوي يونانية", "سلطات طازجة", "أجواء هادئة", "قريب من رمال الشرقية"],
-    mapUrl: "https://maps.app.goo.gl/8ewFUZDCzfnXuDc17",
+    mapUrl: "https://maps.app.goo.gl/iBjkQYUroDHrUfBM7",
   },
   {
     id: "7",
