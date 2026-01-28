@@ -147,5 +147,6 @@ export const restaurants: Restaurant[] = [
     priceRange: "luxury",
     rating: 4.8,
     features: ["فندق 5 نجوم", "تصميم تراثي", "قائمة تذوق", "خدمة استثنائية"],
+    mapUrl: "https://maps.app.goo.gl/ADvaEWmJ27x5TWxY6",
   },
 ];
