@@ -1,6 +1,7 @@
 import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
 import ferryHormuzImg from "@/assets/ferry-hormuz.png";
+import ferryHallaniyatImg from "@/assets/ferry-hallaniyat.png";
 import vanImg from "@/assets/van-shouma.png";
 import taxiRegularImg from "@/assets/taxi-regular.png";
 import taxiLuxuryImg from "@/assets/taxi-luxury.png";
@@ -83,7 +84,7 @@ export const taxis: Taxi[] = [
     description: "عبارة الحلانيات للتنقل إلى جزر الحلانيات. رحلات بحرية مميزة مع مناظر خلابة.",
     city: "الحلانيات",
     region: "ظفار",
-    image: ferryImg,
+    image: ferryHallaniyatImg,
     vehicleType: "عبارة",
     pricePerKm: 1.2,
     rating: 4.6,
