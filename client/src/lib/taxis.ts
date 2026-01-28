@@ -2,6 +2,7 @@ import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
 import vanImg from "@/assets/van-shouma.png";
 import taxiRegularImg from "@/assets/taxi-regular.png";
+import taxiLuxuryImg from "@/assets/taxi-luxury.png";
 
 export const taxis: Taxi[] = [
   {
@@ -25,7 +26,7 @@ export const taxis: Taxi[] = [
     description: "خدمة تاكسي فاخرة للمناسبات الخاصة ورجال الأعمال. سيارات فارهة مع سائقين محترفين بزي رسمي وخدمة متميزة.",
     city: "جميع المناطق",
     region: "عُمان",
-    image: "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31?q=80&w=800",
+    image: taxiLuxuryImg,
     vehicleType: "تاكسي فاخر",
     pricePerKm: 0.8,
     rating: 4.9,
