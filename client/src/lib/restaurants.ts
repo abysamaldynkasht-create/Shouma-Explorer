@@ -105,7 +105,7 @@ export const restaurants: Restaurant[] = [
     priceRange: "moderate",
     rating: 4.8,
     features: ["بيت أثري", "إطلالة بحرية", "فطور عماني", "حلويات محلية"],
-    mapUrl: "https://maps.app.goo.gl/q14JDhMGDtD8jpFy8",
+    mapUrl: "https://maps.app.goo.gl/p1tEFksfA1UUR9bY6",
   },
   {
     id: "8",
