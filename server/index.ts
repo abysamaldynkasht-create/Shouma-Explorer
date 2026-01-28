@@ -7,7 +7,10 @@ import path from "path";
 const app = express();
 const httpServer = createServer(app);
 
-app.use("/assets", express.static(path.resolve(import.meta.dirname, "..", "attached_assets")));
+const assetsPath = process.env.NODE_ENV === "production"
+  ? path.resolve(process.cwd(), "attached_assets")
+  : path.resolve(process.cwd(), "attached_assets");
+app.use("/assets", express.static(assetsPath));
 
 declare module "http" {
   interface IncomingMessage {
