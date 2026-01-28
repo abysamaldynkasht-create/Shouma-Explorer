@@ -25,19 +25,39 @@ export const questionnaireSchema = z.object({
   preferredActivities: z.array(z.string()),
   accommodation: z.enum(["hotel", "resort", "apartment", "hostel"]),
   mealPreference: z.enum(["local", "international", "mixed"]),
+  governorates: z.array(z.string()).optional(),
 });
 
 export type QuestionnaireData = z.infer<typeof questionnaireSchema>;
 
+export const governorates = [
+  { id: "muscat", nameAr: "محافظة مسقط", nameEn: "Muscat" },
+  { id: "dhofar", nameAr: "محافظة ظفار", nameEn: "Dhofar" },
+  { id: "dakhiliyah", nameAr: "محافظة الداخلية", nameEn: "Ad Dakhiliyah" },
+  { id: "north_batinah", nameAr: "محافظة شمال الباطنة", nameEn: "North Al Batinah" },
+  { id: "south_batinah", nameAr: "محافظة جنوب الباطنة", nameEn: "South Al Batinah" },
+  { id: "musandam", nameAr: "محافظة مسندم", nameEn: "Musandam" },
+  { id: "buraimi", nameAr: "محافظة البريمي", nameEn: "Al Buraimi" },
+  { id: "wusta", nameAr: "محافظة الوسطى", nameEn: "Al Wusta" },
+  { id: "north_sharqiyah", nameAr: "محافظة شمال الشرقية", nameEn: "North Ash Sharqiyah" },
+  { id: "south_sharqiyah", nameAr: "محافظة جنوب الشرقية", nameEn: "South Ash Sharqiyah" },
+  { id: "dhahirah", nameAr: "محافظة الظاهرة", nameEn: "Ad Dhahirah" },
+];
+
+export interface ItineraryActivity {
+  time: string;
+  activity: string;
+  location: string;
+  type: "attraction" | "restaurant" | "hotel" | "transport";
+  image?: string;
+  description?: string;
+  rating?: string;
+}
+
 export interface ItineraryDay {
   day: number;
   title: string;
-  activities: {
-    time: string;
-    activity: string;
-    location: string;
-    type: "attraction" | "restaurant" | "hotel" | "transport";
-  }[];
+  activities: ItineraryActivity[];
 }
 
 export interface Itinerary {
@@ -45,6 +65,7 @@ export interface Itinerary {
   title: string;
   duration: number;
   budget: string;
+  governorates: string[];
   days: ItineraryDay[];
 }
 

@@ -3,9 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { governorates as allGovernorates } from "@shared/schema";
 import { 
   Compass, 
   ArrowRight,
+  ArrowLeft,
   Calendar,
   MapPin,
   UtensilsCrossed,
@@ -15,7 +20,9 @@ import {
   Download,
   Share2,
   Home,
-  Sparkles
+  Sparkles,
+  Users,
+  Wallet
 } from "lucide-react";
 import type { Itinerary, ItineraryDay } from "@shared/schema";
 
@@ -35,8 +42,10 @@ const activityColors: Record<string, string> = {
 
 export default function ItineraryPage() {
   const [, setLocation] = useLocation();
+  const { t, isRTL, language } = useLanguage();
   const searchString = useSearch();
-  const params = new URLSearchParams(searchString);
+
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
 
   const fullUrl = searchString ? `/api/itinerary?${searchString}` : "/api/itinerary";
   
@@ -44,11 +53,19 @@ export default function ItineraryPage() {
     queryKey: [fullUrl],
   });
 
-  const budgetLabels: Record<string, string> = {
-    low: "اقتصادية",
-    medium: "متوسطة",
-    high: "مرتفعة",
-    luxury: "فاخرة",
+  const getBudgetLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      low: t('budgetLow'),
+      medium: t('budgetMedium'),
+      high: t('budgetHigh'),
+      luxury: t('budgetLuxury'),
+    };
+    return labels[value] || value;
+  };
+
+  const getGovernorateName = (id: string) => {
+    const gov = allGovernorates.find(g => g.id === id);
+    return gov ? (language === 'ar' || language === 'fa' ? gov.nameAr : gov.nameEn) : id;
   };
 
   if (isLoading) {
@@ -61,24 +78,28 @@ export default function ItineraryPage() {
                 onClick={() => setLocation("/shoumatak")}
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
-                <ArrowRight className="w-5 h-5" />
-                <span className="text-sm font-medium">رجوع</span>
+                <BackArrow className="w-5 h-5" />
+                <span className="text-sm font-medium">{t('back')}</span>
               </button>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                   <Compass className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <span className="text-lg font-bold">جدولك السياحي</span>
+                <span className="text-lg font-bold">{t('yourItinerary')}</span>
               </div>
-              <div className="w-16" />
+              <LanguageSwitcher />
             </div>
           </div>
         </header>
 
         <main className="max-w-6xl mx-auto px-4 py-12">
           <div className="text-center mb-12">
+            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 animate-pulse">
+              <Sparkles className="w-10 h-10 text-primary" />
+            </div>
             <Skeleton className="w-64 h-10 mx-auto mb-4" />
             <Skeleton className="w-48 h-6 mx-auto" />
+            <p className="text-muted-foreground mt-4">{t('creatingItinerary')}</p>
           </div>
           <div className="space-y-6">
             {[1, 2, 3].map((i) => (
@@ -111,14 +132,14 @@ export default function ItineraryPage() {
               <Calendar className="w-8 h-8 text-destructive" />
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              حدث خطأ
+              {t('error')}
             </h2>
             <p className="text-muted-foreground mb-6">
-              لم نتمكن من إنشاء جدولك السياحي. يرجى المحاولة مرة أخرى.
+              {t('tryAgain')}
             </p>
             <Button onClick={() => setLocation("/shoumatak")}>
-              <ArrowRight className="w-4 h-4 ml-2" />
-              حاول مرة أخرى
+              <BackArrow className="w-4 h-4" />
+              <span className="mx-2">{t('back')}</span>
             </Button>
           </CardContent>
         </Card>
@@ -136,23 +157,26 @@ export default function ItineraryPage() {
               onClick={() => setLocation("/shoumatak")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <Compass className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">جدولك السياحي</span>
+              <span className="text-lg font-bold">{t('yourItinerary')}</span>
             </div>
-            <Button
-              data-testid="button-home"
-              variant="ghost"
-              size="icon"
-              onClick={() => setLocation("/home")}
-            >
-              <Home className="w-5 h-5" />
-            </Button>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <Button
+                data-testid="button-home"
+                variant="ghost"
+                size="icon"
+                onClick={() => setLocation("/home")}
+              >
+                <Home className="w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -161,28 +185,39 @@ export default function ItineraryPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">جدول مخصص لك</span>
+            <span className="text-sm font-medium text-primary">{t('itineraryReady')}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {itinerary.title}
           </h1>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground mb-6">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              <span>{itinerary.duration} أيام</span>
+              <span>{itinerary.duration} {t('days')}</span>
             </div>
             <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
-              <span>الميزانية: {budgetLabels[itinerary.budget] || itinerary.budget}</span>
+              <Wallet className="w-5 h-5" />
+              <span>{getBudgetLabel(itinerary.budget)}</span>
             </div>
           </div>
+          {itinerary.governorates && itinerary.governorates.length > 0 && (
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {itinerary.governorates.map((gov) => (
+                <Badge key={gov} variant="secondary" className="text-sm">
+                  <MapPin className="w-3 h-3 mr-1" />
+                  {getGovernorateName(gov)}
+                </Badge>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="space-y-8">
           {itinerary.days.map((day) => (
-            <DayCard key={day.day} day={day} />
+            <DayCard key={day.day} day={day} t={t} />
           ))}
         </div>
 
@@ -194,8 +229,8 @@ export default function ItineraryPage() {
             onClick={() => setLocation("/shoumatak")}
             className="h-12 px-6 rounded-full"
           >
-            <ArrowRight className="w-5 h-5 ml-2" />
-            إنشاء خطة جديدة
+            <BackArrow className="w-5 h-5" />
+            <span className="mx-2">{t('startNewTrip')}</span>
           </Button>
           <Button
             data-testid="button-home-footer"
@@ -203,8 +238,8 @@ export default function ItineraryPage() {
             onClick={() => setLocation("/home")}
             className="h-12 px-6 rounded-full"
           >
-            <Home className="w-5 h-5 ml-2" />
-            العودة للرئيسية
+            <Home className="w-5 h-5" />
+            <span className="mx-2">{t('backToHome')}</span>
           </Button>
         </div>
       </main>
@@ -212,7 +247,7 @@ export default function ItineraryPage() {
   );
 }
 
-function DayCard({ day }: { day: ItineraryDay }) {
+function DayCard({ day, t }: { day: ItineraryDay; t: (key: string) => string }) {
   return (
     <Card data-testid={`card-day-${day.day}`} className="overflow-hidden">
       <CardHeader className="bg-gradient-to-l from-primary/5 to-transparent pb-4">
@@ -222,7 +257,7 @@ function DayCard({ day }: { day: ItineraryDay }) {
           </div>
           <div>
             <CardTitle className="text-xl">{day.title}</CardTitle>
-            <p className="text-sm text-muted-foreground">اليوم {day.day}</p>
+            <p className="text-sm text-muted-foreground">{t('dayNumber')} {day.day}</p>
           </div>
         </div>
       </CardHeader>
@@ -254,6 +289,11 @@ function DayCard({ day }: { day: ItineraryDay }) {
                   <MapPin className="w-3 h-3" />
                   {activity.location}
                 </p>
+                {activity.description && (
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {activity.description}
+                  </p>
+                )}
               </div>
             </div>
           ))}

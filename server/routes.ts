@@ -60,6 +60,7 @@ export async function registerRoutes(
       const interests = ((req.query.interests as string) || "").split(",").filter(Boolean);
       const accommodation = (req.query.accommodation as string) || "hotel";
       const mealPreference = (req.query.mealPreference as string) || "mixed";
+      const governorates = ((req.query.governorates as string) || "").split(",").filter(Boolean);
 
       const itinerary = generateItinerary({
         duration,
@@ -68,6 +69,7 @@ export async function registerRoutes(
         interests,
         accommodation,
         mealPreference,
+        governorates,
       });
 
       return res.json(itinerary);
@@ -87,10 +89,11 @@ interface ItineraryParams {
   interests: string[];
   accommodation: string;
   mealPreference: string;
+  governorates: string[];
 }
 
 function generateItinerary(params: ItineraryParams): Itinerary {
-  const { duration, budget, interests, mealPreference } = params;
+  const { duration, budget, interests, mealPreference, governorates } = params;
 
   const budgetTitles: Record<string, string> = {
     low: "رحلة اقتصادية مميزة",
@@ -171,6 +174,7 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     title: budgetTitles[budget] || "رحلتك المخصصة",
     duration,
     budget,
+    governorates,
     days,
   };
 }

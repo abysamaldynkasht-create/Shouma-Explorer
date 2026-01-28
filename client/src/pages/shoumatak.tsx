@@ -3,6 +3,10 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { governorates, type QuestionnaireData } from "@shared/schema";
 import { 
   Compass, 
   ArrowRight, 
@@ -14,16 +18,25 @@ import {
   Home,
   UtensilsCrossed,
   Sparkles,
-  Check
+  Check,
+  MapPin,
+  Camera,
+  Mountain,
+  ShoppingBag,
+  Palmtree,
+  Waves,
+  Tent,
+  Activity,
+  Leaf,
+  Edit
 } from "lucide-react";
-import type { QuestionnaireData } from "@shared/schema";
 
 interface Question {
-  id: keyof QuestionnaireData | "welcome";
-  title: string;
-  subtitle: string;
-  type: "single" | "multiple" | "number" | "welcome";
-  options?: { value: string; label: string; icon?: React.ReactNode }[];
+  id: keyof QuestionnaireData | "welcome" | "review";
+  titleKey: string;
+  subtitleKey: string;
+  type: "single" | "multiple" | "number" | "welcome" | "governorates" | "review";
+  options?: { value: string; labelKey: string; icon?: React.ReactNode }[];
   min?: number;
   max?: number;
 }
@@ -31,107 +44,133 @@ interface Question {
 const questions: Question[] = [
   {
     id: "welcome",
-    title: "مرحباً بك في شومتك",
-    subtitle: "سنساعدك في تخطيط رحلتك المثالية من خلال بضعة أسئلة بسيطة",
+    titleKey: "welcomeToShoumatak",
+    subtitleKey: "shoumatakIntro",
     type: "welcome",
   },
   {
+    id: "governorates",
+    titleKey: "governoratesQuestion",
+    subtitleKey: "governoratesSubtitle",
+    type: "governorates",
+  },
+  {
     id: "duration",
-    title: "كم مدة إقامتك؟",
-    subtitle: "حدد عدد أيام رحلتك",
+    titleKey: "tripDuration",
+    subtitleKey: "tripDurationSubtitle",
     type: "number",
     min: 1,
     max: 30,
   },
   {
     id: "budget",
-    title: "ما هي ميزانيتك؟",
-    subtitle: "اختر نطاق الميزانية المناسب لك",
+    titleKey: "budget",
+    subtitleKey: "budgetSubtitle",
     type: "single",
     options: [
-      { value: "low", label: "اقتصادية", icon: <Wallet className="w-6 h-6" /> },
-      { value: "medium", label: "متوسطة", icon: <Wallet className="w-6 h-6" /> },
-      { value: "high", label: "مرتفعة", icon: <Wallet className="w-6 h-6" /> },
-      { value: "luxury", label: "فاخرة", icon: <Sparkles className="w-6 h-6" /> },
+      { value: "low", labelKey: "budgetLow", icon: <Wallet className="w-6 h-6" /> },
+      { value: "medium", labelKey: "budgetMedium", icon: <Wallet className="w-6 h-6" /> },
+      { value: "high", labelKey: "budgetHigh", icon: <Wallet className="w-6 h-6" /> },
+      { value: "luxury", labelKey: "budgetLuxury", icon: <Sparkles className="w-6 h-6" /> },
     ],
   },
   {
     id: "groupSize",
-    title: "كم عدد المسافرين؟",
-    subtitle: "حدد عدد الأشخاص في رحلتك",
+    titleKey: "groupSize",
+    subtitleKey: "groupSizeSubtitle",
     type: "number",
     min: 1,
     max: 20,
   },
   {
     id: "interests",
-    title: "ما هي اهتماماتك؟",
-    subtitle: "اختر واحدة أو أكثر من اهتماماتك",
+    titleKey: "interests",
+    subtitleKey: "interestsSubtitle",
     type: "multiple",
     options: [
-      { value: "culture", label: "الثقافة والتاريخ" },
-      { value: "nature", label: "الطبيعة والمناظر" },
-      { value: "adventure", label: "المغامرة والإثارة" },
-      { value: "relaxation", label: "الاسترخاء والراحة" },
-      { value: "shopping", label: "التسوق" },
-      { value: "food", label: "الطعام والمأكولات" },
+      { value: "culture", labelKey: "interestCulture", icon: <Mountain className="w-5 h-5" /> },
+      { value: "nature", labelKey: "interestNature", icon: <Palmtree className="w-5 h-5" /> },
+      { value: "adventure", labelKey: "interestAdventure", icon: <Activity className="w-5 h-5" /> },
+      { value: "relaxation", labelKey: "interestRelaxation", icon: <Leaf className="w-5 h-5" /> },
+      { value: "shopping", labelKey: "interestShopping", icon: <ShoppingBag className="w-5 h-5" /> },
+      { value: "food", labelKey: "interestFood", icon: <UtensilsCrossed className="w-5 h-5" /> },
     ],
   },
   {
     id: "accommodation",
-    title: "أين تفضل الإقامة؟",
-    subtitle: "اختر نوع السكن المفضل",
+    titleKey: "accommodation",
+    subtitleKey: "accommodationSubtitle",
     type: "single",
     options: [
-      { value: "hotel", label: "فندق", icon: <Home className="w-6 h-6" /> },
-      { value: "resort", label: "منتجع", icon: <Sparkles className="w-6 h-6" /> },
-      { value: "apartment", label: "شقة فندقية", icon: <Home className="w-6 h-6" /> },
-      { value: "hostel", label: "نُزُل", icon: <Home className="w-6 h-6" /> },
+      { value: "hotel", labelKey: "hotelType", icon: <Home className="w-6 h-6" /> },
+      { value: "resort", labelKey: "resortType", icon: <Sparkles className="w-6 h-6" /> },
+      { value: "apartment", labelKey: "apartmentType", icon: <Home className="w-6 h-6" /> },
+      { value: "hostel", labelKey: "hostelType", icon: <Home className="w-6 h-6" /> },
     ],
   },
   {
     id: "mealPreference",
-    title: "ما نوع الطعام المفضل؟",
-    subtitle: "اختر تفضيلاتك للوجبات",
+    titleKey: "meals",
+    subtitleKey: "mealsSubtitle",
     type: "single",
     options: [
-      { value: "local", label: "محلي تقليدي", icon: <UtensilsCrossed className="w-6 h-6" /> },
-      { value: "international", label: "عالمي متنوع", icon: <UtensilsCrossed className="w-6 h-6" /> },
-      { value: "mixed", label: "مزيج من الاثنين", icon: <Heart className="w-6 h-6" /> },
+      { value: "local", labelKey: "mealLocal", icon: <UtensilsCrossed className="w-6 h-6" /> },
+      { value: "international", labelKey: "mealInternational", icon: <UtensilsCrossed className="w-6 h-6" /> },
+      { value: "mixed", labelKey: "mealMixed", icon: <Heart className="w-6 h-6" /> },
     ],
   },
   {
     id: "preferredActivities",
-    title: "ما الأنشطة التي تفضلها؟",
-    subtitle: "اختر الأنشطة المفضلة لرحلتك",
+    titleKey: "activities",
+    subtitleKey: "activitiesSubtitle",
     type: "multiple",
     options: [
-      { value: "sightseeing", label: "مشاهدة المعالم" },
-      { value: "photography", label: "التصوير" },
-      { value: "swimming", label: "السباحة" },
-      { value: "camping", label: "التخييم" },
-      { value: "sports", label: "الرياضة" },
-      { value: "wellness", label: "العناية بالصحة" },
+      { value: "sightseeing", labelKey: "activitySightseeing", icon: <MapPin className="w-5 h-5" /> },
+      { value: "photography", labelKey: "activityPhotography", icon: <Camera className="w-5 h-5" /> },
+      { value: "swimming", labelKey: "activitySwimming", icon: <Waves className="w-5 h-5" /> },
+      { value: "camping", labelKey: "activityCamping", icon: <Tent className="w-5 h-5" /> },
+      { value: "sports", labelKey: "activitySports", icon: <Activity className="w-5 h-5" /> },
+      { value: "wellness", labelKey: "activityWellness", icon: <Leaf className="w-5 h-5" /> },
     ],
+  },
+  {
+    id: "review",
+    titleKey: "reviewAnswers",
+    subtitleKey: "reviewAnswersSubtitle",
+    type: "review",
   },
 ];
 
 export default function ShoumatakPage() {
   const [, setLocation] = useLocation();
+  const { t, isRTL, language } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState<Partial<QuestionnaireData>>({
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [answers, setAnswers] = useState<Partial<QuestionnaireData> & { governorates?: string[] }>({
     duration: 3,
     groupSize: 2,
     interests: [],
     preferredActivities: [],
+    governorates: [],
   });
 
   const currentQuestion = questions[currentStep];
   const progress = ((currentStep) / (questions.length - 1)) * 100;
 
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
+  const NextArrow = isRTL ? ArrowLeft : ArrowRight;
+
+  const animateTransition = (callback: () => void) => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      callback();
+      setIsAnimating(false);
+    }, 150);
+  };
+
   const handleNext = () => {
     if (currentStep < questions.length - 1) {
-      setCurrentStep(currentStep + 1);
+      animateTransition(() => setCurrentStep(currentStep + 1));
     } else {
       const params = new URLSearchParams({
         duration: String(answers.duration || 3),
@@ -141,6 +180,7 @@ export default function ShoumatakPage() {
         accommodation: answers.accommodation || "hotel",
         mealPreference: answers.mealPreference || "mixed",
         preferredActivities: (answers.preferredActivities || []).join(","),
+        governorates: (answers.governorates || []).join(","),
       });
       setLocation(`/itinerary?${params.toString()}`);
     }
@@ -148,7 +188,7 @@ export default function ShoumatakPage() {
 
   const handleBack = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
+      animateTransition(() => setCurrentStep(currentStep - 1));
     } else {
       setLocation("/home");
     }
@@ -169,6 +209,15 @@ export default function ShoumatakPage() {
     }
   };
 
+  const handleGovernorateSelect = (id: string) => {
+    const current = answers.governorates || [];
+    if (current.includes(id)) {
+      setAnswers({ ...answers, governorates: current.filter((g) => g !== id) });
+    } else {
+      setAnswers({ ...answers, governorates: [...current, id] });
+    }
+  };
+
   const handleNumberChange = (delta: number) => {
     const key = currentQuestion.id as "duration" | "groupSize";
     const current = answers[key] || 1;
@@ -178,8 +227,15 @@ export default function ShoumatakPage() {
     setAnswers({ ...answers, [key]: newValue });
   };
 
+  const jumpToStep = (stepIndex: number) => {
+    animateTransition(() => setCurrentStep(stepIndex));
+  };
+
   const isNextDisabled = () => {
-    if (currentQuestion.type === "welcome") return false;
+    if (currentQuestion.type === "welcome" || currentQuestion.type === "review") return false;
+    if (currentQuestion.type === "governorates") {
+      return !answers.governorates || answers.governorates.length === 0;
+    }
     if (currentQuestion.type === "single") {
       const key = currentQuestion.id as keyof QuestionnaireData;
       return !answers[key];
@@ -192,6 +248,64 @@ export default function ShoumatakPage() {
     return false;
   };
 
+  const getBudgetLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      low: t('budgetLow'),
+      medium: t('budgetMedium'),
+      high: t('budgetHigh'),
+      luxury: t('budgetLuxury'),
+    };
+    return labels[value] || value;
+  };
+
+  const getAccommodationLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      hotel: t('hotelType'),
+      resort: t('resortType'),
+      apartment: t('apartmentType'),
+      hostel: t('hostelType'),
+    };
+    return labels[value] || value;
+  };
+
+  const getMealLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      local: t('mealLocal'),
+      international: t('mealInternational'),
+      mixed: t('mealMixed'),
+    };
+    return labels[value] || value;
+  };
+
+  const getInterestLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      culture: t('interestCulture'),
+      nature: t('interestNature'),
+      adventure: t('interestAdventure'),
+      relaxation: t('interestRelaxation'),
+      shopping: t('interestShopping'),
+      food: t('interestFood'),
+    };
+    return labels[value] || value;
+  };
+
+  const getActivityLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      sightseeing: t('activitySightseeing'),
+      photography: t('activityPhotography'),
+      swimming: t('activitySwimming'),
+      camping: t('activityCamping'),
+      sports: t('activitySports'),
+      wellness: t('activityWellness'),
+    };
+    return labels[value] || value;
+  };
+
+  const getGovernorateName = (id: string) => {
+    const gov = governorates.find(g => g.id === id);
+    return gov ? (language === 'ar' || language === 'fa' ? gov.nameAr : gov.nameEn) : id;
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -202,23 +316,23 @@ export default function ShoumatakPage() {
               onClick={handleBack}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <Compass className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">شومتك</span>
+              <span className="text-lg font-bold">{t('shoumatak')}</span>
             </div>
 
-            <div className="w-16" />
+            <LanguageSwitcher />
           </div>
         </div>
       </header>
 
-      {currentStep > 0 && (
+      {currentStep > 0 && currentQuestion.type !== "review" && (
         <div className="max-w-4xl mx-auto px-4 pt-6">
           <div className="flex items-center gap-4">
             <Progress value={progress} className="h-2 flex-1" />
@@ -229,20 +343,55 @@ export default function ShoumatakPage() {
         </div>
       )}
 
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main className={`max-w-4xl mx-auto px-4 py-12 transition-opacity duration-150 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
         <div className="text-center mb-12">
           {currentQuestion.type === "welcome" && (
-            <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
+            <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8 animate-pulse">
               <Sparkles className="w-12 h-12 text-primary" />
             </div>
           )}
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            {currentQuestion.title}
+          {currentQuestion.type === "review" && (
+            <div className="w-24 h-24 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-8">
+              <Check className="w-12 h-12 text-green-500" />
+            </div>
+          )}
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-question-title">
+            {t(currentQuestion.titleKey)}
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            {currentQuestion.subtitle}
+            {t(currentQuestion.subtitleKey)}
           </p>
         </div>
+
+        {currentQuestion.type === "governorates" && (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
+            {governorates.map((gov) => {
+              const isSelected = (answers.governorates || []).includes(gov.id);
+              return (
+                <button
+                  key={gov.id}
+                  data-testid={`option-gov-${gov.id}`}
+                  onClick={() => handleGovernorateSelect(gov.id)}
+                  className={`relative p-4 rounded-xl border-2 transition-all duration-200 ${
+                    isSelected
+                      ? "border-primary bg-primary/5 shadow-md"
+                      : "border-border hover:border-primary/50 bg-card"
+                  }`}
+                >
+                  {isSelected && (
+                    <div className="absolute top-2 left-2 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  )}
+                  <MapPin className={`w-5 h-5 mx-auto mb-2 ${isSelected ? 'text-primary' : 'text-muted-foreground'}`} />
+                  <span className={`text-sm font-medium block ${isSelected ? "text-primary" : "text-foreground"}`}>
+                    {language === 'ar' || language === 'fa' ? gov.nameAr : gov.nameEn}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {currentQuestion.type === "single" && currentQuestion.options && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
@@ -254,9 +403,9 @@ export default function ShoumatakPage() {
                   key={option.value}
                   data-testid={`option-${option.value}`}
                   onClick={() => handleSingleSelect(option.value)}
-                  className={`relative p-6 rounded-xl border-2 transition-all duration-200 text-right ${
+                  className={`relative p-6 rounded-xl border-2 transition-all duration-200 text-center ${
                     isSelected
-                      ? "border-primary bg-primary/5"
+                      ? "border-primary bg-primary/5 shadow-md"
                       : "border-border hover:border-primary/50 bg-card"
                   }`}
                 >
@@ -266,12 +415,12 @@ export default function ShoumatakPage() {
                     </div>
                   )}
                   {option.icon && (
-                    <div className={`mb-3 ${isSelected ? "text-primary" : "text-muted-foreground"}`}>
+                    <div className={`mb-3 flex justify-center ${isSelected ? "text-primary" : "text-muted-foreground"}`}>
                       {option.icon}
                     </div>
                   )}
                   <span className={`text-lg font-medium ${isSelected ? "text-primary" : "text-foreground"}`}>
-                    {option.label}
+                    {t(option.labelKey)}
                   </span>
                 </button>
               );
@@ -290,19 +439,19 @@ export default function ShoumatakPage() {
                   key={option.value}
                   data-testid={`option-${option.value}`}
                   onClick={() => handleMultipleSelect(option.value)}
-                  className={`relative p-5 rounded-xl border-2 transition-all duration-200 ${
+                  className={`relative p-5 rounded-xl border-2 transition-all duration-200 flex items-center gap-3 ${
                     isSelected
-                      ? "border-primary bg-primary/5"
+                      ? "border-primary bg-primary/5 shadow-md"
                       : "border-border hover:border-primary/50 bg-card"
                   }`}
                 >
-                  {isSelected && (
-                    <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                      <Check className="w-4 h-4 text-primary-foreground" />
-                    </div>
-                  )}
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                    isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                  }`}>
+                    {isSelected ? <Check className="w-5 h-5" /> : option.icon}
+                  </div>
                   <span className={`text-base font-medium ${isSelected ? "text-primary" : "text-foreground"}`}>
-                    {option.label}
+                    {t(option.labelKey)}
                   </span>
                 </button>
               );
@@ -328,7 +477,7 @@ export default function ShoumatakPage() {
                     {answers[currentQuestion.id as "duration" | "groupSize"] || 1}
                   </span>
                   <p className="text-sm text-muted-foreground mt-2">
-                    {currentQuestion.id === "duration" ? "أيام" : "أشخاص"}
+                    {currentQuestion.id === "duration" ? t('days') : t('travelers')}
                   </p>
                 </div>
                 <Button
@@ -345,6 +494,125 @@ export default function ShoumatakPage() {
           </Card>
         )}
 
+        {currentQuestion.type === "review" && (
+          <div className="max-w-2xl mx-auto space-y-4">
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="divide-y divide-border">
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(1)}>
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('governoratesQuestion')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap gap-1 justify-end max-w-xs">
+                        {(answers.governorates || []).slice(0, 3).map((gov) => (
+                          <Badge key={gov} variant="secondary" className="text-xs">{getGovernorateName(gov)}</Badge>
+                        ))}
+                        {(answers.governorates || []).length > 3 && (
+                          <Badge variant="secondary" className="text-xs">+{(answers.governorates || []).length - 3}</Badge>
+                        )}
+                      </div>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(2)}>
+                    <div className="flex items-center gap-3">
+                      <Calendar className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('tripDuration')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{answers.duration} {t('days')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(3)}>
+                    <div className="flex items-center gap-3">
+                      <Wallet className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('budget')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{getBudgetLabel(answers.budget || 'medium')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(4)}>
+                    <div className="flex items-center gap-3">
+                      <Users className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('groupSize')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{answers.groupSize} {t('travelers')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(5)}>
+                    <div className="flex items-center gap-3">
+                      <Heart className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('interests')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap gap-1 justify-end max-w-xs">
+                        {(answers.interests || []).slice(0, 2).map((i) => (
+                          <Badge key={i} variant="secondary" className="text-xs">{getInterestLabel(i)}</Badge>
+                        ))}
+                        {(answers.interests || []).length > 2 && (
+                          <Badge variant="secondary" className="text-xs">+{(answers.interests || []).length - 2}</Badge>
+                        )}
+                      </div>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(6)}>
+                    <div className="flex items-center gap-3">
+                      <Home className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('accommodation')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{getAccommodationLabel(answers.accommodation || 'hotel')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(7)}>
+                    <div className="flex items-center gap-3">
+                      <UtensilsCrossed className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('meals')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{getMealLabel(answers.mealPreference || 'mixed')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(8)}>
+                    <div className="flex items-center gap-3">
+                      <Activity className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('activities')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap gap-1 justify-end max-w-xs">
+                        {(answers.preferredActivities || []).slice(0, 2).map((a) => (
+                          <Badge key={a} variant="secondary" className="text-xs">{getActivityLabel(a)}</Badge>
+                        ))}
+                        {(answers.preferredActivities || []).length > 2 && (
+                          <Badge variant="secondary" className="text-xs">+{(answers.preferredActivities || []).length - 2}</Badge>
+                        )}
+                      </div>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         <div className="flex justify-center gap-4 mt-12">
           <Button
             data-testid="button-back"
@@ -353,8 +621,8 @@ export default function ShoumatakPage() {
             onClick={handleBack}
             className="h-14 px-8 rounded-full"
           >
-            <ArrowRight className="w-5 h-5 ml-2" />
-            رجوع
+            <BackArrow className="w-5 h-5" />
+            <span className="mx-2">{t('previous')}</span>
           </Button>
           <Button
             data-testid="button-next"
@@ -365,13 +633,18 @@ export default function ShoumatakPage() {
           >
             {currentStep === questions.length - 1 ? (
               <>
-                عرض الجدول
-                <Sparkles className="w-5 h-5 mr-2" />
+                <span className="mx-2">{t('generateItinerary')}</span>
+                <Sparkles className="w-5 h-5" />
+              </>
+            ) : currentStep === 0 ? (
+              <>
+                <span className="mx-2">{t('startPlanning')}</span>
+                <NextArrow className="w-5 h-5" />
               </>
             ) : (
               <>
-                التالي
-                <ArrowLeft className="w-5 h-5 mr-2" />
+                <span className="mx-2">{t('next')}</span>
+                <NextArrow className="w-5 h-5" />
               </>
             )}
           </Button>
