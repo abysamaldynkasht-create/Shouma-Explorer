@@ -177,6 +177,7 @@ export interface Taxi {
   rating: number;
   features: string[];
   phone: string;
+  destinations?: string[];
 }
 
 export interface HikingTrip {
