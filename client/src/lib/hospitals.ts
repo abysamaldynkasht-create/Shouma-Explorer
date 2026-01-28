@@ -119,7 +119,7 @@ export const hospitals: Hospital[] = [
     image: hospitalKhoulaImg,
     rating: 4.3,
     isGovernment: true,
-    mapUrl: "https://maps.app.goo.gl/SX9FH4oYC2PKH3PL9",
+    mapUrl: "https://maps.app.goo.gl/hsjeGEnYaEVFti8Z7",
   },
   {
     id: "muscat-private-hospital",
