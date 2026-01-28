@@ -169,6 +169,17 @@ export default function TaxisPage() {
                       <span className="text-sm text-muted-foreground">للكيلومتر</span>
                       <span className="text-lg font-bold text-primary">{taxi.pricePerKm} ر.ع</span>
                     </div>
+                    <Button
+                      data-testid={`button-book-${taxi.id}`}
+                      className="w-full mt-4"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(`tel:${taxi.phone}`, '_self');
+                      }}
+                    >
+                      <Phone className="w-4 h-4 ml-2" />
+                      احجز الآن
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
