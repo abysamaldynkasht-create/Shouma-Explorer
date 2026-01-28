@@ -133,6 +133,7 @@ export const restaurants: Restaurant[] = [
     priceRange: "moderate",
     rating: 4.7,
     features: ["طعام تقليدي", "أجواء تراثية", "خدمة ممتازة", "حلويات عُمانية"],
+    mapUrl: "https://maps.app.goo.gl/swZVokqKTjfzw5JB9",
   },
   {
     id: "10",
