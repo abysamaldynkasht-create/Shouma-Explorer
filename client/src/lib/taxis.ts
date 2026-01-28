@@ -2,6 +2,7 @@ import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
 import ferryHormuzImg from "@/assets/ferry-hormuz.png";
 import ferryHallaniyatImg from "@/assets/ferry-hallaniyat.png";
+import ferrySauqrahImg from "@/assets/ferry-sauqrah.png";
 import vanImg from "@/assets/van-shouma.png";
 import taxiRegularImg from "@/assets/taxi-regular.png";
 import taxiLuxuryImg from "@/assets/taxi-luxury.png";
@@ -98,7 +99,7 @@ export const taxis: Taxi[] = [
     description: "عبارة صوقرة للنقل البحري. خدمة موثوقة مع رحلات منتظمة.",
     city: "صوقرة",
     region: "ظفار",
-    image: ferryImg,
+    image: ferrySauqrahImg,
     vehicleType: "عبارة",
     pricePerKm: 1.0,
     rating: 4.5,
