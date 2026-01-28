@@ -77,7 +77,7 @@ export const restaurants: Restaurant[] = [
     priceRange: "moderate",
     rating: 4.7,
     features: ["إطلالة على قلعة نزوى", "شرفة سطحية", "قهوة عمانية", "أجواء تراثية"],
-    mapUrl: "https://maps.app.goo.gl/3nKC2yPaLDiJFXgi6",
+    mapUrl: "https://maps.app.goo.gl/iQhbrUE5GYcr4UgA7",
   },
   {
     id: "6",
