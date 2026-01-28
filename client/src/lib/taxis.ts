@@ -1,5 +1,6 @@
 import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
+import ferryHormuzImg from "@/assets/ferry-hormuz.png";
 import vanImg from "@/assets/van-shouma.png";
 import taxiRegularImg from "@/assets/taxi-regular.png";
 import taxiLuxuryImg from "@/assets/taxi-luxury.png";
@@ -110,7 +111,7 @@ export const taxis: Taxi[] = [
     description: "عبارة هرمز للتنقل البحري إلى مضيق هرمز. رحلات مميزة مع إطلالات رائعة.",
     city: "مسندم",
     region: "مسندم",
-    image: ferryImg,
+    image: ferryHormuzImg,
     vehicleType: "عبارة",
     pricePerKm: 1.5,
     rating: 4.7,
