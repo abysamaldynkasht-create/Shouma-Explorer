@@ -1,5 +1,6 @@
 import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
+import vanImg from "@/assets/van-shouma.png";
 
 export const taxis: Taxi[] = [
   {
@@ -37,7 +38,7 @@ export const taxis: Taxi[] = [
     description: "سيارات فان واسعة للعائلات والمجموعات. تتسع حتى 7 ركاب مع مساحة كافية للأمتعة. مثالية للرحلات العائلية.",
     city: "جميع المناطق",
     region: "عُمان",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800",
+    image: vanImg,
     vehicleType: "فان",
     pricePerKm: 0.5,
     rating: 4.6,
