@@ -3,31 +3,34 @@ import { restaurants } from "@/lib/restaurants";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { 
   UtensilsCrossed, 
   ArrowRight,
+  ArrowLeft,
   MapPin,
   Star,
   Share2,
   Heart,
   ExternalLink,
   Check,
-  Clock,
   Wallet
 } from "lucide-react";
 
 export default function RestaurantDetailPage() {
   const [, setLocation] = useLocation();
   const params = useParams<{ id: string }>();
+  const { t, isRTL } = useLanguage();
   
   const restaurant = restaurants.find((r) => r.id === params.id);
 
   const getPriceRangeLabel = (range: string) => {
     const labels: Record<string, string> = {
-      budget: "اقتصادي",
-      moderate: "متوسط",
-      expensive: "مرتفع",
-      luxury: "فاخر",
+      budget: t('priceBudget'),
+      moderate: t('priceModerate'),
+      expensive: t('priceExpensive'),
+      luxury: t('priceLuxury'),
     };
     return labels[range] || range;
   };
@@ -39,6 +42,8 @@ export default function RestaurantDetailPage() {
       .slice(0, 3);
   };
 
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
+
   if (!restaurant) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
@@ -48,14 +53,14 @@ export default function RestaurantDetailPage() {
               <UtensilsCrossed className="w-8 h-8 text-destructive" />
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              المطعم غير موجود
+              {t('restaurantNotFound')}
             </h2>
             <p className="text-muted-foreground mb-6">
-              لم نتمكن من العثور على هذا المطعم.
+              {t('restaurantNotFoundDesc')}
             </p>
             <Button onClick={() => setLocation("/restaurants")}>
-              <ArrowRight className="w-4 h-4 ml-2" />
-              العودة للمطاعم
+              <BackArrow className="w-4 h-4 ml-2" />
+              {t('backToRestaurants')}
             </Button>
           </CardContent>
         </Card>
@@ -75,18 +80,19 @@ export default function RestaurantDetailPage() {
               onClick={() => setLocation("/restaurants")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <UtensilsCrossed className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">تفاصيل المطعم</span>
+              <span className="text-lg font-bold">{t('restaurantDetails')}</span>
             </div>
 
             <div className="flex items-center gap-2">
+              <LanguageSwitcher />
               <Button variant="ghost" size="icon" data-testid="button-share">
                 <Share2 className="w-5 h-5" />
               </Button>
@@ -133,7 +139,7 @@ export default function RestaurantDetailPage() {
           <div className="lg:col-span-2 space-y-8">
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4" data-testid="text-about-title">
-                عن المطعم
+                {t('aboutRestaurant')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-restaurant-description">
                 {restaurant.description}
@@ -142,7 +148,7 @@ export default function RestaurantDetailPage() {
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                المميزات
+                {t('features')}
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {restaurant.features.map((feature) => (
@@ -160,14 +166,14 @@ export default function RestaurantDetailPage() {
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6 space-y-4">
-                <h3 className="text-lg font-bold text-foreground">معلومات سريعة</h3>
+                <h3 className="text-lg font-bold text-foreground">{t('quickInfo')}</h3>
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">الموقع</p>
+                    <p className="text-sm text-muted-foreground">{t('location')}</p>
                     <p className="font-medium">{restaurant.city}</p>
                   </div>
                 </div>
@@ -177,7 +183,7 @@ export default function RestaurantDetailPage() {
                     <UtensilsCrossed className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">نوع المطبخ</p>
+                    <p className="text-sm text-muted-foreground">{t('cuisineType')}</p>
                     <p className="font-medium">{restaurant.cuisine}</p>
                   </div>
                 </div>
@@ -187,7 +193,7 @@ export default function RestaurantDetailPage() {
                     <Wallet className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">مستوى الأسعار</p>
+                    <p className="text-sm text-muted-foreground">{t('priceLevel')}</p>
                     <p className="font-medium">{getPriceRangeLabel(restaurant.priceRange)}</p>
                   </div>
                 </div>
@@ -197,7 +203,7 @@ export default function RestaurantDetailPage() {
                     <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">التقييم</p>
+                    <p className="text-sm text-muted-foreground">{t('rating')}</p>
                     <p className="font-medium">{restaurant.rating} / 5</p>
                   </div>
                 </div>
@@ -209,7 +215,7 @@ export default function RestaurantDetailPage() {
                     onClick={() => window.open(restaurant.mapUrl!, '_blank')}
                   >
                     <MapPin className="w-5 h-5 ml-2" />
-                    عرض الموقع
+                    {t('viewLocation')}
                     <ExternalLink className="w-4 h-4 mr-2" />
                   </Button>
                 )}
@@ -221,7 +227,7 @@ export default function RestaurantDetailPage() {
         {relatedRestaurants.length > 0 && (
           <section className="mt-16">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              مطاعم مشابهة
+              {t('similarRestaurants')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedRestaurants.map((related) => (
@@ -255,7 +261,7 @@ export default function RestaurantDetailPage() {
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
+            {t('copyright')} © {new Date().getFullYear()} {t('appName')}
           </p>
         </div>
       </footer>
