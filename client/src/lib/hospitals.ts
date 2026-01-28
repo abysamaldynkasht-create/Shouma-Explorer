@@ -1,4 +1,5 @@
 import hospitalRoyalImg from "@/assets/hospital-royal.png";
+import hospitalKhoulaImg from "@/assets/hospital-khoula.png";
 
 export interface Hospital {
   id: string;
@@ -67,15 +68,17 @@ export const hospitals: Hospital[] = [
     type: "hospital",
     typeAr: "مستشفى حكومي",
     location: "مسقط",
+    address: "شارع الفحل, Muscat",
     region: "محافظة مسقط",
     description: "مستشفى خولة هو مستشفى حكومي متخصص في جراحة العظام والحوادث. يعتبر المركز الرئيسي لعلاج إصابات الحوادث في السلطنة ويقدم خدمات طبية متميزة في مجال جراحة العظام.",
     services: ["طوارئ 24 ساعة", "جراحة العظام", "علاج الحوادث", "العلاج الطبيعي", "العناية المركزة", "الأشعة"],
-    phone: "+968 24563625",
+    phone: "+968 22 501000",
     emergencyPhone: "+968 24563600",
     workingHours: "24 ساعة",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    image: hospitalKhoulaImg,
     rating: 4.3,
     isGovernment: true,
+    mapUrl: "https://maps.app.goo.gl/SX9FH4oYC2PKH3PL9",
   },
   {
     id: "muscat-private-hospital",
