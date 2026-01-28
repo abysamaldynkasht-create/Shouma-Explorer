@@ -49,7 +49,7 @@ export const restaurants: Restaurant[] = [
     priceRange: "budget",
     rating: 4.5,
     features: ["مضغوط أصيل", "خدمة سريعة", "مناسب للعائلات", "نظافة عالية"],
-    mapUrl: "https://maps.app.goo.gl/NCRTT4jLr9gkwPgw7",
+    mapUrl: "https://maps.app.goo.gl/3dnwRzzrJgDdqJmWA",
   },
   {
     id: "4",
