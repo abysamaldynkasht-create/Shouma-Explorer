@@ -5,6 +5,7 @@ export interface Hospital {
   type: "hospital" | "health_center" | "clinic" | "pharmacy";
   typeAr: string;
   location: string;
+  address?: string;
   region: string;
   description: string;
   services: string[];
@@ -14,6 +15,7 @@ export interface Hospital {
   image: string;
   rating: number;
   isGovernment: boolean;
+  mapUrl?: string;
 }
 
 export const getTypeAr = (type: string): string => {
@@ -44,15 +46,17 @@ export const hospitals: Hospital[] = [
     type: "hospital",
     typeAr: "مستشفى حكومي",
     location: "مسقط",
+    address: "Ghala St, Muscat",
     region: "محافظة مسقط",
     description: "المستشفى السلطاني هو أكبر مستشفى حكومي في سلطنة عمان، يقدم خدمات طبية متكاملة ومتخصصة على أعلى مستوى. يضم المستشفى أقسام متعددة تشمل الطوارئ، الجراحة، الباطنية، القلب، الأورام، وغيرها من التخصصات الطبية.",
     services: ["طوارئ 24 ساعة", "جراحة عامة", "قسم القلب", "الأورام", "العناية المركزة", "الأشعة", "المختبرات"],
-    phone: "+968 24599000",
+    phone: "+968 24 599000",
     emergencyPhone: "+968 24599999",
     workingHours: "24 ساعة",
     image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800",
     rating: 4.5,
     isGovernment: true,
+    mapUrl: "https://maps.app.goo.gl/SX9FH4oYC2PKH3PL9",
   },
   {
     id: "khoula-hospital",

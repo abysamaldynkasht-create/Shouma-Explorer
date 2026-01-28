@@ -13,7 +13,8 @@ import {
   Phone,
   Check,
   Clock,
-  AlertCircle
+  AlertCircle,
+  Navigation
 } from "lucide-react";
 
 export default function HospitalDetailPage() {
@@ -169,6 +170,9 @@ export default function HospitalDetailPage() {
                   <div>
                     <p className="text-sm text-muted-foreground">الموقع</p>
                     <p className="font-medium">{hospital.location}</p>
+                    {hospital.address && (
+                      <p className="text-sm text-muted-foreground" dir="ltr">{hospital.address}</p>
+                    )}
                   </div>
                 </div>
 
@@ -226,6 +230,18 @@ export default function HospitalDetailPage() {
                   <Phone className="w-5 h-5 ml-2" />
                   اتصل الآن
                 </Button>
+
+                {hospital.mapUrl && (
+                  <Button 
+                    variant="outline"
+                    className="w-full h-12" 
+                    data-testid="button-view-map"
+                    onClick={() => window.open(hospital.mapUrl, '_blank')}
+                  >
+                    <Navigation className="w-5 h-5 ml-2" />
+                    الموقع في جوجل ماب
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
