@@ -10,7 +10,7 @@ import {
   Star,
   Share2,
   Heart,
-  Phone,
+  ExternalLink,
   Check,
   Clock,
   Wallet
@@ -202,10 +202,17 @@ export default function RestaurantDetailPage() {
                   </div>
                 </div>
 
-                <Button className="w-full h-12" data-testid="button-call-restaurant">
-                  <Phone className="w-5 h-5 ml-2" />
-                  اتصل للحجز
-                </Button>
+                {restaurant.mapUrl && (
+                  <Button 
+                    className="w-full h-12" 
+                    data-testid="button-location-restaurant"
+                    onClick={() => window.open(restaurant.mapUrl!, '_blank')}
+                  >
+                    <MapPin className="w-5 h-5 ml-2" />
+                    عرض الموقع
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </div>
