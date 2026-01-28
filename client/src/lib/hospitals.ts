@@ -1,3 +1,5 @@
+import hospitalRoyalImg from "@/assets/hospital-royal.png";
+
 export interface Hospital {
   id: string;
   name: string;
@@ -53,7 +55,7 @@ export const hospitals: Hospital[] = [
     phone: "+968 24 599000",
     emergencyPhone: "+968 24599999",
     workingHours: "24 ساعة",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800",
+    image: hospitalRoyalImg,
     rating: 4.5,
     isGovernment: true,
     mapUrl: "https://maps.app.goo.gl/SX9FH4oYC2PKH3PL9",
