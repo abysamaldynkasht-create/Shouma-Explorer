@@ -165,19 +165,7 @@ export default function TaxisPage() {
                         </Badge>
                       ))}
                     </div>
-                    {taxi.destinations && taxi.destinations.length > 0 && (
-                      <div className="mb-3 p-2 bg-muted/50 rounded-md">
-                        <p className="text-xs text-muted-foreground mb-2">الوجهات:</p>
-                        <div className="flex flex-wrap gap-1">
-                          {taxi.destinations.map((dest) => (
-                            <Badge key={dest} variant="secondary" className="text-xs">
-                              {dest}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    <div className="flex items-center justify-between pt-3 border-t border-border">
+                                        <div className="flex items-center justify-between pt-3 border-t border-border">
                       <span className="text-sm text-muted-foreground">للكيلومتر</span>
                       <span className="text-lg font-bold text-primary">{taxi.pricePerKm} ر.ع</span>
                     </div>
