@@ -112,7 +112,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'تعذر الحصول على موقعك',
     searchingLocation: 'جاري تحديد موقعك...',
     noNearbyPlaces: 'لا توجد أماكن سياحية قريبة من موقعك',
+    filterResults: 'تصفية النتائج',
     distance: 'المسافة',
+    governorate: 'المحافظة',
+    listView: 'قائمة',
+    mapView: 'خريطة',
+    yourLocation: 'موقعك',
+    navigate: 'تنقل',
+    tryDifferentFilter: 'جرب تغيير خيارات التصفية',
     km: 'كم',
     
     // Tour Guides
@@ -373,7 +380,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'Could not get your location',
     searchingLocation: 'Finding your location...',
     noNearbyPlaces: 'No tourist places nearby',
+    filterResults: 'Filter Results',
     distance: 'Distance',
+    governorate: 'Governorate',
+    listView: 'List',
+    mapView: 'Map',
+    yourLocation: 'Your Location',
+    navigate: 'Navigate',
+    tryDifferentFilter: 'Try changing the filter options',
     km: 'km',
     
     // Tour Guides
@@ -634,7 +648,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'Impossible de déterminer votre position',
     searchingLocation: 'Recherche de votre position...',
     noNearbyPlaces: 'Aucun lieu touristique à proximité',
+    filterResults: 'Filtrer les résultats',
     distance: 'Distance',
+    governorate: 'Gouvernorat',
+    listView: 'Liste',
+    mapView: 'Carte',
+    yourLocation: 'Votre position',
+    navigate: 'Naviguer',
+    tryDifferentFilter: 'Essayez de modifier les options de filtre',
     km: 'km',
     
     // Tour Guides
@@ -895,7 +916,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'No se pudo obtener tu ubicación',
     searchingLocation: 'Buscando tu ubicación...',
     noNearbyPlaces: 'No hay lugares turísticos cercanos',
+    filterResults: 'Filtrar resultados',
     distance: 'Distancia',
+    governorate: 'Gobernación',
+    listView: 'Lista',
+    mapView: 'Mapa',
+    yourLocation: 'Tu ubicación',
+    navigate: 'Navegar',
+    tryDifferentFilter: 'Intenta cambiar las opciones de filtro',
     km: 'km',
     
     // Tour Guides
@@ -1156,7 +1184,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'Konumunuz alınamadı',
     searchingLocation: 'Konumunuz bulunuyor...',
     noNearbyPlaces: 'Yakında turistik yer yok',
+    filterResults: 'Sonuçları filtrele',
     distance: 'Mesafe',
+    governorate: 'İl',
+    listView: 'Liste',
+    mapView: 'Harita',
+    yourLocation: 'Konumunuz',
+    navigate: 'Yol tarifi',
+    tryDifferentFilter: 'Filtre seçeneklerini değiştirmeyi deneyin',
     km: 'km',
     
     // Tour Guides
@@ -1417,7 +1452,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: '无法获取您的位置',
     searchingLocation: '正在定位...',
     noNearbyPlaces: '附近没有旅游景点',
+    filterResults: '筛选结果',
     distance: '距离',
+    governorate: '省份',
+    listView: '列表',
+    mapView: '地图',
+    yourLocation: '您的位置',
+    navigate: '导航',
+    tryDifferentFilter: '尝试更改筛选选项',
     km: '公里',
     
     // Tour Guides
@@ -1678,7 +1720,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: '位置情報を取得できませんでした',
     searchingLocation: '位置情報を取得中...',
     noNearbyPlaces: '近くに観光スポットがありません',
+    filterResults: '結果をフィルター',
     distance: '距離',
+    governorate: '県',
+    listView: 'リスト',
+    mapView: '地図',
+    yourLocation: 'あなたの位置',
+    navigate: 'ナビ',
+    tryDifferentFilter: 'フィルターオプションを変更してみてください',
     km: 'km',
     
     // Tour Guides
@@ -1939,7 +1988,14 @@ export const translations: Record<Language, Record<string, string>> = {
     locationError: 'موقعیت شما قابل دریافت نیست',
     searchingLocation: 'در حال یافتن موقعیت شما...',
     noNearbyPlaces: 'مکان گردشگری نزدیکی یافت نشد',
+    filterResults: 'فیلتر نتایج',
     distance: 'فاصله',
+    governorate: 'استان',
+    listView: 'لیست',
+    mapView: 'نقشه',
+    yourLocation: 'موقعیت شما',
+    navigate: 'مسیریابی',
+    tryDifferentFilter: 'سعی کنید گزینه‌های فیلتر را تغییر دهید',
     km: 'کیلومتر',
     
     // Tour Guides
