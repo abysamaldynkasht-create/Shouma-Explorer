@@ -1,6 +1,7 @@
 import type { Taxi } from "@shared/schema";
 import ferryImg from "@/assets/ferry-oman.png";
 import vanImg from "@/assets/van-shouma.png";
+import taxiRegularImg from "@/assets/taxi-regular.png";
 
 export const taxis: Taxi[] = [
   {
@@ -10,7 +11,7 @@ export const taxis: Taxi[] = [
     description: "خدمة تاكسي عادية بأسعار معقولة. سيارات مريحة ومكيفة مع سائقين محترفين لتوصيلك إلى وجهتك بأمان.",
     city: "جميع المناطق",
     region: "عُمان",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800",
+    image: taxiRegularImg,
     vehicleType: "تاكسي عادي",
     pricePerKm: 0.3,
     rating: 4.5,
