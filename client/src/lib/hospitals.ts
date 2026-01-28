@@ -2,6 +2,7 @@ import hospitalRoyalImg from "@/assets/hospital-royal.png";
 import hospitalKhoulaImg from "@/assets/hospital-khoula.png";
 import hospitalBadrSamaaImg from "@/assets/hospital-badr-samaa.png";
 import hospitalSquImg from "@/assets/hospital-squ.png";
+import hospitalOmanInternationalImg from "@/assets/hospital-oman-international.png";
 
 export interface Hospital {
   id: string;
@@ -81,6 +82,25 @@ export const hospitals: Hospital[] = [
     rating: 4.6,
     isGovernment: true,
     mapUrl: "https://maps.app.goo.gl/Rr3euq7R41zdQBim7",
+  },
+  {
+    id: "oman-international-hospital",
+    name: "Oman International Hospital",
+    nameAr: "مستشفى عمان الدولي",
+    type: "hospital",
+    typeAr: "مستشفى خاص",
+    location: "مسقط",
+    address: "Al Dhayafa St, Muscat 333",
+    region: "محافظة مسقط",
+    description: "مستشفى عمان الدولي هو مستشفى خاص حديث يقدم خدمات طبية متكاملة بمعايير دولية عالية. يضم أحدث التجهيزات الطبية وفريق من الأطباء المتخصصين.",
+    services: ["طوارئ 24 ساعة", "جراحة عامة", "قسم القلب", "العظام", "العناية المركزة", "الأشعة", "المختبرات"],
+    phone: "+968 24 903500",
+    emergencyPhone: "+968 24 903500",
+    workingHours: "24 ساعة",
+    image: hospitalOmanInternationalImg,
+    rating: 4.5,
+    isGovernment: false,
+    mapUrl: "https://maps.app.goo.gl/1He7emPqvJC9X67F8",
   },
   {
     id: "khoula-hospital",
