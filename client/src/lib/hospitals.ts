@@ -1,6 +1,7 @@
 import hospitalRoyalImg from "@/assets/hospital-royal.png";
 import hospitalKhoulaImg from "@/assets/hospital-khoula.png";
 import hospitalBadrSamaaImg from "@/assets/hospital-badr-samaa.png";
+import hospitalSquImg from "@/assets/hospital-squ.png";
 
 export interface Hospital {
   id: string;
@@ -61,6 +62,25 @@ export const hospitals: Hospital[] = [
     rating: 4.5,
     isGovernment: true,
     mapUrl: "https://maps.app.goo.gl/SX9FH4oYC2PKH3PL9",
+  },
+  {
+    id: "squ-hospital",
+    name: "Sultan Qaboos University Hospital",
+    nameAr: "مستشفى جامعة السلطان قابوس",
+    type: "hospital",
+    typeAr: "مستشفى حكومي",
+    location: "السيب، مسقط",
+    address: "H5QC+36M, Dr Ali Al Bimani St, Seeb",
+    region: "محافظة مسقط",
+    description: "مستشفى جامعة السلطان قابوس هو مستشفى تعليمي تابع لجامعة السلطان قابوس. يقدم خدمات طبية متقدمة ويعتبر من أهم المراكز الطبية التعليمية في السلطنة.",
+    services: ["طوارئ 24 ساعة", "جراحة عامة", "قسم القلب", "الأورام", "العناية المركزة", "الأشعة", "المختبرات", "طب الأسرة"],
+    phone: "+968 24 147777",
+    emergencyPhone: "+968 24 147777",
+    workingHours: "24 ساعة",
+    image: hospitalSquImg,
+    rating: 4.6,
+    isGovernment: true,
+    mapUrl: "https://maps.app.goo.gl/Rr3euq7R41zdQBim7",
   },
   {
     id: "khoula-hospital",
