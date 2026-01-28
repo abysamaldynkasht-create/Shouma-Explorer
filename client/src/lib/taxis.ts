@@ -1,4 +1,5 @@
 import type { Taxi } from "@shared/schema";
+import ferryImg from "@/assets/ferry-oman.png";
 
 export const taxis: Taxi[] = [
   {
@@ -50,7 +51,7 @@ export const taxis: Taxi[] = [
     description: "خدمة عبارات بحرية للتنقل بين الموانئ العُمانية والجزر. رحلات منتظمة مع إطلالات خلابة على البحر ومرافق مريحة.",
     city: "الموانئ البحرية",
     region: "عُمان",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800",
+    image: ferryImg,
     vehicleType: "عبارة",
     pricePerKm: 1.0,
     rating: 4.7,
