@@ -1,5 +1,6 @@
 import hospitalRoyalImg from "@/assets/hospital-royal.png";
 import hospitalKhoulaImg from "@/assets/hospital-khoula.png";
+import hospitalBadrSamaaImg from "@/assets/hospital-badr-samaa.png";
 
 export interface Hospital {
   id: string;
