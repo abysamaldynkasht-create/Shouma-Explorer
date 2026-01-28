@@ -18,6 +18,17 @@ import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
+// Import Oman-specific images for categories
+import nizwaFortImg from "@/assets/nizwa-fort.png";
+import sixSensesHotelImg from "@/assets/six-senses-hotel.png";
+import baitAlmadghootImg from "@/assets/bait-almadghoot.png";
+import jebelAkhdarImg from "@/assets/jebel-akhdar.png";
+import mutrahSouqImg from "@/assets/mutrah-souq.png";
+import qurmBeachImg from "@/assets/qurum-beach.png";
+import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
+import wadiDarbatImg from "@/assets/wadi-darbat.png";
+import mughsailBeachImg from "@/assets/mughsail-beach.png";
+
 const iconMap: Record<string, React.ReactNode> = {
   MapPin: <MapPin className="w-8 h-8" />,
   Building2: <Building2 className="w-8 h-8" />,
@@ -94,7 +105,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=2071')`,
+            backgroundImage: `url('${misfatAbriyyinImg}')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -212,15 +223,15 @@ export default function HomePage() {
 
 function getCategoryImage(id: string): string {
   const images: Record<string, string> = {
-    attractions: "https://images.unsplash.com/photo-1578895101408-1a36b834405b?q=80&w=800",
-    hotels: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
-    restaurants: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800",
-    hiking: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800",
-    taxis: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800",
-    hospitals: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800",
-    "tour-guides": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800",
-    shoumatak: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800",
-    nearby: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800",
+    attractions: nizwaFortImg,
+    hotels: sixSensesHotelImg,
+    restaurants: baitAlmadghootImg,
+    hiking: jebelAkhdarImg,
+    taxis: mutrahSouqImg,
+    hospitals: qurmBeachImg,
+    "tour-guides": misfatAbriyyinImg,
+    shoumatak: wadiDarbatImg,
+    nearby: mughsailBeachImg,
   };
   return images[id] || images.attractions;
 }
