@@ -112,6 +112,24 @@ export interface HotelReview {
   date: string;
 }
 
+export interface RestaurantReview {
+  id: string;
+  restaurantId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export const insertRestaurantReviewSchema = z.object({
+  restaurantId: z.string(),
+  userName: z.string().min(2),
+  rating: z.number().min(1).max(5),
+  comment: z.string().min(5),
+});
+
+export type InsertRestaurantReview = z.infer<typeof insertRestaurantReviewSchema>;
+
 export interface Hotel {
   id: string;
   name: string;

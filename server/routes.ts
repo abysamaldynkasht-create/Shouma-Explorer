@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertUserSchema, questionnaireSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
+import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(
@@ -49,6 +49,37 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Login error:", error);
       return res.status(500).json({ message: "حدث خطأ في الخادم" });
+    }
+  });
+
+  app.get("/api/restaurants/:id/reviews", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const reviews = await storage.getRestaurantReviews(id);
+      return res.json(reviews);
+    } catch (error) {
+      console.error("Get reviews error:", error);
+      return res.status(500).json({ message: "حدث خطأ في جلب التقييمات" });
+    }
+  });
+
+  app.post("/api/restaurants/:id/reviews", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const result = insertRestaurantReviewSchema.safeParse({
+        ...req.body,
+        restaurantId: id
+      });
+      
+      if (!result.success) {
+        return res.status(400).json({ message: "بيانات غير صالحة", errors: result.error.errors });
+      }
+
+      const review = await storage.createRestaurantReview(result.data);
+      return res.status(201).json(review);
+    } catch (error) {
+      console.error("Create review error:", error);
+      return res.status(500).json({ message: "حدث خطأ في إضافة التقييم" });
     }
   });
 
