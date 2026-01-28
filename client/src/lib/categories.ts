@@ -73,4 +73,12 @@ export const categories: Category[] = [
     description: "اكتشف الأماكن القريبة من موقعك",
     color: "from-blue-600/80 to-blue-800/90",
   },
+  {
+    id: "activities",
+    title: "Activities",
+    titleAr: "الأنشطة",
+    icon: "Compass",
+    description: "أنشطة سياحية متنوعة",
+    color: "from-purple-600/80 to-purple-800/90",
+  },
 ];

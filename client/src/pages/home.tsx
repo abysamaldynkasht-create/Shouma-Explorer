@@ -12,7 +12,8 @@ import {
   LogOut,
   Hospital,
   UserCheck,
-  Navigation
+  Navigation,
+  Compass
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -39,6 +40,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Hospital: <Hospital className="w-8 h-8" />,
   UserCheck: <UserCheck className="w-8 h-8" />,
   Navigation: <Navigation className="w-8 h-8" />,
+  Compass: <Compass className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -64,6 +66,8 @@ export default function HomePage() {
       setLocation("/tour-guides");
     } else if (categoryId === "nearby") {
       setLocation("/nearby");
+    } else if (categoryId === "activities") {
+      setLocation("/activities");
     }
   };
 
@@ -232,6 +236,7 @@ function getCategoryImage(id: string): string {
     "tour-guides": misfatAbriyyinImg,
     shoumatak: wadiDarbatImg,
     nearby: mughsailBeachImg,
+    activities: jebelAkhdarImg,
   };
   return images[id] || images.attractions;
 }
@@ -247,6 +252,7 @@ function getCategoryTitle(id: string, t: (key: string) => string): string {
     "tour-guides": t('tourGuides'),
     shoumatak: t('shoumatak'),
     nearby: t('nearbyPlaces'),
+    activities: t('activities'),
   };
   return titles[id] || id;
 }
@@ -262,6 +268,7 @@ function getCategoryDesc(id: string, t: (key: string) => string): string {
     "tour-guides": t('tourGuidesDesc'),
     shoumatak: t('shoumatakDescShort'),
     nearby: t('nearbyPlacesDesc'),
+    activities: t('activitiesDesc'),
   };
   return descs[id] || '';
 }
