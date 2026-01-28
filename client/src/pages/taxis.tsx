@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import mutrahSouqHeroImg from "@/assets/mutrah-souq.png";
 
-const vehicleTypes = ["الكل", "سيدان", "SUV", "فان", "ليموزين", "4x4"];
+const vehicleTypes = ["الكل", "تاكسي عادي", "تاكسي فاخر", "فان", "عبارة"];
 
 export default function TaxisPage() {
   const [, setLocation] = useLocation();
