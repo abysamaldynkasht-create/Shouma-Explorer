@@ -14,22 +14,29 @@ import {
 } from "@/components/ui/select";
 import { 
   ArrowRight,
+  ArrowLeft,
   MapPin,
   Star,
   Search,
   Map,
   Building2,
-  Navigation
+  Navigation,
+  Globe
 } from "lucide-react";
 import logoUrl from "@assets/شومة_1768320219408.jpg";
 import mutrahSouqHeroImg from "@/assets/mutrah-souq.png";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { languages } from "@/lib/translations";
 
 export default function AttractionsPage() {
   const [, setLocation] = useLocation();
+  const { language, setLanguage, t, direction } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGovernorate, setSelectedGovernorate] = useState("all");
   const [selectedWilayat, setSelectedWilayat] = useState("all");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  
+  const BackArrow = direction === 'rtl' ? ArrowRight : ArrowLeft;
 
   const availableWilayats = useMemo(() => {
     if (selectedGovernorate === "all") return [];
@@ -60,7 +67,7 @@ export default function AttractionsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={direction}>
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 gap-4">
@@ -69,20 +76,33 @@ export default function AttractionsPage() {
               onClick={() => setLocation("/home")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <img 
                 src={logoUrl} 
-                alt="شومة" 
+                alt={t('appName')} 
                 className="w-8 h-8 rounded-full object-cover"
               />
-              <span className="text-lg font-bold">الأماكن السياحية</span>
+              <span className="text-lg font-bold">{t('attractions')}</span>
             </div>
 
-            <div className="w-16" />
+            <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
+              <SelectTrigger className="w-auto gap-2" data-testid="select-language">
+                <Globe className="w-4 h-4" />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {languages.map((lang) => (
+                  <SelectItem key={lang.code} value={lang.code}>
+                    <span className="font-medium">{lang.flag}</span>
+                    <span className="mx-2">{lang.nativeName}</span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </header>
@@ -98,10 +118,10 @@ export default function AttractionsPage() {
         
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg" data-testid="text-page-title">
-            اكتشف أجمل الأماكن السياحية
+            {t('discoverBestPlaces')}
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mb-4 drop-shadow" data-testid="text-page-subtitle">
-            أكثر من {attractions.length} مكان سياحي في {governorates.length} محافظات
+            {t('moreThanPlaces')} {attractions.length} {t('placesIn')} {governorates.length} {t('governorates')}
           </p>
         </div>
       </section>
@@ -112,26 +132,26 @@ export default function AttractionsPage() {
             <Input
               data-testid="input-search"
               type="search"
-              placeholder="ابحث عن مكان سياحي..."
+              placeholder={t('searchAttraction')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-12 pr-5 pl-12"
+              className={`h-12 ${direction === 'rtl' ? 'pr-5 pl-12' : 'pl-5 pr-12'}`}
             />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Search className={`absolute ${direction === 'rtl' ? 'left-4' : 'right-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground`} />
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground flex items-center gap-2">
                 <Building2 className="w-4 h-4" />
-                المحافظة
+                {t('governorate')}
               </label>
               <Select value={selectedGovernorate} onValueChange={handleGovernorateChange}>
                 <SelectTrigger data-testid="select-governorate">
-                  <SelectValue placeholder="اختر المحافظة" />
+                  <SelectValue placeholder={t('selectGovernorate')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">جميع المحافظات</SelectItem>
+                  <SelectItem value="all">{t('allGovernorates')}</SelectItem>
                   {governorates.map((gov) => (
                     <SelectItem key={gov.id} value={gov.id}>
                       {gov.nameAr}
@@ -144,7 +164,7 @@ export default function AttractionsPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                الولاية
+                {t('wilayat')}
               </label>
               <Select 
                 value={selectedWilayat} 
@@ -152,13 +172,13 @@ export default function AttractionsPage() {
                 disabled={selectedGovernorate === "all"}
               >
                 <SelectTrigger data-testid="select-wilayat">
-                  <SelectValue placeholder="اختر الولاية" />
+                  <SelectValue placeholder={t('selectWilayat')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">جميع الولايات</SelectItem>
-                  {availableWilayats.map((wilayat, index) => (
-                    <SelectItem key={`${wilayat}-${index}`} value={wilayat}>
-                      {wilayat}
+                  <SelectItem value="all">{t('allWilayats')}</SelectItem>
+                  {availableWilayats.map((wilayatItem, index) => (
+                    <SelectItem key={`${wilayatItem}-${index}`} value={wilayatItem}>
+                      {wilayatItem}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -168,14 +188,14 @@ export default function AttractionsPage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground flex items-center gap-2">
                 <Map className="w-4 h-4" />
-                التصنيف
+                {t('category')}
               </label>
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger data-testid="select-category">
-                  <SelectValue placeholder="اختر التصنيف" />
+                  <SelectValue placeholder={t('selectCategory')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">جميع التصنيفات</SelectItem>
+                  <SelectItem value="all">{t('allCategories')}</SelectItem>
                   {categories.map((cat, index) => (
                     <SelectItem key={`${cat}-${index}`} value={cat}>
                       {cat}
@@ -194,7 +214,7 @@ export default function AttractionsPage() {
                   <button 
                     data-testid="button-clear-governorate"
                     onClick={() => handleGovernorateChange("all")}
-                    className="mr-1 hover:text-destructive"
+                    className={`${direction === 'rtl' ? 'mr-1' : 'ml-1'} hover:text-destructive`}
                   >
                     ×
                   </button>
@@ -206,7 +226,7 @@ export default function AttractionsPage() {
                   <button 
                     data-testid="button-clear-wilayat"
                     onClick={() => setSelectedWilayat("all")}
-                    className="mr-1 hover:text-destructive"
+                    className={`${direction === 'rtl' ? 'mr-1' : 'ml-1'} hover:text-destructive`}
                   >
                     ×
                   </button>
@@ -218,7 +238,7 @@ export default function AttractionsPage() {
                   <button 
                     data-testid="button-clear-category"
                     onClick={() => setSelectedCategory("all")}
-                    className="mr-1 hover:text-destructive"
+                    className={`${direction === 'rtl' ? 'mr-1' : 'ml-1'} hover:text-destructive`}
                   >
                     ×
                   </button>
@@ -226,11 +246,11 @@ export default function AttractionsPage() {
               )}
               {searchQuery && (
                 <Badge variant="secondary" className="flex items-center gap-1">
-                  بحث: {searchQuery}
+                  {t('searchFor')} {searchQuery}
                   <button 
                     data-testid="button-clear-search"
                     onClick={() => setSearchQuery("")}
-                    className="mr-1 hover:text-destructive"
+                    className={`${direction === 'rtl' ? 'mr-1' : 'ml-1'} hover:text-destructive`}
                   >
                     ×
                   </button>
@@ -245,15 +265,15 @@ export default function AttractionsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-foreground" data-testid="text-results-count">
-              {filteredAttractions.length} مكان سياحي
+              {filteredAttractions.length} {t('attractionCount')}
             </h2>
           </div>
 
           {filteredAttractions.length === 0 ? (
             <div className="text-center py-16">
               <MapPin className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">لا توجد نتائج</h3>
-              <p className="text-muted-foreground">جرب البحث بكلمات مختلفة أو تغيير الفلاتر</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t('noResults')}</h3>
+              <p className="text-muted-foreground">{t('changeFilters')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -309,7 +329,7 @@ export default function AttractionsPage() {
                         className="gap-1"
                       >
                         <Navigation className="w-4 h-4" />
-                        الخريطة
+                        {t('mapButton')}
                       </Button>
                     </div>
                   </CardContent>
@@ -323,11 +343,11 @@ export default function AttractionsPage() {
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <img src={logoUrl} alt="شومة" className="w-6 h-6 rounded-full object-cover" />
-            <span className="font-semibold">شومة</span>
+            <img src={logoUrl} alt={t('appName')} className="w-6 h-6 rounded-full object-cover" />
+            <span className="font-semibold">{t('appName')}</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
+            {t('copyright')} © {new Date().getFullYear()} {t('appName')}
           </p>
         </div>
       </footer>
