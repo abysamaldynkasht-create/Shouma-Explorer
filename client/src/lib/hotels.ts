@@ -11,6 +11,9 @@ import crownePlazaImg2 from "@/assets/crowne-plaza-duqm-2.png";
 import crownePlazaImg3 from "@/assets/crowne-plaza-duqm-3.png";
 import alsalamGrandImg from "@/assets/alsalam-grand-resort.png";
 import alsalamGrandImg2 from "@/assets/alsalam-grand-resort-2.png";
+import sixSensesDeluxeRoomImg from "@/assets/six-senses-deluxe-room.png";
+import sixSensesVillaImg from "@/assets/six-senses-villa.png";
+import sixSensesYachtImg from "@/assets/six-senses-yacht.png";
 
 export const hotels: Hotel[] = [
   {
@@ -31,6 +34,38 @@ export const hotels: Hotel[] = [
     stars: 5,
     phone: "",
     mapUrl: "https://maps.app.goo.gl/4ASSWXq1DQiQcuds6?g_st=ic",
+    roomOptions: [
+      {
+        id: "r1-deluxe",
+        name: "Deluxe Double Sea View Room",
+        nameAr: "غرفة ديلوكس مزدوجة مطلة على البحر",
+        description: "غرفة فندقية ديلوكس بإطلالة مباشرة على البحر. تحتوي على سرير مزدوج كبير جداً وسرير أريكة. شاملة لجميع الوجبات. الخيار الأنسب للأزواج.",
+        pricePerNight: 45,
+        maxGuests: 2,
+        amenities: ["إطلالة على البحر", "سرير مزدوج", "شامل الوجبات", "واي فاي", "تكييف"],
+        image: sixSensesDeluxeRoomImg
+      },
+      {
+        id: "r2-villa",
+        name: "6-Bedroom House",
+        nameAr: "منزل من 6 غرف نوم",
+        description: "بيت عطلات كامل بمساحة 1,000 متر مربع. يحتوي على غرفتي نوم و5 حمّامات. يضم 3 أسرّة (2 مزدوجان كبيران جداً + سرير أريكة). الخيار الأنسب للعائلات والخصوصية.",
+        pricePerNight: 239,
+        maxGuests: 6,
+        amenities: ["مسبح خاص", "خصوصية تامة", "5 حمّامات", "غرفتا نوم", "مطبخ كامل"],
+        image: sixSensesVillaImg
+      },
+      {
+        id: "r3-yacht",
+        name: "Mobile House - Yacht",
+        nameAr: "منزل متنقل - يخت",
+        description: "يخت بحري فاخر يحتوي على 4 غرف نوم وغرفة معيشة و3 حمّامات. يضم 9 أسرّة (2 مزدوجان كبيران جداً و7 أسرّة بطابقين). نظام شامل كلياً. الخيار الفاخر والتجربة الفريدة.",
+        pricePerNight: 468,
+        maxGuests: 9,
+        amenities: ["يخت خاص", "شامل كلياً", "4 غرف نوم", "3 حمّامات", "تجربة بحرية فريدة"],
+        image: sixSensesYachtImg
+      }
+    ],
     reviews: [
       { id: "r1", userName: "أحمد محمد", rating: 5, comment: "تجربة لا تُنسى! الخدمة ممتازة والمناظر خلابة. أنصح الجميع بزيارته.", date: "2025-01-15" },
       { id: "r2", userName: "فاطمة علي", rating: 5, comment: "منتجع راقي جداً، الغرف واسعة ونظيفة والطعام لذيذ.", date: "2025-01-10" },

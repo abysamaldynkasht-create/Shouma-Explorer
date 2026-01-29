@@ -134,6 +134,7 @@ export interface RoomOption {
   pricePerNight: number;
   maxGuests: number;
   amenities: string[];
+  image?: string;
 }
 
 export interface HotelReview {

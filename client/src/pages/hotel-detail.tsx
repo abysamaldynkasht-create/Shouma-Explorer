@@ -207,7 +207,17 @@ export default function HotelDetailPage() {
                       onClick={() => setSelectedRoom(room)}
                       data-testid={`card-room-${room.id}`}
                     >
-                      <CardContent className="p-5">
+                      <div className="flex flex-col md:flex-row">
+                        {room.image && (
+                          <div className="md:w-1/3 aspect-video md:aspect-auto">
+                            <img 
+                              src={room.image} 
+                              alt={room.nameAr} 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )}
+                        <CardContent className={`p-5 ${room.image ? 'md:w-2/3' : 'w-full'}`}>
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
@@ -255,6 +265,7 @@ export default function HotelDetailPage() {
                           </div>
                         </div>
                       </CardContent>
+                      </div>
                     </Card>
                   ))}
                 </div>
