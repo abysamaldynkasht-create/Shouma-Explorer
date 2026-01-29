@@ -4,6 +4,12 @@ import { storage } from "./storage";
 import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
 import { z } from "zod";
 import { textToSpeechStream } from "./replit_integrations/audio/client";
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+});
 
 export async function registerRoutes(
   httpServer: Server,
@@ -86,7 +92,7 @@ export async function registerRoutes(
 
   app.post("/api/voice-guide", async (req, res) => {
     try {
-      const { text, voice = "alloy" } = req.body;
+      const { text, attractionName, location, voice = "alloy" } = req.body;
       
       if (!text) {
         return res.status(400).json({ error: "Text is required" });
@@ -96,7 +102,38 @@ export async function registerRoutes(
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
 
-      const stream = await textToSpeechStream(text, voice);
+      const enrichedResponse = await openai.chat.completions.create({
+        model: "gpt-5.2",
+        messages: [
+          {
+            role: "system",
+            content: `أنت مرشد سياحي خبير في سلطنة عُمان. مهمتك إنشاء نص صوتي غني ومثير للاهتمام عن المعالم السياحية العُمانية. 
+            
+قواعد مهمة:
+- استخدم اللغة العربية الفصحى البسيطة
+- أضف معلومات تاريخية وثقافية مثيرة
+- اذكر نصائح للزوار
+- اذكر أفضل أوقات الزيارة إن أمكن
+- اجعل النص ممتعاً وحماسياً كأنك مرشد سياحي حقيقي
+- لا تتجاوز 150 كلمة`
+          },
+          {
+            role: "user",
+            content: `أنشئ نصاً صوتياً مرشداً سياحياً عن هذا المكان:
+            
+الاسم: ${attractionName || "معلم سياحي"}
+الموقع: ${location || "عُمان"}
+الوصف الأساسي: ${text}
+
+أضف معلومات إضافية مثيرة للاهتمام وتفاصيل تاريخية وثقافية ونصائح للزوار.`
+          }
+        ],
+        max_tokens: 500,
+      });
+
+      const enrichedText = enrichedResponse.choices[0]?.message?.content || text;
+      
+      const stream = await textToSpeechStream(enrichedText, voice);
       
       for await (const audioChunk of stream) {
         res.write(`data: ${JSON.stringify({ type: "audio", data: audioChunk })}\n\n`);

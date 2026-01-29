@@ -131,7 +131,9 @@ export default function AttractionDetailPage() {
                   عن المكان
                 </h2>
                 <VoiceGuide 
-                  text={`${attraction.nameAr}. ${attraction.description}. يقع في ${attraction.wilayat}، ${attraction.governorate}.`}
+                  text={attraction.description}
+                  attractionName={attraction.nameAr}
+                  location={`${attraction.wilayat}، ${attraction.governorate}`}
                 />
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-attraction-description">
