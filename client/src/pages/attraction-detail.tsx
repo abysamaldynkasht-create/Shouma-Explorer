@@ -165,7 +165,11 @@ export default function AttractionDetailPage() {
                 />
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-attraction-description">
-                {language === 'ar' || language === 'fa' ? attraction.description : (attraction.descriptionEn || attraction.description)}
+                {language === 'ar' || language === 'fa' 
+                  ? attraction.description 
+                  : language === 'fr' 
+                    ? (attraction.descriptionFr || attraction.descriptionEn || attraction.description)
+                    : (attraction.descriptionEn || attraction.description)}
               </p>
             </section>
           </div>

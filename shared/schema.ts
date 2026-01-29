@@ -113,6 +113,7 @@ export interface Attraction {
   nameAr: string;
   description: string;
   descriptionEn?: string;
+  descriptionFr?: string;
   governorate: string;
   governorateId: string;
   wilayat: string;
