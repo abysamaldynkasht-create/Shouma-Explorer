@@ -46,6 +46,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function HomePage() {
   const [, setLocation] = useLocation();
   const { t, isRTL } = useLanguage();
+  const username = localStorage.getItem('shouma-username');
 
   const handleCategoryClick = (categoryId: string) => {
     if (categoryId === "shoumatak") {
@@ -72,6 +73,7 @@ export default function HomePage() {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('shouma-username');
     setLocation("/");
   };
 
@@ -87,6 +89,11 @@ export default function HomePage() {
                 className="h-12 w-auto"
                 data-testid="logo-icon"
               />
+              {username && (
+                <span className="text-foreground font-medium text-lg" data-testid="text-welcome-user">
+                  {t('hello')} {username}
+                </span>
+              )}
             </div>
 
             <div className="flex items-center gap-2">

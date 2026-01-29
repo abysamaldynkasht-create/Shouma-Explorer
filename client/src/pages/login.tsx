@@ -47,9 +47,11 @@ export default function LoginPage() {
   const loginMutation = useMutation({
     mutationFn: async (data: { username: string; password: string }) => {
       const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register";
-      return apiRequest("POST", endpoint, data);
+      const response = await apiRequest("POST", endpoint, data);
+      return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (data: { id: string; username: string }) => {
+      localStorage.setItem('shouma-username', data.username);
       toast({
         title: isLogin ? t('loginSuccess') : t('registerSuccess'),
         description: t('welcomeMessage'),
