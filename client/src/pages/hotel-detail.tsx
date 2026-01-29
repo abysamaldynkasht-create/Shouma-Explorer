@@ -164,7 +164,13 @@ export default function HotelDetailPage() {
                 {t('aboutHotel')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-hotel-description">
-                {hotel.description}
+                {language === 'ar' || language === 'fa' 
+                  ? hotel.description 
+                  : language === 'fr' 
+                    ? (hotel.descriptionFr || hotel.descriptionEn || hotel.description)
+                    : language === 'tr'
+                      ? (hotel.descriptionTr || hotel.descriptionEn || hotel.description)
+                      : (hotel.descriptionEn || hotel.description)}
               </p>
             </section>
 

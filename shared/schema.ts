@@ -167,6 +167,9 @@ export interface Hotel {
   name: string;
   nameAr: string;
   description: string;
+  descriptionEn?: string;
+  descriptionFr?: string;
+  descriptionTr?: string;
   city: string;
   region: string;
   image: string;
