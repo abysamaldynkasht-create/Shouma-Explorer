@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
 import { z } from "zod";
+import { textToSpeechStream } from "./replit_integrations/audio/client";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -80,6 +81,37 @@ export async function registerRoutes(
     } catch (error) {
       console.error("Create review error:", error);
       return res.status(500).json({ message: "حدث خطأ في إضافة التقييم" });
+    }
+  });
+
+  app.post("/api/voice-guide", async (req, res) => {
+    try {
+      const { text, voice = "alloy" } = req.body;
+      
+      if (!text) {
+        return res.status(400).json({ error: "Text is required" });
+      }
+
+      res.setHeader("Content-Type", "text/event-stream");
+      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Connection", "keep-alive");
+
+      const stream = await textToSpeechStream(text, voice);
+      
+      for await (const audioChunk of stream) {
+        res.write(`data: ${JSON.stringify({ type: "audio", data: audioChunk })}\n\n`);
+      }
+
+      res.write(`data: ${JSON.stringify({ type: "done" })}\n\n`);
+      res.end();
+    } catch (error) {
+      console.error("Voice guide error:", error);
+      if (res.headersSent) {
+        res.write(`data: ${JSON.stringify({ type: "error", error: "Failed to generate audio" })}\n\n`);
+        res.end();
+      } else {
+        res.status(500).json({ error: "Failed to generate voice guide" });
+      }
     }
   });
 

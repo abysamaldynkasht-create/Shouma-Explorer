@@ -61,6 +61,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'خطأ',
     tryAgain: 'حدث خطأ، يرجى المحاولة مرة أخرى',
     loading: 'جاري التحميل...',
+    voiceGuide: 'المرشد الصوتي',
+    stopVoice: 'إيقاف الصوت',
     
     // Register Page
     createNewAccount: 'إنشاء حساب جديد',
@@ -329,6 +331,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'Error',
     tryAgain: 'An error occurred, please try again',
     loading: 'Loading...',
+    voiceGuide: 'Voice Guide',
+    stopVoice: 'Stop Audio',
     
     // Register Page
     createNewAccount: 'Create New Account',
@@ -597,6 +601,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'Erreur',
     tryAgain: 'Une erreur est survenue, veuillez réessayer',
     loading: 'Chargement...',
+    voiceGuide: 'Guide Vocal',
+    stopVoice: 'Arrêter',
     
     // Register Page
     createNewAccount: 'Créer un nouveau compte',
@@ -865,6 +871,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'Error',
     tryAgain: 'Ocurrió un error, por favor intente de nuevo',
     loading: 'Cargando...',
+    voiceGuide: 'Guía de Voz',
+    stopVoice: 'Detener',
     
     // Register Page
     createNewAccount: 'Crear nueva cuenta',
@@ -1133,6 +1141,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'Hata',
     tryAgain: 'Bir hata oluştu, lütfen tekrar deneyin',
     loading: 'Yükleniyor...',
+    voiceGuide: 'Sesli Rehber',
+    stopVoice: 'Durdur',
     
     // Register Page
     createNewAccount: 'Yeni hesap oluştur',
@@ -1401,6 +1411,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: '错误',
     tryAgain: '发生错误，请重试',
     loading: '加载中...',
+    voiceGuide: '语音导游',
+    stopVoice: '停止',
     
     // Register Page
     createNewAccount: '创建新账户',
@@ -1669,6 +1681,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'エラー',
     tryAgain: 'エラーが発生しました。もう一度お試しください',
     loading: '読み込み中...',
+    voiceGuide: '音声ガイド',
+    stopVoice: '停止',
     
     // Register Page
     createNewAccount: '新規アカウント作成',
@@ -1937,6 +1951,8 @@ export const translations: Record<Language, Record<string, string>> = {
     error: 'خطا',
     tryAgain: 'خطایی رخ داد، لطفاً دوباره تلاش کنید',
     loading: 'در حال بارگذاری...',
+    voiceGuide: 'راهنمای صوتی',
+    stopVoice: 'توقف',
     
     // Register Page
     createNewAccount: 'ایجاد حساب جدید',

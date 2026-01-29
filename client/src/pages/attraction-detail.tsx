@@ -14,6 +14,7 @@ import {
   Tag
 } from "lucide-react";
 import logoUrl from "@assets/شومة_1768320219408.jpg";
+import { VoiceGuide } from "@/components/VoiceGuide";
 
 export default function AttractionDetailPage() {
   const [, setLocation] = useLocation();
@@ -125,9 +126,14 @@ export default function AttractionDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4" data-testid="text-about-title">
-                عن المكان
-              </h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-bold text-foreground" data-testid="text-about-title">
+                  عن المكان
+                </h2>
+                <VoiceGuide 
+                  text={`${attraction.nameAr}. ${attraction.description}. يقع في ${attraction.wilayat}، ${attraction.governorate}.`}
+                />
+              </div>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-attraction-description">
                 {attraction.description}
               </p>
