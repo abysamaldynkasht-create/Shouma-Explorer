@@ -7,10 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PaymentModal from "@/components/PaymentModal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { RoomOption, HotelReview } from "@shared/schema";
 import { 
   Building2, 
   ArrowRight,
+  ArrowLeft,
   MapPin,
   Star,
   Share2,
@@ -38,10 +41,10 @@ export default function HotelDetailPage() {
   const [newReview, setNewReview] = useState({ userName: "", rating: 5, comment: "" });
   const [showReviewForm, setShowReviewForm] = useState(false);
   const params = useParams<{ id: string }>();
+  const { t, language, isRTL } = useLanguage();
   
   const hotel = hotels.find((h) => h.id === params.id);
   
-  // Initialize reviews from hotel data
   useEffect(() => {
     if (hotel?.reviews) {
       setReviews(hotel.reviews);
@@ -61,6 +64,8 @@ export default function HotelDetailPage() {
       .slice(0, 3);
   };
 
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
+
   if (!hotel) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
@@ -70,14 +75,14 @@ export default function HotelDetailPage() {
               <Building2 className="w-8 h-8 text-destructive" />
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              الفندق غير موجود
+              {t('hotelNotFound')}
             </h2>
             <p className="text-muted-foreground mb-6">
-              لم نتمكن من العثور على هذا الفندق.
+              {t('hotelNotFoundDesc')}
             </p>
             <Button onClick={() => setLocation("/hotels")}>
-              <ArrowRight className="w-4 h-4 ml-2" />
-              العودة للفنادق
+              <BackArrow className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+              {t('backToHotels')}
             </Button>
           </CardContent>
         </Card>
@@ -97,18 +102,19 @@ export default function HotelDetailPage() {
               onClick={() => setLocation("/hotels")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <Building2 className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">تفاصيل الفندق</span>
+              <span className="text-lg font-bold">{t('hotelDetails')}</span>
             </div>
 
             <div className="flex items-center gap-2">
+              <LanguageSwitcher />
               <Button variant="ghost" size="icon" data-testid="button-share">
                 <Share2 className="w-5 h-5" />
               </Button>
@@ -128,7 +134,7 @@ export default function HotelDetailPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         
-        <div className="absolute bottom-0 right-0 left-0 p-6 sm:p-8">
+        <div className={`absolute bottom-0 ${isRTL ? 'right-0 left-0' : 'left-0 right-0'} p-6 sm:p-8`}>
           <div className="max-w-6xl mx-auto">
             <div className="flex gap-1 mb-3">
               {renderStars(hotel.stars)}
@@ -155,7 +161,7 @@ export default function HotelDetailPage() {
           <div className="lg:col-span-2 space-y-8">
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4" data-testid="text-about-title">
-                عن الفندق
+                {t('aboutHotel')}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg" data-testid="text-hotel-description">
                 {hotel.description}
@@ -164,7 +170,7 @@ export default function HotelDetailPage() {
 
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                المرافق والخدمات
+                {t('facilitiesAndServices')}
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {hotel.amenities.map((amenity) => (
@@ -181,7 +187,7 @@ export default function HotelDetailPage() {
             {hotel.roomOptions && hotel.roomOptions.length > 0 && (
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  خيارات الغرف
+                  {t('roomOptions')}
                 </h2>
                 <div className="space-y-4">
                   {hotel.roomOptions.map((room) => (
@@ -202,14 +208,14 @@ export default function HotelDetailPage() {
                               <Bed className="w-5 h-5 text-primary" />
                               <h3 className="font-bold text-lg">{room.nameAr}</h3>
                               {selectedRoom?.id === room.id && (
-                                <Badge className="bg-primary text-primary-foreground">محدد</Badge>
+                                <Badge className="bg-primary text-primary-foreground">{t('selected')}</Badge>
                               )}
                             </div>
                             <p className="text-muted-foreground text-sm mb-3">{room.description}</p>
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                               <div className="flex items-center gap-1">
                                 <Users className="w-4 h-4" />
-                                <span>حتى {room.maxGuests} ضيوف</span>
+                                <span>{t('upToGuests').replace('{count}', String(room.maxGuests))}</span>
                               </div>
                             </div>
                             <div className="flex flex-wrap gap-2 mt-3">
@@ -220,14 +226,14 @@ export default function HotelDetailPage() {
                               ))}
                               {room.amenities.length > 4 && (
                                 <Badge variant="outline" className="text-xs">
-                                  +{room.amenities.length - 4} المزيد
+                                  +{room.amenities.length - 4} {t('more')}
                                 </Badge>
                               )}
                             </div>
                           </div>
-                          <div className="text-left sm:text-right">
-                            <p className="text-2xl font-bold text-primary">{room.pricePerNight} ر.ع</p>
-                            <p className="text-sm text-muted-foreground">لليلة الواحدة</p>
+                          <div className={`${isRTL ? 'text-left sm:text-right' : 'text-right sm:text-left'}`}>
+                            <p className="text-2xl font-bold text-primary">{room.pricePerNight} {t('omr')}</p>
+                            <p className="text-sm text-muted-foreground">{t('perNight')}</p>
                             <Button 
                               className="mt-3"
                               size="sm"
@@ -238,7 +244,7 @@ export default function HotelDetailPage() {
                               }}
                               data-testid={`button-book-room-${room.id}`}
                             >
-                              احجز الآن
+                              {t('book')}
                             </Button>
                           </div>
                         </div>
@@ -252,7 +258,7 @@ export default function HotelDetailPage() {
             {hotel.gallery.length > 1 && (
               <section>
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  معرض الصور
+                  {t('photoGallery')}
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
                   {hotel.gallery.map((img, index) => (
@@ -269,7 +275,7 @@ export default function HotelDetailPage() {
                 <div className="flex items-center gap-3">
                   <MessageSquare className="w-6 h-6 text-primary" />
                   <h2 className="text-2xl font-bold text-foreground">
-                    التقييمات والتعليقات
+                    {t('reviewsAndComments')}
                   </h2>
                   <Badge variant="secondary">{reviews.length}</Badge>
                 </div>
@@ -278,26 +284,26 @@ export default function HotelDetailPage() {
                   onClick={() => setShowReviewForm(!showReviewForm)}
                   data-testid="button-add-review"
                 >
-                  {showReviewForm ? "إلغاء" : "أضف تقييمك"}
+                  {showReviewForm ? t('cancel') : t('addReview')}
                 </Button>
               </div>
 
               {showReviewForm && (
                 <Card className="mb-6">
                   <CardContent className="p-6">
-                    <h3 className="font-bold text-lg mb-4">أضف تقييمك</h3>
+                    <h3 className="font-bold text-lg mb-4">{t('addReview')}</h3>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">اسمك</label>
+                        <label className="block text-sm font-medium mb-2">{t('yourName')}</label>
                         <Input
                           data-testid="input-review-name"
-                          placeholder="أدخل اسمك"
+                          placeholder={t('enterYourName')}
                           value={newReview.userName}
                           onChange={(e) => setNewReview({ ...newReview, userName: e.target.value })}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">التقييم</label>
+                        <label className="block text-sm font-medium mb-2">{t('rating')}</label>
                         <div className="flex gap-2">
                           {[1, 2, 3, 4, 5].map((star) => (
                             <button
@@ -319,10 +325,10 @@ export default function HotelDetailPage() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">تعليقك</label>
+                        <label className="block text-sm font-medium mb-2">{t('yourComment')}</label>
                         <Textarea
                           data-testid="input-review-comment"
-                          placeholder="شاركنا تجربتك..."
+                          placeholder={t('shareYourExperience')}
                           rows={4}
                           value={newReview.comment}
                           onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
@@ -337,7 +343,7 @@ export default function HotelDetailPage() {
                               userName: newReview.userName,
                               rating: newReview.rating,
                               comment: newReview.comment,
-                              date: new Date().toLocaleDateString("ar-OM"),
+                              date: new Date().toLocaleDateString(language === 'ar' ? "ar-OM" : "en-US"),
                             };
                             setReviews([review, ...reviews]);
                             setNewReview({ userName: "", rating: 5, comment: "" });
@@ -346,8 +352,8 @@ export default function HotelDetailPage() {
                         }}
                         data-testid="button-submit-review"
                       >
-                        <Send className="w-4 h-4 ml-2" />
-                        إرسال التقييم
+                        <Send className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                        {t('submitReview')}
                       </Button>
                     </div>
                   </CardContent>
@@ -358,10 +364,10 @@ export default function HotelDetailPage() {
                 <Card>
                   <CardContent className="py-12 text-center">
                     <MessageSquare className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                    <h3 className="font-semibold text-lg mb-2">لا توجد تقييمات بعد</h3>
-                    <p className="text-muted-foreground mb-4">كن أول من يشارك تجربته!</p>
+                    <h3 className="font-semibold text-lg mb-2">{t('noReviewsYet')}</h3>
+                    <p className="text-muted-foreground mb-4">{t('beFirstToReview')}</p>
                     <Button variant="outline" onClick={() => setShowReviewForm(true)}>
-                      أضف أول تقييم
+                      {t('addFirstReview')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -406,9 +412,9 @@ export default function HotelDetailPage() {
             <Card>
               <CardContent className="p-6 space-y-4">
                 <div className="text-center pb-4 border-b border-border">
-                  <p className="text-sm text-muted-foreground mb-1">السعر يبدأ من</p>
-                  <p className="text-3xl font-bold text-primary">{hotel.pricePerNight} ر.ع</p>
-                  <p className="text-xs text-muted-foreground">لليلة الواحدة</p>
+                  <p className="text-sm text-muted-foreground mb-1">{t('priceStartsFrom')}</p>
+                  <p className="text-3xl font-bold text-primary">{hotel.pricePerNight} {t('omr')}</p>
+                  <p className="text-xs text-muted-foreground">{t('perNight')}</p>
                 </div>
                 
                 <div className="flex items-center gap-3">
@@ -416,7 +422,7 @@ export default function HotelDetailPage() {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">الموقع</p>
+                    <p className="text-sm text-muted-foreground">{t('location')}</p>
                     <p className="font-medium">{hotel.city}</p>
                   </div>
                 </div>
@@ -426,7 +432,7 @@ export default function HotelDetailPage() {
                     <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">التقييم</p>
+                    <p className="text-sm text-muted-foreground">{t('rating')}</p>
                     <p className="font-medium">{hotel.rating} / 5</p>
                   </div>
                 </div>
@@ -436,7 +442,7 @@ export default function HotelDetailPage() {
                     <Building2 className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">التصنيف</p>
+                    <p className="text-sm text-muted-foreground">{t('classification')}</p>
                     <div className="flex gap-0.5">
                       {renderStars(hotel.stars)}
                     </div>
@@ -448,7 +454,7 @@ export default function HotelDetailPage() {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">للحجز والاستفسار</p>
+                    <p className="text-sm text-muted-foreground">{t('forBookingAndInquiry')}</p>
                     <a 
                       href={`tel:${hotel.phone}`} 
                       className="font-medium text-primary hover:underline"
@@ -472,23 +478,23 @@ export default function HotelDetailPage() {
                       <Navigation className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="font-medium text-primary">عرض على الخريطة</p>
-                      <p className="text-xs text-muted-foreground">افتح في خرائط جوجل</p>
+                      <p className="font-medium text-primary">{t('viewOnMap')}</p>
+                      <p className="text-xs text-muted-foreground">{t('openInGoogleMaps')}</p>
                     </div>
                   </a>
                 )}
 
                 {hotel.roomOptions && hotel.roomOptions.length > 0 ? (
                   <div className="text-center">
-                    <p className="text-sm text-muted-foreground mb-2">اختر نوع الغرفة من الخيارات أعلاه</p>
+                    <p className="text-sm text-muted-foreground mb-2">{t('selectRoomTypeAbove')}</p>
                     {selectedRoom && (
                       <Button 
                         className="w-full h-12" 
                         data-testid="button-book-now"
                         onClick={() => setPaymentOpen(true)}
                       >
-                        <CreditCard className="w-5 h-5 ml-2" />
-                        احجز {selectedRoom.nameAr}
+                        <CreditCard className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                        {t('bookRoom').replace('{room}', selectedRoom.nameAr)}
                       </Button>
                     )}
                   </div>
@@ -498,8 +504,8 @@ export default function HotelDetailPage() {
                     data-testid="button-book-now"
                     onClick={() => setPaymentOpen(true)}
                   >
-                    <CreditCard className="w-5 h-5 ml-2" />
-                    احجز الآن
+                    <CreditCard className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                    {t('book')}
                   </Button>
                 )}
               </CardContent>
@@ -518,34 +524,39 @@ export default function HotelDetailPage() {
         {relatedHotels.length > 0 && (
           <section className="mt-16">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              فنادق مشابهة
+              {t('similarHotels')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedHotels.map((related) => (
                 <Card 
                   key={related.id}
                   data-testid={`card-related-${related.id}`}
-                  className="overflow-hidden group cursor-pointer hover:shadow-lg transition-all"
+                  className="overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"
                   onClick={() => setLocation(`/hotels/${related.id}`)}
                 >
-                  <div className="relative aspect-video overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={related.image}
                       alt={related.nameAr}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2 right-2 flex gap-0.5">
-                      {renderStars(related.stars)}
+                    <div className={`absolute top-3 flex gap-0.5 ${isRTL ? 'right-3' : 'left-3'}`}>
+                      {Array.from({ length: related.stars }, (_, i) => (
+                        <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      ))}
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <h3 className="font-bold text-foreground mb-1">{related.nameAr}</h3>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                        <MapPin className="w-4 h-4" />
-                        <span>{related.city}</span>
-                      </div>
-                      <span className="font-bold text-primary">{related.pricePerNight} ر.ع</span>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {related.nameAr}
+                    </h3>
+                    <div className="flex items-center gap-1 text-muted-foreground text-sm mb-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{related.city}</span>
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t border-border">
+                      <span className="text-sm text-muted-foreground">{t('perNight')}</span>
+                      <span className="font-bold text-primary">{related.pricePerNight} {t('omr')}</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -554,14 +565,6 @@ export default function HotelDetailPage() {
           </section>
         )}
       </main>
-
-      <footer className="py-8 px-4 border-t border-border">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

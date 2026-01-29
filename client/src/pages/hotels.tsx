@@ -5,9 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { 
   Building2, 
   ArrowRight,
+  ArrowLeft,
   MapPin,
   Star,
   Search,
@@ -17,18 +20,27 @@ import {
 } from "lucide-react";
 import sixSensesHeroImg from "@/assets/six-senses-hotel.png";
 
-const regions = ["الكل", "مسقط", "الداخلية", "ظفار", "شمال الشرقية"];
+const regionKeys = ["all", "muscat", "dakhiliyah", "dhofar", "northSharqiyah"] as const;
+const regionArabicMap: Record<string, string> = {
+  "all": "الكل",
+  "muscat": "مسقط",
+  "dakhiliyah": "الداخلية",
+  "dhofar": "ظفار",
+  "northSharqiyah": "شمال الشرقية"
+};
 
 export default function HotelsPage() {
   const [, setLocation] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState("الكل");
+  const [selectedRegion, setSelectedRegion] = useState("all");
+  const { t, language, isRTL } = useLanguage();
 
   const filteredHotels = hotels.filter((hotel) => {
     const matchesSearch = hotel.nameAr.includes(searchQuery) || 
                           hotel.description.includes(searchQuery) ||
                           hotel.city.includes(searchQuery);
-    const matchesRegion = selectedRegion === "الكل" || hotel.region === selectedRegion;
+    const arabicRegion = regionArabicMap[selectedRegion];
+    const matchesRegion = selectedRegion === "all" || hotel.region === arabicRegion;
     return matchesSearch && matchesRegion;
   });
 
@@ -37,6 +49,8 @@ export default function HotelsPage() {
       <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
     ));
   };
+
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
 
   return (
     <div className="min-h-screen bg-background">
@@ -48,18 +62,20 @@ export default function HotelsPage() {
               onClick={() => setLocation("/home")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ArrowRight className="w-5 h-5" />
-              <span className="text-sm font-medium">رجوع</span>
+              <BackArrow className="w-5 h-5" />
+              <span className="text-sm font-medium">{t('back')}</span>
             </button>
 
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                 <Building2 className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold">الفنادق</span>
+              <span className="text-lg font-bold">{t('hotels')}</span>
             </div>
 
-            <div className="w-16" />
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>
@@ -75,10 +91,10 @@ export default function HotelsPage() {
         
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg" data-testid="text-page-title">
-            أفضل الفنادق في عُمان
+            {t('bestHotelsInOman')}
           </h1>
           <p className="text-lg text-white/90 max-w-2xl mb-6 drop-shadow" data-testid="text-page-subtitle">
-            اكتشف أرقى الفنادق والمنتجعات لإقامة لا تُنسى
+            {t('hotelsPageSubtitle')}
           </p>
         </div>
       </section>
@@ -90,25 +106,25 @@ export default function HotelsPage() {
               <Input
                 data-testid="input-search"
                 type="search"
-                placeholder="ابحث عن فندق..."
+                placeholder={t('searchHotel')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-12 pr-5 pl-12"
+                className={`h-12 ${isRTL ? 'pr-5 pl-12' : 'pl-5 pr-12'}`}
               />
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <Search className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground ${isRTL ? 'left-4' : 'right-4'}`} />
             </div>
             
             <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0">
-              {regions.map((region) => (
+              {regionKeys.map((regionKey) => (
                 <Button
-                  key={region}
-                  data-testid={`button-region-${region}`}
-                  variant={selectedRegion === region ? "default" : "outline"}
+                  key={regionKey}
+                  data-testid={`button-region-${regionKey}`}
+                  variant={selectedRegion === regionKey ? "default" : "outline"}
                   size="sm"
-                  onClick={() => setSelectedRegion(region)}
+                  onClick={() => setSelectedRegion(regionKey)}
                   className="whitespace-nowrap"
                 >
-                  {region}
+                  {t(`region_${regionKey}`)}
                 </Button>
               ))}
             </div>
@@ -120,15 +136,15 @@ export default function HotelsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-foreground" data-testid="text-results-count">
-              {filteredHotels.length} فندق
+              {filteredHotels.length} {t('hotel')}
             </h2>
           </div>
 
           {filteredHotels.length === 0 ? (
             <div className="text-center py-16">
               <Building2 className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">لا توجد نتائج</h3>
-              <p className="text-muted-foreground">جرب البحث بكلمات مختلفة</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t('noResults')}</h3>
+              <p className="text-muted-foreground">{t('tryDifferentSearch')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -145,10 +161,10 @@ export default function HotelsPage() {
                       alt={hotel.nameAr}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-3 right-3 flex gap-0.5">
+                    <div className={`absolute top-3 flex gap-0.5 ${isRTL ? 'right-3' : 'left-3'}`}>
                       {renderStars(hotel.stars)}
                     </div>
-                    <div className="absolute top-3 left-3 flex items-center gap-1 bg-black/60 text-white px-2 py-1 rounded-full text-sm">
+                    <div className={`absolute top-3 flex items-center gap-1 bg-black/60 text-white px-2 py-1 rounded-full text-sm ${isRTL ? 'left-3' : 'right-3'}`}>
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                       <span>{hotel.rating}</span>
                     </div>
@@ -172,8 +188,8 @@ export default function HotelsPage() {
                       ))}
                     </div>
                     <div className="flex items-center justify-between pt-3 border-t border-border">
-                      <span className="text-sm text-muted-foreground">لليلة الواحدة</span>
-                      <span className="text-lg font-bold text-primary">{hotel.pricePerNight} ر.ع</span>
+                      <span className="text-sm text-muted-foreground">{t('perNight')}</span>
+                      <span className="text-lg font-bold text-primary">{hotel.pricePerNight} {t('omr')}</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -186,7 +202,7 @@ export default function HotelsPage() {
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            جميع الحقوق محفوظة © {new Date().getFullYear()} شومة
+            {t('copyright')} © {new Date().getFullYear()} {t('appName')}
           </p>
         </div>
       </footer>
