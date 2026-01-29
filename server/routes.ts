@@ -128,7 +128,7 @@ export async function registerRoutes(
 أضف معلومات إضافية مثيرة للاهتمام وتفاصيل تاريخية وثقافية ونصائح للزوار.`
           }
         ],
-        max_tokens: 500,
+        max_completion_tokens: 500,
       });
 
       const enrichedText = enrichedResponse.choices[0]?.message?.content || text;
