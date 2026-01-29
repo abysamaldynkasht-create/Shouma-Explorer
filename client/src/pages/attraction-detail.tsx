@@ -169,7 +169,9 @@ export default function AttractionDetailPage() {
                   ? attraction.description 
                   : language === 'fr' 
                     ? (attraction.descriptionFr || attraction.descriptionEn || attraction.description)
-                    : (attraction.descriptionEn || attraction.description)}
+                    : language === 'tr'
+                      ? (attraction.descriptionTr || attraction.descriptionEn || attraction.description)
+                      : (attraction.descriptionEn || attraction.description)}
               </p>
             </section>
           </div>
