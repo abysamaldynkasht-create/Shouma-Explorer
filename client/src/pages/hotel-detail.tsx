@@ -99,7 +99,7 @@ export default function HotelDetailPage() {
           <div className="flex items-center justify-between h-16 gap-4">
             <button
               data-testid="button-back"
-              onClick={() => setLocation("/hotels")}
+              onClick={() => window.history.length > 1 ? window.history.back() : setLocation("/hotels")}
               className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <BackArrow className="w-5 h-5" />
