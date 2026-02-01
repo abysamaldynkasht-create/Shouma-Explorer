@@ -248,6 +248,7 @@ function getCategoryImage(id: string): string {
     shoumatak: wadiDarbatImg,
     nearby: mughsailBeachImg,
     activities: jebelAkhdarImg,
+    "hidden-gems": misfatAbriyyinImg,
   };
   return images[id] || images.attractions;
 }
@@ -264,6 +265,7 @@ function getCategoryTitle(id: string, t: (key: string) => string): string {
     shoumatak: t('shoumatak'),
     nearby: t('nearbyPlaces'),
     activities: t('activities'),
+    "hidden-gems": t('hiddenGems'),
   };
   return titles[id] || id;
 }
@@ -280,6 +282,7 @@ function getCategoryDesc(id: string, t: (key: string) => string): string {
     shoumatak: t('shoumatakDescShort'),
     nearby: t('nearbyPlacesDesc'),
     activities: t('activitiesDesc'),
+    "hidden-gems": t('hiddenGemsDesc'),
   };
   return descs[id] || '';
 }
