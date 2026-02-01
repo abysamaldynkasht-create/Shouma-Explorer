@@ -1,6 +1,13 @@
 import activityCamelRidingImg from "@/assets/activity-camel-riding.png";
 import horseRidingSeebImg from "@/assets/horse-riding-seeb.png";
 import khareefDhofarImg from "@/assets/khareef-dhofar.png";
+import muscatNightsImg from "@/assets/muscat-nights.png";
+
+export interface ActivityBranch {
+  name: string;
+  nameAr: string;
+  mapUrl: string;
+}
 
 export interface Activity {
   id: string;
@@ -18,6 +25,7 @@ export interface Activity {
   provider?: string;
   phone?: string;
   mapUrl?: string;
+  branches?: ActivityBranch[];
 }
 
 export const activities: Activity[] = [
@@ -66,5 +74,28 @@ export const activities: Activity[] = [
     rating: 4.9,
     includes: ["طبيعة خضراء", "أمطار خفيفة", "شلالات طبيعية", "فعاليات ثقافية", "أجواء معتدلة"],
     mapUrl: "https://maps.app.goo.gl/NcYLwNDFoyS6c1319",
+  },
+  {
+    id: "muscat-nights",
+    name: "Muscat Nights Festival",
+    nameAr: "مهرجان ليالي مسقط",
+    description: "Muscat Nights is one of the largest and most popular annual festivals in the Sultanate of Oman. It features entertainment shows, cultural activities, traditional crafts, food courts, games, and family-friendly events. The festival takes place at multiple locations across Muscat with various branches offering unique experiences.",
+    descriptionAr: "ليالي مسقط هو أحد أكبر وأشهر المهرجانات السنوية في سلطنة عُمان. يتضمن عروضاً ترفيهية وأنشطة ثقافية وحرف تقليدية ومناطق للأطعمة وألعاب وفعاليات عائلية متنوعة. يُقام المهرجان في مواقع متعددة في مسقط مع فروع مختلفة تقدم تجارب فريدة.",
+    location: "مواقع متعددة، محافظة مسقط",
+    region: "محافظة مسقط",
+    duration: "يناير - فبراير",
+    price: "دخول مجاني",
+    image: muscatNightsImg,
+    rating: 4.8,
+    includes: ["عروض ترفيهية", "أنشطة ثقافية", "حرف تقليدية", "مناطق طعام", "ألعاب للأطفال"],
+    branches: [
+      { name: "Qurum Natural Park", nameAr: "فرع متنزه القرم الطبيعي", mapUrl: "https://maps.app.goo.gl/D72Fu6tEnpsD35aE7" },
+      { name: "Royal Opera House", nameAr: "فرع دار الأوبرا السلطانية", mapUrl: "https://maps.app.goo.gl/bQckzMTczwfawfSQ7" },
+      { name: "Wadi Al Khoud", nameAr: "فرع وادي الخوض", mapUrl: "https://maps.app.goo.gl/3Zbn8LnwCetre5Ue7" },
+      { name: "Sur Al Hadid", nameAr: "فرع سور الحديد", mapUrl: "https://maps.app.goo.gl/qPP7U14noVcZvH3C6" },
+      { name: "Quriyat", nameAr: "فرع قريات", mapUrl: "https://maps.app.goo.gl/PjULcAecnnjDDDQP9" },
+      { name: "Al Amarat Park", nameAr: "فرع متنزه العامرات", mapUrl: "https://maps.app.goo.gl/Kbr31kLwSWUVoTEFA" },
+      { name: "Oman Automobile Association", nameAr: "فرع الجمعية العمانية للسيارات", mapUrl: "https://maps.app.goo.gl/xSnmAPjdGaTK1un6A" },
+    ],
   },
 ];

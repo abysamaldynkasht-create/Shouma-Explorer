@@ -80,9 +80,9 @@ export default function ActivitiesPage() {
                   <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
                     {isRTL ? activity.descriptionAr : activity.description}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
                     <span className="text-lg font-bold text-primary">{activity.price}</span>
-                    {activity.mapUrl && (
+                    {activity.mapUrl && !activity.branches && (
                       <Button
                         variant="outline"
                         size="sm"
@@ -94,6 +94,26 @@ export default function ActivitiesPage() {
                       </Button>
                     )}
                   </div>
+                  {activity.branches && activity.branches.length > 0 && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <p className="text-sm font-semibold text-foreground mb-2">{isRTL ? 'الفروع:' : 'Branches:'}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {activity.branches.map((branch, idx) => (
+                          <Button
+                            key={idx}
+                            variant="outline"
+                            size="sm"
+                            onClick={() => window.open(branch.mapUrl, '_blank')}
+                            data-testid={`button-branch-${activity.id}-${idx}`}
+                            className="text-xs"
+                          >
+                            <MapPin className="w-3 h-3" />
+                            <span className={isRTL ? 'mr-1' : 'ml-1'}>{isRTL ? branch.nameAr : branch.name}</span>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
