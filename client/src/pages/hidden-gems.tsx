@@ -9,6 +9,7 @@ import jabalSamhanImg from "@/assets/jabal-samhan.png";
 import biladSaytImg from "@/assets/bilad-sayt.png";
 import zakaitLakeImg from "@/assets/zakait-lake.png";
 import wadiJiziDamImg from "@/assets/wadi-jizi-dam.png";
+import hajirLakeImg from "@/assets/hajir-lake.png";
 
 interface HiddenGem {
   id: string;
@@ -134,6 +135,20 @@ const hiddenGems: HiddenGem[] = [
     image: wadiJiziDamImg,
     rating: 4.5,
     mapUrl: "https://maps.app.goo.gl/UyXdEPKBLDkNqogr5?g_st=ic"
+  },
+  {
+    id: "9",
+    name: "بحيرة الهجير",
+    nameEn: "Al Hajir Lake",
+    description: "تقع بحيرة (برك) الهجير ضمن مسار وادي الهجير في ولاية العوابي بسلطنة عُمان، وهي منطقة مغامرات صعبة تمتد لـ 6 كم وتستغرق حوالي 8 ساعات للمسير. وتتميز بوجود برك مائية عديدة، ويُنصح بزيارتها في فصل الصيف نظراً لبرودة مياهها. تشمل مغامرة الوادي 4 نزلات (نزول) يبلغ طول أطولها 40 متراً",
+    descriptionEn: "Al Hajir Lake (pools) is located along the Wadi Al Hajir trail in Al Awabi, Oman. It's a challenging adventure area spanning 6 km, taking about 8 hours to hike. Known for its numerous water pools, it's best visited in summer due to the cold water. The adventure includes 4 descents, with the longest being 40 meters.",
+    location: "ولاية العوابي",
+    locationEn: "Al Awabi",
+    governorate: "batinah",
+    governorateEn: "South Batinah",
+    image: hajirLakeImg,
+    rating: 4.9,
+    mapUrl: "https://maps.app.goo.gl/YKNnjvEEWMbGsnAWA"
   }
 ];
 
