@@ -2,7 +2,9 @@ import { useLocation } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, ArrowLeft, MapPin, Gem, Star } from "lucide-react";
+import { ArrowRight, ArrowLeft, MapPin, Gem, Star, ExternalLink } from "lucide-react";
+
+import finsBeachImg from "@/assets/fins-beach.png";
 
 interface HiddenGem {
   id: string;
@@ -16,6 +18,7 @@ interface HiddenGem {
   governorateEn: string;
   image: string;
   rating: number;
+  mapUrl?: string;
 }
 
 const hiddenGems: HiddenGem[] = [
@@ -55,8 +58,9 @@ const hiddenGems: HiddenGem[] = [
     locationEn: "Quriyat",
     governorate: "sharqiyah",
     governorateEn: "South Sharqiyah",
-    image: "",
-    rating: 4.7
+    image: finsBeachImg,
+    rating: 4.7,
+    mapUrl: "https://maps.app.goo.gl/nCfxh94LsUvPDH3v9"
   },
   {
     id: "4",
@@ -144,12 +148,19 @@ export default function HiddenGemsPage() {
           {hiddenGems.map((gem) => (
             <Card 
               key={gem.id} 
-              className="overflow-hidden hover-elevate cursor-pointer"
+              className="overflow-hidden hover-elevate"
               data-testid={`card-hidden-gem-${gem.id}`}
             >
-              <div className="aspect-video bg-gradient-to-br from-rose-600/80 to-rose-800/90 flex items-center justify-center">
-                <Gem className="w-16 h-16 text-white/80" />
-              </div>
+              {gem.image ? (
+                <div 
+                  className="aspect-video bg-cover bg-center"
+                  style={{ backgroundImage: `url('${gem.image}')` }}
+                />
+              ) : (
+                <div className="aspect-video bg-gradient-to-br from-rose-600/80 to-rose-800/90 flex items-center justify-center">
+                  <Gem className="w-16 h-16 text-white/80" />
+                </div>
+              )}
               <CardContent className="p-4">
                 <h3 className="font-bold text-lg text-foreground mb-2">
                   {getLocalizedText(gem.name, gem.nameEn)}
@@ -162,9 +173,21 @@ export default function HiddenGemsPage() {
                   <Star className="w-4 h-4 fill-current" />
                   <span className="text-sm font-medium">{gem.rating}</span>
                 </div>
-                <p className="text-muted-foreground text-sm line-clamp-3">
+                <p className="text-muted-foreground text-sm line-clamp-3 mb-3">
                   {getLocalizedText(gem.description, gem.descriptionEn)}
                 </p>
+                {gem.mapUrl && (
+                  <a
+                    href={gem.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium"
+                    data-testid={`link-map-${gem.id}`}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    {t('viewOnMap')}
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}
