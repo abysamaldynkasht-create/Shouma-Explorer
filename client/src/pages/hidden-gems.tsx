@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ArrowLeft, MapPin, Gem, Star, ExternalLink } from "lucide-react";
 
 import finsBeachImg from "@/assets/fins-beach.png";
+import jabalSamhanImg from "@/assets/jabal-samhan.png";
 
 interface HiddenGem {
   id: string;
@@ -85,8 +86,9 @@ const hiddenGems: HiddenGem[] = [
     locationEn: "Mirbat",
     governorate: "dhofar",
     governorateEn: "Dhofar",
-    image: "",
-    rating: 4.8
+    image: jabalSamhanImg,
+    rating: 4.8,
+    mapUrl: "https://maps.app.goo.gl/fJMtvythxoefsD6dA"
   },
   {
     id: "6",
