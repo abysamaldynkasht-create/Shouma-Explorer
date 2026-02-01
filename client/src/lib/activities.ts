@@ -3,6 +3,7 @@ import horseRidingSeebImg from "@/assets/horse-riding-seeb.png";
 import khareefDhofarImg from "@/assets/khareef-dhofar.png";
 import muscatNightsImg from "@/assets/muscat-nights.png";
 import potteryNizwaImg from "@/assets/pottery-nizwa.png";
+import musandamZiplineImg from "@/assets/musandam-zipline-1.png";
 
 export interface ActivityBranch {
   name: string;
@@ -113,5 +114,28 @@ export const activities: Activity[] = [
     rating: 4.7,
     includes: ["تعليم صناعة الفخار", "المواد الخام", "قطعة تذكارية", "مرشد محلي"],
     mapUrl: "https://maps.app.goo.gl/vBGZoVLbdZRFiC8U7",
+  },
+  {
+    id: "musandam-zipline",
+    name: "Musandam Zip Line",
+    nameAr: "زيب لاين مسندم",
+    description: "The longest over-water free-flight zipline in the world, Guinness World Record holder. The journey spans 1,800 meters, launching from Jebel Fit and passing over the crystal-clear waters of the Strait of Hormuz to reach Atana Khasab Hotel. Speeds reach up to 80 km/h, giving you a true flying sensation over the sea. Operated by Oman Adventures.",
+    descriptionAr: "هو أطول مسار انزلاق حر فوق الماء في العالم، وحاصل على رقم قياسي من موسوعة غينيس. تمتد الرحلة لمسافة 1,800 متر، حيث تنطلق من جبل فِت وتمر فوق مياه مضيق هرمز الصافية لتصل إلى فندق أتانا خصب. السرعة تصل إلى 80 كم/ساعة، مما يمنحك شعوراً بالطيران الفعلي فوق البحر. مركز مغامرات عمان.",
+    location: "خصب، محافظة مسندم",
+    region: "محافظة مسندم",
+    duration: "8:30 ص - 4 م يومياً",
+    price: "18-25 ر.ع",
+    image: musandamZiplineImg,
+    rating: 4.9,
+    includes: [
+      "تذكرة فردية: 18 ر.ع",
+      "جولة مزدوجة: 25 ر.ع",
+      "مجموعة 10-25: 17 ر.ع/شخص",
+      "أكثر من 25: 16 ر.ع/شخص",
+      "منصة المشاهدة: 6 ر.ع",
+      "خصم 10% لنزلاء فندق أتانا خصب"
+    ],
+    provider: "مركز مغامرات عمان",
+    mapUrl: "https://maps.app.goo.gl/EggGrkij2dtfLx7TA",
   },
 ];
