@@ -7,6 +7,7 @@ import { ArrowRight, ArrowLeft, MapPin, Gem, Star, ExternalLink } from "lucide-r
 import finsBeachImg from "@/assets/fins-beach.png";
 import jabalSamhanImg from "@/assets/jabal-samhan.png";
 import biladSaytImg from "@/assets/bilad-sayt.png";
+import zakaitLakeImg from "@/assets/zakait-lake.png";
 
 interface HiddenGem {
   id: string;
@@ -115,7 +116,7 @@ const hiddenGems: HiddenGem[] = [
     locationEn: "Al Mudaybi",
     governorate: "sharqiyah",
     governorateEn: "North Sharqiyah",
-    image: "",
+    image: zakaitLakeImg,
     rating: 4.8,
     mapUrl: "https://maps.app.goo.gl/egCd5Bw7Ln1uuehA9?g_st=ic"
   }
