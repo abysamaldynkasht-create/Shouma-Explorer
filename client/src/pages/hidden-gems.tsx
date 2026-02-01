@@ -8,6 +8,7 @@ import finsBeachImg from "@/assets/fins-beach.png";
 import jabalSamhanImg from "@/assets/jabal-samhan.png";
 import biladSaytImg from "@/assets/bilad-sayt.png";
 import zakaitLakeImg from "@/assets/zakait-lake.png";
+import wadiJiziDamImg from "@/assets/wadi-jizi-dam.png";
 
 interface HiddenGem {
   id: string;
@@ -119,6 +120,20 @@ const hiddenGems: HiddenGem[] = [
     image: zakaitLakeImg,
     rating: 4.8,
     mapUrl: "https://maps.app.goo.gl/egCd5Bw7Ln1uuehA9?g_st=ic"
+  },
+  {
+    id: "8",
+    name: "سد وادي الجزي",
+    nameEn: "Wadi Al Jizi Dam",
+    description: "سد وادي الجزي بحيرة جميلة في ولاية صحار، لا توجد العديد من الخدمات القريبة والطريق غير معبد للوصول إلى البحيرة",
+    descriptionEn: "Wadi Al Jizi Dam is a beautiful lake in Sohar. There are few nearby services and the road is unpaved to reach the lake.",
+    location: "ولاية صحار",
+    locationEn: "Sohar",
+    governorate: "batinah",
+    governorateEn: "North Batinah",
+    image: wadiJiziDamImg,
+    rating: 4.5,
+    mapUrl: "https://maps.app.goo.gl/UyXdEPKBLDkNqogr5?g_st=ic"
   }
 ];
 
