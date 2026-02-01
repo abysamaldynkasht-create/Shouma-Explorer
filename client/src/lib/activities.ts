@@ -108,7 +108,7 @@ export const activities: Activity[] = [
     location: "نزوى، محافظة الداخلية",
     region: "محافظة الداخلية",
     duration: "2-3 ساعات",
-    price: "10-15 ر.ع",
+    price: "1-5 ر.ع",
     image: potteryNizwaImg,
     rating: 4.7,
     includes: ["تعليم صناعة الفخار", "المواد الخام", "قطعة تذكارية", "مرشد محلي"],
