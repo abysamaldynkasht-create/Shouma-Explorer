@@ -107,6 +107,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'أنشطة ومواسم سياحية متنوعة',
     hiddenGems: 'دروب شومة',
     hiddenGemsDesc: 'أماكن سياحية مخفية وغير معروفة',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'الآن',
+    featuredEvent: 'الحدث المميز',
+    muscatNightsFestival: 'مهرجان ليالي مسقط',
+    muscatNightsDesc: 'استمتع بأكبر مهرجان ترفيهي في عُمان - عروض، ثقافة، طعام، وفعاليات عائلية',
+    multipleLocations: '7 مواقع في مسقط',
+    freeEntry: 'دخول مجاني',
     discoverHiddenGems: 'اكتشف الجواهر الخفية',
     noActivitiesYet: 'لا توجد أنشطة حالياً',
     activitiesComingSoon: 'سيتم إضافة أنشطة سياحية متنوعة قريباً',
@@ -437,6 +445,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Various tourist activities',
     hiddenGems: 'Shouma Paths',
     hiddenGemsDesc: 'Hidden and unknown tourist places',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'Now',
+    featuredEvent: 'Featured Event',
+    muscatNightsFestival: 'Muscat Nights Festival',
+    muscatNightsDesc: 'Enjoy Oman\'s largest entertainment festival - shows, culture, food, and family events',
+    multipleLocations: '7 locations in Muscat',
+    freeEntry: 'Free Entry',
     discoverHiddenGems: 'Discover Hidden Gems',
     noActivitiesYet: 'No activities yet',
     activitiesComingSoon: 'Various tourist activities will be added soon',
@@ -767,6 +783,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Diverses activités touristiques',
     hiddenGems: 'Chemins de Shouma',
     hiddenGemsDesc: 'Lieux touristiques cachés et méconnus',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'Maintenant',
+    featuredEvent: 'Événement vedette',
+    muscatNightsFestival: 'Festival des Nuits de Mascate',
+    muscatNightsDesc: 'Profitez du plus grand festival de divertissement d\'Oman - spectacles, culture, gastronomie et événements familiaux',
+    multipleLocations: '7 sites à Mascate',
+    freeEntry: 'Entrée gratuite',
     discoverHiddenGems: 'Découvrez les joyaux cachés',
     noActivitiesYet: 'Pas encore d\'activités',
     activitiesComingSoon: 'Diverses activités touristiques seront ajoutées bientôt',
@@ -1097,6 +1121,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Diversas actividades turísticas',
     hiddenGems: 'Caminos de Shouma',
     hiddenGemsDesc: 'Lugares turísticos ocultos y desconocidos',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'Ahora',
+    featuredEvent: 'Evento destacado',
+    muscatNightsFestival: 'Festival Noches de Mascate',
+    muscatNightsDesc: 'Disfruta del mayor festival de entretenimiento de Omán - espectáculos, cultura, comida y eventos familiares',
+    multipleLocations: '7 ubicaciones en Mascate',
+    freeEntry: 'Entrada gratuita',
     discoverHiddenGems: 'Descubre las joyas ocultas',
     noActivitiesYet: 'Aún no hay actividades',
     activitiesComingSoon: 'Se agregarán diversas actividades turísticas pronto',
@@ -1427,6 +1459,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Çeşitli turistik aktiviteler',
     hiddenGems: 'Shouma Yolları',
     hiddenGemsDesc: 'Gizli ve bilinmeyen turistik yerler',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'Şimdi',
+    featuredEvent: 'Öne Çıkan Etkinlik',
+    muscatNightsFestival: 'Maskat Geceleri Festivali',
+    muscatNightsDesc: 'Umman\'ın en büyük eğlence festivalinin tadını çıkarın - gösteriler, kültür, yemek ve aile etkinlikleri',
+    multipleLocations: 'Maskat\'ta 7 konum',
+    freeEntry: 'Ücretsiz giriş',
     discoverHiddenGems: 'Gizli mücevherleri keşfedin',
     noActivitiesYet: 'Henüz aktivite yok',
     activitiesComingSoon: 'Çeşitli turistik aktiviteler yakında eklenecek',
@@ -1757,6 +1797,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: '各种旅游活动',
     hiddenGems: '舒玛之路',
     hiddenGemsDesc: '隐藏和未知的旅游景点',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: '现在',
+    featuredEvent: '精选活动',
+    muscatNightsFestival: '马斯喀特之夜节',
+    muscatNightsDesc: '享受阿曼最大的娱乐节 - 表演、文化、美食和家庭活动',
+    multipleLocations: '马斯喀特7个地点',
+    freeEntry: '免费入场',
     discoverHiddenGems: '发现隐藏的宝藏',
     noActivitiesYet: '暂无活动',
     activitiesComingSoon: '各种旅游活动即将添加',
@@ -2087,6 +2135,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: '様々な観光アクティビティ',
     hiddenGems: 'ショウマの道',
     hiddenGemsDesc: '隠れた未知の観光地',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: '開催中',
+    featuredEvent: '注目のイベント',
+    muscatNightsFestival: 'マスカットナイトフェスティバル',
+    muscatNightsDesc: 'オマーン最大のエンターテインメントフェスティバルを楽しもう - ショー、文化、グルメ、ファミリーイベント',
+    multipleLocations: 'マスカット7会場',
+    freeEntry: '入場無料',
     discoverHiddenGems: '隠れた宝石を発見',
     noActivitiesYet: 'まだアクティビティはありません',
     activitiesComingSoon: '様々な観光アクティビティが近日追加されます',
@@ -2417,6 +2473,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'فعالیت‌های گردشگری متنوع',
     hiddenGems: 'مسیرهای شومه',
     hiddenGemsDesc: 'مکان‌های گردشگری پنهان و ناشناخته',
+    
+    // Muscat Nights Festival Banner
+    nowOpen: 'اکنون',
+    featuredEvent: 'رویداد ویژه',
+    muscatNightsFestival: 'جشنواره شب‌های مسقط',
+    muscatNightsDesc: 'از بزرگترین جشنواره تفریحی عمان لذت ببرید - نمایش‌ها، فرهنگ، غذا و رویدادهای خانوادگی',
+    multipleLocations: '۷ مکان در مسقط',
+    freeEntry: 'ورود رایگان',
     discoverHiddenGems: 'گوهرهای پنهان را کشف کنید',
     noActivitiesYet: 'هنوز فعالیتی وجود ندارد',
     activitiesComingSoon: 'فعالیت‌های گردشگری متنوع به زودی اضافه می‌شوند',

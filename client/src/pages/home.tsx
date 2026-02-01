@@ -30,6 +30,7 @@ import qurmBeachImg from "@/assets/qurum-beach.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import wadiDarbatImg from "@/assets/wadi-darbat.png";
 import mughsailBeachImg from "@/assets/mughsail-beach.png";
+import muscatNightsImg from "@/assets/muscat-nights.png";
 
 const iconMap: Record<string, React.ReactNode> = {
   MapPin: <MapPin className="w-8 h-8" />,
@@ -141,6 +142,59 @@ export default function HomePage() {
             <Sparkles className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
             {t('startJourney')}
           </Button>
+        </div>
+      </section>
+
+      {/* Featured: Muscat Nights Festival Banner */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-900/20 via-amber-800/10 to-amber-900/20">
+        <div className="max-w-7xl mx-auto">
+          <button
+            onClick={() => setLocation("/activities")}
+            data-testid="banner-muscat-nights"
+            className="w-full group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-1"
+          >
+            <div className="relative h-48 sm:h-64 md:h-72">
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: `url('${muscatNightsImg}')` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+              
+              {/* Animated sparkles effect */}
+              <div className="absolute top-4 right-4 flex items-center gap-2">
+                <span className="px-3 py-1.5 bg-amber-500/90 backdrop-blur-sm rounded-full text-white text-sm font-bold animate-pulse">
+                  {t('nowOpen') || 'الآن'}
+                </span>
+              </div>
+              
+              <div className={`absolute inset-0 flex flex-col justify-center p-6 sm:p-8 md:p-10 ${isRTL ? 'text-right items-end' : 'text-left items-start'}`}>
+                <div className="flex items-center gap-3 mb-3">
+                  <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400 animate-pulse" />
+                  <span className="text-amber-400 text-sm sm:text-base font-semibold">
+                    {t('featuredEvent') || 'الحدث المميز'}
+                  </span>
+                </div>
+                
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                  {t('muscatNightsFestival') || 'مهرجان ليالي مسقط'}
+                </h2>
+                
+                <p className="text-white/90 text-sm sm:text-base max-w-md mb-4 drop-shadow">
+                  {t('muscatNightsDesc') || 'استمتع بأكبر مهرجان ترفيهي في عُمان - عروض، ثقافة، طعام، وفعاليات عائلية'}
+                </p>
+                
+                <div className="flex items-center gap-4 text-white/80 text-sm">
+                  <span className="flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4" />
+                    {t('multipleLocations') || '7 مواقع في مسقط'}
+                  </span>
+                  <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs">
+                    {t('freeEntry') || 'دخول مجاني'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </button>
         </div>
       </section>
 
