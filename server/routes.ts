@@ -92,7 +92,7 @@ export async function registerRoutes(
 
   app.post("/api/voice-guide", async (req, res) => {
     try {
-      const { text, attractionName, location, voice = "alloy" } = req.body;
+      const { text, attractionName, location, voice = "alloy", language = "ar" } = req.body;
       
       if (!text) {
         return res.status(400).json({ error: "Text is required" });
@@ -102,12 +102,10 @@ export async function registerRoutes(
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
 
-      const enrichedResponse = await openai.chat.completions.create({
-        model: "gpt-5.2",
-        messages: [
-          {
-            role: "system",
-            content: `أنت مرشد سياحي خبير في سلطنة عُمان. مهمتك إنشاء نص صوتي غني ومثير للاهتمام عن المعالم السياحية العُمانية. 
+      const isArabic = language === "ar" || language === "fa";
+      
+      const systemPrompt = isArabic 
+        ? `أنت مرشد سياحي خبير في سلطنة عُمان. مهمتك إنشاء نص صوتي غني ومثير للاهتمام عن المعالم السياحية العُمانية. 
             
 قواعد مهمة:
 - استخدم اللغة العربية الفصحى البسيطة
@@ -116,17 +114,37 @@ export async function registerRoutes(
 - اذكر أفضل أوقات الزيارة إن أمكن
 - اجعل النص ممتعاً وحماسياً كأنك مرشد سياحي حقيقي
 - لا تتجاوز 150 كلمة`
-          },
-          {
-            role: "user",
-            content: `أنشئ نصاً صوتياً مرشداً سياحياً عن هذا المكان:
+        : `You are an expert tour guide specializing in the Sultanate of Oman. Your task is to create rich, engaging audio narration about Omani tourist attractions.
+
+Important rules:
+- Use clear, simple English
+- Add interesting historical and cultural information
+- Provide tips for visitors
+- Mention the best times to visit if applicable
+- Make the text engaging and enthusiastic like a real tour guide
+- Keep it under 150 words`;
+
+      const userPrompt = isArabic
+        ? `أنشئ نصاً صوتياً مرشداً سياحياً عن هذا المكان:
             
 الاسم: ${attractionName || "معلم سياحي"}
 الموقع: ${location || "عُمان"}
 الوصف الأساسي: ${text}
 
 أضف معلومات إضافية مثيرة للاهتمام وتفاصيل تاريخية وثقافية ونصائح للزوار.`
-          }
+        : `Create an audio tour guide script about this place:
+            
+Name: ${attractionName || "Tourist Attraction"}
+Location: ${location || "Oman"}
+Basic description: ${text}
+
+Add interesting additional information, historical and cultural details, and tips for visitors.`;
+
+      const enrichedResponse = await openai.chat.completions.create({
+        model: "gpt-5.2",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
         ],
         max_completion_tokens: 500,
       });

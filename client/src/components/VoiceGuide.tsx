@@ -24,7 +24,7 @@ interface VoiceGuideProps {
 }
 
 export function VoiceGuide({ text, attractionName, location, className }: VoiceGuideProps) {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -77,7 +77,7 @@ export function VoiceGuide({ text, attractionName, location, className }: VoiceG
       const response = await fetch("/api/voice-guide", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, attractionName, location, voice: "nova" }),
+        body: JSON.stringify({ text, attractionName, location, voice: "nova", language }),
         signal: abortControllerRef.current.signal,
       });
 
