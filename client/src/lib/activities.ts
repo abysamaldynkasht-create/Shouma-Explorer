@@ -2,6 +2,7 @@ import activityCamelRidingImg from "@/assets/activity-camel-riding.png";
 import horseRidingSeebImg from "@/assets/horse-riding-seeb.png";
 import khareefDhofarImg from "@/assets/khareef-dhofar.png";
 import muscatNightsImg from "@/assets/muscat-nights.png";
+import potteryNizwaImg from "@/assets/pottery-nizwa.png";
 
 export interface ActivityBranch {
   name: string;
@@ -97,5 +98,20 @@ export const activities: Activity[] = [
       { name: "Al Amarat Park", nameAr: "فرع متنزه العامرات", mapUrl: "https://maps.app.goo.gl/Kbr31kLwSWUVoTEFA" },
       { name: "Oman Automobile Association", nameAr: "فرع الجمعية العمانية للسيارات", mapUrl: "https://maps.app.goo.gl/xSnmAPjdGaTK1un6A" },
     ],
+  },
+  {
+    id: "pottery-nizwa",
+    name: "Pottery Making in Nizwa",
+    nameAr: "صناعة الفخار في نزوى",
+    description: "Experience the ancient art of pottery making in Nizwa, one of Oman's most historic cities. Learn traditional techniques from local artisans and create your own pottery pieces. This hands-on activity offers a unique glimpse into Omani heritage and craftsmanship.",
+    descriptionAr: "استمتع بتجربة فن صناعة الفخار العريق في نزوى، إحدى أعرق المدن العُمانية. تعلّم التقنيات التقليدية من الحرفيين المحليين وصنع قطع الفخار الخاصة بك. هذا النشاط العملي يوفر لمحة فريدة عن التراث والحرف اليدوية العُمانية.",
+    location: "نزوى، محافظة الداخلية",
+    region: "محافظة الداخلية",
+    duration: "2-3 ساعات",
+    price: "10-15 ر.ع",
+    image: potteryNizwaImg,
+    rating: 4.7,
+    includes: ["تعليم صناعة الفخار", "المواد الخام", "قطعة تذكارية", "مرشد محلي"],
+    mapUrl: "https://maps.app.goo.gl/vBGZoVLbdZRFiC8U7",
   },
 ];
