@@ -237,25 +237,25 @@ const appAttractions: AppItem[] = [
 ];
 
 const appHotels: AppItem[] = [
-  { id: "1", name: "فندق الحواس الست", location: "محافظة مسندم" },
-  { id: "2", name: "مخيم ألف ليلة", location: "محافظة شمال الشرقية" },
-  { id: "3", name: "فندق شانغريلا مسقط", location: "محافظة مسقط" },
-  { id: "4", name: "منتجع أنتارا الجبل الأخضر", location: "محافظة الداخلية" },
-  { id: "5", name: "فندق W مسقط", location: "محافظة مسقط" },
-  { id: "6", name: "فندق كمبينسكي الموج", location: "محافظة مسقط" },
-  { id: "7", name: "فندق الفيصل", location: "محافظة ظفار" },
-  { id: "8", name: "فندق سنتارا صلالة", location: "محافظة ظفار" },
+  { id: "1", name: "فندق الحواس الست", location: "محافظة مسندم", governorateId: "musandam" },
+  { id: "2", name: "مخيم ألف ليلة", location: "محافظة شمال الشرقية", governorateId: "north_sharqiyah" },
+  { id: "3", name: "فندق شانغريلا مسقط", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "4", name: "منتجع أنتارا الجبل الأخضر", location: "محافظة الداخلية", governorateId: "dakhiliyah" },
+  { id: "5", name: "فندق W مسقط", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "6", name: "فندق كمبينسكي الموج", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "7", name: "فندق الفيصل", location: "محافظة ظفار", governorateId: "dhofar" },
+  { id: "8", name: "فندق سنتارا صلالة", location: "محافظة ظفار", governorateId: "dhofar" },
 ];
 
 const appRestaurants: AppItem[] = [
-  { id: "1", name: "قهوة البرج", location: "محافظة جنوب الباطنة" },
-  { id: "2", name: "لاجونا", location: "محافظة مسقط" },
-  { id: "3", name: "بيت المضغوط", location: "محافظة مسقط" },
-  { id: "4", name: "مطاعم خوان", location: "محافظة مسقط" },
-  { id: "5", name: "بين القصورين", location: "محافظة مسقط" },
-  { id: "6", name: "ذا ريستورانت", location: "محافظة مسقط" },
-  { id: "7", name: "ذكريات", location: "محافظة مسقط" },
-  { id: "8", name: "شواء مسقط", location: "محافظة مسقط" },
+  { id: "1", name: "قهوة البرج", location: "محافظة جنوب الباطنة", governorateId: "south_batinah" },
+  { id: "2", name: "لاجونا", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "3", name: "بيت المضغوط", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "4", name: "مطاعم خوان", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "5", name: "بين القصورين", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "6", name: "ذا ريستورانت", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "7", name: "ذكريات", location: "محافظة مسقط", governorateId: "muscat" },
+  { id: "8", name: "شواء مسقط", location: "محافظة مسقط", governorateId: "muscat" },
 ];
 
 function generateItinerary(params: ItineraryParams): Itinerary {
@@ -268,22 +268,48 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     luxury: "رحلة استثنائية فاخرة",
   };
 
+  // Filter attractions by selected governorates
   const filteredAttractions = governorates.length > 0 
     ? appAttractions.filter(a => a.governorateId && governorates.includes(a.governorateId))
     : appAttractions;
   
+  // Filter hotels by selected governorates, fallback to nearest available
+  const filteredHotels = governorates.length > 0
+    ? appHotels.filter(h => h.governorateId && governorates.includes(h.governorateId))
+    : appHotels;
+  
+  // Filter restaurants by selected governorates, fallback to nearest available  
+  const filteredRestaurants = governorates.length > 0
+    ? appRestaurants.filter(r => r.governorateId && governorates.includes(r.governorateId))
+    : appRestaurants;
+  
+  // Use filtered data or fallback to all if no matches
   const attractions = filteredAttractions.length > 0 ? filteredAttractions : appAttractions;
-  const hotels = appHotels;
-  const restaurants = appRestaurants;
+  const hotels = filteredHotels.length > 0 ? filteredHotels : appHotels;
+  const restaurants = filteredRestaurants.length > 0 ? filteredRestaurants : appRestaurants;
 
   const days: ItineraryDay[] = [];
 
   for (let i = 1; i <= Math.min(duration, 7); i++) {
+    // Get attractions for this day
     const attr1 = attractions[(i * 2 - 2) % attractions.length];
     const attr2 = attractions[(i * 2 - 1) % attractions.length];
-    const hotel = hotels[(i - 1) % hotels.length];
-    const restaurant1 = restaurants[(i * 2 - 2) % restaurants.length];
-    const restaurant2 = restaurants[(i * 2 - 1) % restaurants.length];
+    
+    // Find hotel in same governorate as first attraction, or use from list
+    const dayGovernorate = attr1.governorateId;
+    const sameGovHotels = hotels.filter(h => h.governorateId === dayGovernorate);
+    const hotel = sameGovHotels.length > 0 
+      ? sameGovHotels[(i - 1) % sameGovHotels.length] 
+      : hotels[(i - 1) % hotels.length];
+    
+    // Find restaurants in same governorate as attractions
+    const sameGovRestaurants = restaurants.filter(r => r.governorateId === dayGovernorate);
+    const restaurant1 = sameGovRestaurants.length > 0 
+      ? sameGovRestaurants[(i * 2 - 2) % sameGovRestaurants.length]
+      : restaurants[(i * 2 - 2) % restaurants.length];
+    const restaurant2 = sameGovRestaurants.length > 1 
+      ? sameGovRestaurants[(i * 2 - 1) % sameGovRestaurants.length]
+      : (sameGovRestaurants.length > 0 ? sameGovRestaurants[0] : restaurants[(i * 2 - 1) % restaurants.length]);
 
     const activities = [
       {
