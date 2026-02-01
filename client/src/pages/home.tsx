@@ -13,7 +13,8 @@ import {
   Hospital,
   UserCheck,
   Navigation,
-  Compass
+  Compass,
+  Gem
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -41,6 +42,7 @@ const iconMap: Record<string, React.ReactNode> = {
   UserCheck: <UserCheck className="w-8 h-8" />,
   Navigation: <Navigation className="w-8 h-8" />,
   Compass: <Compass className="w-8 h-8" />,
+  Gem: <Gem className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -69,6 +71,8 @@ export default function HomePage() {
       setLocation("/nearby");
     } else if (categoryId === "activities") {
       setLocation("/activities");
+    } else if (categoryId === "hidden-gems") {
+      setLocation("/hidden-gems");
     }
   };
 

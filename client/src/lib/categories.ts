@@ -81,4 +81,12 @@ export const categories: Category[] = [
     description: "أنشطة سياحية متنوعة",
     color: "from-purple-600/80 to-purple-800/90",
   },
+  {
+    id: "hidden-gems",
+    title: "Shouma Paths",
+    titleAr: "دروب شومة",
+    icon: "Gem",
+    description: "أماكن سياحية مخفية وغير معروفة",
+    color: "from-rose-600/80 to-rose-800/90",
+  },
 ];

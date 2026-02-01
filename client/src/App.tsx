@@ -24,6 +24,7 @@ import HospitalDetailPage from "@/pages/hospital-detail";
 import TourGuidesPage from "@/pages/tour-guides";
 import NearbyPlacesPage from "@/pages/nearby-places";
 import ActivitiesPage from "@/pages/activities";
+import HiddenGemsPage from "@/pages/hidden-gems";
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 import CustomerService from "@/components/CustomerService";
 
@@ -49,6 +50,7 @@ function Router() {
       <Route path="/tour-guides" component={TourGuidesPage} />
       <Route path="/nearby" component={NearbyPlacesPage} />
       <Route path="/activities" component={ActivitiesPage} />
+      <Route path="/hidden-gems" component={HiddenGemsPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,0 +1,175 @@
+import { useLocation } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, ArrowLeft, MapPin, Gem, Star } from "lucide-react";
+
+interface HiddenGem {
+  id: string;
+  name: string;
+  nameEn: string;
+  description: string;
+  descriptionEn: string;
+  location: string;
+  locationEn: string;
+  governorate: string;
+  governorateEn: string;
+  image: string;
+  rating: number;
+}
+
+const hiddenGems: HiddenGem[] = [
+  {
+    id: "1",
+    name: "وادي الأربعين",
+    nameEn: "Wadi Al Arbeieen",
+    description: "وادٍ ساحر يقع في محافظة مسقط، يتميز ببركه الفيروزية الصافية والجبال الشاهقة المحيطة به. مكان مثالي للاسترخاء والسباحة بعيداً عن الزحام.",
+    descriptionEn: "A charming valley in Muscat governorate, featuring crystal-clear turquoise pools and towering surrounding mountains. Perfect for relaxation and swimming away from crowds.",
+    location: "محافظة مسقط",
+    locationEn: "Muscat Governorate",
+    governorate: "muscat",
+    governorateEn: "Muscat",
+    image: "",
+    rating: 4.8
+  },
+  {
+    id: "2",
+    name: "قرية بلد سيت",
+    nameEn: "Bilad Sayt Village",
+    description: "قرية جبلية تقليدية معزولة تقع في أعالي جبال الحجر. تتميز بمدرجاتها الزراعية الخضراء وبيوتها الحجرية القديمة والهواء النقي.",
+    descriptionEn: "An isolated traditional mountain village in the Hajar Mountains. Known for its green agricultural terraces, old stone houses, and fresh air.",
+    location: "ولاية الحمراء",
+    locationEn: "Al Hamra",
+    governorate: "dakhiliyah",
+    governorateEn: "Dakhiliyah",
+    image: "",
+    rating: 4.9
+  },
+  {
+    id: "3",
+    name: "شاطئ فنس",
+    nameEn: "Fins Beach",
+    description: "شاطئ رملي أبيض هادئ يقع بين مسقط وصور. مياهه الصافية ورماله الناعمة تجعله ملاذاً مثالياً للهروب من صخب المدينة.",
+    descriptionEn: "A quiet white sandy beach between Muscat and Sur. Its clear waters and soft sand make it a perfect escape from city life.",
+    location: "ولاية قريات",
+    locationEn: "Quriyat",
+    governorate: "sharqiyah",
+    governorateEn: "South Sharqiyah",
+    image: "",
+    rating: 4.7
+  },
+  {
+    id: "4",
+    name: "كهف مجلس الجن",
+    nameEn: "Majlis Al Jinn Cave",
+    description: "ثاني أكبر كهف في العالم من حيث الحجم. يقع في محافظة شمال الشرقية ويمكن الوصول إليه فقط عبر النزول بالحبال من فتحات في سقفه.",
+    descriptionEn: "The world's second-largest cave by volume. Located in North Sharqiyah, accessible only by rappelling through ceiling openings.",
+    location: "ولاية سلوت",
+    locationEn: "Silut",
+    governorate: "sharqiyah",
+    governorateEn: "North Sharqiyah",
+    image: "",
+    rating: 4.9
+  },
+  {
+    id: "5",
+    name: "جبل سمحان",
+    nameEn: "Jabal Samhan",
+    description: "محمية طبيعية في ظفار تضم النمر العربي النادر. تتميز بمناظرها الخلابة من على ارتفاع 2000 متر فوق سطح البحر.",
+    descriptionEn: "A nature reserve in Dhofar home to the rare Arabian leopard. Features breathtaking views from 2000 meters above sea level.",
+    location: "ولاية مرباط",
+    locationEn: "Mirbat",
+    governorate: "dhofar",
+    governorateEn: "Dhofar",
+    image: "",
+    rating: 4.8
+  },
+  {
+    id: "6",
+    name: "عين رزات",
+    nameEn: "Ain Razat",
+    description: "عين مائية طبيعية محاطة بالأشجار الكثيفة والخضرة الدائمة. مكان منعش ومثالي للاستجمام في أيام الصيف الحارة.",
+    descriptionEn: "A natural spring surrounded by dense trees and evergreen vegetation. A refreshing spot perfect for relaxation during hot summer days.",
+    location: "ولاية صلالة",
+    locationEn: "Salalah",
+    governorate: "dhofar",
+    governorateEn: "Dhofar",
+    image: "",
+    rating: 4.6
+  }
+];
+
+export default function HiddenGemsPage() {
+  const [, setLocation] = useLocation();
+  const { t, language, isRTL } = useLanguage();
+
+  const BackArrow = isRTL ? ArrowRight : ArrowLeft;
+
+  const getLocalizedText = (ar: string, en: string) => {
+    if (language === 'ar' || language === 'fa') return ar;
+    return en;
+  };
+
+  return (
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLocation("/home")}
+              className="gap-2"
+              data-testid="button-back"
+            >
+              <BackArrow className="w-4 h-4" />
+              {t('back')}
+            </Button>
+            <h1 className="text-xl font-bold text-foreground">{t('hiddenGems')}</h1>
+            <div className="w-20" />
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+            <Gem className="w-8 h-8 text-primary" />
+          </div>
+          <h2 className="text-2xl font-bold text-foreground mb-2">{t('discoverHiddenGems')}</h2>
+          <p className="text-muted-foreground">{t('hiddenGemsDesc')}</p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {hiddenGems.map((gem) => (
+            <Card 
+              key={gem.id} 
+              className="overflow-hidden hover-elevate cursor-pointer"
+              data-testid={`card-hidden-gem-${gem.id}`}
+            >
+              <div className="aspect-video bg-gradient-to-br from-rose-600/80 to-rose-800/90 flex items-center justify-center">
+                <Gem className="w-16 h-16 text-white/80" />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg text-foreground mb-2">
+                  {getLocalizedText(gem.name, gem.nameEn)}
+                </h3>
+                <div className="flex items-center gap-1 text-muted-foreground text-sm mb-2">
+                  <MapPin className="w-4 h-4" />
+                  <span>{getLocalizedText(gem.location, gem.locationEn)}</span>
+                </div>
+                <div className="flex items-center gap-1 text-amber-500 mb-3">
+                  <Star className="w-4 h-4 fill-current" />
+                  <span className="text-sm font-medium">{gem.rating}</span>
+                </div>
+                <p className="text-muted-foreground text-sm line-clamp-3">
+                  {getLocalizedText(gem.description, gem.descriptionEn)}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+}
