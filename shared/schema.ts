@@ -81,6 +81,7 @@ export interface ItineraryActivity {
   image?: string;
   description?: string;
   rating?: string;
+  itemId?: string;
 }
 
 export interface ItineraryDay {

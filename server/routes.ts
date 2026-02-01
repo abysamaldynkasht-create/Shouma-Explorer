@@ -210,8 +210,56 @@ interface ItineraryParams {
   governorates: string[];
 }
 
+interface AppItem {
+  id: string;
+  name: string;
+  location: string;
+  category?: string;
+  governorateId?: string;
+}
+
+const appAttractions: AppItem[] = [
+  { id: "1", name: "شاطئ القرم", location: "محافظة مسقط", category: "nature", governorateId: "muscat" },
+  { id: "2", name: "سوق مطرح", location: "محافظة مسقط", category: "markets", governorateId: "muscat" },
+  { id: "3", name: "قلعة نزوى", location: "محافظة الداخلية", category: "historical", governorateId: "dakhiliyah" },
+  { id: "4", name: "الجامع الأكبر", location: "محافظة مسقط", category: "religious", governorateId: "muscat" },
+  { id: "5", name: "متحف عُمان الوطني", location: "محافظة مسقط", category: "museums", governorateId: "muscat" },
+  { id: "6", name: "شاطئ المغسيل", location: "محافظة ظفار", category: "nature", governorateId: "dhofar" },
+  { id: "7", name: "وادي شاب", location: "محافظة جنوب الشرقية", category: "nature", governorateId: "south_sharqiyah" },
+  { id: "8", name: "الجبل الأخضر", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah" },
+  { id: "9", name: "رمال الشرقية", location: "محافظة شمال الشرقية", category: "nature", governorateId: "north_sharqiyah" },
+  { id: "10", name: "قلعة بهلاء", location: "محافظة الداخلية", category: "historical", governorateId: "dakhiliyah" },
+  { id: "11", name: "وادي دربات", location: "محافظة ظفار", category: "nature", governorateId: "dhofar" },
+  { id: "12", name: "قصر العلم", location: "محافظة مسقط", category: "historical", governorateId: "muscat" },
+  { id: "13", name: "قرية مسفاة العبريين", location: "محافظة الداخلية", category: "villages", governorateId: "dakhiliyah" },
+  { id: "14", name: "كهف الهوتة", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah" },
+  { id: "15", name: "شاطئ السوادي", location: "محافظة جنوب الباطنة", category: "nature", governorateId: "south_batinah" },
+];
+
+const appHotels: AppItem[] = [
+  { id: "1", name: "فندق الحواس الست", location: "محافظة مسندم" },
+  { id: "2", name: "مخيم ألف ليلة", location: "محافظة شمال الشرقية" },
+  { id: "3", name: "فندق شانغريلا مسقط", location: "محافظة مسقط" },
+  { id: "4", name: "منتجع أنتارا الجبل الأخضر", location: "محافظة الداخلية" },
+  { id: "5", name: "فندق W مسقط", location: "محافظة مسقط" },
+  { id: "6", name: "فندق كمبينسكي الموج", location: "محافظة مسقط" },
+  { id: "7", name: "فندق الفيصل", location: "محافظة ظفار" },
+  { id: "8", name: "فندق سنتارا صلالة", location: "محافظة ظفار" },
+];
+
+const appRestaurants: AppItem[] = [
+  { id: "1", name: "قهوة البرج", location: "محافظة جنوب الباطنة" },
+  { id: "2", name: "لاجونا", location: "محافظة مسقط" },
+  { id: "3", name: "بيت المضغوط", location: "محافظة مسقط" },
+  { id: "4", name: "مطاعم خوان", location: "محافظة مسقط" },
+  { id: "5", name: "بين القصورين", location: "محافظة مسقط" },
+  { id: "6", name: "ذا ريستورانت", location: "محافظة مسقط" },
+  { id: "7", name: "ذكريات", location: "محافظة مسقط" },
+  { id: "8", name: "شواء مسقط", location: "محافظة مسقط" },
+];
+
 function generateItinerary(params: ItineraryParams): Itinerary {
-  const { duration, budget, interests, mealPreference, governorates } = params;
+  const { duration, budget, interests, governorates } = params;
 
   const budgetTitles: Record<string, string> = {
     low: "رحلة اقتصادية مميزة",
@@ -220,53 +268,65 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     luxury: "رحلة استثنائية فاخرة",
   };
 
-  const attractions = getAttractions(budget, interests);
-  const restaurants = getRestaurants(budget, mealPreference);
-  const hotels = getHotels(budget);
+  const filteredAttractions = governorates.length > 0 
+    ? appAttractions.filter(a => a.governorateId && governorates.includes(a.governorateId))
+    : appAttractions;
+  
+  const attractions = filteredAttractions.length > 0 ? filteredAttractions : appAttractions;
+  const hotels = appHotels;
+  const restaurants = appRestaurants;
 
   const days: ItineraryDay[] = [];
 
   for (let i = 1; i <= Math.min(duration, 7); i++) {
-    const dayAttractions = attractions.slice((i - 1) * 2, i * 2);
-    const dayRestaurant = restaurants[(i - 1) % restaurants.length];
-    const dayHotel = hotels[(i - 1) % hotels.length];
+    const attr1 = attractions[(i * 2 - 2) % attractions.length];
+    const attr2 = attractions[(i * 2 - 1) % attractions.length];
+    const hotel = hotels[(i - 1) % hotels.length];
+    const restaurant1 = restaurants[(i * 2 - 2) % restaurants.length];
+    const restaurant2 = restaurants[(i * 2 - 1) % restaurants.length];
 
     const activities = [
       {
         time: "08:00",
         activity: "إفطار في الفندق",
-        location: dayHotel,
+        location: hotel.name,
         type: "hotel" as const,
+        itemId: hotel.id,
       },
       {
         time: "10:00",
-        activity: dayAttractions[0] || "جولة حرة",
-        location: "المنطقة السياحية",
+        activity: `زيارة ${attr1.name}`,
+        location: attr1.location,
         type: "attraction" as const,
+        itemId: attr1.id,
       },
       {
         time: "13:00",
         activity: "غداء",
-        location: dayRestaurant,
+        location: restaurant1.name,
         type: "restaurant" as const,
+        itemId: restaurant1.id,
       },
       {
         time: "15:00",
-        activity: dayAttractions[1] || "استكشاف المنطقة",
-        location: "وسط المدينة",
+        activity: `استكشاف ${attr2.name}`,
+        location: attr2.location,
         type: "attraction" as const,
+        itemId: attr2.id,
       },
       {
         time: "19:00",
         activity: "عشاء",
-        location: restaurants[(i) % restaurants.length],
+        location: restaurant2.name,
         type: "restaurant" as const,
+        itemId: restaurant2.id,
       },
       {
         time: "21:00",
         activity: "العودة للفندق",
-        location: dayHotel,
+        location: hotel.name,
         type: "hotel" as const,
+        itemId: hotel.id,
       },
     ];
 
@@ -295,73 +355,4 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     governorates,
     days,
   };
-}
-
-function getAttractions(budget: string, interests: string[]): string[] {
-  const allAttractions = {
-    culture: ["زيارة المتحف الوطني", "جولة في القصر التاريخي", "استكشاف الحي القديم", "زيارة المسجد الكبير"],
-    nature: ["رحلة إلى الجبال", "جولة في الحديقة الوطنية", "شاطئ البحر", "وادي الزهور"],
-    adventure: ["رحلة سفاري", "تسلق الجبال", "الغوص", "التزلج على الرمال"],
-    relaxation: ["سبا وعلاجات", "حمام تقليدي", "جلسة يوغا", "تأمل في الطبيعة"],
-    shopping: ["السوق التقليدي", "مول التسوق الكبير", "البازار القديم", "شارع التسوق"],
-    food: ["جولة الطعام المحلي", "دروس الطبخ", "سوق المأكولات", "تذوق الحلويات"],
-  };
-
-  let attractions: string[] = [];
-  
-  if (interests.length === 0) {
-    Object.values(allAttractions).forEach(arr => attractions.push(...arr));
-  } else {
-    interests.forEach(interest => {
-      const key = interest as keyof typeof allAttractions;
-      if (allAttractions[key]) {
-        attractions.push(...allAttractions[key]);
-      }
-    });
-  }
-
-  if (budget === "luxury" || budget === "high") {
-    attractions = attractions.map(a => `${a} (VIP)`);
-  }
-
-  return attractions;
-}
-
-function getRestaurants(budget: string, mealPreference: string): string[] {
-  const restaurants: Record<string, Record<string, string[]>> = {
-    local: {
-      low: ["مطعم البيت الشعبي", "مطعم الأصالة", "مطعم الحارة"],
-      medium: ["مطعم التراث", "مطعم الديوان", "مطعم المجلس"],
-      high: ["مطعم النخبة", "مطعم الملوك", "مطعم الأمراء"],
-      luxury: ["مطعم القصر الملكي", "مطعم السلطان", "مطعم الدرة"],
-    },
-    international: {
-      low: ["مطعم عالمي", "كافيه انترناشونال", "بيتزا هاوس"],
-      medium: ["مطعم فيوجن", "لا تيراسا", "ذا غريل"],
-      high: ["مطعم بوليفارد", "لو شاتو", "ذا بالاس"],
-      luxury: ["نوبو", "زوما", "بيير غانيير"],
-    },
-    mixed: {
-      low: ["مطعم متنوع", "كافيه الحي", "مطعم الساحة"],
-      medium: ["مطعم الواحة", "ذا ميكس", "كافيه بيسترو"],
-      high: ["مطعم الجاردن", "ذا لاونج", "سكاي دايننق"],
-      luxury: ["أتيليه", "إيليت دايننق", "ذا بينتهاوس"],
-    },
-  };
-
-  const preference = mealPreference || "mixed";
-  const budgetLevel = budget || "medium";
-
-  return restaurants[preference]?.[budgetLevel] || restaurants.mixed.medium;
-}
-
-function getHotels(budget: string): string[] {
-  const hotels: Record<string, string[]> = {
-    low: ["فندق الضيافة", "نزل المسافر", "فندق الراحة"],
-    medium: ["فندق النخيل", "فندق الواحة", "فندق الشرق"],
-    high: ["فندق الريتز", "فندق الفور سيزونز", "فندق الهيلتون"],
-    luxury: ["فندق البرج", "فندق الأرماني", "فندق السبع نجوم"],
-  };
-
-  return hotels[budget] || hotels.medium;
 }

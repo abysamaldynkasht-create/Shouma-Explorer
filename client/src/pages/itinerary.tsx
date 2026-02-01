@@ -68,6 +68,17 @@ export default function ItineraryPage() {
     return gov ? (language === 'ar' || language === 'fa' ? gov.nameAr : gov.nameEn) : id;
   };
 
+  const handleItemClick = (type: string, id: string) => {
+    const routes: Record<string, string> = {
+      attraction: `/attractions/${id}`,
+      restaurant: `/restaurants/${id}`,
+      hotel: `/hotels/${id}`,
+    };
+    if (routes[type]) {
+      setLocation(routes[type]);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
@@ -217,7 +228,7 @@ export default function ItineraryPage() {
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="space-y-8">
           {itinerary.days.map((day) => (
-            <DayCard key={day.day} day={day} t={t} />
+            <DayCard key={day.day} day={day} t={t} onItemClick={handleItemClick} />
           ))}
         </div>
 
@@ -247,7 +258,7 @@ export default function ItineraryPage() {
   );
 }
 
-function DayCard({ day, t }: { day: ItineraryDay; t: (key: string) => string }) {
+function DayCard({ day, t, onItemClick }: { day: ItineraryDay; t: (key: string) => string; onItemClick: (type: string, id: string) => void }) {
   return (
     <Card data-testid={`card-day-${day.day}`} className="overflow-hidden">
       <CardHeader className="bg-gradient-to-l from-primary/5 to-transparent pb-4">
@@ -267,7 +278,8 @@ function DayCard({ day, t }: { day: ItineraryDay; t: (key: string) => string }) 
             <div 
               key={index}
               data-testid={`activity-${day.day}-${index}`}
-              className="flex gap-4 items-start"
+              className={`flex gap-4 items-start ${activity.itemId ? 'cursor-pointer hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors' : ''}`}
+              onClick={() => activity.itemId && onItemClick(activity.type, activity.itemId)}
             >
               <div className="flex flex-col items-center">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center ${activityColors[activity.type]}`}>
@@ -282,7 +294,7 @@ function DayCard({ day, t }: { day: ItineraryDay; t: (key: string) => string }) 
                   <Clock className="w-4 h-4" />
                   <span>{activity.time}</span>
                 </div>
-                <h4 className="font-semibold text-foreground mb-1">
+                <h4 className={`font-semibold mb-1 ${activity.itemId ? 'text-primary hover:underline' : 'text-foreground'}`}>
                   {activity.activity}
                 </h4>
                 <p className="text-sm text-muted-foreground flex items-center gap-1">
