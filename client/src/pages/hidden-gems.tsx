@@ -29,19 +29,6 @@ interface HiddenGem {
 const hiddenGems: HiddenGem[] = [
   {
     id: "1",
-    name: "وادي الأربعين",
-    nameEn: "Wadi Al Arbeieen",
-    description: "وادٍ ساحر يقع في محافظة مسقط، يتميز ببركه الفيروزية الصافية والجبال الشاهقة المحيطة به. مكان مثالي للاسترخاء والسباحة بعيداً عن الزحام.",
-    descriptionEn: "A charming valley in Muscat governorate, featuring crystal-clear turquoise pools and towering surrounding mountains. Perfect for relaxation and swimming away from crowds.",
-    location: "محافظة مسقط",
-    locationEn: "Muscat Governorate",
-    governorate: "muscat",
-    governorateEn: "Muscat",
-    image: "",
-    rating: 4.8
-  },
-  {
-    id: "2",
     name: "قرية بلد سيت",
     nameEn: "Bilad Sayt Village",
     description: "قرية جبلية تقليدية معزولة تقع في أعالي جبال الحجر. تتميز بمدرجاتها الزراعية الخضراء وبيوتها الحجرية القديمة والهواء النقي.",
@@ -55,7 +42,7 @@ const hiddenGems: HiddenGem[] = [
     mapUrl: "https://maps.app.goo.gl/YnskwhUiTqFWzyLY9"
   },
   {
-    id: "3",
+    id: "2",
     name: "شاطئ فنس",
     nameEn: "Fins Beach",
     description: "شاطئ رملي أبيض هادئ يقع بين مسقط وصور. مياهه الصافية ورماله الناعمة تجعله ملاذاً مثالياً للهروب من صخب المدينة.",
@@ -70,19 +57,6 @@ const hiddenGems: HiddenGem[] = [
   },
   {
     id: "4",
-    name: "كهف مجلس الجن",
-    nameEn: "Majlis Al Jinn Cave",
-    description: "ثاني أكبر كهف في العالم من حيث الحجم. يقع في محافظة شمال الشرقية ويمكن الوصول إليه فقط عبر النزول بالحبال من فتحات في سقفه.",
-    descriptionEn: "The world's second-largest cave by volume. Located in North Sharqiyah, accessible only by rappelling through ceiling openings.",
-    location: "ولاية سلوت",
-    locationEn: "Silut",
-    governorate: "sharqiyah",
-    governorateEn: "North Sharqiyah",
-    image: "",
-    rating: 4.9
-  },
-  {
-    id: "5",
     name: "جبل سمحان",
     nameEn: "Jabal Samhan",
     description: "محمية طبيعية في ظفار تضم النمر العربي النادر. تتميز بمناظرها الخلابة من على ارتفاع 2000 متر فوق سطح البحر.",
@@ -96,20 +70,7 @@ const hiddenGems: HiddenGem[] = [
     mapUrl: "https://maps.app.goo.gl/fJMtvythxoefsD6dA"
   },
   {
-    id: "6",
-    name: "عين رزات",
-    nameEn: "Ain Razat",
-    description: "عين مائية طبيعية محاطة بالأشجار الكثيفة والخضرة الدائمة. مكان منعش ومثالي للاستجمام في أيام الصيف الحارة.",
-    descriptionEn: "A natural spring surrounded by dense trees and evergreen vegetation. A refreshing spot perfect for relaxation during hot summer days.",
-    location: "ولاية صلالة",
-    locationEn: "Salalah",
-    governorate: "dhofar",
-    governorateEn: "Dhofar",
-    image: "",
-    rating: 4.6
-  },
-  {
-    id: "7",
+    id: "5",
     name: "بحيرة زكت المخفية",
     nameEn: "Zakait Hidden Lake",
     description: "بحيرة مخفية من اكتشاف فريق شومة تقع في ولاية المضيبي",
@@ -123,7 +84,7 @@ const hiddenGems: HiddenGem[] = [
     mapUrl: "https://maps.app.goo.gl/egCd5Bw7Ln1uuehA9?g_st=ic"
   },
   {
-    id: "8",
+    id: "6",
     name: "سد وادي الجزي",
     nameEn: "Wadi Al Jizi Dam",
     description: "سد وادي الجزي بحيرة جميلة في ولاية صحار، لا توجد العديد من الخدمات القريبة والطريق غير معبد للوصول إلى البحيرة",
@@ -137,7 +98,7 @@ const hiddenGems: HiddenGem[] = [
     mapUrl: "https://maps.app.goo.gl/UyXdEPKBLDkNqogr5?g_st=ic"
   },
   {
-    id: "9",
+    id: "7",
     name: "بحيرة الهجير",
     nameEn: "Al Hajir Lake",
     description: "تقع بحيرة (برك) الهجير ضمن مسار وادي الهجير في ولاية العوابي بسلطنة عُمان، وهي منطقة مغامرات صعبة تمتد لـ 6 كم وتستغرق حوالي 8 ساعات للمسير. وتتميز بوجود برك مائية عديدة، ويُنصح بزيارتها في فصل الصيف نظراً لبرودة مياهها. تشمل مغامرة الوادي 4 نزلات (نزول) يبلغ طول أطولها 40 متراً",
