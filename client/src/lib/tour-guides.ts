@@ -1,3 +1,10 @@
+import guideAhmedImg from "@/assets/guide-ahmed.png";
+import guideFatimaImg from "@/assets/guide-fatima.png";
+import guideKhalidImg from "@/assets/guide-khalid.png";
+import guideMariamImg from "@/assets/guide-mariam.png";
+import guideSaidImg from "@/assets/guide-said.png";
+import guideYusufImg from "@/assets/guide-yusuf.png";
+
 export interface TourGuide {
   id: number;
   name: string;
@@ -29,7 +36,7 @@ export const tourGuides: TourGuide[] = [
     experience: 12,
     city: "مسقط",
     description: "مرشد سياحي محترف متخصص في التاريخ العُماني والمواقع الأثرية. خبرة واسعة في تنظيم الجولات للمجموعات والأفراد مع معرفة عميقة بالتراث العُماني.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400",
+    image: guideAhmedImg,
     phone: "+968 9123 4567",
     whatsapp: "+96891234567",
     rating: 4.9,
@@ -48,7 +55,7 @@ export const tourGuides: TourGuide[] = [
     experience: 8,
     city: "نزوى",
     description: "مرشدة متخصصة في رحلات المغامرة والهايكنج في الجبال العُمانية. خبيرة في مسارات الجبل الأخضر وجبل شمس مع اهتمام خاص بالسلامة.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400",
+    image: guideFatimaImg,
     phone: "+968 9234 5678",
     whatsapp: "+96892345678",
     rating: 4.8,
@@ -67,7 +74,7 @@ export const tourGuides: TourGuide[] = [
     experience: 15,
     city: "صلالة",
     description: "خبير في رحلات الصحراء والسفاري مع معرفة واسعة بصحراء الربع الخالي ورمال وهيبة. متخصص في تنظيم رحلات التخييم الصحراوي الفاخرة.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400",
+    image: guideKhalidImg,
     phone: "+968 9345 6789",
     whatsapp: "+96893456789",
     rating: 4.9,
@@ -86,7 +93,7 @@ export const tourGuides: TourGuide[] = [
     experience: 6,
     city: "مسقط",
     description: "مرشدة متخصصة في جولات التصوير الفوتوغرافي، تساعدك في اكتشاف أفضل المواقع والأوقات لالتقاط صور مذهلة لعُمان.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400",
+    image: guideMariamImg,
     phone: "+968 9456 7890",
     whatsapp: "+96894567890",
     rating: 4.7,
@@ -105,7 +112,7 @@ export const tourGuides: TourGuide[] = [
     experience: 10,
     city: "مسندم",
     description: "مرشد بحري محترف ومدرب غوص معتمد. خبرة واسعة في تنظيم رحلات مشاهدة الدلافين والغوص في مياه مسندم الصافية.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400",
+    image: guideSaidImg,
     phone: "+968 9567 8901",
     whatsapp: "+96895678901",
     rating: 4.8,
@@ -124,7 +131,7 @@ export const tourGuides: TourGuide[] = [
     experience: 9,
     city: "صحار",
     description: "متخصص في تنظيم الجولات العائلية والمجموعات الكبيرة. يوفر تجربة سياحية ممتعة وآمنة للجميع مع مراعاة احتياجات الأطفال وكبار السن.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400",
+    image: guideYusufImg,
     phone: "+968 9678 9012",
     whatsapp: "+96896789012",
     rating: 4.6,
