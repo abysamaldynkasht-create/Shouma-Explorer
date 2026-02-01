@@ -104,6 +104,20 @@ const hiddenGems: HiddenGem[] = [
     governorateEn: "Dhofar",
     image: "",
     rating: 4.6
+  },
+  {
+    id: "7",
+    name: "بحيرة زكت المخفية",
+    nameEn: "Zakait Hidden Lake",
+    description: "بحيرة مخفية من اكتشاف فريق شومة تقع في ولاية المضيبي",
+    descriptionEn: "A hidden lake discovered by the Shouma team, located in Al Mudaybi.",
+    location: "ولاية المضيبي",
+    locationEn: "Al Mudaybi",
+    governorate: "sharqiyah",
+    governorateEn: "North Sharqiyah",
+    image: "",
+    rating: 4.8,
+    mapUrl: "https://maps.app.goo.gl/egCd5Bw7Ln1uuehA9?g_st=ic"
   }
 ];
 
