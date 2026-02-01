@@ -75,10 +75,10 @@ export const categories: Category[] = [
   },
   {
     id: "activities",
-    title: "Activities",
-    titleAr: "الأنشطة",
+    title: "Activities & Seasons",
+    titleAr: "الأنشطة والمواسم",
     icon: "Compass",
-    description: "أنشطة سياحية متنوعة",
+    description: "أنشطة ومواسم سياحية متنوعة",
     color: "from-purple-600/80 to-purple-800/90",
   },
   {
