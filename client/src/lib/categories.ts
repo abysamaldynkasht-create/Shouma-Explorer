@@ -89,4 +89,12 @@ export const categories: Category[] = [
     description: "أماكن سياحية مخفية وغير معروفة",
     color: "from-rose-600/80 to-rose-800/90",
   },
+  {
+    id: "offline-map",
+    title: "Offline Map",
+    titleAr: "خريطة بدون نت",
+    icon: "Map",
+    description: "خريطة تفاعلية تعمل بدون إنترنت",
+    color: "from-cyan-600/80 to-cyan-800/90",
+  },
 ];

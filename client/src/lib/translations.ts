@@ -107,6 +107,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'أنشطة ومواسم سياحية متنوعة',
     hiddenGems: 'دروب شومة',
     hiddenGemsDesc: 'أماكن سياحية مخفية وغير معروفة',
+    offlineMap: 'خريطة بدون نت',
+    offlineMapDescShort: 'خريطة تفاعلية تعمل بدون إنترنت',
+    offlineMapDesc: 'هذه الخريطة تعمل بالكامل بدون اتصال بالإنترنت',
+    worksOffline: 'تعمل بدون إنترنت',
+    offlineMapInstructions: 'اكتشف خريطة عُمان',
+    offlineMapInstructionsDesc: 'اضغط على أي محافظة لعرض الأماكن السياحية فيها، أو اضغط على علامات المواقع لعرض التفاصيل',
+    governoratesLabel: 'المحافظات',
+    attractionsInGovernorate: 'مكان سياحي',
     
     // Muscat Nights Festival Banner
     nowOpen: 'الآن',
@@ -445,6 +453,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Various tourist activities',
     hiddenGems: 'Shouma Paths',
     hiddenGemsDesc: 'Hidden and unknown tourist places',
+    offlineMap: 'Offline Map',
+    offlineMapDescShort: 'Interactive map works without internet',
+    offlineMapDesc: 'This map works completely without internet connection',
+    worksOffline: 'Works Offline',
+    offlineMapInstructions: 'Explore the Map of Oman',
+    offlineMapInstructionsDesc: 'Tap any governorate to see its tourist attractions, or tap location markers to view details',
+    governoratesLabel: 'Governorates',
+    attractionsInGovernorate: 'tourist attractions',
     
     // Muscat Nights Festival Banner
     nowOpen: 'Now',
@@ -783,6 +799,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Diverses activités touristiques',
     hiddenGems: 'Chemins de Shouma',
     hiddenGemsDesc: 'Lieux touristiques cachés et méconnus',
+    offlineMap: 'Carte Hors Ligne',
+    offlineMapDescShort: 'Carte interactive sans connexion internet',
+    offlineMapDesc: 'Cette carte fonctionne entièrement sans connexion internet',
+    worksOffline: 'Fonctionne Hors Ligne',
+    offlineMapInstructions: 'Explorez la Carte d\'Oman',
+    offlineMapInstructionsDesc: 'Appuyez sur une région pour voir ses attractions touristiques, ou appuyez sur les marqueurs pour voir les détails',
+    governoratesLabel: 'Gouvernorats',
+    attractionsInGovernorate: 'attractions touristiques',
     
     // Muscat Nights Festival Banner
     nowOpen: 'Maintenant',
@@ -1121,6 +1145,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Diversas actividades turísticas',
     hiddenGems: 'Caminos de Shouma',
     hiddenGemsDesc: 'Lugares turísticos ocultos y desconocidos',
+    offlineMap: 'Mapa Sin Conexión',
+    offlineMapDescShort: 'Mapa interactivo sin internet',
+    offlineMapDesc: 'Este mapa funciona completamente sin conexión a internet',
+    worksOffline: 'Funciona Sin Conexión',
+    offlineMapInstructions: 'Explora el Mapa de Omán',
+    offlineMapInstructionsDesc: 'Toca cualquier gobernación para ver sus atracciones turísticas, o toca los marcadores para ver detalles',
+    governoratesLabel: 'Gobernaciones',
+    attractionsInGovernorate: 'atracciones turísticas',
     
     // Muscat Nights Festival Banner
     nowOpen: 'Ahora',
@@ -1459,6 +1491,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'Çeşitli turistik aktiviteler',
     hiddenGems: 'Shouma Yolları',
     hiddenGemsDesc: 'Gizli ve bilinmeyen turistik yerler',
+    offlineMap: 'Çevrimdışı Harita',
+    offlineMapDescShort: 'İnternet olmadan çalışan interaktif harita',
+    offlineMapDesc: 'Bu harita tamamen internet bağlantısı olmadan çalışır',
+    worksOffline: 'Çevrimdışı Çalışır',
+    offlineMapInstructions: 'Umman Haritasını Keşfedin',
+    offlineMapInstructionsDesc: 'Turistik yerlerini görmek için herhangi bir bölgeye dokunun veya ayrıntıları görmek için konum işaretçilerine dokunun',
+    governoratesLabel: 'Bölgeler',
+    attractionsInGovernorate: 'turistik yer',
     
     // Muscat Nights Festival Banner
     nowOpen: 'Şimdi',
@@ -1797,6 +1837,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: '各种旅游活动',
     hiddenGems: '舒玛之路',
     hiddenGemsDesc: '隐藏和未知的旅游景点',
+    offlineMap: '离线地图',
+    offlineMapDescShort: '无需互联网的交互式地图',
+    offlineMapDesc: '此地图完全无需互联网连接即可使用',
+    worksOffline: '离线可用',
+    offlineMapInstructions: '探索阿曼地图',
+    offlineMapInstructionsDesc: '点击任意省份查看其旅游景点，或点击位置标记查看详情',
+    governoratesLabel: '省份',
+    attractionsInGovernorate: '个旅游景点',
     
     // Muscat Nights Festival Banner
     nowOpen: '现在',
@@ -2135,6 +2183,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: '様々な観光アクティビティ',
     hiddenGems: 'ショウマの道',
     hiddenGemsDesc: '隠れた未知の観光地',
+    offlineMap: 'オフラインマップ',
+    offlineMapDescShort: 'インターネット不要のインタラクティブマップ',
+    offlineMapDesc: 'このマップはインターネット接続なしで完全に動作します',
+    worksOffline: 'オフライン対応',
+    offlineMapInstructions: 'オマーンの地図を探索',
+    offlineMapInstructionsDesc: '任意の州をタップして観光スポットを表示するか、場所マーカーをタップして詳細を表示',
+    governoratesLabel: '州',
+    attractionsInGovernorate: '件の観光スポット',
     
     // Muscat Nights Festival Banner
     nowOpen: '開催中',
@@ -2473,6 +2529,14 @@ export const translations: Record<Language, Record<string, string>> = {
     activitiesDesc: 'فعالیت‌های گردشگری متنوع',
     hiddenGems: 'مسیرهای شومه',
     hiddenGemsDesc: 'مکان‌های گردشگری پنهان و ناشناخته',
+    offlineMap: 'نقشه آفلاین',
+    offlineMapDescShort: 'نقشه تعاملی بدون نیاز به اینترنت',
+    offlineMapDesc: 'این نقشه کاملاً بدون اتصال به اینترنت کار می‌کند',
+    worksOffline: 'بدون اینترنت کار می‌کند',
+    offlineMapInstructions: 'نقشه عمان را کاوش کنید',
+    offlineMapInstructionsDesc: 'روی هر استان ضربه بزنید تا جاذبه‌های گردشگری آن را ببینید، یا روی نشانگرهای مکان ضربه بزنید',
+    governoratesLabel: 'استان‌ها',
+    attractionsInGovernorate: 'جاذبه گردشگری',
     
     // Muscat Nights Festival Banner
     nowOpen: 'اکنون',

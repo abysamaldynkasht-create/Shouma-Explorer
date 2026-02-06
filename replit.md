@@ -66,6 +66,17 @@ Preferred communication style: Simple, everyday language.
 - **States**: Loading (requesting location), Error (location denied/unavailable with retry), Success (grid of nearby attractions)
 - **Coverage**: 18+ attractions have coordinates across Muscat, Dakhiliyah, Wusta, North Batinah, and Dhofar governorates
 
+### Offline Map Feature
+- **Route**: `/offline-map`
+- **Component**: `client/src/pages/offline-map.tsx`
+- **Functionality**: Interactive SVG-based map of Oman that works without internet connection
+- **Governorates**: All 11 governorates rendered as clickable SVG path regions with Arabic/English labels
+- **Attraction Markers**: Attractions with lat/lng coordinates shown as dots on the map
+- **Side Panel**: Shows governorate attractions list or individual attraction details with images
+- **Navigation**: Can navigate to attraction detail pages from the map
+- **Coordinate Mapping**: latLngToSvg() converts real coordinates to SVG positions
+- **No Dependencies**: Pure SVG, no external map tiles or APIs needed
+
 ### Build System
 - **Development**: Vite dev server with Express middleware integration
 - **Production**: esbuild for server bundling, Vite for client build
