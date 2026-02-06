@@ -20,8 +20,13 @@ function getCredentials(): any | null {
   try {
     return JSON.parse(credsJson);
   } catch {
-    console.error("Failed to parse GOOGLE_SHEETS_CREDENTIALS");
-    return null;
+    try {
+      const cleaned = credsJson.replace(/\\n/g, '\n').replace(/\r/g, '');
+      return JSON.parse(cleaned);
+    } catch (e2) {
+      console.error("Failed to parse GOOGLE_SHEETS_CREDENTIALS:", e2);
+      return null;
+    }
   }
 }
 
