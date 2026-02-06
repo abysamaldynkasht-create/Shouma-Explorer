@@ -58,6 +58,13 @@ import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
 import mallOfOmanImg from "@/assets/mall-of-oman.png";
 import squSquareImg from "@/assets/squ-square.png";
+import luluKhasabImg from "@/assets/lulu-khasab.png";
+import bassaBeachImg from "@/assets/bassa-beach.png";
+import khorNajdImg from "@/assets/khor-najd.png";
+import khasabParkImg from "@/assets/khasab-park.png";
+import kamazaraFortImg from "@/assets/kamazara-fort.png";
+import jebelRahimImg from "@/assets/jebel-rahim.png";
+import musandamZiplineImg from "@/assets/musandam-zipline-1.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -920,7 +927,7 @@ export const attractions: Attraction[] = [
     wilayat: "ولاية خصب",
     category: "heritage",
     image: khasabFortImg,
-    mapUrl: "https://maps.app.goo.gl/6YmhAYxbjxCrztxj8",
+    mapUrl: "https://maps.app.goo.gl/mSipYc52ni7T7jJ8A",
     rating: "4.6"
   },
   {
@@ -1082,5 +1089,117 @@ export const attractions: Attraction[] = [
     image: squSquareImg,
     mapUrl: "https://share.google/pGvy4FreyxyjffxKS",
     rating: "4.5"
+  },
+  {
+    id: "61",
+    name: "مركز لولو التجاري",
+    nameAr: "مركز لولو التجاري",
+    description: "أكبر مركز تجاري (هايبر ماركت) في ولاية خصب، يوفر تجربة تسوق حديثة متكاملة تشمل المواد الغذائية والإلكترونيات. يتوفر في جميع المحافظات.",
+    descriptionEn: "The largest hypermarket in Khasab, offering a complete modern shopping experience including groceries and electronics. Available across all governorates.",
+    descriptionFr: "Le plus grand hypermarché de Khasab, offrant une expérience de shopping moderne complète incluant l'alimentation et l'électronique. Disponible dans toutes les provinces.",
+    descriptionTr: "Hasab'daki en büyük hipermarket, market ürünleri ve elektronik dahil eksiksiz modern bir alışveriş deneyimi sunar. Tüm vilayetlerde mevcuttur.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "markets",
+    image: luluKhasabImg,
+    mapUrl: "https://maps.app.goo.gl/6aAf1ra2MNp9xR3x6",
+    rating: "4.4"
+  },
+  {
+    id: "62",
+    name: "سلك انزالقي خصب",
+    nameAr: "سلك انزالقي خصب",
+    description: "أطول سلك انزالقي مزدوج فوق الماء في العالم، يوفر تجربة مغامرة بارتفاعات شاهقة فوق المياه الصافية في مضيق هرمز.",
+    descriptionEn: "The longest dual zipline over water in the world, offering an adventure experience at soaring heights above the clear waters of the Strait of Hormuz.",
+    descriptionFr: "La plus longue tyrolienne double au-dessus de l'eau au monde, offrant une expérience d'aventure à des hauteurs vertigineuses au-dessus des eaux cristallines du détroit d'Hormuz.",
+    descriptionTr: "Dünyanın su üzerindeki en uzun çift zip hattı, Hürmüz Boğazı'nın berrak suları üzerinde yükseklerde bir macera deneyimi sunar.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "entertainment",
+    image: musandamZiplineImg,
+    mapUrl: "https://maps.app.goo.gl/78b1nCDRr8T4xnsZ8",
+    rating: "4.7"
+  },
+  {
+    id: "63",
+    name: "شاطئ بصة",
+    nameAr: "شاطئ بصة",
+    description: "شاطئ رملي مطور من شركة عمران بمرافق حديثة وألعاب أطفال، مكان مثالي للعائلات للاستمتاع بالبحر والرمال.",
+    descriptionEn: "A sandy beach developed by Omran with modern facilities and children's playground, an ideal place for families to enjoy the sea and sand.",
+    descriptionFr: "Une plage de sable aménagée par Omran avec des installations modernes et une aire de jeux pour enfants, un endroit idéal pour les familles.",
+    descriptionTr: "Omran tarafından modern tesisler ve çocuk oyun alanı ile geliştirilen kumlu bir plaj, ailelerin deniz ve kumun tadını çıkarması için ideal bir yer.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "nature",
+    image: bassaBeachImg,
+    mapUrl: "https://maps.app.goo.gl/tPPJ63bQqD14PA4s5",
+    rating: "4.5"
+  },
+  {
+    id: "64",
+    name: "خور نجد",
+    nameAr: "خور نجد",
+    description: "إطلالة جبلية ساحرة على مضيق بحري، وهو مقصد لمحبي التخييم والطبيعة الخلابة بين الجبال والبحر.",
+    descriptionEn: "A stunning mountain viewpoint overlooking a sea inlet, a destination for camping enthusiasts and breathtaking nature between mountains and sea.",
+    descriptionFr: "Un point de vue montagneux époustouflant surplombant une crique marine, une destination pour les amateurs de camping et de nature à couper le souffle entre montagnes et mer.",
+    descriptionTr: "Bir deniz girişine bakan büyüleyici dağ manzarası, kamp tutkunları ve dağlar ile deniz arasındaki nefes kesici doğa için bir destinasyon.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "wadis",
+    image: khorNajdImg,
+    mapUrl: "https://maps.app.goo.gl/hZaTNsVoQ1uNwb9a7",
+    rating: "4.7"
+  },
+  {
+    id: "65",
+    name: "حديقة خصب العامة",
+    nameAr: "حديقة خصب العامة",
+    description: "متنزه عائلي يضم مساحات خضراء وألعاب أطفال ومسارات للمشي، مكان مثالي للاسترخاء والتنزه.",
+    descriptionEn: "A family park with green spaces, children's playground, and walking paths, an ideal place for relaxation and strolling.",
+    descriptionFr: "Un parc familial avec des espaces verts, une aire de jeux pour enfants et des sentiers de promenade, un endroit idéal pour la détente.",
+    descriptionTr: "Yeşil alanlar, çocuk oyun alanı ve yürüyüş yolları ile bir aile parkı, dinlenme ve gezinti için ideal bir yer.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "entertainment",
+    image: khasabParkImg,
+    mapUrl: "https://maps.app.goo.gl/nx8UBmfDTKVgZUF97",
+    rating: "4.3"
+  },
+  {
+    id: "66",
+    name: "حصن الكمازرة",
+    nameAr: "حصن الكمازرة",
+    description: "حصن صغير يمثل إرث قبيلة الكمازرة في قلب ولاية خصب، شاهد على التاريخ العريق للمنطقة.",
+    descriptionEn: "A small fort representing the heritage of the Kamazara tribe in the heart of Khasab, a witness to the region's rich history.",
+    descriptionFr: "Un petit fort représentant l'héritage de la tribu Kamazara au cœur de Khasab, témoin de la riche histoire de la région.",
+    descriptionTr: "Hasab'ın kalbinde Kamazara kabilesinin mirasını temsil eden küçük bir kale, bölgenin zengin tarihinin tanığı.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "heritage",
+    image: kamazaraFortImg,
+    mapUrl: "https://maps.app.goo.gl/S33xjmu8iGPF8uyf7",
+    rating: "4.4"
+  },
+  {
+    id: "67",
+    name: "جبل الرحيم",
+    nameAr: "جبل الرحيم",
+    description: "أعلى قمة في مسندم بارتفاع 2087 متراً، يشتهر بوجود أحافير بحرية فوق قمته مما يجعله وجهة فريدة لمحبي الطبيعة والجيولوجيا.",
+    descriptionEn: "The highest peak in Musandam at 2,087 meters, famous for its marine fossils at the summit, making it a unique destination for nature and geology enthusiasts.",
+    descriptionFr: "Le plus haut sommet de Musandam à 2 087 mètres, célèbre pour ses fossiles marins au sommet, en faisant une destination unique pour les passionnés de nature et de géologie.",
+    descriptionTr: "2.087 metre ile Musandam'ın en yüksek zirvesi, zirvesindeki deniz fosilleri ile ünlü, doğa ve jeoloji meraklıları için eşsiz bir destinasyon.",
+    governorate: "محافظة مسندم",
+    governorateId: "musandam",
+    wilayat: "ولاية خصب",
+    category: "nature",
+    image: jebelRahimImg,
+    mapUrl: "https://maps.app.goo.gl/Gr8cdATcQJa6PmKJ6",
+    rating: "4.6"
   }
 ];
