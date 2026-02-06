@@ -3,7 +3,7 @@ import horseRidingSeebImg from "@/assets/horse-riding-seeb.png";
 import khareefDhofarImg from "@/assets/khareef-dhofar.png";
 import muscatNightsImg from "@/assets/muscat-nights.png";
 import potteryNizwaImg from "@/assets/pottery-nizwa.png";
-import musandamZiplineImg from "@/assets/musandam-zipline-1.png";
+import musandamZiplineImg from "@/assets/khasab-zipline.jpg";
 
 export interface ActivityBranch {
   name: string;
