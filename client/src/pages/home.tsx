@@ -78,6 +78,8 @@ export default function HomePage() {
       setLocation("/hidden-gems");
     } else if (categoryId === "offline-map") {
       setLocation("/offline-map");
+    } else if (categoryId === "admin") {
+      setLocation("/admin");
     }
   };
 
@@ -308,6 +310,7 @@ function getCategoryImage(id: string): string {
     activities: jebelAkhdarImg,
     "hidden-gems": misfatAbriyyinImg,
     "offline-map": muscatNightsImg,
+    admin: mutrahSouqImg,
   };
   return images[id] || images.attractions;
 }
@@ -326,6 +329,7 @@ function getCategoryTitle(id: string, t: (key: string) => string): string {
     activities: t('activities'),
     "hidden-gems": t('hiddenGems'),
     "offline-map": t('offlineMap'),
+    admin: t('adminPanel'),
   };
   return titles[id] || id;
 }
@@ -344,6 +348,7 @@ function getCategoryDesc(id: string, t: (key: string) => string): string {
     activities: t('activitiesDesc'),
     "hidden-gems": t('hiddenGemsDesc'),
     "offline-map": t('offlineMapDescShort'),
+    admin: t('adminSubtitle'),
   };
   return descs[id] || '';
 }

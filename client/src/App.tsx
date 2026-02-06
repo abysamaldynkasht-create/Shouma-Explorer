@@ -26,6 +26,7 @@ import NearbyPlacesPage from "@/pages/nearby-places";
 import ActivitiesPage from "@/pages/activities";
 import HiddenGemsPage from "@/pages/hidden-gems";
 import OfflineMapPage from "@/pages/offline-map";
+import AdminPage from "@/pages/admin";
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 import CustomerService from "@/components/CustomerService";
 
@@ -53,6 +54,7 @@ function Router() {
       <Route path="/activities" component={ActivitiesPage} />
       <Route path="/hidden-gems" component={HiddenGemsPage} />
       <Route path="/offline-map" component={OfflineMapPage} />
+      <Route path="/admin" component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   );

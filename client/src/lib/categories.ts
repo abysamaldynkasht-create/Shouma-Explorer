@@ -97,4 +97,12 @@ export const categories: Category[] = [
     description: "خريطة تفاعلية تعمل بدون إنترنت",
     color: "from-cyan-600/80 to-cyan-800/90",
   },
+  {
+    id: "admin",
+    title: "Admin Panel",
+    titleAr: "لوحة التحكم",
+    icon: "Settings",
+    description: "إدارة البيانات عبر Google Sheets",
+    color: "from-slate-600/80 to-slate-800/90",
+  },
 ];
