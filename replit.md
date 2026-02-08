@@ -95,6 +95,17 @@ Preferred communication style: Simple, everyday language.
 - **Production**: esbuild for server bundling, Vite for client build
 - **Output**: `dist/` directory with `public/` for static assets
 
+### Group Trips Feature
+- **Route**: `/group-trips`
+- **Component**: `client/src/pages/group-trips.tsx`
+- **API**: `POST /api/group-trips` (create), `GET /api/group-trips` (list)
+- **Schema**: `groupTripRequests` table in `shared/schema.ts`
+- **Storage**: In-memory via `MemStorage` class
+- **Form Fields**: Number of people, number of days, trip preferences (multi-select: adventures, exploration, heritage, nature, entertainment, custom), country of origin (dropdown), arrival date (date picker)
+- **Validation**: Zod schema with react-hook-form + zodResolver
+- **Purpose**: Collect group trip requests for future custom offer generation
+- **Multi-language**: Translations in all 8 languages
+
 ## Pending Features
 
 ### Payment Integration (Hotels)

@@ -1,12 +1,22 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { apiRequest } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -73,30 +83,37 @@ const countriesAr: Record<string, string> = {
   "Kenya": "كينيا", "Nigeria": "نيجيريا",
 };
 
+const formSchema = z.object({
+  numberOfPeople: z.coerce.number().min(1, "minPeople"),
+  numberOfDays: z.coerce.number().min(1, "minDays"),
+  preferences: z.array(z.string()).min(1, "fieldRequired"),
+  country: z.string().min(1, "fieldRequired"),
+  arrivalDate: z.string().min(1, "fieldRequired"),
+});
+
+type FormValues = z.infer<typeof formSchema>;
+
 export default function GroupTripsPage() {
   const [, setLocation] = useLocation();
   const { t, isRTL, language } = useLanguage();
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
 
-  const [numberOfPeople, setNumberOfPeople] = useState("");
-  const [numberOfDays, setNumberOfDays] = useState("");
-  const [selectedPreferences, setSelectedPreferences] = useState<string[]>([]);
-  const [country, setCountry] = useState("");
-  const [arrivalDate, setArrivalDate] = useState("");
-
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
   const BackArrow = isRTL ? ArrowRight : ArrowLeft;
 
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      numberOfPeople: undefined as unknown as number,
+      numberOfDays: undefined as unknown as number,
+      preferences: [],
+      country: "",
+      arrivalDate: "",
+    },
+  });
+
   const mutation = useMutation({
-    mutationFn: async (data: {
-      numberOfPeople: number;
-      numberOfDays: number;
-      preferences: string[];
-      country: string;
-      arrivalDate: string;
-    }) => {
+    mutationFn: async (data: FormValues) => {
       const res = await apiRequest("POST", "/api/group-trips", data);
       return res.json();
     },
@@ -112,51 +129,16 @@ export default function GroupTripsPage() {
     },
   });
 
-  const validate = () => {
-    const newErrors: Record<string, string> = {};
-    if (!numberOfPeople || parseInt(numberOfPeople) < 1) {
-      newErrors.numberOfPeople = t("minPeople");
-    }
-    if (!numberOfDays || parseInt(numberOfDays) < 1) {
-      newErrors.numberOfDays = t("minDays");
-    }
-    if (selectedPreferences.length === 0) {
-      newErrors.preferences = t("fieldRequired");
-    }
-    if (!country) {
-      newErrors.country = t("fieldRequired");
-    }
-    if (!arrivalDate) {
-      newErrors.arrivalDate = t("fieldRequired");
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    mutation.mutate({
-      numberOfPeople: parseInt(numberOfPeople),
-      numberOfDays: parseInt(numberOfDays),
-      preferences: selectedPreferences,
-      country,
-      arrivalDate,
-    });
+  const onSubmit = (data: FormValues) => {
+    mutation.mutate(data);
   };
 
   const togglePreference = (pref: string) => {
-    setSelectedPreferences((prev) =>
-      prev.includes(pref) ? prev.filter((p) => p !== pref) : [...prev, pref]
-    );
-    if (errors.preferences) {
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next.preferences;
-        return next;
-      });
-    }
+    const current = form.getValues("preferences");
+    const updated = current.includes(pref)
+      ? current.filter((p) => p !== pref)
+      : [...current, pref];
+    form.setValue("preferences", updated, { shouldValidate: true });
   };
 
   const getCountryDisplay = (c: string) => {
@@ -213,7 +195,7 @@ export default function GroupTripsPage() {
                 alt="شومة"
                 className="w-8 h-8 rounded-full object-cover"
               />
-              <h1 className="text-lg font-bold text-foreground">
+              <h1 className="text-lg font-bold text-foreground" data-testid="text-header-title">
                 {t("groupTrips")}
               </h1>
             </div>
@@ -236,195 +218,174 @@ export default function GroupTripsPage() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <Card>
-            <CardContent className="pt-6 space-y-5">
-              <div className="space-y-2">
-                <Label htmlFor="numberOfPeople" className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-muted-foreground" />
-                  {t("numberOfPeople")}
-                </Label>
-                <Input
-                  data-testid="input-number-of-people"
-                  id="numberOfPeople"
-                  type="number"
-                  min="1"
-                  max="500"
-                  placeholder="1"
-                  value={numberOfPeople}
-                  onChange={(e) => {
-                    setNumberOfPeople(e.target.value);
-                    if (errors.numberOfPeople) {
-                      setErrors((prev) => {
-                        const next = { ...prev };
-                        delete next.numberOfPeople;
-                        return next;
-                      });
-                    }
-                  }}
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <Card>
+              <CardContent className="pt-6 space-y-5">
+                <FormField
+                  control={form.control}
+                  name="numberOfPeople"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-muted-foreground" />
+                        {t("numberOfPeople")}
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          data-testid="input-number-of-people"
+                          type="number"
+                          min="1"
+                          max="500"
+                          placeholder="1"
+                          {...field}
+                          value={field.value ?? ""}
+                          onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : undefined)}
+                        />
+                      </FormControl>
+                      <FormMessage>{form.formState.errors.numberOfPeople && t(form.formState.errors.numberOfPeople.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
                 />
-                {errors.numberOfPeople && (
-                  <p className="text-sm text-destructive" data-testid="error-number-of-people">
-                    {errors.numberOfPeople}
-                  </p>
-                )}
-              </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="numberOfDays" className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-muted-foreground" />
-                  {t("numberOfDays")}
-                </Label>
-                <Input
-                  data-testid="input-number-of-days"
-                  id="numberOfDays"
-                  type="number"
-                  min="1"
-                  max="90"
-                  placeholder="1"
-                  value={numberOfDays}
-                  onChange={(e) => {
-                    setNumberOfDays(e.target.value);
-                    if (errors.numberOfDays) {
-                      setErrors((prev) => {
-                        const next = { ...prev };
-                        delete next.numberOfDays;
-                        return next;
-                      });
-                    }
-                  }}
+                <FormField
+                  control={form.control}
+                  name="numberOfDays"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-muted-foreground" />
+                        {t("numberOfDays")}
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          data-testid="input-number-of-days"
+                          type="number"
+                          min="1"
+                          max="90"
+                          placeholder="1"
+                          {...field}
+                          value={field.value ?? ""}
+                          onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : undefined)}
+                        />
+                      </FormControl>
+                      <FormMessage>{form.formState.errors.numberOfDays && t(form.formState.errors.numberOfDays.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
                 />
-                {errors.numberOfDays && (
-                  <p className="text-sm text-destructive" data-testid="error-number-of-days">
-                    {errors.numberOfDays}
-                  </p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="pt-6 space-y-3">
-              <Label className="flex items-center gap-2 mb-1">
-                {t("tripPreferences")}
-              </Label>
-              <p className="text-xs text-muted-foreground mb-3">
-                {t("selectPreferences")}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {preferenceKeys.map((key, index) => {
-                  const value = preferenceValues[index];
-                  const isSelected = selectedPreferences.includes(value);
-                  return (
-                    <button
-                      key={value}
-                      type="button"
-                      data-testid={`button-pref-${value}`}
-                      onClick={() => togglePreference(value)}
-                      className={`px-4 py-3 rounded-md border text-sm font-medium transition-colors ${
-                        isSelected
-                          ? "bg-indigo-600 text-white border-indigo-600 dark:bg-indigo-500 dark:border-indigo-500"
-                          : "bg-background border-border text-foreground hover-elevate"
-                      }`}
-                    >
-                      {t(key)}
-                    </button>
-                  );
-                })}
-              </div>
-              {errors.preferences && (
-                <p className="text-sm text-destructive" data-testid="error-preferences">
-                  {errors.preferences}
-                </p>
+            <Card>
+              <CardContent className="pt-6 space-y-3">
+                <FormField
+                  control={form.control}
+                  name="preferences"
+                  render={() => (
+                    <FormItem>
+                      <FormLabel>{t("tripPreferences")}</FormLabel>
+                      <p className="text-xs text-muted-foreground" data-testid="text-preferences-hint">
+                        {t("selectPreferences")}
+                      </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        {preferenceKeys.map((key, index) => {
+                          const value = preferenceValues[index];
+                          const isSelected = form.watch("preferences").includes(value);
+                          return (
+                            <button
+                              key={value}
+                              type="button"
+                              data-testid={`button-pref-${value}`}
+                              onClick={() => togglePreference(value)}
+                              className={`px-4 py-3 rounded-md border text-sm font-medium transition-colors toggle-elevate ${
+                                isSelected
+                                  ? "bg-indigo-600 text-white border-indigo-600 dark:bg-indigo-500 dark:border-indigo-500 toggle-elevated"
+                                  : "bg-background border-border text-foreground"
+                              }`}
+                            >
+                              {t(key)}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <FormMessage>{form.formState.errors.preferences && t(form.formState.errors.preferences.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
+                />
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6 space-y-5">
+                <FormField
+                  control={form.control}
+                  name="country"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Globe className="w-4 h-4 text-muted-foreground" />
+                        {t("countryOfOrigin")}
+                      </FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger data-testid="select-country">
+                            <SelectValue placeholder={t("selectCountry")} />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {countries.map((c) => (
+                            <SelectItem key={c} value={c} data-testid={`option-country-${c}`}>
+                              {getCountryDisplay(c)}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage>{form.formState.errors.country && t(form.formState.errors.country.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="arrivalDate"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-muted-foreground" />
+                        {t("arrivalDate")}
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          data-testid="input-arrival-date"
+                          type="date"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage>{form.formState.errors.arrivalDate && t(form.formState.errors.arrivalDate.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
+                />
+              </CardContent>
+            </Card>
+
+            <Button
+              data-testid="button-submit-request"
+              type="submit"
+              className="w-full"
+              size="lg"
+              disabled={mutation.isPending}
+            >
+              {mutation.isPending ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <>
+                  <Send className="w-5 h-5" />
+                  <span className={isRTL ? "mr-2" : "ml-2"}>{t("submitRequest")}</span>
+                </>
               )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="pt-6 space-y-5">
-              <div className="space-y-2">
-                <Label className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-muted-foreground" />
-                  {t("countryOfOrigin")}
-                </Label>
-                <Select
-                  value={country}
-                  onValueChange={(val) => {
-                    setCountry(val);
-                    if (errors.country) {
-                      setErrors((prev) => {
-                        const next = { ...prev };
-                        delete next.country;
-                        return next;
-                      });
-                    }
-                  }}
-                >
-                  <SelectTrigger data-testid="select-country">
-                    <SelectValue placeholder={t("selectCountry")} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countries.map((c) => (
-                      <SelectItem key={c} value={c} data-testid={`option-country-${c}`}>
-                        {getCountryDisplay(c)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {errors.country && (
-                  <p className="text-sm text-destructive" data-testid="error-country">
-                    {errors.country}
-                  </p>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="arrivalDate" className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-muted-foreground" />
-                  {t("arrivalDate")}
-                </Label>
-                <Input
-                  data-testid="input-arrival-date"
-                  id="arrivalDate"
-                  type="date"
-                  value={arrivalDate}
-                  onChange={(e) => {
-                    setArrivalDate(e.target.value);
-                    if (errors.arrivalDate) {
-                      setErrors((prev) => {
-                        const next = { ...prev };
-                        delete next.arrivalDate;
-                        return next;
-                      });
-                    }
-                  }}
-                />
-                {errors.arrivalDate && (
-                  <p className="text-sm text-destructive" data-testid="error-arrival-date">
-                    {errors.arrivalDate}
-                  </p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Button
-            data-testid="button-submit-request"
-            type="submit"
-            className="w-full"
-            size="lg"
-            disabled={mutation.isPending}
-          >
-            {mutation.isPending ? (
-              <Loader2 className="w-5 h-5 animate-spin" />
-            ) : (
-              <>
-                <Send className="w-5 h-5" />
-                <span className={isRTL ? "mr-2" : "ml-2"}>{t("submitRequest")}</span>
-              </>
-            )}
-          </Button>
-        </form>
+            </Button>
+          </form>
+        </Form>
       </main>
     </div>
   );
