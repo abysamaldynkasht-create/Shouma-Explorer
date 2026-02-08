@@ -217,6 +217,24 @@ export interface Taxi {
   destinations?: string[];
 }
 
+export const groupTripRequests = pgTable("group_trip_requests", {
+  id: serial("id").primaryKey(),
+  numberOfPeople: integer("number_of_people").notNull(),
+  numberOfDays: integer("number_of_days").notNull(),
+  preferences: text("preferences").array().notNull(),
+  country: text("country").notNull(),
+  arrivalDate: text("arrival_date").notNull(),
+  createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
+});
+
+export const insertGroupTripRequestSchema = createInsertSchema(groupTripRequests).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type GroupTripRequest = typeof groupTripRequests.$inferSelect;
+export type InsertGroupTripRequest = z.infer<typeof insertGroupTripRequestSchema>;
+
 export interface HikingTrip {
   id: string;
   name: string;
