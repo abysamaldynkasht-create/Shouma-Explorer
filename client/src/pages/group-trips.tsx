@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { apiRequest } from "@/lib/queryClient";
+import { governorates } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -33,6 +34,7 @@ import {
   CheckCircle2,
   Send,
   Loader2,
+  MapPin,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import logoImage from "@assets/شومة_1768320219408.jpg";
@@ -89,6 +91,16 @@ const formSchema = z.object({
   preferences: z.array(z.string()).min(1, "fieldRequired"),
   country: z.string().min(1, "fieldRequired"),
   arrivalDate: z.string().min(1, "fieldRequired"),
+  destinationPreference: z.string().min(1, "fieldRequired"),
+  selectedGovernorate: z.string().optional(),
+}).refine((data) => {
+  if (data.destinationPreference === "single" && !data.selectedGovernorate) {
+    return false;
+  }
+  return true;
+}, {
+  message: "fieldRequired",
+  path: ["selectedGovernorate"],
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -109,12 +121,20 @@ export default function GroupTripsPage() {
       preferences: [],
       country: "",
       arrivalDate: "",
+      destinationPreference: "",
+      selectedGovernorate: "",
     },
   });
 
+  const destinationPref = form.watch("destinationPreference");
+
   const mutation = useMutation({
     mutationFn: async (data: FormValues) => {
-      const res = await apiRequest("POST", "/api/group-trips", data);
+      const payload = {
+        ...data,
+        selectedGovernorate: data.destinationPreference === "single" ? data.selectedGovernorate : null,
+      };
+      const res = await apiRequest("POST", "/api/group-trips", payload);
       return res.json();
     },
     onSuccess: () => {
@@ -146,6 +166,13 @@ export default function GroupTripsPage() {
       return countriesAr[c] || c;
     }
     return c;
+  };
+
+  const getGovernorateName = (gov: typeof governorates[number]) => {
+    if (language === "ar" || language === "fa") {
+      return gov.nameAr;
+    }
+    return gov.nameEn;
   };
 
   if (submitted) {
@@ -312,6 +339,88 @@ export default function GroupTripsPage() {
                     </FormItem>
                   )}
                 />
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6 space-y-5">
+                <FormField
+                  control={form.control}
+                  name="destinationPreference"
+                  render={() => (
+                    <FormItem>
+                      <FormLabel className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-muted-foreground" />
+                        {t("destinationPreference")}
+                      </FormLabel>
+                      <p className="text-xs text-muted-foreground">
+                        {t("selectOneOption")}
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <button
+                          type="button"
+                          data-testid="button-dest-single"
+                          onClick={() => {
+                            form.setValue("destinationPreference", "single", { shouldValidate: true });
+                          }}
+                          className={`px-4 py-3 rounded-md border text-sm font-medium transition-colors toggle-elevate ${
+                            destinationPref === "single"
+                              ? "bg-indigo-600 text-white border-indigo-600 dark:bg-indigo-500 dark:border-indigo-500 toggle-elevated"
+                              : "bg-background border-border text-foreground"
+                          }`}
+                        >
+                          {t("singleGovernorate")}
+                        </button>
+                        <button
+                          type="button"
+                          data-testid="button-dest-multiple"
+                          onClick={() => {
+                            form.setValue("destinationPreference", "multiple", { shouldValidate: true });
+                            form.setValue("selectedGovernorate", "", { shouldValidate: false });
+                          }}
+                          className={`px-4 py-3 rounded-md border text-sm font-medium transition-colors toggle-elevate ${
+                            destinationPref === "multiple"
+                              ? "bg-indigo-600 text-white border-indigo-600 dark:bg-indigo-500 dark:border-indigo-500 toggle-elevated"
+                              : "bg-background border-border text-foreground"
+                          }`}
+                        >
+                          {t("multipleGovernorates")}
+                        </button>
+                      </div>
+                      <FormMessage>{form.formState.errors.destinationPreference && t(form.formState.errors.destinationPreference.message || "fieldRequired")}</FormMessage>
+                    </FormItem>
+                  )}
+                />
+
+                {destinationPref === "single" && (
+                  <FormField
+                    control={form.control}
+                    name="selectedGovernorate"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-muted-foreground" />
+                          {t("selectGovernorate")}
+                        </FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value || ""}>
+                          <FormControl>
+                            <SelectTrigger data-testid="select-governorate">
+                              <SelectValue placeholder={t("selectGovernorate")} />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {governorates.map((gov) => (
+                              <SelectItem key={gov.id} value={gov.id} data-testid={`option-gov-${gov.id}`}>
+                                {getGovernorateName(gov)}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage>{form.formState.errors.selectedGovernorate && t(form.formState.errors.selectedGovernorate.message || "fieldRequired")}</FormMessage>
+                      </FormItem>
+                    )}
+                  />
+                )}
               </CardContent>
             </Card>
 
