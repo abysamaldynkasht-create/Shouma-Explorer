@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
+import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, insertGroupTripRequestSchema, type Itinerary, type ItineraryDay } from "@shared/schema";
 import { z } from "zod";
 import { textToSpeechStream } from "./replit_integrations/audio/client";
 import OpenAI from "openai";
@@ -274,6 +274,30 @@ Add interesting additional information, historical and cultural details, and tip
         return res.status(404).json({ message: "السجل غير موجود" });
       }
       return res.status(500).json({ message: error.message || "فشل في حذف البيانات" });
+    }
+  });
+
+  app.post("/api/group-trips", async (req, res) => {
+    try {
+      const result = insertGroupTripRequestSchema.safeParse(req.body);
+      if (!result.success) {
+        return res.status(400).json({ message: "بيانات غير صالحة", errors: result.error.errors });
+      }
+      const tripRequest = await storage.createGroupTripRequest(result.data);
+      return res.status(201).json(tripRequest);
+    } catch (error) {
+      console.error("Group trip request error:", error);
+      return res.status(500).json({ message: "حدث خطأ في حفظ الطلب" });
+    }
+  });
+
+  app.get("/api/group-trips", async (_req, res) => {
+    try {
+      const requests = await storage.getGroupTripRequests();
+      return res.json(requests);
+    } catch (error) {
+      console.error("Get group trips error:", error);
+      return res.status(500).json({ message: "حدث خطأ في جلب الطلبات" });
     }
   });
 

@@ -98,6 +98,14 @@ export const categories: Category[] = [
     color: "from-cyan-600/80 to-cyan-800/90",
   },
   {
+    id: "group-trips",
+    title: "Group Trips",
+    titleAr: "رحلات جماعية",
+    icon: "Users",
+    description: "خطط رحلتك الجماعية واحصل على عرض مخصص",
+    color: "from-indigo-600/80 to-indigo-800/90",
+  },
+  {
     id: "admin",
     title: "Admin Panel",
     titleAr: "لوحة التحكم",

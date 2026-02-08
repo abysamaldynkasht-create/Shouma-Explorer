@@ -15,7 +15,8 @@ import {
   Navigation,
   Compass,
   Gem,
-  Map
+  Map,
+  Users
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -46,6 +47,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Compass: <Compass className="w-8 h-8" />,
   Gem: <Gem className="w-8 h-8" />,
   Map: <Map className="w-8 h-8" />,
+  Users: <Users className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -78,6 +80,8 @@ export default function HomePage() {
       setLocation("/hidden-gems");
     } else if (categoryId === "offline-map") {
       setLocation("/offline-map");
+    } else if (categoryId === "group-trips") {
+      setLocation("/group-trips");
     } else if (categoryId === "admin") {
       setLocation("/admin");
     }
