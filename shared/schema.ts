@@ -224,6 +224,8 @@ export const groupTripRequests = pgTable("group_trip_requests", {
   preferences: text("preferences").array().notNull(),
   country: text("country").notNull(),
   arrivalDate: text("arrival_date").notNull(),
+  destinationPreference: text("destination_preference").notNull(),
+  selectedGovernorate: text("selected_governorate"),
   createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`).notNull(),
 });
 
