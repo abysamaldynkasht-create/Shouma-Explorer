@@ -77,19 +77,6 @@ Preferred communication style: Simple, everyday language.
 - **Coordinate Mapping**: latLngToSvg() converts real coordinates to SVG positions
 - **No Dependencies**: Pure SVG, no external map tiles or APIs needed
 
-### Google Sheets Admin Panel
-- **Route**: `/admin`
-- **Component**: `client/src/pages/admin.tsx`
-- **Backend Service**: `server/google-sheets.ts`
-- **Functionality**: Admin panel for managing app data via Google Sheets
-- **API Endpoints**: `/api/admin/status`, `/api/admin/sheets` (CRUD), `/api/admin/sheets/init`
-- **Sheet Columns**: ID, Activity Name, Category, State, Description, Google Maps Link, Images, Hidden Gems
-- **Operations**: Add, edit, delete rows; search and filter by category; initialize sheet headers
-- **ID-Based**: Update and delete operations use row ID (not index) for data integrity
-- **Validation**: Zod schemas validate all CRUD request bodies
-- **Configuration**: Requires `GOOGLE_SHEETS_CREDENTIALS` (JSON) and `GOOGLE_SHEET_ID` environment variables
-- **Not Configured State**: Shows setup instructions when credentials are missing
-
 ### Build System
 - **Development**: Vite dev server with Express middleware integration
 - **Production**: esbuild for server bundling, Vite for client build

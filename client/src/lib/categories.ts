@@ -105,12 +105,4 @@ export const categories: Category[] = [
     description: "خطط رحلتك الجماعية واحصل على عرض مخصص",
     color: "from-indigo-600/80 to-indigo-800/90",
   },
-  {
-    id: "admin",
-    title: "Admin Panel",
-    titleAr: "لوحة التحكم",
-    icon: "Settings",
-    description: "إدارة البيانات عبر Google Sheets",
-    color: "from-slate-600/80 to-slate-800/90",
-  },
 ];

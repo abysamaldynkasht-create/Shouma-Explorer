@@ -5,7 +5,6 @@ import { insertUserSchema, questionnaireSchema, insertRestaurantReviewSchema, in
 import { z } from "zod";
 import { textToSpeechStream } from "./replit_integrations/audio/client";
 import OpenAI from "openai";
-import * as googleSheets from "./google-sheets";
 
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
@@ -198,85 +197,6 @@ Add interesting additional information, historical and cultural details, and tip
     }
   });
 
-  const sheetRowSchema = z.object({
-    activityName: z.string().min(1),
-    category: z.string().min(1),
-    state: z.string().min(1),
-    description: z.string().optional().default(""),
-    googleMapsLink: z.string().optional().default(""),
-    images: z.string().optional().default(""),
-    hiddenGems: z.string().optional().default("No"),
-  });
-
-  const sheetRowUpdateSchema = sheetRowSchema.extend({
-    id: z.string().min(1),
-  });
-
-  app.get("/api/admin/status", async (_req, res) => {
-    try {
-      const configured = await googleSheets.isConfigured();
-      return res.json({ configured });
-    } catch (error) {
-      return res.json({ configured: false });
-    }
-  });
-
-  app.get("/api/admin/sheets", async (_req, res) => {
-    try {
-      const rows = await googleSheets.getAllRows();
-      return res.json(rows);
-    } catch (error: any) {
-      console.error("Google Sheets read error:", error);
-      return res.status(500).json({ message: error.message || "فشل في قراءة البيانات" });
-    }
-  });
-
-  app.post("/api/admin/sheets", async (req, res) => {
-    try {
-      const result = sheetRowSchema.safeParse(req.body);
-      if (!result.success) {
-        return res.status(400).json({ message: "بيانات غير صالحة", errors: result.error.errors });
-      }
-      const row = await googleSheets.addRow(result.data);
-      return res.status(201).json(row);
-    } catch (error: any) {
-      console.error("Google Sheets add error:", error);
-      return res.status(500).json({ message: error.message || "فشل في إضافة البيانات" });
-    }
-  });
-
-  app.put("/api/admin/sheets/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const result = sheetRowUpdateSchema.safeParse({ ...req.body, id });
-      if (!result.success) {
-        return res.status(400).json({ message: "بيانات غير صالحة", errors: result.error.errors });
-      }
-      const row = await googleSheets.updateRowById(id, result.data);
-      return res.json(row);
-    } catch (error: any) {
-      console.error("Google Sheets update error:", error);
-      if (error.message?.includes("not found")) {
-        return res.status(404).json({ message: "السجل غير موجود" });
-      }
-      return res.status(500).json({ message: error.message || "فشل في تحديث البيانات" });
-    }
-  });
-
-  app.delete("/api/admin/sheets/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      await googleSheets.deleteRowById(id);
-      return res.json({ success: true });
-    } catch (error: any) {
-      console.error("Google Sheets delete error:", error);
-      if (error.message?.includes("not found")) {
-        return res.status(404).json({ message: "السجل غير موجود" });
-      }
-      return res.status(500).json({ message: error.message || "فشل في حذف البيانات" });
-    }
-  });
-
   app.post("/api/group-trips", async (req, res) => {
     try {
       const result = insertGroupTripRequestSchema.safeParse(req.body);
@@ -298,16 +218,6 @@ Add interesting additional information, historical and cultural details, and tip
     } catch (error) {
       console.error("Get group trips error:", error);
       return res.status(500).json({ message: "حدث خطأ في جلب الطلبات" });
-    }
-  });
-
-  app.post("/api/admin/sheets/init", async (_req, res) => {
-    try {
-      const result = await googleSheets.initializeSheet();
-      return res.json({ message: result });
-    } catch (error: any) {
-      console.error("Google Sheets init error:", error);
-      return res.status(500).json({ message: error.message || "فشل في تهيئة الجدول" });
     }
   });
 
