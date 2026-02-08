@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type RestaurantReview, type InsertRestaurantReview } from "@shared/schema";
+import { type User, type InsertUser, type RestaurantReview, type InsertRestaurantReview, type GroupTripRequest, type InsertGroupTripRequest } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -7,15 +7,21 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   getRestaurantReviews(restaurantId: string): Promise<RestaurantReview[]>;
   createRestaurantReview(review: InsertRestaurantReview): Promise<RestaurantReview>;
+  createGroupTripRequest(request: InsertGroupTripRequest): Promise<GroupTripRequest>;
+  getGroupTripRequests(): Promise<GroupTripRequest[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private restaurantReviews: Map<string, RestaurantReview>;
+  private groupTripRequests: Map<number, GroupTripRequest>;
+  private groupTripNextId: number;
 
   constructor() {
     this.users = new Map();
     this.restaurantReviews = new Map();
+    this.groupTripRequests = new Map();
+    this.groupTripNextId = 1;
     this.seedRestaurantReviews();
   }
 
@@ -91,6 +97,22 @@ export class MemStorage implements IStorage {
     };
     this.restaurantReviews.set(id, review);
     return review;
+  }
+
+  async createGroupTripRequest(request: InsertGroupTripRequest): Promise<GroupTripRequest> {
+    const id = this.groupTripNextId++;
+    const tripRequest: GroupTripRequest = {
+      ...request,
+      id,
+      createdAt: new Date(),
+    };
+    this.groupTripRequests.set(id, tripRequest);
+    return tripRequest;
+  }
+
+  async getGroupTripRequests(): Promise<GroupTripRequest[]> {
+    return Array.from(this.groupTripRequests.values())
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }
 }
 
