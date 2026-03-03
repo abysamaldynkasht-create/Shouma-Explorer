@@ -66,7 +66,11 @@ Preferred communication style: Simple, everyday language.
 **Data Models:**
 - Users table with username/password authentication
 - Questionnaire schema for trip preferences (duration, budget, interests, group size, activities, accommodation, meals)
-- Itinerary types for generated trip plans
+- Itinerary types for generated trip plans with geographic clustering (Haversine distance)
+- All appAttractions, appHotels, appRestaurants in server/routes.ts have lat/lng coordinates
+- Itinerary generator uses nearest-neighbor algorithm to group geographically close places per day
+- Activities include distance descriptions (e.g., "5 كم من الفندق") and estimated travel times
+- Day titles are region-specific (e.g., "استكشاف مسقط" for Muscat, "تراث الداخلية" for Dakhiliyah)
 - Attraction interface with optional lat/lng coordinates for geolocation features
 
 ### Nearby Places Feature
@@ -99,8 +103,8 @@ Preferred communication style: Simple, everyday language.
 - **API**: `POST /api/group-trips` (create), `GET /api/group-trips` (list)
 - **Schema**: `groupTripRequests` table in `shared/schema.ts`
 - **Storage**: In-memory via `MemStorage` class
-- **Form Fields**: Number of people, number of days, trip preferences (multi-select: adventures, exploration, heritage, nature, entertainment, custom), country of origin (dropdown), arrival date (date picker)
-- **Validation**: Zod schema with react-hook-form + zodResolver
+- **Form Fields**: Number of people, number of days, trip preferences (multi-select: adventures, exploration, heritage, nature, entertainment, custom), destination preference (single/multiple governorates), selected governorate (conditional dropdown), country of origin (dropdown), arrival date (date picker)
+- **Validation**: Zod schema with react-hook-form + zodResolver; server-side refinement requires selectedGovernorate when destinationPreference is "single"
 - **Purpose**: Collect group trip requests for future custom offer generation
 - **Multi-language**: Translations in all 8 languages
 

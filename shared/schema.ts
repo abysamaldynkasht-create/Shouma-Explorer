@@ -232,6 +232,14 @@ export const groupTripRequests = pgTable("group_trip_requests", {
 export const insertGroupTripRequestSchema = createInsertSchema(groupTripRequests).omit({
   id: true,
   createdAt: true,
+}).refine((data) => {
+  if (data.destinationPreference === "single" && !data.selectedGovernorate) {
+    return false;
+  }
+  return true;
+}, {
+  message: "selectedGovernorate is required when destinationPreference is 'single'",
+  path: ["selectedGovernorate"],
 });
 
 export type GroupTripRequest = typeof groupTripRequests.$inferSelect;

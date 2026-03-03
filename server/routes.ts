@@ -234,66 +234,92 @@ interface ItineraryParams {
   governorates: string[];
 }
 
-interface AppItem {
+interface GeoItem {
   id: string;
   name: string;
   location: string;
   category?: string;
   governorateId?: string;
+  lat: number;
+  lng: number;
 }
 
-const appAttractions: AppItem[] = [
-  { id: "1", name: "شاطئ القرم", location: "محافظة مسقط", category: "nature", governorateId: "muscat" },
-  { id: "2", name: "سوق مطرح", location: "محافظة مسقط", category: "markets", governorateId: "muscat" },
-  { id: "7", name: "قلعة نزوى", location: "محافظة الداخلية", category: "heritage", governorateId: "dakhiliyah" },
-  { id: "4", name: "منتزه القرم الطبيعي", location: "محافظة مسقط", category: "nature", governorateId: "muscat" },
-  { id: "5", name: "قلعة مطرح", location: "محافظة مسقط", category: "heritage", governorateId: "muscat" },
-  { id: "25", name: "شاطئ المغسيل", location: "محافظة ظفار", category: "nature", governorateId: "dhofar" },
-  { id: "8", name: "وادي الغول", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah" },
-  { id: "6", name: "جبل الأخضر", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah" },
-  { id: "43", name: "رمال وهيبة", location: "محافظة شمال الشرقية", category: "entertainment", governorateId: "north_sharqiyah" },
-  { id: "9", name: "سوق نزوى التقليدي", location: "محافظة الداخلية", category: "markets", governorateId: "dakhiliyah" },
-  { id: "22", name: "شلالات وادي دربات", location: "محافظة ظفار", category: "nature", governorateId: "dhofar" },
-  { id: "3", name: "وادي الخوض", location: "محافظة مسقط", category: "wadis", governorateId: "muscat" },
-  { id: "34", name: "مسفاة العبريين", location: "محافظة الداخلية", category: "heritage", governorateId: "dakhiliyah" },
-  { id: "10", name: "حديقة فلج دارس", location: "محافظة الداخلية", category: "entertainment", governorateId: "dakhiliyah" },
-  { id: "14", name: "قلعة صحار", location: "محافظة شمال الباطنة", category: "heritage", governorateId: "north_batinah" },
-  { id: "49", name: "خور شم", location: "محافظة مسندم", category: "nature", governorateId: "musandam" },
-  { id: "50", name: "قلعة خصب", location: "محافظة مسندم", category: "heritage", governorateId: "musandam" },
-  { id: "48", name: "الرحلات البحرية في الخيران", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam" },
-  { id: "62", name: "سلك انزالقي خصب", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam" },
-  { id: "63", name: "شاطئ بصة", location: "محافظة مسندم", category: "nature", governorateId: "musandam" },
-  { id: "64", name: "خور نجد", location: "محافظة مسندم", category: "wadis", governorateId: "musandam" },
-  { id: "67", name: "جبل الرحيم", location: "محافظة مسندم", category: "nature", governorateId: "musandam" },
-  { id: "66", name: "حصن الكمازرة", location: "محافظة مسندم", category: "heritage", governorateId: "musandam" },
-  { id: "61", name: "مركز لولو التجاري", location: "محافظة مسندم", category: "markets", governorateId: "musandam" },
-  { id: "65", name: "حديقة خصب العامة", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam" },
+function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function findNearest<T extends GeoItem>(target: GeoItem, items: T[], exclude: Set<string>): T | null {
+  let best: T | null = null;
+  let bestDist = Infinity;
+  for (const item of items) {
+    if (exclude.has(item.id)) continue;
+    const dist = haversineDistance(target.lat, target.lng, item.lat, item.lng);
+    if (dist < bestDist) {
+      bestDist = dist;
+      best = item;
+    }
+  }
+  return best;
+}
+
+const appAttractions: GeoItem[] = [
+  { id: "1", name: "شاطئ القرم", location: "محافظة مسقط", category: "nature", governorateId: "muscat", lat: 23.6071, lng: 58.4942 },
+  { id: "2", name: "سوق مطرح", location: "محافظة مسقط", category: "markets", governorateId: "muscat", lat: 23.6193, lng: 58.5713 },
+  { id: "7", name: "قلعة نزوى", location: "محافظة الداخلية", category: "heritage", governorateId: "dakhiliyah", lat: 22.9320, lng: 57.5292 },
+  { id: "4", name: "منتزه القرم الطبيعي", location: "محافظة مسقط", category: "nature", governorateId: "muscat", lat: 23.5992, lng: 58.4156 },
+  { id: "5", name: "قلعة مطرح", location: "محافظة مسقط", category: "heritage", governorateId: "muscat", lat: 23.6225, lng: 58.5695 },
+  { id: "25", name: "شاطئ المغسيل", location: "محافظة ظفار", category: "nature", governorateId: "dhofar", lat: 16.8415, lng: 53.7635 },
+  { id: "8", name: "وادي الغول", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah", lat: 23.1250, lng: 57.3500 },
+  { id: "6", name: "جبل الأخضر", location: "محافظة الداخلية", category: "nature", governorateId: "dakhiliyah", lat: 23.0742, lng: 57.6517 },
+  { id: "43", name: "رمال وهيبة", location: "محافظة شمال الشرقية", category: "entertainment", governorateId: "north_sharqiyah", lat: 22.3500, lng: 58.5000 },
+  { id: "9", name: "سوق نزوى التقليدي", location: "محافظة الداخلية", category: "markets", governorateId: "dakhiliyah", lat: 22.9315, lng: 57.5283 },
+  { id: "22", name: "شلالات وادي دربات", location: "محافظة ظفار", category: "nature", governorateId: "dhofar", lat: 17.1100, lng: 54.4300 },
+  { id: "3", name: "وادي الخوض", location: "محافظة مسقط", category: "wadis", governorateId: "muscat", lat: 23.5451, lng: 58.0872 },
+  { id: "34", name: "مسفاة العبريين", location: "محافظة الداخلية", category: "heritage", governorateId: "dakhiliyah", lat: 23.1350, lng: 57.3100 },
+  { id: "10", name: "حديقة فلج دارس", location: "محافظة الداخلية", category: "entertainment", governorateId: "dakhiliyah", lat: 22.9251, lng: 57.5350 },
+  { id: "14", name: "قلعة صحار", location: "محافظة شمال الباطنة", category: "heritage", governorateId: "north_batinah", lat: 24.3636, lng: 56.7485 },
+  { id: "49", name: "خور شم", location: "محافظة مسندم", category: "nature", governorateId: "musandam", lat: 26.1800, lng: 56.2300 },
+  { id: "50", name: "قلعة خصب", location: "محافظة مسندم", category: "heritage", governorateId: "musandam", lat: 26.1760, lng: 56.2480 },
+  { id: "48", name: "الرحلات البحرية في الخيران", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam", lat: 26.1850, lng: 56.2350 },
+  { id: "62", name: "سلك انزالقي خصب", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam", lat: 26.1790, lng: 56.2400 },
+  { id: "63", name: "شاطئ بصة", location: "محافظة مسندم", category: "nature", governorateId: "musandam", lat: 26.1650, lng: 56.2500 },
+  { id: "64", name: "خور نجد", location: "محافظة مسندم", category: "wadis", governorateId: "musandam", lat: 26.1500, lng: 56.2700 },
+  { id: "67", name: "جبل الرحيم", location: "محافظة مسندم", category: "nature", governorateId: "musandam", lat: 26.1400, lng: 56.2200 },
+  { id: "66", name: "حصن الكمازرة", location: "محافظة مسندم", category: "heritage", governorateId: "musandam", lat: 26.2000, lng: 56.2600 },
+  { id: "61", name: "مركز لولو التجاري", location: "محافظة مسندم", category: "markets", governorateId: "musandam", lat: 26.1770, lng: 56.2470 },
+  { id: "65", name: "حديقة خصب العامة", location: "محافظة مسندم", category: "entertainment", governorateId: "musandam", lat: 26.1740, lng: 56.2450 },
 ];
 
-const appHotels: AppItem[] = [
-  { id: "1", name: "فندق الحواس الست", location: "محافظة مسندم", governorateId: "musandam" },
-  { id: "2", name: "مخيم ألف ليلة", location: "محافظة شمال الشرقية", governorateId: "north_sharqiyah" },
-  { id: "3", name: "فندق شانغريلا مسقط", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "4", name: "منتجع أنتارا الجبل الأخضر", location: "محافظة الداخلية", governorateId: "dakhiliyah" },
-  { id: "5", name: "فندق W مسقط", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "6", name: "فندق كمبينسكي الموج", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "7", name: "فندق الفيصل", location: "محافظة ظفار", governorateId: "dhofar" },
-  { id: "8", name: "فندق سنتارا صلالة", location: "محافظة ظفار", governorateId: "dhofar" },
+const appHotels: GeoItem[] = [
+  { id: "1", name: "فندق الحواس الست", location: "محافظة مسندم", governorateId: "musandam", lat: 26.1600, lng: 56.2550 },
+  { id: "2", name: "مخيم ألف ليلة", location: "محافظة شمال الشرقية", governorateId: "north_sharqiyah", lat: 22.3600, lng: 58.4900 },
+  { id: "3", name: "فندق شانغريلا مسقط", location: "محافظة مسقط", governorateId: "muscat", lat: 23.5400, lng: 58.6400 },
+  { id: "4", name: "منتجع أنتارا الجبل الأخضر", location: "محافظة الداخلية", governorateId: "dakhiliyah", lat: 23.0750, lng: 57.6600 },
+  { id: "5", name: "فندق W مسقط", location: "محافظة مسقط", governorateId: "muscat", lat: 23.6100, lng: 58.4200 },
+  { id: "6", name: "فندق كمبينسكي الموج", location: "محافظة مسقط", governorateId: "muscat", lat: 23.6400, lng: 58.2700 },
+  { id: "7", name: "فندق الفيصل", location: "محافظة ظفار", governorateId: "dhofar", lat: 17.0178, lng: 54.0825 },
+  { id: "8", name: "فندق سنتارا صلالة", location: "محافظة ظفار", governorateId: "dhofar", lat: 16.9990, lng: 54.1200 },
 ];
 
-const appRestaurants: AppItem[] = [
-  { id: "1", name: "قهوة البرج", location: "محافظة جنوب الباطنة", governorateId: "south_batinah" },
-  { id: "2", name: "لاجونا", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "3", name: "بيت المضغوط", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "4", name: "مطاعم خوان", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "5", name: "بين القصورين", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "6", name: "ذا ريستورانت", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "7", name: "ذكريات", location: "محافظة مسقط", governorateId: "muscat" },
-  { id: "8", name: "شواء مسقط", location: "محافظة مسقط", governorateId: "muscat" },
+const appRestaurants: GeoItem[] = [
+  { id: "1", name: "قهوة البرج", location: "محافظة جنوب الباطنة", governorateId: "south_batinah", lat: 23.4850, lng: 57.9500 },
+  { id: "2", name: "لاجونا", location: "محافظة مسقط", governorateId: "muscat", lat: 23.5960, lng: 58.4100 },
+  { id: "3", name: "بيت المضغوط", location: "محافظة مسقط", governorateId: "muscat", lat: 23.5800, lng: 58.4000 },
+  { id: "4", name: "مطاعم خوان", location: "محافظة مسقط", governorateId: "muscat", lat: 23.5950, lng: 58.4500 },
+  { id: "5", name: "بين القصورين", location: "محافظة مسقط", governorateId: "muscat", lat: 23.6050, lng: 58.5400 },
+  { id: "6", name: "ذا ريستورانت", location: "محافظة مسقط", governorateId: "muscat", lat: 23.5870, lng: 58.4250 },
+  { id: "7", name: "ذكريات", location: "محافظة مسقط", governorateId: "muscat", lat: 23.6100, lng: 58.5000 },
+  { id: "8", name: "شواء مسقط", location: "محافظة مسقط", governorateId: "muscat", lat: 23.6000, lng: 58.4700 },
 ];
 
 function generateItinerary(params: ItineraryParams): Itinerary {
-  const { duration, budget, interests, governorates } = params;
+  const { duration, budget, governorates } = params;
 
   const budgetTitles: Record<string, string> = {
     low: "رحلة اقتصادية مميزة",
@@ -302,48 +328,69 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     luxury: "رحلة استثنائية فاخرة",
   };
 
-  // Filter attractions by selected governorates
-  const filteredAttractions = governorates.length > 0 
+  const filteredAttractions = governorates.length > 0
     ? appAttractions.filter(a => a.governorateId && governorates.includes(a.governorateId))
     : appAttractions;
-  
-  // Filter hotels by selected governorates, fallback to nearest available
   const filteredHotels = governorates.length > 0
     ? appHotels.filter(h => h.governorateId && governorates.includes(h.governorateId))
     : appHotels;
-  
-  // Filter restaurants by selected governorates, fallback to nearest available  
   const filteredRestaurants = governorates.length > 0
     ? appRestaurants.filter(r => r.governorateId && governorates.includes(r.governorateId))
     : appRestaurants;
-  
-  // Use filtered data or fallback to all if no matches
+
   const attractions = filteredAttractions.length > 0 ? filteredAttractions : appAttractions;
   const hotels = filteredHotels.length > 0 ? filteredHotels : appHotels;
   const restaurants = filteredRestaurants.length > 0 ? filteredRestaurants : appRestaurants;
 
+  const usedAttractions = new Set<string>();
   const days: ItineraryDay[] = [];
+  const numDays = Math.min(duration, 7);
 
-  for (let i = 1; i <= Math.min(duration, 7); i++) {
-    // Get attractions for this day
-    const attr1 = attractions[(i * 2 - 2) % attractions.length];
-    const attr2 = attractions[(i * 2 - 1) % attractions.length];
-    
-    // Find hotel in same governorate as first attraction, or use from list
-    const dayGovernorate = attr1.governorateId;
-    const sameGovHotels = hotels.filter(h => h.governorateId === dayGovernorate);
-    const hotel = sameGovHotels.length > 0 
-      ? sameGovHotels[(i - 1) % sameGovHotels.length] 
-      : hotels[(i - 1) % hotels.length];
-    
-    // Find restaurants in same governorate as attractions
-    const sameGovRestaurants = restaurants.filter(r => r.governorateId === dayGovernorate);
-    const restaurant1 = sameGovRestaurants.length > 0 
-      ? sameGovRestaurants[(i * 2 - 2) % sameGovRestaurants.length]
-      : restaurants[(i * 2 - 2) % restaurants.length];
-    const restaurant2 = sameGovRestaurants.length > 1 
-      ? sameGovRestaurants[(i * 2 - 1) % sameGovRestaurants.length]
-      : (sameGovRestaurants.length > 0 ? sameGovRestaurants[0] : restaurants[(i * 2 - 1) % restaurants.length]);
+  const govGroups: Record<string, GeoItem[]> = {};
+  for (const a of attractions) {
+    const gov = a.governorateId || "other";
+    if (!govGroups[gov]) govGroups[gov] = [];
+    govGroups[gov].push(a);
+  }
+
+  const sortedGovs = Object.entries(govGroups)
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([gov]) => gov);
+
+  for (let i = 0; i < numDays; i++) {
+    const govIndex = i % sortedGovs.length;
+    const dayGov = sortedGovs[govIndex];
+    const govAttractions = govGroups[dayGov] || [];
+
+    let anchor = govAttractions.find(a => !usedAttractions.has(a.id));
+    if (!anchor) {
+      anchor = attractions.find(a => !usedAttractions.has(a.id));
+    }
+    if (!anchor) {
+      usedAttractions.clear();
+      anchor = govAttractions[0] || attractions[0];
+    }
+    usedAttractions.add(anchor.id);
+
+    const attr1 = anchor;
+    const attr2 = findNearest(attr1, attractions.filter(a => !usedAttractions.has(a.id)), usedAttractions)
+      || attractions.find(a => a.id !== attr1.id) || attr1;
+    usedAttractions.add(attr2.id);
+
+    const dayCenter: GeoItem = {
+      id: "center", name: "", location: "",
+      lat: (attr1.lat + attr2.lat) / 2,
+      lng: (attr1.lng + attr2.lng) / 2,
+    };
+
+    const hotel = findNearest(dayCenter, hotels, new Set()) || hotels[0];
+    const usedRestaurants = new Set<string>();
+    const restaurant1 = findNearest(attr1, restaurants, usedRestaurants) || restaurants[0];
+    usedRestaurants.add(restaurant1.id);
+    const restaurant2 = findNearest(attr2, restaurants, usedRestaurants) || restaurant1;
+
+    const distAttr = haversineDistance(attr1.lat, attr1.lng, attr2.lat, attr2.lng);
+    const travelMin = Math.max(15, Math.round(distAttr / 60 * 60));
 
     const activities = [
       {
@@ -352,6 +399,7 @@ function generateItinerary(params: ItineraryParams): Itinerary {
         location: hotel.name,
         type: "hotel" as const,
         itemId: hotel.id,
+        description: `${hotel.location}`,
       },
       {
         time: "10:00",
@@ -359,6 +407,7 @@ function generateItinerary(params: ItineraryParams): Itinerary {
         location: attr1.location,
         type: "attraction" as const,
         itemId: attr1.id,
+        description: `${Math.round(haversineDistance(hotel.lat, hotel.lng, attr1.lat, attr1.lng))} كم من الفندق`,
       },
       {
         time: "13:00",
@@ -366,13 +415,15 @@ function generateItinerary(params: ItineraryParams): Itinerary {
         location: restaurant1.name,
         type: "restaurant" as const,
         itemId: restaurant1.id,
+        description: `${Math.round(haversineDistance(attr1.lat, attr1.lng, restaurant1.lat, restaurant1.lng))} كم من ${attr1.name}`,
       },
       {
-        time: "15:00",
+        time: `${14 + Math.floor(travelMin / 60)}:${String(travelMin % 60).padStart(2, '0')}`,
         activity: `استكشاف ${attr2.name}`,
         location: attr2.location,
         type: "attraction" as const,
         itemId: attr2.id,
+        description: `${Math.round(distAttr)} كم من ${attr1.name} (~${travelMin} دقيقة)`,
       },
       {
         time: "19:00",
@@ -380,6 +431,7 @@ function generateItinerary(params: ItineraryParams): Itinerary {
         location: restaurant2.name,
         type: "restaurant" as const,
         itemId: restaurant2.id,
+        description: `${Math.round(haversineDistance(attr2.lat, attr2.lng, restaurant2.lat, restaurant2.lng))} كم من ${attr2.name}`,
       },
       {
         time: "21:00",
@@ -387,10 +439,20 @@ function generateItinerary(params: ItineraryParams): Itinerary {
         location: hotel.name,
         type: "hotel" as const,
         itemId: hotel.id,
+        description: `${Math.round(haversineDistance(attr2.lat, attr2.lng, hotel.lat, hotel.lng))} كم`,
       },
     ];
 
-    const dayTitles = [
+    const dayTitlesByGov: Record<string, string[]> = {
+      muscat: ["استكشاف مسقط", "جمال العاصمة", "يوم في مسقط"],
+      dakhiliyah: ["تراث الداخلية", "قلاع ووديان", "يوم في نزوى"],
+      dhofar: ["سحر ظفار", "خريف صلالة", "طبيعة ظفار"],
+      musandam: ["جمال مسندم", "أفيورد العرب", "بحر مسندم"],
+      north_batinah: ["ساحل الباطنة", "تاريخ صحار"],
+      north_sharqiyah: ["صحراء الشرقية", "رمال وهيبة"],
+    };
+
+    const dayTitlesGeneral = [
       "الوصول والاستكشاف",
       "يوم المعالم التاريخية",
       "مغامرة في الطبيعة",
@@ -400,9 +462,14 @@ function generateItinerary(params: ItineraryParams): Itinerary {
       "الوداع والمغادرة",
     ];
 
+    const govTitles = dayTitlesByGov[dayGov];
+    const dayTitle = govTitles
+      ? govTitles[i % govTitles.length]
+      : dayTitlesGeneral[i % dayTitlesGeneral.length];
+
     days.push({
-      day: i,
-      title: dayTitles[(i - 1) % dayTitles.length],
+      day: i + 1,
+      title: dayTitle,
       activities,
     });
   }
