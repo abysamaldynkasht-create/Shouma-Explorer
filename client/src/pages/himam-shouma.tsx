@@ -103,7 +103,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     features: ["ممرات مستوية", "مقاعد استراحة", "دورات مياه مهيأة", "إضاءة جيدة", "مواقف قريبة"],
     featuresEn: ["Level pathways", "Rest benches", "Accessible restrooms", "Good lighting", "Nearby parking"],
     rating: 4.7,
-    mapUrl: "https://maps.app.goo.gl/oVqZjjBk4k8UQHKR6",
+    mapUrl: "https://maps.app.goo.gl/8DDfZ75uhL6NbTGa8",
     fullyAccessible: true
   },
   {
@@ -140,22 +140,6 @@ const accessiblePlaces: AccessiblePlace[] = [
   },
   {
     id: "7",
-    name: "فندق شانغريلا بر الجصة",
-    nameEn: "Shangri-La Barr Al Jissah",
-    description: "غرف مهيأة خصيصاً لأصحاب الهمم، شاطئ مع كراسي بحر متحركة، مسبح مع مدخل مهيأ، وطاقم مدرب على المساعدة.",
-    descriptionEn: "Specially adapted rooms for people of determination, beach with mobile beach chairs, pool with accessible entry, and trained assistance staff.",
-    location: "مسقط، بندر الجصة",
-    locationEn: "Muscat, Bandar Al Jissah",
-    category: "support",
-    features: ["غرف مهيأة", "كراسي بحر متحركة", "مسبح مهيأ", "طاقم مدرب", "نقل مهيأ من المطار"],
-    featuresEn: ["Adapted rooms", "Mobile beach chairs", "Accessible pool", "Trained staff", "Accessible airport transfer"],
-    rating: 4.9,
-    phone: "+968 2477 6666",
-    mapUrl: "https://maps.app.goo.gl/WxT1N5j4LjWP6DWw8",
-    fullyAccessible: true
-  },
-  {
-    id: "8",
     name: "متحف بيت الزبير",
     nameEn: "Bait Al Zubair Museum",
     description: "متحف تراثي مع منحدرات لجميع المعارض، دليل صوتي متاح، ودخول مجاني لأصحاب الهمم والمرافقين.",
@@ -167,7 +151,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Ramps to all exhibits", "Audio guide", "Free entry", "Free companion", "Level floors"],
     rating: 4.5,
     phone: "+968 2208 4700",
-    mapUrl: "https://maps.app.goo.gl/XFZzHqDqQ6KJNjGK7",
+    mapUrl: "https://maps.app.goo.gl/qLTmX4NpjzUDkege6",
     fullyAccessible: false
   },
 ];
