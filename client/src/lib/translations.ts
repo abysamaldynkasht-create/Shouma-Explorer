@@ -3010,7 +3010,6 @@ export const translations: Record<Language, Record<string, string>> = {
     selectOneOption: 'یک گزینه انتخاب کنید',
     singleGovernorate: 'یک استان مشخص',
     multipleGovernorates: 'چندین استان',
-    selectGovernorate: 'استان را انتخاب کنید',
     selectCountry: 'کشور را انتخاب کنید',
     selectPreferences: 'ترجیحات خود را انتخاب کنید (امکان انتخاب چندگانه)',
     fieldRequired: 'این فیلد الزامی است',
