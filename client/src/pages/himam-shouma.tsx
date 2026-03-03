@@ -72,7 +72,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Step-free entrances", "Smooth floors", "Designated restrooms", "Reserved parking", "Wheelchairs"],
     rating: 5.0,
     phone: "+968 2450 5100",
-    mapUrl: "https://maps.app.goo.gl/BcK3N9gLmE9HrfSe6",
+    mapUrl: "https://share.google/HsHWETNMNrzudAsiw",
     fullyAccessible: true
   },
   {
@@ -88,7 +88,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Designated seating", "Elevators", "Assistive hearing system", "Accessible restrooms", "Reserved parking"],
     rating: 4.9,
     phone: "+968 2240 3300",
-    mapUrl: "https://maps.app.goo.gl/r8wHvXGxyS7mKJqH8",
+    mapUrl: "https://maps.app.goo.gl/VDdQwqu3VM1hpNGP6",
     fullyAccessible: true
   },
   {
@@ -119,7 +119,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Braille elevators", "Wide ramps", "Companion service", "Designated restrooms", "Reserved parking"],
     rating: 4.8,
     phone: "+968 2402 3000",
-    mapUrl: "https://maps.app.goo.gl/4p6HQDQ7uL3nG5yJ7",
+    mapUrl: "https://share.google/PoTo0U6WRy2YKUKUk",
     fullyAccessible: true
   },
   {
@@ -135,7 +135,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Free wheelchairs", "Multiple elevators", "Restrooms every floor", "Parking near entrance", "Level floors"],
     rating: 4.6,
     phone: "+968 2455 8888",
-    mapUrl: "https://maps.app.goo.gl/aJ88d2JxWCwWQeYs7",
+    mapUrl: "https://share.google/v8tS74f1z5sf59A0d",
     fullyAccessible: true
   },
   {
