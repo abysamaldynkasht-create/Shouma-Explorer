@@ -8,6 +8,7 @@ import greekHouseImg from "@/assets/greek-house.png";
 import alhawashImg from "@/assets/alhawash.png";
 import souqDuqmImg from "@/assets/souq-duqm.png";
 import ainAlkhaleejImg from "@assets/image_1772573893188.png";
+import binAteeqImg from "@assets/image_1772574323731.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -163,5 +164,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.4,
     features: ["أكل شعبي", "أسعار مناسبة", "وجبات منزلية", "مناسب للعائلات"],
     mapUrl: "https://share.google/TJPr6xa8euLnu3HFh",
+  },
+  {
+    id: "12",
+    name: "Bin Ateeq Restaurant",
+    nameAr: "مطعم بن عتيق للمأكولات العمانية",
+    description: "يُعد مطعم بن عتيق من أشهر المطاعم العمانية في محافظة ظفار، ويتخصص في تقديم المأكولات العمانية الأصيلة بنكهة ظفارية مميزة. يشتهر المطعم بأطباقه التقليدية مثل المندي والمضبي والهريس، ويتميز بجودة المكونات والطعم الأصيل الذي يعكس تراث المطبخ العماني. يحظى المطعم بشعبية كبيرة بين السكان المحليين والسياح على حد سواء.",
+    city: "صلالة",
+    region: "محافظة ظفار",
+    image: binAteeqImg,
+    cuisine: "عُماني تقليدي",
+    priceRange: "budget",
+    rating: 4.6,
+    features: ["مأكولات عمانية أصيلة", "مندي ومضبي", "أسعار مناسبة", "شعبية عالية"],
+    mapUrl: "https://maps.app.goo.gl/vmXmWTYzsyyejR6u6",
   },
 ];
