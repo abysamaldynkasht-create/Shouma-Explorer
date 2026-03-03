@@ -249,8 +249,7 @@ export default function LoginPage() {
             <img 
               src={shoumaNewLogo} 
               alt="شومة - Shouma"
-              className="w-48 h-auto mx-auto mb-4 drop-shadow-2xl rounded-2xl"
-              style={{ mixBlendMode: 'screen' }}
+              className="w-56 h-auto mx-auto mb-4 drop-shadow-2xl rounded-2xl"
               data-testid="logo-login"
             />
             <p className="text-amber-100/90 text-lg drop-shadow-md" data-testid="text-tagline">
