@@ -16,7 +16,8 @@ import {
   Compass,
   Gem,
   Map,
-  Users
+  Users,
+  Accessibility
 } from "lucide-react";
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
@@ -49,6 +50,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Gem: <Gem className="w-8 h-8" />,
   Map: <Map className="w-8 h-8" />,
   Users: <Users className="w-8 h-8" />,
+  Accessibility: <Accessibility className="w-8 h-8" />,
 };
 
 export default function HomePage() {
@@ -83,6 +85,8 @@ export default function HomePage() {
       setLocation("/offline-map");
     } else if (categoryId === "group-trips") {
       setLocation("/group-trips");
+    } else if (categoryId === "himam-shouma") {
+      setLocation("/himam-shouma");
     }
   };
 
@@ -314,6 +318,7 @@ function getCategoryImage(id: string): string {
     activities: jebelAkhdarImg,
     "hidden-gems": misfatAbriyyinImg,
     "offline-map": muscatNightsImg,
+    "himam-shouma": qurmBeachImg,
   };
   return images[id] || images.attractions;
 }
@@ -332,6 +337,7 @@ function getCategoryTitle(id: string, t: (key: string) => string): string {
     activities: t('activities'),
     "hidden-gems": t('hiddenGems'),
     "offline-map": t('offlineMap'),
+    "himam-shouma": t('himamShouma'),
   };
   return titles[id] || id;
 }
@@ -350,6 +356,7 @@ function getCategoryDesc(id: string, t: (key: string) => string): string {
     activities: t('activitiesDesc'),
     "hidden-gems": t('hiddenGemsDesc'),
     "offline-map": t('offlineMapDescShort'),
+    "himam-shouma": t('himamShoumaDesc'),
   };
   return descs[id] || '';
 }

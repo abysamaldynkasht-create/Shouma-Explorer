@@ -27,6 +27,7 @@ import ActivitiesPage from "@/pages/activities";
 import HiddenGemsPage from "@/pages/hidden-gems";
 import OfflineMapPage from "@/pages/offline-map";
 import GroupTripsPage from "@/pages/group-trips";
+import HimamShoumaPage from "@/pages/himam-shouma";
 
 import AccessibilityAssistant from "@/components/AccessibilityAssistant";
 import CustomerService from "@/components/CustomerService";
@@ -56,6 +57,7 @@ function Router() {
       <Route path="/hidden-gems" component={HiddenGemsPage} />
       <Route path="/offline-map" component={OfflineMapPage} />
       <Route path="/group-trips" component={GroupTripsPage} />
+      <Route path="/himam-shouma" component={HimamShoumaPage} />
 
       <Route component={NotFound} />
     </Switch>

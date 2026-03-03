@@ -104,6 +104,15 @@ Preferred communication style: Simple, everyday language.
 - **Purpose**: Collect group trip requests for future custom offer generation
 - **Multi-language**: Translations in all 8 languages
 
+### Himam Shouma (همم شومة) - Accessibility Section
+- **Route**: `/himam-shouma`
+- **Component**: `client/src/pages/himam-shouma.tsx`
+- **Purpose**: Dedicated section for people of determination showing accessible locations and services in Oman
+- **Service Categories**: Wheelchair accessible places, accessible restrooms, easy entrances & ramps, support & assistance services
+- **Data**: 8 accessible places including National Museum, Sultan Qaboos Grand Mosque, Royal Opera House, Qurum Natural Park, OCEC, City Centre Muscat, Shangri-La, Bait Al Zubair
+- **Features per place**: Name (AR/EN), description, location, accessibility rating, phone, Google Maps link, feature badges
+- **Multi-language**: Translations in all 8 languages
+
 ## Pending Features
 
 ### Payment Integration (Hotels)

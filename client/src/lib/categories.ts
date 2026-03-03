@@ -105,4 +105,12 @@ export const categories: Category[] = [
     description: "خطط رحلتك الجماعية واحصل على عرض مخصص",
     color: "from-indigo-600/80 to-indigo-800/90",
   },
+  {
+    id: "himam-shouma",
+    title: "Himam Shouma",
+    titleAr: "همم شومة",
+    icon: "Accessibility",
+    description: "خدمات ومواقع مهيأة لأصحاب الهمم",
+    color: "from-sky-600/80 to-sky-800/90",
+  },
 ];
