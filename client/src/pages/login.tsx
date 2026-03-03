@@ -11,6 +11,7 @@ import { insertUserSchema } from "@shared/schema";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
+import shoumaNewLogo from "@assets/image_1772569182491.png";
 
 function OmaniLandscapeSVG() {
   return (
@@ -245,9 +246,13 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center p-6 relative z-10">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold text-white mb-2 drop-shadow-lg" style={{ fontFamily: 'Cairo, sans-serif' }} data-testid="text-app-name">
-              شومة
-            </h1>
+            <img 
+              src={shoumaNewLogo} 
+              alt="شومة - Shouma"
+              className="w-48 h-auto mx-auto mb-4 drop-shadow-2xl rounded-2xl"
+              style={{ mixBlendMode: 'screen' }}
+              data-testid="logo-login"
+            />
             <p className="text-amber-100/90 text-lg drop-shadow-md" data-testid="text-tagline">
               {t('homeSubtitle')}
             </p>
