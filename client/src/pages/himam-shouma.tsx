@@ -56,7 +56,7 @@ const accessiblePlaces: AccessiblePlace[] = [
     featuresEn: ["Free wheelchairs", "Elevators", "Ramps", "Braille signage", "Sign language tours", "Free entry for companions"],
     rating: 5.0,
     phone: "+968 2401 8700",
-    mapUrl: "https://maps.app.goo.gl/8KxGfQzJZ5xR6yXi8",
+    mapUrl: "https://share.google/w1qoVzACJItpeC0x7",
     fullyAccessible: true
   },
   {
