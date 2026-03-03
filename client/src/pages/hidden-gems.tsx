@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ArrowLeft, MapPin, Gem, Star, ExternalLink } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 import finsBeachImg from "@/assets/fins-beach.png";
 import jabalSamhanImg from "@/assets/jabal-samhan.png";
@@ -140,7 +141,7 @@ export default function HiddenGemsPage() {
               {t('back')}
             </Button>
             <h1 className="text-xl font-bold text-foreground">{t('hiddenGems')}</h1>
-            <div className="w-20" />
+            <ThemeToggle />
           </div>
         </div>
       </header>

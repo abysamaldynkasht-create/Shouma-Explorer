@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import PaymentModal from "@/components/PaymentModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import type { RoomOption, HotelReview } from "@shared/schema";
 import { 
   Building2, 
@@ -114,6 +115,7 @@ export default function HotelDetailPage() {
             </div>
 
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <LanguageSwitcher />
               <Button variant="ghost" size="icon" data-testid="button-share">
                 <Share2 className="w-5 h-5" />

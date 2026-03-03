@@ -7,6 +7,7 @@ import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { apiRequest } from "@/lib/queryClient";
 import { governorates } from "@shared/schema";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -227,7 +228,7 @@ export default function GroupTripsPage() {
               </h1>
             </div>
 
-            <div className="w-16" />
+            <ThemeToggle />
           </div>
         </div>
       </header>

@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeft, Compass, MapPin, Star, Clock, ExternalLink } fro
 import { useLanguage } from "@/contexts/LanguageContext";
 import { activities } from "@/lib/activities";
 import { Card, CardContent } from "@/components/ui/card";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function ActivitiesPage() {
   const [, setLocation] = useLocation();
@@ -29,6 +30,7 @@ export default function ActivitiesPage() {
                 {t('activities')}
               </h1>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>

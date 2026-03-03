@@ -10,6 +10,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { insertUserSchema } from "@shared/schema";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function OmaniLandscapeSVG() {
   return (
@@ -230,7 +231,8 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex relative overflow-hidden">
-      <div className="absolute top-4 left-4 z-50">
+      <div className="absolute top-4 left-4 z-50 flex items-center gap-2">
+        <ThemeToggle variant="icon-only" />
         <LanguageSwitcher />
       </div>
 

@@ -19,6 +19,7 @@ import {
   Clock
 } from "lucide-react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import misfatAbriyyinHeroImg from "@/assets/misfat-abriyyin.png";
 
 
@@ -94,7 +95,10 @@ export default function TourGuidesPage() {
               <span className="text-lg font-bold">{t('tourGuides')}</span>
             </div>
 
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>

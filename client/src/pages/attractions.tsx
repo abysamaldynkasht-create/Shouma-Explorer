@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   Select,
   SelectContent,
@@ -89,6 +90,8 @@ export default function AttractionsPage() {
               <span className="text-lg font-bold">{t('attractions')}</span>
             </div>
 
+            <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
               <SelectTrigger className="w-auto gap-2" data-testid="select-language">
                 <Globe className="w-4 h-4" />
@@ -103,6 +106,7 @@ export default function AttractionsPage() {
                 ))}
               </SelectContent>
             </Select>
+            </div>
           </div>
         </div>
       </header>

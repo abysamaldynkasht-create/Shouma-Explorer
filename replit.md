@@ -25,6 +25,17 @@ Preferred communication style: Simple, everyday language.
 - Typography uses Cairo (Arabic) and Montserrat (headers) Google Fonts
 - Card-based UI for destination discovery and exploration
 - Mobile-first responsive design with breakpoints for tablet and desktop
+- Dark/Light mode (الوضع الليلي/النهاري) with class-based toggling
+
+### Dark/Light Mode System
+- **Component**: `client/src/components/ThemeToggle.tsx` - reusable toggle button
+- **Strategy**: Tailwind CSS class-based (`darkMode: ["class"]`) - adds/removes `dark` class on `<html>`
+- **CSS Variables**: Light mode in `:root`, dark mode in `.dark` (defined in `client/src/index.css`)
+- **Persistence**: localStorage key `shouma-theme` (values: "dark" or "light")
+- **Placement**: Available on every page header (login, home, attractions, hotels, restaurants, etc.)
+- **Accessibility Panel**: Also integrated in `AccessibilityAssistant.tsx` as a toggle switch (الوضع الليلي/النهاري)
+- **Login Page Variant**: Uses `variant="icon-only"` with transparent styling to match the SVG background
+- **Sync**: ThemeToggle component and AccessibilityAssistant share the same localStorage key for consistent state
 
 ### Multi-Language System
 - **8 Languages Supported**: Arabic (AR), English (EN), French (FR), Spanish (ES), Turkish (TR), Chinese (ZH), Japanese (JA), Persian (FA)

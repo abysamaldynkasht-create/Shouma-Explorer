@@ -6,6 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import { governorates, type QuestionnaireData } from "@shared/schema";
 import { 
   Compass, 
@@ -327,7 +328,10 @@ export default function ShoumatakPage() {
               <span className="text-lg font-bold">{t('shoumatak')}</span>
             </div>
 
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>

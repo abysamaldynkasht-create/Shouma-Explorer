@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import { 
   UtensilsCrossed, 
   ArrowRight,
@@ -87,7 +88,10 @@ export default function RestaurantsPage() {
               <span className="text-lg font-bold">{t('restaurants')}</span>
             </div>
 
-            <LanguageSwitcher />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>

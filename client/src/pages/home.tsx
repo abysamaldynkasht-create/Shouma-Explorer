@@ -21,6 +21,7 @@ import {
 import shoumaLogo from "@assets/شومة_1768320219408.jpg";
 import { Input } from "@/components/ui/input";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // Import Oman-specific images for categories
 import nizwaFortImg from "@/assets/nizwa-fort.png";
@@ -110,6 +111,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <LanguageSwitcher />
               <Button 
                 variant="ghost" 

@@ -7,6 +7,7 @@ import { ArrowRight, ArrowLeft, Navigation, MapPin, Star, Loader2, ExternalLink,
 import { attractions } from "@/lib/attractions";
 import type { Attraction } from "@shared/schema";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NearbyAttraction extends Attraction {
   distance: number;
@@ -155,6 +156,7 @@ export default function NearbyPlacesPage() {
                 {t('nearbyPlacesSubtitle')}
               </p>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>

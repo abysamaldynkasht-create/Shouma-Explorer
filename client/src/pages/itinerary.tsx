@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import { governorates as allGovernorates } from "@shared/schema";
 import { 
   Compass, 
@@ -98,7 +99,10 @@ export default function ItineraryPage() {
                 </div>
                 <span className="text-lg font-bold">{t('yourItinerary')}</span>
               </div>
-              <LanguageSwitcher />
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         </header>
@@ -178,6 +182,7 @@ export default function ItineraryPage() {
               <span className="text-lg font-bold">{t('yourItinerary')}</span>
             </div>
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <LanguageSwitcher />
               <Button
                 data-testid="button-home"

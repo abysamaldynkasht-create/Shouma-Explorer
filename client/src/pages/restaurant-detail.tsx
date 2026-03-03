@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { RestaurantReview } from "@shared/schema";
 import { 
@@ -147,6 +148,7 @@ export default function RestaurantDetailPage() {
             </div>
 
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <LanguageSwitcher />
               <Button variant="ghost" size="icon" data-testid="button-share">
                 <Share2 className="w-5 h-5" />

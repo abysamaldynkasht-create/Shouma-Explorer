@@ -22,6 +22,7 @@ import {
 interface AccessibilitySettings {
   fontSize: number;
   highContrast: boolean;
+  darkMode: boolean;
   largePointer: boolean;
   highlightLinks: boolean;
   reduceMotion: boolean;
@@ -32,6 +33,7 @@ interface AccessibilitySettings {
 const defaultSettings: AccessibilitySettings = {
   fontSize: 100,
   highContrast: false,
+  darkMode: false,
   largePointer: false,
   highlightLinks: false,
   reduceMotion: false,
@@ -43,7 +45,12 @@ export default function AccessibilityAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(() => {
     const saved = localStorage.getItem("accessibility-settings");
-    return saved ? JSON.parse(saved) : defaultSettings;
+    const parsed = saved ? JSON.parse(saved) : defaultSettings;
+    const themeSaved = localStorage.getItem("shouma-theme");
+    if (themeSaved) {
+      parsed.darkMode = themeSaved === "dark";
+    }
+    return parsed;
   });
 
   useEffect(() => {
@@ -59,6 +66,14 @@ export default function AccessibilityAssistant() {
     const root = document.documentElement;
     
     root.style.fontSize = `${s.fontSize}%`;
+
+    if (s.darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("shouma-theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("shouma-theme", "light");
+    }
     
     if (s.highContrast) {
       root.classList.add("high-contrast");
@@ -196,6 +211,21 @@ export default function AccessibilityAssistant() {
                   <Eye className="w-5 h-5 text-primary" />
                   خيارات العرض
                 </h3>
+
+                <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    {settings.darkMode ? <Sun className="w-5 h-5 text-muted-foreground" /> : <Moon className="w-5 h-5 text-muted-foreground" />}
+                    <Label htmlFor="dark-mode" className="font-medium cursor-pointer">
+                      {settings.darkMode ? 'الوضع النهاري' : 'الوضع الليلي'}
+                    </Label>
+                  </div>
+                  <Switch
+                    id="dark-mode"
+                    checked={settings.darkMode}
+                    onCheckedChange={(checked) => updateSetting("darkMode", checked)}
+                    data-testid="switch-dark-mode"
+                  />
+                </div>
 
                 <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
                   <div className="flex items-center gap-3">
