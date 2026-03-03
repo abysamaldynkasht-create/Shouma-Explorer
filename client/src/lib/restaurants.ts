@@ -7,6 +7,7 @@ import tamraNizwaImg from "@/assets/tamra-nizwa.png";
 import greekHouseImg from "@/assets/greek-house.png";
 import alhawashImg from "@/assets/alhawash.png";
 import souqDuqmImg from "@/assets/souq-duqm.png";
+import ainAlkhaleejImg from "@assets/image_1772573893188.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -148,5 +149,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.8,
     features: ["فندق 5 نجوم", "تصميم تراثي", "قائمة تذوق", "خدمة استثنائية"],
     mapUrl: "https://maps.app.goo.gl/ADvaEWmJ27x5TWxY6",
+  },
+  {
+    id: "11",
+    name: "Ain Al Khaleej Restaurant",
+    nameAr: "مطعم ومطبخ عين الخليج",
+    description: "يُعد مطعم ومطبخ عين الخليج من المطاعم الشعبية المعروفة في ولاية المضيبي، ويشتهر بتقديم الأطباق العمانية التقليدية والمأكولات الشعبية بنكهة أصيلة. يتميز المطعم بوجباته المنزلية الطازجة وأسعاره المناسبة، مما يجعله وجهة مفضلة للعائلات والمسافرين في محافظة شمال الشرقية.",
+    city: "ولاية المضيبي",
+    region: "محافظة شمال الشرقية",
+    image: ainAlkhaleejImg,
+    cuisine: "عُماني شعبي",
+    priceRange: "budget",
+    rating: 4.4,
+    features: ["أكل شعبي", "أسعار مناسبة", "وجبات منزلية", "مناسب للعائلات"],
+    mapUrl: "https://share.google/TJPr6xa8euLnu3HFh",
   },
 ];
