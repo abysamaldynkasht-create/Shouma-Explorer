@@ -96,6 +96,7 @@ import alMoujImg from "@assets/image_1772604327165.png";
 import wadiKhoudImg from "@assets/image_1772604355683.png";
 import bousherHeightsImg from "@assets/image_1772604967818.png";
 import palmeraGardenImg from "@assets/image_1772605456212.png";
+import royalOperaImg from "@assets/image_1772605843928.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1760,6 +1761,22 @@ export const attractions: Attraction[] = [
     image: palmeraGardenImg,
     mapUrl: "https://maps.app.goo.gl/8357LmgPa9awa9ot8",
     rating: "4.5"
+  },
+  {
+    id: "1034",
+    name: "دار الأوبرا السلطانية مسقط",
+    nameAr: "دار الأوبرا السلطانية مسقط",
+    description: "صرح ثقافي وفني عالمي يقدم عروضاً أوبرالية وموسيقية من مختلف أنحاء العالم. يضم مركز تسوق راقٍ (الأوبرا جالاريا) ومطاعم فاخرة. جولات سياحية تعريفية من السبت إلى الخميس (8:30 ص - 5:30 م) بـ3.150 ر.ع. الأوبرا جالاريا مفتوحة يومياً (10 ص - 10 م)، والجمعة (4 م - 12 منتصف الليل). مواقف مجانية ومرافق لذوي الاحتياجات الخاصة.",
+    descriptionEn: "A world-class cultural and artistic venue hosting opera and musical performances from around the globe. Features the upscale Opera Galleria shopping center and fine dining restaurants. Guided tours Sat-Thu (8:30 AM-5:30 PM) at 3.150 OMR. Opera Galleria open daily (10 AM-10 PM), Fridays (4 PM-12 AM). Free parking and accessibility facilities.",
+    descriptionFr: "Un lieu culturel et artistique de renommée mondiale accueillant des spectacles d'opéra et de musique du monde entier. Comprend le centre commercial haut de gamme Opera Galleria et des restaurants gastronomiques. Visites guidées sam-jeu (8h30-17h30) à 3,150 OMR. Opera Galleria ouverte tous les jours (10h-22h), vendredis (16h-minuit). Parking gratuit et accessibilité.",
+    descriptionTr: "Dünya çapında opera ve müzik performanslarına ev sahipliği yapan birinci sınıf bir kültür ve sanat mekanı. Lüks Opera Galleria alışveriş merkezi ve seçkin restoranlar içerir. Rehberli turlar Cmt-Per (8:30-17:30) 3,150 OMR. Opera Galleria her gün (10:00-22:00), Cuma (16:00-gece yarısı). Ücretsiz otopark ve erişilebilirlik tesisleri.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: royalOperaImg,
+    mapUrl: "https://maps.app.goo.gl/aiGAxYW9wCxrYTwBA",
+    rating: "4.9"
   },
   {
     id: "61",
