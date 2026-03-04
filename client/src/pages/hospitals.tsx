@@ -60,7 +60,7 @@ export default function HospitalsPage() {
               <img 
                 src={logoImage} 
                 alt="شومة" 
-                className="w-8 h-8 rounded-full object-cover"
+                className="w-8 h-8 rounded-full object-cover mix-blend-multiply dark:mix-blend-screen dark:invert"
               />
               <span className="text-lg font-bold">المستشفيات والمراكز الصحية</span>
             </div>

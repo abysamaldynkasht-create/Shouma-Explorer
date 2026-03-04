@@ -221,7 +221,7 @@ export default function GroupTripsPage() {
               <img
                 src={logoImage}
                 alt="شومة"
-                className="w-8 h-8 rounded-full object-cover"
+                className="w-8 h-8 rounded-full object-cover mix-blend-multiply dark:mix-blend-screen dark:invert"
               />
               <h1 className="text-lg font-bold text-foreground" data-testid="text-header-title">
                 {t("groupTrips")}

@@ -105,7 +105,7 @@ export default function HomePage() {
               <img 
                 src={shoumaLogo} 
                 alt="شومة" 
-                className="h-12 w-auto"
+                className="h-12 w-auto mix-blend-multiply dark:mix-blend-screen dark:invert"
                 data-testid="logo-icon"
               />
               {username && (
@@ -292,7 +292,7 @@ export default function HomePage() {
             <img 
               src={shoumaLogo} 
               alt="شومة" 
-              className="h-10 w-auto"
+              className="h-10 w-auto mix-blend-multiply dark:mix-blend-screen dark:invert"
             />
           </div>
           <p className="text-sm text-muted-foreground" data-testid="text-copyright">

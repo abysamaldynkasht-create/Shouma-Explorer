@@ -87,7 +87,7 @@ export default function AttractionDetailPage() {
               <img 
                 src={logoUrl} 
                 alt={t('appName')} 
-                className="w-8 h-8 rounded-full object-cover"
+                className="w-8 h-8 rounded-full object-cover mix-blend-multiply dark:mix-blend-screen dark:invert"
               />
               <span className="text-lg font-bold">{t('placeDetails')}</span>
             </div>
@@ -279,7 +279,7 @@ export default function AttractionDetailPage() {
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <img src={logoUrl} alt={t('appName')} className="w-6 h-6 rounded-full object-cover" />
+            <img src={logoUrl} alt={t('appName')} className="w-6 h-6 rounded-full object-cover mix-blend-multiply dark:mix-blend-screen dark:invert" />
             <span className="font-semibold">{t('appName')}</span>
           </div>
           <p className="text-sm text-muted-foreground">

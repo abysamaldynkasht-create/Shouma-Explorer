@@ -180,7 +180,7 @@ export default function OfflineMapPage() {
               <LanguageSwitcher />
             </div>
             <div className="flex items-center gap-2">
-              <img src={shoumaLogo} alt="شومة" className="h-10 w-auto" />
+              <img src={shoumaLogo} alt="شومة" className="h-10 w-auto mix-blend-multiply dark:mix-blend-screen dark:invert" />
               <h1 className="text-lg font-bold text-foreground" data-testid="text-page-title">
                 {t('offlineMap')}
               </h1>

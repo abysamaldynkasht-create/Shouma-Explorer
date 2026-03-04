@@ -61,7 +61,7 @@ export default function HikingPage() {
               <img 
                 src={logoImage} 
                 alt="شومة" 
-                className="w-8 h-8 rounded-full object-cover"
+                className="w-8 h-8 rounded-full object-cover mix-blend-multiply dark:mix-blend-screen dark:invert"
               />
               <span className="text-lg font-bold">رحلات الهايكنق</span>
             </div>
