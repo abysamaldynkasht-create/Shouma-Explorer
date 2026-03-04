@@ -4,6 +4,7 @@ import khareefDhofarImg from "@/assets/khareef-dhofar.png";
 import muscatNightsImg from "@/assets/muscat-nights.png";
 import potteryNizwaImg from "@/assets/pottery-nizwa.png";
 import musandamZiplineImg from "@/assets/khasab-zipline.jpg";
+import jabalShamsSunriseImg from "@assets/image_1772602468877.png";
 
 export interface ActivityBranch {
   name: string;
@@ -137,5 +138,20 @@ export const activities: Activity[] = [
     ],
     provider: "مركز مغامرات عمان",
     mapUrl: "https://maps.app.goo.gl/EggGrkij2dtfLx7TA",
+  },
+  {
+    id: "jabal-shams-sunrise",
+    name: "Sunrise at Jebel Shams Summit",
+    nameAr: "شروق الشمس في قمة جبل شمس",
+    description: "Watch a breathtaking sunrise from the highest peak in Oman and the Arabian Gulf, Jebel Shams (over 3,000m). An unforgettable experience overlooking Wadi An Nakhr (Oman's Grand Canyon) as the first rays of light paint the mountains.",
+    descriptionAr: "شاهد شروق الشمس الخلاب من أعلى قمة في سلطنة عُمان والخليج العربي، جبل شمس (أكثر من 3,000 متر). تجربة لا تُنسى تُطل على وادي النخر (غراند كانيون عُمان) مع أولى أشعة الضوء التي تُلوّن الجبال.",
+    location: "جبل شمس، ولاية الحمراء، محافظة الداخلية",
+    region: "محافظة الداخلية",
+    duration: "2-3 ساعات (يُنصح بالوصول قبل الفجر)",
+    price: "مجاني",
+    image: jabalShamsSunriseImg,
+    rating: 4.9,
+    includes: ["مشاهدة شروق الشمس", "إطلالة على وادي النخر", "مسارات مشي جبلية", "تصوير فوتوغرافي"],
+    mapUrl: "https://maps.app.goo.gl/9WcLFuJgGZMbqWmD9",
   },
 ];
