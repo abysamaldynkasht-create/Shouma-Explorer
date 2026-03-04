@@ -38,7 +38,7 @@ import soharSouqImg from "@/assets/sohar-souq.png";
 import wadiJiziImg from "@/assets/wadi-jizi.png";
 import sahlAtinImg from "@/assets/sahl-atin.png";
 import ainJarzizImg from "@/assets/ain-jarziz.png";
-import wahaMallImg from "@/assets/waha-mall.png";
+
 import hisnHazmImg from "@assets/image_1772599891548.png";
 import ibriSouqImg from "@/assets/ibri-souq.png";
 import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
@@ -840,22 +840,6 @@ export const attractions: Attraction[] = [
     image: mughsailBeachImg,
     mapUrl: "https://maps.app.goo.gl/YWk2hPQAELHzNn8Q9?g_st=ic",
     rating: "4.8"
-  },
-  {
-    id: "26",
-    name: "مجمع الواحة",
-    nameAr: "مجمع الواحة",
-    description: "مجمع تجاري في الرستاق يوفر مرافق تسوق وخدمات متنوعة للزوار.",
-    descriptionEn: "A commercial complex in Rustaq providing shopping facilities and various services for visitors.",
-    descriptionFr: "Un complexe commercial à Rustaq offrant des installations de shopping et divers services pour les visiteurs.",
-    descriptionTr: "Rustaq'ta ziyaretçilere alışveriş imkanları ve çeşitli hizmetler sunan ticari bir kompleks.",
-    governorate: "محافظة جنوب الباطنة",
-    governorateId: "south_batinah",
-    wilayat: "ولاية الرستاق",
-    category: "entertainment",
-    image: wahaMallImg,
-    mapUrl: null,
-    rating: "4.0"
   },
   {
     id: "27",
