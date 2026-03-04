@@ -80,6 +80,7 @@ import jabalShamsImg from "@assets/image_1772601315074.png";
 import seebParkImg from "@assets/image_1772601333396.png";
 import wadiBaniHabibImg from "@assets/image_1772601448180.png";
 import omanAquariumImg from "@assets/image_1772601705477.png";
+import wadiTanufImg from "@assets/image_1772601831058.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1055,6 +1056,22 @@ export const attractions: Attraction[] = [
     category: "nature",
     image: wadiBaniHabibImg,
     mapUrl: "https://maps.app.goo.gl/uzqZ6VHMJNCERkeH7",
+    rating: "4.7"
+  },
+  {
+    id: "1018",
+    name: "وادي تنوف",
+    nameAr: "وادي تنوف",
+    description: "وادٍ طبيعي خلاب يقع بالقرب من نزوى، يتميز بمياهه الجارية بين الصخور الشاهقة وممراته الضيقة المثيرة للاستكشاف. يُعد وجهة مثالية لمحبي المشي والمغامرات الطبيعية.",
+    descriptionEn: "A stunning natural wadi near Nizwa, featuring flowing water between towering rocks and narrow passages perfect for exploration. An ideal destination for hiking and nature adventure enthusiasts.",
+    descriptionFr: "Un wadi naturel magnifique près de Nizwa, avec de l'eau coulant entre des rochers imposants et des passages étroits parfaits pour l'exploration. Une destination idéale pour les amateurs de randonnée et d'aventures naturelles.",
+    descriptionTr: "Nizva yakınlarında muhteşem bir doğal vadi, yükselen kayalar arasında akan su ve keşif için mükemmel dar geçitler içerir. Yürüyüş ve doğa macerası tutkunları için ideal bir destinasyon.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "nature",
+    image: wadiTanufImg,
+    mapUrl: "https://maps.app.goo.gl/U2MzyNVdgYHRPLTJ8",
     rating: "4.7"
   },
   {
