@@ -46,7 +46,7 @@ import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
 import wadiDammImg from "@assets/image_1772600210502.png";
 import surSouqImg from "@/assets/sur-souq.png";
-import marahLandImg from "@/assets/marah-land.png";
+
 import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
 import biladSurFortImg from "@/assets/bilad-sur-fort.png";
 import wadiHawerImg from "@/assets/wadi-hawer.png";
@@ -1016,22 +1016,6 @@ export const attractions: Attraction[] = [
     image: surSouqImg,
     mapUrl: null,
     rating: "4.4"
-  },
-  {
-    id: "38",
-    name: "مرح لاند",
-    nameAr: "مرح لاند",
-    description: "مدينة ترفيهية للعائلات تضم ألعاب متنوعة ومرافق ترفيهية للأطفال والكبار.",
-    descriptionEn: "A family entertainment city featuring various games and recreational facilities for children and adults.",
-    descriptionFr: "Un parc de divertissement familial proposant divers jeux et installations récréatives pour les enfants et les adultes.",
-    descriptionTr: "Çocuklar ve yetişkinler için çeşitli oyunlar ve eğlence tesisleri sunan bir aile eğlence şehri.",
-    governorate: "محافظة جنوب الشرقية",
-    governorateId: "south_sharqiyah",
-    wilayat: "ولاية صور",
-    category: "entertainment",
-    image: marahLandImg,
-    mapUrl: null,
-    rating: "4.3"
   },
   {
     id: "39",
