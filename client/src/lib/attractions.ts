@@ -53,7 +53,7 @@ import wadiHawerImg from "@/assets/wadi-hawer.png";
 import ibraSouqImg from "@/assets/ibra-souq.png";
 import wahibaSandsImg from "@/assets/wahiba-sands.png";
 import wadiTiwiImg from "@/assets/wadi-tiwi.png";
-import baitDarwazaImg from "@/assets/bait-darwaza.png";
+import baitDarwazaImg from "@assets/image_1772600494273.png";
 import wadiBaniKhalidImg from "@assets/image_1772600395560.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
 import mallOfOmanImg from "@/assets/mall-of-oman.png";
