@@ -6,6 +6,7 @@ import potteryNizwaImg from "@/assets/pottery-nizwa.png";
 import musandamZiplineImg from "@/assets/khasab-zipline.jpg";
 import jabalShamsSunriseImg from "@assets/image_1772602468877.png";
 import rosePickingImg from "@assets/image_1772603622726.png";
+import actionPointImg from "@assets/image_1772606155245.png";
 
 export interface ActivityBranch {
   name: string;
@@ -169,5 +170,20 @@ export const activities: Activity[] = [
     rating: 4.8,
     includes: ["قطف الورد يدوياً", "مشاهدة تقطير ماء الورد", "تذوق ماء الورد الطازج", "شراء منتجات الورد المحلية"],
     mapUrl: "https://maps.app.goo.gl/Mr2WNUGqrKiANERw6",
+  },
+  {
+    id: "shooting-action-point",
+    name: "Shooting at Action Point - Oman Shooting Club",
+    nameAr: "الرماية في أكشن بوينت - نادي عُمان للرماية",
+    description: "Experience professional shooting at Action Point within Active Oman Center at the Oman Automobile Association in Airport Heights. Choose from multiple packages: Trigger Reward (45 OMR), Shooter's Delight (45 OMR), Power Bundle (50 OMR), or Ultimate Deal (70 OMR) covering pistols, rifles, and shotguns. Open daily 9 AM - 11 PM.",
+    descriptionAr: "استمتع بتجربة رماية احترافية في أكشن بوينت ضمن مركز أكتيف عُمان بمقر الجمعية العُمانية للسيارات في مرتفعات المطار. اختر من عدة باقات: مكافأة الزناد (45 ر.ع)، متعة الرماة (45 ر.ع)، حزمة الطاقة (50 ر.ع)، أو الصفقة النهائية (70 ر.ع) تشمل المسدسات والبنادق والشوزن. مفتوح يومياً 9:00 ص - 11:00 م.",
+    location: "مرتفعات المطار، ولاية السيب، محافظة مسقط",
+    region: "محافظة مسقط",
+    duration: "1-2 ساعة",
+    price: "45-70 ر.ع",
+    image: actionPointImg,
+    rating: 4.7,
+    includes: ["معدات السلامة", "إشراف مدربين محترفين", "ذخيرة حسب الباقة", "أسلحة متنوعة (مسدس، بندقية، شوزن)"],
+    mapUrl: "https://maps.app.goo.gl/Gj39JJ67Z7T4rKAA8",
   },
 ];
