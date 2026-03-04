@@ -72,6 +72,7 @@ import ramlatKahlImg from "@/assets/ramlat-kahl.png";
 import wadiQahfiImg from "@/assets/wadi-qahfi.png";
 import wadiKhatwaImg from "@/assets/wadi-khatwa.png";
 import jebelQitarImg from "@/assets/jebel-qitar.png";
+import omanAcrossAgesImg from "@assets/image_1772600713536.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -968,6 +969,22 @@ export const attractions: Attraction[] = [
     image: misfatAbriyyinImg,
     mapUrl: null,
     rating: "4.7"
+  },
+  {
+    id: "1010",
+    name: "متحف عمان عبر الزمان",
+    nameAr: "متحف عمان عبر الزمان",
+    description: "متحف حديث يروي تاريخ عُمان عبر العصور المختلفة من خلال تقنيات عرض متطورة وتصميم معماري فريد.",
+    descriptionEn: "A modern museum that narrates Oman's history through the ages using advanced display technologies and unique architectural design.",
+    descriptionFr: "Un musée moderne qui retrace l'histoire d'Oman à travers les âges grâce à des technologies d'exposition avancées et un design architectural unique.",
+    descriptionTr: "Gelişmiş sergileme teknolojileri ve benzersiz mimari tasarımıyla Umman'ın tarihini çağlar boyunca anlatan modern bir müze.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية منح",
+    category: "heritage",
+    image: omanAcrossAgesImg,
+    mapUrl: "https://maps.app.goo.gl/bJuYEi79eRjrJbrUA",
+    rating: "4.9"
   },
   {
     id: "35",
