@@ -73,6 +73,7 @@ import wadiQahfiImg from "@/assets/wadi-qahfi.png";
 import wadiKhatwaImg from "@/assets/wadi-khatwa.png";
 import jebelQitarImg from "@/assets/jebel-qitar.png";
 import omanAcrossAgesImg from "@assets/image_1772600713536.png";
+import bahlaFortImg from "@assets/image_1772600976310.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -985,6 +986,22 @@ export const attractions: Attraction[] = [
     image: omanAcrossAgesImg,
     mapUrl: "https://maps.app.goo.gl/bJuYEi79eRjrJbrUA",
     rating: "4.9"
+  },
+  {
+    id: "1011",
+    name: "قلعة بهلاء",
+    nameAr: "قلعة بهلاء",
+    description: "قلعة تاريخية مدرجة في قائمة التراث العالمي لليونسكو، تعد من أقدم وأضخم القلاع في عُمان وتعكس عراقة الحضارة العمانية.",
+    descriptionEn: "A UNESCO World Heritage historic fort, one of the oldest and largest forts in Oman, reflecting the richness of Omani civilization.",
+    descriptionFr: "Un fort historique classé au patrimoine mondial de l'UNESCO, l'un des plus anciens et des plus grands forts d'Oman, reflétant la richesse de la civilisation omanaise.",
+    descriptionTr: "UNESCO Dünya Mirası listesindeki tarihi bir kale, Umman'daki en eski ve en büyük kalelerden biri olup Umman medeniyetinin zenginliğini yansıtmaktadır.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية بهلاء",
+    category: "heritage",
+    image: bahlaFortImg,
+    mapUrl: "https://maps.app.goo.gl/M6KzvWsARkGMwUtz6",
+    rating: "4.8"
   },
   {
     id: "35",
