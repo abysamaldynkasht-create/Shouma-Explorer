@@ -88,6 +88,7 @@ import roseFarmsImg from "@assets/image_1772602116361.png";
 import izkiOldImg from "@assets/image_1772602312650.png";
 import seebFortImg from "@assets/image_1772602334297.png";
 import fiqaMosqueImg from "@assets/image_1772602603532.png";
+import baitAlOudImg from "@assets/image_1772602845500.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1624,6 +1625,22 @@ export const attractions: Attraction[] = [
     image: fiqaMosqueImg,
     mapUrl: "https://maps.app.goo.gl/STGtCbDM5ggV2yAG7",
     rating: "4.7"
+  },
+  {
+    id: "1026",
+    name: "بيت العود",
+    nameAr: "بيت العود",
+    description: "بيت تراثي عريق في الخوض القديمة يعكس فنون العمارة العُمانية القديمة والتحصينات الدفاعية. يحتوي على مجالس عربية تقليدية لاستقبال الضيوف ومسجد أثري يخدم المنطقة المحيطة. الموقع مفتوح للزيارة والاستكشاف الخارجي مجاناً.",
+    descriptionEn: "A historic heritage house in Old Al Khoud reflecting traditional Omani architectural arts and defensive fortifications. Features traditional Arab reception halls and an ancient mosque serving the surrounding area. The site is open for free external visits and exploration.",
+    descriptionFr: "Une maison patrimoniale historique dans l'ancien Al Khoud reflétant les arts architecturaux traditionnels omanais et les fortifications défensives. Comprend des salons de réception arabes traditionnels et une mosquée ancienne. Le site est ouvert aux visites extérieures gratuites.",
+    descriptionTr: "Eski Al Khoud'da geleneksel Umman mimari sanatlarını ve savunma tahkimatlarını yansıtan tarihi bir miras evi. Geleneksel Arap kabul salonları ve çevreye hizmet veren eski bir cami içerir. Alan ücretsiz dış ziyaret ve keşfe açıktır.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "heritage",
+    image: baitAlOudImg,
+    mapUrl: "https://maps.app.goo.gl/jK7Mh2Aj4RY2vaCN7",
+    rating: "4.4"
   },
   {
     id: "61",
