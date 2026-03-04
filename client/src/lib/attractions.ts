@@ -82,6 +82,7 @@ import wadiBaniHabibImg from "@assets/image_1772601448180.png";
 import omanAquariumImg from "@assets/image_1772601705477.png";
 import wadiTanufImg from "@assets/image_1772601831058.png";
 import birkatAlMawzImg from "@assets/image_1772601912719.png";
+import ridaydaFortImg from "@assets/image_1772601989490.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1090,6 +1091,22 @@ export const attractions: Attraction[] = [
     image: birkatAlMawzImg,
     mapUrl: "https://maps.app.goo.gl/UKWFnEM39kF4tK3w8",
     rating: "4.7"
+  },
+  {
+    id: "1020",
+    name: "حصن الرديدة",
+    nameAr: "حصن الرديدة",
+    description: "حصن تاريخي محصن يقع في نيابة بركة الموز عند مدخل الجبل الأخضر، يتميز بأبراجه الدفاعية وأسواره المهيبة المطلة على بساتين النخيل والجبال. رسوم الدخول: 500 بيسة للعمانيين / 3 ريال للسياح.",
+    descriptionEn: "A historic fortified castle located in Birkat Al Mawz at the entrance of Al Jabal Al Akhdar, featuring defensive towers and majestic walls overlooking palm groves and mountains. Entry fee: 500 Baisa for Omanis / 3 OMR for tourists.",
+    descriptionFr: "Un château fortifié historique situé à Birkat Al Mawz à l'entrée du Jabal Al Akhdar, avec des tours défensives et des murs majestueux surplombant les palmeraies et les montagnes. Entrée : 500 Baisa pour les Omanais / 3 OMR pour les touristes.",
+    descriptionTr: "Jabal Al Akhdar girişinde Birkat Al Mawz'da bulunan tarihi müstahkem bir kale, hurma bahçelerine ve dağlara bakan savunma kuleleri ve görkemli surlarıyla öne çıkar. Giriş ücreti: Umanlılar için 500 Baisa / turistler için 3 OMR.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "heritage",
+    image: ridaydaFortImg,
+    mapUrl: "https://maps.app.goo.gl/24bPLhfgLnjG9nne9",
+    rating: "4.6"
   },
   {
     id: "35",
