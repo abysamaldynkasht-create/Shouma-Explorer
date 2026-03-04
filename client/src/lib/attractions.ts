@@ -92,6 +92,7 @@ import baitAlOudImg from "@assets/image_1772602845500.png";
 import haratAlAqrImg from "@assets/image_1772602872583.png";
 import sqMosqueSeebImg from "@assets/image_1772603235690.png";
 import seebBeachImg from "@assets/image_1772603650600.png";
+import alMoujImg from "@assets/image_1772604327165.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1692,6 +1693,22 @@ export const attractions: Attraction[] = [
     image: seebBeachImg,
     mapUrl: "https://maps.app.goo.gl/GJ72xqZYQxSg6jDf6",
     rating: "4.5"
+  },
+  {
+    id: "1030",
+    name: "الموج مسقط",
+    nameAr: "الموج مسقط",
+    description: "مشروع سياحي وسكني متكامل يمتد على الواجهة البحرية، يضم مرسى لليخوت ومنتجعات فاخرة وشواطئ خاصة ومطاعم ومقاهي عالمية وممرات للمشي. يُعد وجهة مثالية للترفيه والاستجمام والتسوق بإطلالات بحرية ساحرة.",
+    descriptionEn: "An integrated tourism and residential waterfront development featuring a yacht marina, luxury resorts, private beaches, world-class restaurants and cafes, and walking promenades. An ideal destination for entertainment, relaxation, and shopping with stunning sea views.",
+    descriptionFr: "Un développement touristique et résidentiel intégré en bord de mer comprenant une marina pour yachts, des complexes de luxe, des plages privées, des restaurants et cafés de classe mondiale et des promenades. Une destination idéale pour le divertissement et la détente avec de superbes vues sur la mer.",
+    descriptionTr: "Yat marinası, lüks tatil köyleri, özel plajlar, dünya standartlarında restoranlar ve kafeler ile yürüyüş yolları içeren entegre bir turizm ve konut sahil projesi. Muhteşem deniz manzarasıyla eğlence, dinlenme ve alışveriş için ideal bir destinasyon.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "entertainment",
+    image: alMoujImg,
+    mapUrl: "https://maps.app.goo.gl/L7XvURpbJiBHLHQ79",
+    rating: "4.8"
   },
   {
     id: "61",
