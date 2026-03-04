@@ -77,6 +77,7 @@ import bahlaFortImg from "@assets/image_1772600976310.png";
 import sahwaParkImg from "@assets/image_1772600917148.png";
 import jabreenCastleImg from "@assets/image_1772601059161.png";
 import jabalShamsImg from "@assets/image_1772601315074.png";
+import seebParkImg from "@assets/image_1772601333396.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1437,6 +1438,22 @@ export const attractions: Attraction[] = [
     image: sahwaParkImg,
     mapUrl: "https://maps.app.goo.gl/koZHe9tgRWSxyigx9",
     rating: "4.6"
+  },
+  {
+    id: "1015",
+    name: "حديقة السيب العامة",
+    nameAr: "حديقة السيب العامة",
+    description: "وجهة ترفيهية مفضلة للعائلات تمتد على مساحة 33 ألف متر مربع. تضم مناطق ألعاب أطفال وممرات للمشي والجري وأماكن مظللة للجلوس. موقعها الهادئ يجعلها متنفساً طبيعياً بعيداً عن صخب المناطق التجارية. تغلق عند الساعة 12 ليلاً.",
+    descriptionEn: "A favorite family recreation destination spanning 33,000 square meters. Features children's play areas, walking and jogging paths, and shaded seating areas. Its tranquil location provides a natural retreat away from commercial areas. Closes at 12 AM.",
+    descriptionFr: "Une destination récréative familiale préférée s'étendant sur 33 000 mètres carrés. Comprend des aires de jeux pour enfants, des sentiers de marche et de jogging, et des zones ombragées. Son emplacement tranquille offre un refuge naturel loin des zones commerciales. Fermeture à minuit.",
+    descriptionTr: "33.000 metrekarelik alana yayılan favori bir aile eğlence destinasyonu. Çocuk oyun alanları, yürüyüş ve koşu parkurları ve gölgeli oturma alanları içerir. Sakin konumu, ticari bölgelerden uzak doğal bir kaçış sunar. Gece 12'de kapanır.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "entertainment",
+    image: seebParkImg,
+    mapUrl: "https://maps.app.goo.gl/ZJVBZrNpLa1nSF4C9",
+    rating: "4.4"
   },
   {
     id: "61",
