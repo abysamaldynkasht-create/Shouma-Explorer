@@ -74,6 +74,7 @@ import wadiKhatwaImg from "@/assets/wadi-khatwa.png";
 import jebelQitarImg from "@/assets/jebel-qitar.png";
 import omanAcrossAgesImg from "@assets/image_1772600713536.png";
 import bahlaFortImg from "@assets/image_1772600976310.png";
+import sahwaParkImg from "@assets/image_1772600917148.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1386,6 +1387,22 @@ export const attractions: Attraction[] = [
     image: squSquareImg,
     mapUrl: "https://share.google/pGvy4FreyxyjffxKS",
     rating: "4.5"
+  },
+  {
+    id: "1012",
+    name: "حديقة الصحوة",
+    nameAr: "حديقة الصحوة",
+    description: "متنزه حضري بارز بتصميم هندسي فريد، يضم 8 حدائق فرعية متصلة ونوافير مائية تفاعلية. تعتبر متنفساً رئيسياً للعائلات، وتوفر مساحات خضراء واسعة ومناطق ألعاب مجهزة. موقعها استراتيجي بالقرب من برج الصحوة التاريخي.",
+    descriptionEn: "A prominent urban park with a unique architectural design, featuring 8 interconnected sub-gardens and interactive water fountains. A major family destination offering vast green spaces and equipped play areas, strategically located near the historic Al Sahwa Tower.",
+    descriptionFr: "Un parc urbain remarquable au design architectural unique, comprenant 8 sous-jardins interconnectés et des fontaines interactives. Un lieu familial majeur offrant de vastes espaces verts et des aires de jeux équipées, stratégiquement situé près de la tour historique Al Sahwa.",
+    descriptionTr: "Benzersiz mimari tasarıma sahip öne çıkan bir şehir parkı, 8 birbirine bağlı alt bahçe ve interaktif su fıskiyeleri içerir. Geniş yeşil alanlar ve donanımlı oyun alanları sunan önemli bir aile destinasyonu, tarihi Al Sahwa Kulesi'nin yakınında stratejik konumdadır.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "entertainment",
+    image: sahwaParkImg,
+    mapUrl: "https://maps.app.goo.gl/koZHe9tgRWSxyigx9",
+    rating: "4.6"
   },
   {
     id: "61",
