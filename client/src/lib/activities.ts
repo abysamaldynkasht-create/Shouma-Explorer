@@ -5,6 +5,7 @@ import muscatNightsImg from "@/assets/muscat-nights.png";
 import potteryNizwaImg from "@/assets/pottery-nizwa.png";
 import musandamZiplineImg from "@/assets/khasab-zipline.jpg";
 import jabalShamsSunriseImg from "@assets/image_1772602468877.png";
+import rosePickingImg from "@assets/image_1772603622726.png";
 
 export interface ActivityBranch {
   name: string;
@@ -153,5 +154,20 @@ export const activities: Activity[] = [
     rating: 4.9,
     includes: ["مشاهدة شروق الشمس", "إطلالة على وادي النخر", "مسارات مشي جبلية", "تصوير فوتوغرافي"],
     mapUrl: "https://maps.app.goo.gl/9WcLFuJgGZMbqWmD9",
+  },
+  {
+    id: "rose-picking-jabal-akhdar",
+    name: "Rose Picking in Al Jabal Al Akhdar",
+    nameAr: "قطف الورود في الجبل الأخضر",
+    description: "Join local farmers in the traditional art of picking Damask roses on Al Jabal Al Akhdar during the blooming season (April-May). Learn about the centuries-old process of rose distillation to produce authentic Omani rosewater. Some private farms may charge a small fee or require a purchase.",
+    descriptionAr: "شارك المزارعين المحليين في فن قطف الورد الدمشقي التقليدي على الجبل الأخضر خلال موسم الإزهار (أبريل - مايو). تعرّف على عملية تقطير الورد العريقة لإنتاج ماء الورد العُماني الأصيل. بعض المزارع الخاصة قد تطلب رسوماً رمزية أو تشترط الشراء.",
+    location: "الجبل الأخضر، محافظة الداخلية",
+    region: "محافظة الداخلية",
+    duration: "2-4 ساعات",
+    price: "مجاني (رسوم رمزية في بعض المزارع)",
+    image: rosePickingImg,
+    rating: 4.8,
+    includes: ["قطف الورد يدوياً", "مشاهدة تقطير ماء الورد", "تذوق ماء الورد الطازج", "شراء منتجات الورد المحلية"],
+    mapUrl: "https://maps.app.goo.gl/Mr2WNUGqrKiANERw6",
   },
 ];
