@@ -95,6 +95,7 @@ import seebBeachImg from "@assets/image_1772603650600.png";
 import alMoujImg from "@assets/image_1772604327165.png";
 import wadiKhoudImg from "@assets/image_1772604355683.png";
 import bousherHeightsImg from "@assets/image_1772604967818.png";
+import palmeraGardenImg from "@assets/image_1772605456212.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1743,6 +1744,22 @@ export const attractions: Attraction[] = [
     image: bousherHeightsImg,
     mapUrl: "https://maps.app.goo.gl/osWJ8SxAhJqGcZbm7",
     rating: "4.6"
+  },
+  {
+    id: "1033",
+    name: "حديقة النخلة",
+    nameAr: "حديقة النخلة",
+    description: "وجهة تعليمية وترفيهية فريدة تركز على غرس قيم الرفق بالحيوان والمسؤولية لدى الأطفال. تتيح للزوار التعرف على أنواع مختلفة من الزواحف والحيوانات والنباتات في بيئة تعليمية مصغرة. تنظم ورش عمل تفاعلية دورية مثل تصميم بيئات الكائنات الحية تحت إشراف مختصين. رسوم الورش حوالي 5 ريالات عُمانية.",
+    descriptionEn: "A unique educational and recreational destination focused on teaching children animal welfare and responsibility. Allows visitors to learn about various reptiles, animals, and plants in a miniature educational environment. Organizes regular interactive workshops like habitat design under specialist supervision. Workshop fees around 5 OMR.",
+    descriptionFr: "Une destination éducative et récréative unique axée sur l'enseignement du bien-être animal et de la responsabilité aux enfants. Permet aux visiteurs de découvrir divers reptiles, animaux et plantes dans un environnement éducatif miniature. Organise des ateliers interactifs réguliers sous la supervision de spécialistes. Frais d'atelier environ 5 OMR.",
+    descriptionTr: "Çocuklara hayvan refahı ve sorumluluk öğretmeye odaklanan benzersiz bir eğitim ve eğlence destinasyonu. Ziyaretçilerin minyatür eğitim ortamında çeşitli sürüngenler, hayvanlar ve bitkiler hakkında bilgi edinmesini sağlar. Uzman gözetiminde düzenli interaktif atölyeler düzenler. Atölye ücreti yaklaşık 5 OMR.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: palmeraGardenImg,
+    mapUrl: "https://maps.app.goo.gl/8357LmgPa9awa9ot8",
+    rating: "4.5"
   },
   {
     id: "61",
