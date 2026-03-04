@@ -345,6 +345,8 @@ function generateItinerary(params: ItineraryParams): Itinerary {
   const restaurants = filteredRestaurants.length > 0 ? filteredRestaurants : appRestaurants;
 
   const usedAttractions = new Set<string>();
+  const usedHotels = new Set<string>();
+  const usedRestaurants = new Set<string>();
   const days: ItineraryDay[] = [];
   const numDays = Math.min(duration, 7);
 
@@ -369,14 +371,18 @@ function generateItinerary(params: ItineraryParams): Itinerary {
       anchor = attractions.find(a => !usedAttractions.has(a.id));
     }
     if (!anchor) {
-      usedAttractions.clear();
       anchor = govAttractions[0] || attractions[0];
     }
     usedAttractions.add(anchor.id);
 
     const attr1 = anchor;
-    const attr2 = findNearest(attr1, attractions.filter(a => !usedAttractions.has(a.id)), usedAttractions)
-      || attractions.find(a => a.id !== attr1.id) || attr1;
+    let attr2 = findNearest(attr1, attractions, usedAttractions);
+    if (!attr2) {
+      attr2 = attractions.find(a => !usedAttractions.has(a.id)) || null;
+    }
+    if (!attr2) {
+      attr2 = attractions.find(a => a.id !== attr1.id) || attr1;
+    }
     usedAttractions.add(attr2.id);
 
     const dayCenter: GeoItem = {
@@ -385,11 +391,36 @@ function generateItinerary(params: ItineraryParams): Itinerary {
       lng: (attr1.lng + attr2.lng) / 2,
     };
 
-    const hotel = findNearest(dayCenter, hotels, new Set()) || hotels[0];
-    const usedRestaurants = new Set<string>();
-    const restaurant1 = findNearest(attr1, restaurants, usedRestaurants) || restaurants[0];
+    let hotel = findNearest(dayCenter, hotels, usedHotels);
+    if (!hotel) {
+      hotel = findNearest(dayCenter, appHotels, usedHotels);
+    }
+    if (!hotel) {
+      usedHotels.clear();
+      hotel = findNearest(dayCenter, hotels, new Set()) || hotels[0];
+    }
+    usedHotels.add(hotel.id);
+
+    let restaurant1 = findNearest(attr1, restaurants, usedRestaurants);
+    if (!restaurant1) {
+      restaurant1 = findNearest(attr1, appRestaurants, usedRestaurants);
+    }
+    if (!restaurant1) {
+      usedRestaurants.clear();
+      restaurant1 = findNearest(attr1, restaurants, new Set()) || restaurants[0];
+    }
     usedRestaurants.add(restaurant1.id);
-    const restaurant2 = findNearest(attr2, restaurants, usedRestaurants) || restaurant1;
+
+    let restaurant2 = findNearest(attr2, restaurants, usedRestaurants);
+    if (!restaurant2) {
+      restaurant2 = findNearest(attr2, appRestaurants, usedRestaurants);
+    }
+    if (!restaurant2) {
+      restaurant2 = findNearest(attr2, restaurants, usedRestaurants) || restaurants.find(r => r.id !== restaurant1.id) || restaurant1;
+    }
+    if (restaurant2.id !== restaurant1.id) {
+      usedRestaurants.add(restaurant2.id);
+    }
 
     const distAttr = haversineDistance(attr1.lat, attr1.lng, attr2.lat, attr2.lng);
     const travelMin = Math.max(15, Math.round(distAttr / 60 * 60));

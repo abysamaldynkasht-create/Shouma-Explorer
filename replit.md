@@ -71,6 +71,7 @@ Preferred communication style: Simple, everyday language.
 - Itinerary generator uses nearest-neighbor algorithm to group geographically close places per day
 - Activities include distance descriptions (e.g., "5 كم من الفندق") and estimated travel times
 - Day titles are region-specific (e.g., "استكشاف مسقط" for Muscat, "تراث الداخلية" for Dakhiliyah)
+- Global deduplication: tracks usedAttractions, usedHotels, usedRestaurants across all days; falls back to full data pool before repeating any place
 - Attraction interface with optional lat/lng coordinates for geolocation features
 
 ### Nearby Places Feature
