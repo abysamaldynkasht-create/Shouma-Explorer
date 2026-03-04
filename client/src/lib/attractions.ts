@@ -56,7 +56,7 @@ import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 import baitDarwazaImg from "@assets/image_1772600494273.png";
 import wadiBaniKhalidImg from "@assets/image_1772600395560.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
-import mallOfOmanImg from "@/assets/mall-of-oman.png";
+import mallOfOmanImg from "@assets/image_1772607261031.png";
 import squSquareImg from "@/assets/squ-square.png";
 import luluKhasabImg from "@/assets/lulu-khasab.jpg";
 import bassaBeachImg from "@/assets/bassa-beach.jpg";
@@ -1536,7 +1536,7 @@ export const attractions: Attraction[] = [
     governorateId: "muscat",
     wilayat: "ولاية بوشر",
     category: "entertainment",
-    image: fabylandImg,
+    image: mallOfOmanImg,
     mapUrl: "https://maps.app.goo.gl/QhhpVwEMgDP3e61x5",
     rating: "4.3"
   },
