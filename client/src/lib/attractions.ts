@@ -81,6 +81,7 @@ import seebParkImg from "@assets/image_1772601333396.png";
 import wadiBaniHabibImg from "@assets/image_1772601448180.png";
 import omanAquariumImg from "@assets/image_1772601705477.png";
 import wadiTanufImg from "@assets/image_1772601831058.png";
+import birkatAlMawzImg from "@assets/image_1772601912719.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1072,6 +1073,22 @@ export const attractions: Attraction[] = [
     category: "nature",
     image: wadiTanufImg,
     mapUrl: "https://maps.app.goo.gl/U2MzyNVdgYHRPLTJ8",
+    rating: "4.7"
+  },
+  {
+    id: "1019",
+    name: "بركة الموز",
+    nameAr: "بركة الموز",
+    description: "قرية تراثية عريقة تقع عند سفح الجبل الأخضر، تتميز ببيوتها الطينية القديمة المتراصة وسط بساتين النخيل الكثيفة وحصنها التاريخي. تُعد من أجمل القرى التراثية في عُمان. الدخول مجاني، وقد توجد رسوم رمزية لدخول الحصن.",
+    descriptionEn: "An ancient heritage village at the foot of Al Jabal Al Akhdar, featuring clustered mud-brick houses surrounded by dense palm groves and a historic fort. One of the most beautiful heritage villages in Oman. Free entry; a small fee may apply for the fort.",
+    descriptionFr: "Un ancien village patrimonial au pied du Jabal Al Akhdar, avec des maisons en briques de terre regroupées entourées de palmeraies denses et un fort historique. L'un des plus beaux villages patrimoniaux d'Oman. Entrée gratuite ; un petit supplément peut s'appliquer pour le fort.",
+    descriptionTr: "Jabal Al Akhdar'ın eteklerinde yer alan kadim bir miras köyü, yoğun hurma bahçeleriyle çevrili kerpiç evler ve tarihi bir kale içerir. Umman'ın en güzel miras köylerinden biri. Giriş ücretsiz; kale için küçük bir ücret uygulanabilir.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "heritage",
+    image: birkatAlMawzImg,
+    mapUrl: "https://maps.app.goo.gl/UKWFnEM39kF4tK3w8",
     rating: "4.7"
   },
   {
