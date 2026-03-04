@@ -10,6 +10,7 @@ import souqDuqmImg from "@/assets/souq-duqm.png";
 import ainAlkhaleejImg from "@assets/image_1772573893188.png";
 import binAteeqImg from "@assets/image_1772574323731.png";
 import cafeBateelImg from "@assets/image_1772603776289.png";
+import darcysKitchenImg from "@assets/image_1772604487806.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -193,5 +194,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.7,
     features: ["تمور فاخرة", "شوكولاتة بتيل", "قهوة مختصة", "إفطار ومعجنات", "إطلالة بحرية"],
     mapUrl: "https://maps.app.goo.gl/nrtWYWLSrpDmGjr98",
+  },
+  {
+    id: "14",
+    name: "D'Arcy's Kitchen",
+    nameAr: "دارسي كيتشن",
+    description: "مطعم ومقهى أنيق يقع في شاطئ القرم بمسقط، يتميز بأجوائه الدافئة وجلساته الخارجية الملونة المحاطة بالنباتات. يقدم قائمة متنوعة تشمل الإفطار والغداء والمأكولات الأوروبية والمحلية، بالإضافة إلى المعجنات الطازجة والقهوة المختصة. وجهة مفضلة للعائلات والأصدقاء.",
+    city: "شاطئ القرم، ولاية بوشر",
+    region: "محافظة مسقط",
+    image: darcysKitchenImg,
+    cuisine: "أوروبي متنوع",
+    priceRange: "moderate",
+    rating: 4.6,
+    features: ["إفطار ومعجنات", "جلسات خارجية", "قهوة مختصة", "أجواء عائلية", "مأكولات أوروبية"],
+    mapUrl: "https://maps.app.goo.gl/DHA1aC3LYTw65xDM9",
   },
 ];
