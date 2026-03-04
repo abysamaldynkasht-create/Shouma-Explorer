@@ -78,6 +78,7 @@ import sahwaParkImg from "@assets/image_1772600917148.png";
 import jabreenCastleImg from "@assets/image_1772601059161.png";
 import jabalShamsImg from "@assets/image_1772601315074.png";
 import seebParkImg from "@assets/image_1772601333396.png";
+import wadiBaniHabibImg from "@assets/image_1772601448180.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1038,6 +1039,22 @@ export const attractions: Attraction[] = [
     image: jabalShamsImg,
     mapUrl: "https://maps.app.goo.gl/W3dHHsLg2Vv6vcts5",
     rating: "4.9"
+  },
+  {
+    id: "1016",
+    name: "وادي بني حبيب",
+    nameAr: "وادي بني حبيب",
+    description: "قرية أثرية مهجورة تقع على الجبل الأخضر، تتميز ببيوتها الحجرية القديمة المبنية على المنحدرات الصخرية ومدرجاتها الزراعية التاريخية. الدخول مجاني، وقد يتطلب الوصول للجبل الأخضر رسوم عبور بسيطة للمركبات.",
+    descriptionEn: "An abandoned ancient village located on Al Jabal Al Akhdar, featuring old stone houses built on rocky slopes and historic agricultural terraces. Free entry; accessing Al Jabal Al Akhdar may require a small vehicle crossing fee.",
+    descriptionFr: "Un ancien village abandonné situé sur Al Jabal Al Akhdar, avec des maisons en pierre construites sur des pentes rocheuses et des terrasses agricoles historiques. Entrée gratuite ; l'accès au Jabal Al Akhdar peut nécessiter un petit péage véhicule.",
+    descriptionTr: "Al Jabal Al Akhdar'da bulunan terk edilmiş antik bir köy, kayalık yamaçlara inşa edilmiş eski taş evler ve tarihi tarım teraslarıyla öne çıkar. Giriş ücretsiz; Jabal Al Akhdar'a erişim küçük bir araç geçiş ücreti gerektirebilir.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية الجبل الأخضر",
+    category: "nature",
+    image: wadiBaniHabibImg,
+    mapUrl: "https://maps.app.goo.gl/uzqZ6VHMJNCERkeH7",
+    rating: "4.7"
   },
   {
     id: "35",
