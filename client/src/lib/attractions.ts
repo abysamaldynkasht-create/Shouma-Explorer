@@ -97,6 +97,7 @@ import wadiKhoudImg from "@assets/image_1772604355683.png";
 import bousherHeightsImg from "@assets/image_1772604967818.png";
 import palmeraGardenImg from "@assets/image_1772605456212.png";
 import royalOperaImg from "@assets/image_1772605843928.png";
+import actionPointImg from "@assets/image_1772606155245.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1777,6 +1778,22 @@ export const attractions: Attraction[] = [
     image: royalOperaImg,
     mapUrl: "https://maps.app.goo.gl/aiGAxYW9wCxrYTwBA",
     rating: "4.9"
+  },
+  {
+    id: "1035",
+    name: "نادي عُمان للرماية - أكشن بوينت",
+    nameAr: "نادي عُمان للرماية - أكشن بوينت",
+    description: "مركز رماية احترافي يقع ضمن مركز أكتيف عُمان في مقر الجمعية العُمانية للسيارات بمرتفعات المطار. يقدم باقات متنوعة: باقة مكافأة الزناد (45 ر.ع) 50 طلقة مسدس و40 طلقة بندقية، باقة متعة الرماة (45 ر.ع) 50 طلقة مسدس و28 طلقة شوزن، باقة حزمة الطاقة (50 ر.ع) 50 طلقة بندقية و28 طلقة شوزن، الصفقة النهائية (70 ر.ع) جميع الأسلحة. مفتوح يومياً 9:00 ص - 11:00 م.",
+    descriptionEn: "A professional shooting range located within Active Oman Center at the Oman Automobile Association in Airport Heights. Offers various packages: Trigger Reward (45 OMR) 50 pistol & 40 rifle rounds, Shooter's Delight (45 OMR) 50 pistol & 28 shotgun rounds, Power Bundle (50 OMR) 50 rifle & 28 shotgun rounds, Ultimate Deal (70 OMR) all weapons. Open daily 9 AM - 11 PM.",
+    descriptionFr: "Un stand de tir professionnel situé dans le centre Active Oman à l'Association Automobile d'Oman, Airport Heights. Propose divers forfaits: Trigger Reward (45 OMR), Shooter's Delight (45 OMR), Power Bundle (50 OMR), Ultimate Deal (70 OMR). Ouvert tous les jours de 9h à 23h.",
+    descriptionTr: "Havalimanı Tepeleri'ndeki Umman Otomobil Derneği'nde Active Oman Merkezi bünyesinde yer alan profesyonel bir atış poligonu. Çeşitli paketler sunar: Tetik Ödülü (45 OMR), Atıcı Keyfi (45 OMR), Güç Paketi (50 OMR), Nihai Anlaşma (70 OMR). Her gün 09:00-23:00 arası açık.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "entertainment",
+    image: actionPointImg,
+    mapUrl: "https://maps.app.goo.gl/Gj39JJ67Z7T4rKAA8",
+    rating: "4.7"
   },
   {
     id: "61",
