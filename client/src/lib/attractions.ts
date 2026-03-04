@@ -89,6 +89,7 @@ import izkiOldImg from "@assets/image_1772602312650.png";
 import seebFortImg from "@assets/image_1772602334297.png";
 import fiqaMosqueImg from "@assets/image_1772602603532.png";
 import baitAlOudImg from "@assets/image_1772602845500.png";
+import haratAlAqrImg from "@assets/image_1772602872583.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1129,6 +1130,22 @@ export const attractions: Attraction[] = [
     image: roseFarmsImg,
     mapUrl: "https://maps.app.goo.gl/Mr2WNUGqrKiANERw6",
     rating: "4.8"
+  },
+  {
+    id: "1027",
+    name: "حارة العقر",
+    nameAr: "حارة العقر",
+    description: "حارة تراثية تاريخية في قلب نزوى تضم سور العقر الشهير وأزقة قديمة تعكس الحياة العُمانية التقليدية. رسوم زيارة سور العقر: 1 ريال عُماني، والتجول في أزقة الحارة مجاني. تتوفر جولات سياحية منظمة عبر عربات نزوى السياحية بأسعار تبدأ من 4 ريالات للشخص. تذكرة مجانية لشخصين عند الشراء بـ5 ريالات أو أكثر من مطعم العقر.",
+    descriptionEn: "A historic heritage quarter in the heart of Nizwa featuring the famous Sur Al Aqr wall and ancient alleys reflecting traditional Omani life. Sur Al Aqr entry: 1 OMR; walking the old alleys is free. Organized tours via Nizwa tourist carts available from 4 OMR per person. Free ticket for 2 when spending 5+ OMR at Al Aqr Restaurant.",
+    descriptionFr: "Un quartier patrimonial historique au cœur de Nizwa avec le célèbre mur Sur Al Aqr et des ruelles anciennes reflétant la vie traditionnelle omanaise. Entrée Sur Al Aqr : 1 OMR ; promenade dans les ruelles gratuite. Visites organisées en chariot touristique à partir de 4 OMR/personne. Billet gratuit pour 2 en dépensant 5+ OMR au restaurant Al Aqr.",
+    descriptionTr: "Nizva'nın kalbinde ünlü Sur Al Aqr surları ve geleneksel Umman yaşamını yansıtan eski sokaklarıyla tarihi bir miras mahallesi. Sur Al Aqr girişi: 1 OMR; eski sokaklarda yürüyüş ücretsiz. Nizva turist arabaları ile organize turlar kişi başı 4 OMR'den başlar. Al Aqr Restoran'da 5+ OMR harcamada 2 kişilik ücretsiz bilet.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية نزوى",
+    category: "heritage",
+    image: haratAlAqrImg,
+    mapUrl: "https://maps.app.goo.gl/GvCMHfGcxGw3bkLY6",
+    rating: "4.7"
   },
   {
     id: "1023",
