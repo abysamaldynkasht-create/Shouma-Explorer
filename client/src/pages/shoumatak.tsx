@@ -29,7 +29,9 @@ import {
   Tent,
   Activity,
   Leaf,
-  Edit
+  Edit,
+  Hotel,
+  Building2
 } from "lucide-react";
 
 interface Question {
@@ -110,6 +112,16 @@ const questions: Question[] = [
     ],
   },
   {
+    id: "hotelPreference",
+    titleKey: "hotelPreference",
+    subtitleKey: "hotelPreferenceSubtitle",
+    type: "single",
+    options: [
+      { value: "single", labelKey: "singleHotel", icon: <Hotel className="w-6 h-6" /> },
+      { value: "multiple", labelKey: "multipleHotels", icon: <Building2 className="w-6 h-6" /> },
+    ],
+  },
+  {
     id: "mealPreference",
     titleKey: "meals",
     subtitleKey: "mealsSubtitle",
@@ -179,6 +191,7 @@ export default function ShoumatakPage() {
         groupSize: String(answers.groupSize || 2),
         interests: (answers.interests || []).join(","),
         accommodation: answers.accommodation || "hotel",
+        hotelPreference: answers.hotelPreference || "single",
         mealPreference: answers.mealPreference || "mixed",
         preferredActivities: (answers.preferredActivities || []).join(","),
         governorates: (answers.governorates || []).join(","),
@@ -265,6 +278,14 @@ export default function ShoumatakPage() {
       resort: t('resortType'),
       apartment: t('apartmentType'),
       hostel: t('hostelType'),
+    };
+    return labels[value] || value;
+  };
+
+  const getHotelPreferenceLabel = (value: string) => {
+    const labels: Record<string, string> = {
+      single: t('singleHotel'),
+      multiple: t('multipleHotels'),
     };
     return labels[value] || value;
   };
@@ -585,6 +606,17 @@ export default function ShoumatakPage() {
                   
                   <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(7)}>
                     <div className="flex items-center gap-3">
+                      <Hotel className="w-5 h-5 text-primary" />
+                      <span className="font-medium">{t('hotelPreference')}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{getHotelPreferenceLabel(answers.hotelPreference || 'single')}</Badge>
+                      <Edit className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(8)}>
+                    <div className="flex items-center gap-3">
                       <UtensilsCrossed className="w-5 h-5 text-primary" />
                       <span className="font-medium">{t('meals')}</span>
                     </div>
@@ -594,7 +626,7 @@ export default function ShoumatakPage() {
                     </div>
                   </div>
                   
-                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(8)}>
+                  <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(9)}>
                     <div className="flex items-center gap-3">
                       <Activity className="w-5 h-5 text-primary" />
                       <span className="font-medium">{t('activities')}</span>

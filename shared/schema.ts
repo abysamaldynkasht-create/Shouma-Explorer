@@ -53,6 +53,7 @@ export const questionnaireSchema = z.object({
   groupSize: z.number().min(1).max(20),
   preferredActivities: z.array(z.string()),
   accommodation: z.enum(["hotel", "resort", "apartment", "hostel"]),
+  hotelPreference: z.enum(["single", "multiple"]).optional(),
   mealPreference: z.enum(["local", "international", "mixed"]),
   governorates: z.array(z.string()).optional(),
 });

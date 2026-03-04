@@ -72,6 +72,8 @@ Preferred communication style: Simple, everyday language.
 - Activities include distance descriptions (e.g., "5 كم من الفندق") and estimated travel times
 - Day titles are region-specific (e.g., "استكشاف مسقط" for Muscat, "تراث الداخلية" for Dakhiliyah)
 - Global deduplication: tracks usedAttractions, usedHotels, usedRestaurants across all days; falls back to full data pool before repeating any place
+- Hotel preference: questionnaire asks user if they want single hotel (same throughout) or multiple hotels (different each day); defaults to single
+- Geographic clustering: attractions per day are grouped within same governorate (80km radius), restaurants and hotels selected nearest to day's attractions
 - Attraction interface with optional lat/lng coordinates for geolocation features
 
 ### Nearby Places Feature

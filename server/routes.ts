@@ -177,6 +177,7 @@ Add interesting additional information, historical and cultural details, and tip
       const groupSize = parseInt(req.query.groupSize as string) || 2;
       const interests = ((req.query.interests as string) || "").split(",").filter(Boolean);
       const accommodation = (req.query.accommodation as string) || "hotel";
+      const hotelPreference = (req.query.hotelPreference as string) || "single";
       const mealPreference = (req.query.mealPreference as string) || "mixed";
       const governorates = ((req.query.governorates as string) || "").split(",").filter(Boolean);
 
@@ -186,6 +187,7 @@ Add interesting additional information, historical and cultural details, and tip
         groupSize,
         interests,
         accommodation,
+        hotelPreference,
         mealPreference,
         governorates,
       });
@@ -230,6 +232,7 @@ interface ItineraryParams {
   groupSize: number;
   interests: string[];
   accommodation: string;
+  hotelPreference: string;
   mealPreference: string;
   governorates: string[];
 }
@@ -320,8 +323,23 @@ const appRestaurants: GeoItem[] = [
   { id: "12", name: "مطعم بن عتيق للمأكولات العمانية", location: "محافظة ظفار", governorateId: "dhofar", lat: 17.0170, lng: 54.0900 },
 ];
 
+function findNearestWithinRadius<T extends GeoItem>(target: GeoItem, items: T[], exclude: Set<string>, maxDistKm: number): T | null {
+  let best: T | null = null;
+  let bestDist = Infinity;
+  for (const item of items) {
+    if (exclude.has(item.id)) continue;
+    const dist = haversineDistance(target.lat, target.lng, item.lat, item.lng);
+    if (dist <= maxDistKm && dist < bestDist) {
+      bestDist = dist;
+      best = item;
+    }
+  }
+  return best;
+}
+
 function generateItinerary(params: ItineraryParams): Itinerary {
-  const { duration, budget, governorates } = params;
+  const { duration, budget, hotelPreference, governorates } = params;
+  const singleHotelMode = hotelPreference !== "multiple";
 
   const budgetTitles: Record<string, string> = {
     low: "رحلة اقتصادية مميزة",
@@ -345,7 +363,6 @@ function generateItinerary(params: ItineraryParams): Itinerary {
   const restaurants = filteredRestaurants.length > 0 ? filteredRestaurants : appRestaurants;
 
   const usedAttractions = new Set<string>();
-  const usedHotels = new Set<string>();
   const usedRestaurants = new Set<string>();
   const days: ItineraryDay[] = [];
   const numDays = Math.min(duration, 7);
@@ -361,9 +378,56 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     .sort((a, b) => b[1].length - a[1].length)
     .map(([gov]) => gov);
 
+  const dayGovAssignments: string[] = [];
+  let govIdx = 0;
   for (let i = 0; i < numDays; i++) {
-    const govIndex = i % sortedGovs.length;
-    const dayGov = sortedGovs[govIndex];
+    const gov = sortedGovs[govIdx % sortedGovs.length];
+    const available = (govGroups[gov] || []).filter(a => !usedAttractions.has(a.id));
+    if (available.length >= 2 || i >= sortedGovs.length) {
+      dayGovAssignments.push(gov);
+      available.slice(0, 2).forEach(a => usedAttractions.add(a.id));
+      govIdx++;
+    } else if (available.length === 1) {
+      dayGovAssignments.push(gov);
+      available.forEach(a => usedAttractions.add(a.id));
+      govIdx++;
+    } else {
+      govIdx++;
+      i--;
+      if (govIdx > sortedGovs.length * 3) {
+        dayGovAssignments.push(sortedGovs[0]);
+        break;
+      }
+    }
+  }
+  usedAttractions.clear();
+
+  let fixedHotel: GeoItem | null = null;
+  if (singleHotelMode) {
+    const allDayGovs = new Set(dayGovAssignments);
+    const govHotels = hotels.filter(h => h.governorateId && allDayGovs.has(h.governorateId));
+    if (govHotels.length > 0) {
+      const govCenter: GeoItem = {
+        id: "center", name: "", location: "",
+        lat: attractions.reduce((s, a) => s + a.lat, 0) / attractions.length,
+        lng: attractions.reduce((s, a) => s + a.lng, 0) / attractions.length,
+      };
+      fixedHotel = findNearest(govCenter, govHotels, new Set());
+    }
+    if (!fixedHotel) {
+      fixedHotel = findNearest(
+        { id: "c", name: "", location: "", lat: attractions[0].lat, lng: attractions[0].lng },
+        hotels,
+        new Set()
+      ) || hotels[0];
+    }
+  }
+
+  const usedHotels = new Set<string>();
+  const MAX_CLUSTER_RADIUS = 80;
+
+  for (let i = 0; i < numDays; i++) {
+    const dayGov = dayGovAssignments[i] || sortedGovs[i % sortedGovs.length];
     const govAttractions = govGroups[dayGov] || [];
 
     let anchor = govAttractions.find(a => !usedAttractions.has(a.id));
@@ -371,14 +435,18 @@ function generateItinerary(params: ItineraryParams): Itinerary {
       anchor = attractions.find(a => !usedAttractions.has(a.id));
     }
     if (!anchor) {
+      usedAttractions.clear();
       anchor = govAttractions[0] || attractions[0];
     }
     usedAttractions.add(anchor.id);
 
     const attr1 = anchor;
-    let attr2 = findNearest(attr1, attractions, usedAttractions);
+    let attr2 = findNearestWithinRadius(attr1, govAttractions, usedAttractions, MAX_CLUSTER_RADIUS);
     if (!attr2) {
-      attr2 = attractions.find(a => !usedAttractions.has(a.id)) || null;
+      attr2 = findNearestWithinRadius(attr1, attractions, usedAttractions, MAX_CLUSTER_RADIUS);
+    }
+    if (!attr2) {
+      attr2 = findNearest(attr1, attractions, usedAttractions);
     }
     if (!attr2) {
       attr2 = attractions.find(a => a.id !== attr1.id) || attr1;
@@ -391,19 +459,34 @@ function generateItinerary(params: ItineraryParams): Itinerary {
       lng: (attr1.lng + attr2.lng) / 2,
     };
 
-    let hotel = findNearest(dayCenter, hotels, usedHotels);
-    if (!hotel) {
-      hotel = findNearest(dayCenter, appHotels, usedHotels);
+    let hotel: GeoItem;
+    if (singleHotelMode && fixedHotel) {
+      hotel = fixedHotel;
+    } else {
+      let h = findNearestWithinRadius(dayCenter, hotels, usedHotels, MAX_CLUSTER_RADIUS);
+      if (!h) {
+        h = findNearestWithinRadius(dayCenter, appHotels, usedHotels, MAX_CLUSTER_RADIUS);
+      }
+      if (!h) {
+        h = findNearest(dayCenter, hotels, usedHotels);
+      }
+      if (!h) {
+        h = findNearest(dayCenter, appHotels, usedHotels);
+      }
+      if (!h) {
+        usedHotels.clear();
+        h = findNearest(dayCenter, hotels, new Set()) || hotels[0];
+      }
+      hotel = h;
+      usedHotels.add(hotel.id);
     }
-    if (!hotel) {
-      usedHotels.clear();
-      hotel = findNearest(dayCenter, hotels, new Set()) || hotels[0];
-    }
-    usedHotels.add(hotel.id);
 
-    let restaurant1 = findNearest(attr1, restaurants, usedRestaurants);
+    let restaurant1 = findNearestWithinRadius(attr1, restaurants, usedRestaurants, MAX_CLUSTER_RADIUS);
     if (!restaurant1) {
-      restaurant1 = findNearest(attr1, appRestaurants, usedRestaurants);
+      restaurant1 = findNearestWithinRadius(attr1, appRestaurants, usedRestaurants, MAX_CLUSTER_RADIUS);
+    }
+    if (!restaurant1) {
+      restaurant1 = findNearest(attr1, restaurants, usedRestaurants);
     }
     if (!restaurant1) {
       usedRestaurants.clear();
@@ -411,12 +494,15 @@ function generateItinerary(params: ItineraryParams): Itinerary {
     }
     usedRestaurants.add(restaurant1.id);
 
-    let restaurant2 = findNearest(attr2, restaurants, usedRestaurants);
+    let restaurant2 = findNearestWithinRadius(attr2, restaurants, usedRestaurants, MAX_CLUSTER_RADIUS);
     if (!restaurant2) {
-      restaurant2 = findNearest(attr2, appRestaurants, usedRestaurants);
+      restaurant2 = findNearestWithinRadius(attr2, appRestaurants, usedRestaurants, MAX_CLUSTER_RADIUS);
     }
     if (!restaurant2) {
-      restaurant2 = findNearest(attr2, restaurants, usedRestaurants) || restaurants.find(r => r.id !== restaurant1.id) || restaurant1;
+      restaurant2 = findNearest(attr2, restaurants, usedRestaurants);
+    }
+    if (!restaurant2) {
+      restaurant2 = restaurants.find(r => r.id !== restaurant1.id) || restaurant1;
     }
     if (restaurant2.id !== restaurant1.id) {
       usedRestaurants.add(restaurant2.id);
