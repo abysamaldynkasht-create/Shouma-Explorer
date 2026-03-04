@@ -1813,6 +1813,22 @@ export const attractions: Attraction[] = [
     rating: "4.4"
   },
   {
+    id: "1037",
+    name: "ألعاب ماجك بلانيت",
+    nameAr: "ألعاب ماجك بلانيت",
+    description: "مركز ترفيهي في مول عُمان يضم مجموعة واسعة من ألعاب الأركيد والمحاكاة، ومناطق مخصصة للأطفال الصغار، مع خيارات متنوعة لشحن بطاقات اللعب وباقات عائلية. يسهل الوصول منه للمطاعم والسينما داخل المول. السبت - الأربعاء (10:00 ص - 10:00 م)، الخميس والجمعة (10:00 ص - 12:00 منتصف الليل).",
+    descriptionEn: "An entertainment center at Oman Mall featuring a wide range of arcade and simulation games, dedicated areas for young children, and various card-charging options with family packages. Easy access to restaurants and cinema within the mall. Sat-Wed (10 AM-10 PM), Thu-Fri (10 AM-midnight).",
+    descriptionFr: "Un centre de divertissement au Oman Mall avec une large gamme de jeux d'arcade et de simulation, des zones dédiées aux jeunes enfants et diverses options de recharge de cartes avec forfaits familiaux. Accès facile aux restaurants et au cinéma. Sam-Mer (10h-22h), Jeu-Ven (10h-minuit).",
+    descriptionTr: "Oman Mall'da geniş bir arcade ve simülasyon oyunu yelpazesi, küçük çocuklara özel alanlar ve aile paketleri ile çeşitli kart yükleme seçenekleri sunan bir eğlence merkezi. AVM içindeki restoranlara ve sinemaya kolay erişim. Cmt-Çar (10:00-22:00), Per-Cum (10:00-gece yarısı).",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: fabylandImg,
+    mapUrl: "https://maps.app.goo.gl/QhhpVwEMgDP3e61x5",
+    rating: "4.3"
+  },
+  {
     id: "61",
     name: "مركز لولو التجاري",
     nameAr: "مركز لولو التجاري",
