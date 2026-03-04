@@ -41,7 +41,7 @@ import ainJarzizImg from "@/assets/ain-jarziz.png";
 
 import hisnHazmImg from "@assets/image_1772599891548.png";
 import ibriSouqImg from "@/assets/ibri-souq.png";
-import dhahirahFestivalImg from "@/assets/dhahirah-festival.png";
+import dhahirahFestivalImg from "@assets/image_1772600139426.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
 import wadiDammImg from "@/assets/wadi-damm.png";
