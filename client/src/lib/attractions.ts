@@ -44,7 +44,7 @@ import ibriSouqImg from "@/assets/ibri-souq.png";
 import dhahirahFestivalImg from "@assets/image_1772600139426.png";
 import misfatAbriyyinImg from "@/assets/misfat-abriyyin.png";
 import mahyulDamImg from "@/assets/mahyul-dam.png";
-import wadiDammImg from "@/assets/wadi-damm.png";
+import wadiDammImg from "@assets/image_1772600210502.png";
 import surSouqImg from "@/assets/sur-souq.png";
 import marahLandImg from "@/assets/marah-land.png";
 import ashkharahBeachImg from "@/assets/ashkharah-beach.png";
