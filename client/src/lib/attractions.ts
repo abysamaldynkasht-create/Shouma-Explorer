@@ -86,6 +86,7 @@ import ridaydaFortImg from "@assets/image_1772601989490.png";
 import cityCentreMuscatImg from "@assets/image_1772601998013.png";
 import roseFarmsImg from "@assets/image_1772602116361.png";
 import izkiOldImg from "@assets/image_1772602312650.png";
+import seebFortImg from "@assets/image_1772602334297.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1590,6 +1591,22 @@ export const attractions: Attraction[] = [
     image: cityCentreMuscatImg,
     mapUrl: "https://maps.app.goo.gl/oXE3UgeTMN9YEcUm8",
     rating: "4.5"
+  },
+  {
+    id: "1024",
+    name: "حصن السيب",
+    nameAr: "حصن السيب",
+    description: "حصن تاريخي يُعرف سابقاً بحصن دما، يقع بالقرب من سوق السيب المركزي وجامع السلطان قابوس. يضم مركزاً ثقافياً وتاريخياً بقاعات عرض للمقتنيات التاريخية، وأربع غرف رئيسية ومرافق خارجية لاستقبال الزوار. تحيط به ساحات عامة تُستخدم في المناسبات الوطنية مثل إطلاق مدفع العيد.",
+    descriptionEn: "A historic fort formerly known as Dama Fort, located near Al Seeb Central Market and Sultan Qaboos Mosque. Features a cultural and historical center with exhibition halls for historical artifacts, four main rooms, and outdoor facilities for visitors. Surrounded by public squares used for national celebrations such as the Eid cannon firing.",
+    descriptionFr: "Un fort historique anciennement connu sous le nom de Fort Dama, situé près du marché central d'Al Seeb et de la mosquée Sultan Qaboos. Comprend un centre culturel et historique avec des salles d'exposition, quatre salles principales et des installations extérieures pour les visiteurs. Entouré de places publiques utilisées pour les célébrations nationales.",
+    descriptionTr: "Eskiden Dama Kalesi olarak bilinen tarihi bir kale, Al Seeb Merkez Pazarı ve Sultan Qaboos Camii yakınında yer alır. Tarihi eserler için sergi salonları, dört ana oda ve ziyaretçiler için dış mekan tesisleri içeren kültürel ve tarihi bir merkez barındırır. Bayram topu atışı gibi ulusal kutlamalar için kullanılan meydanlarla çevrilidir.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "heritage",
+    image: seebFortImg,
+    mapUrl: "https://maps.app.goo.gl/PrXZmYGBsecG4NMi9",
+    rating: "4.3"
   },
   {
     id: "61",
