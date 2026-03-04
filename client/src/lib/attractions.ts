@@ -98,6 +98,7 @@ import bousherHeightsImg from "@assets/image_1772604967818.png";
 import palmeraGardenImg from "@assets/image_1772605456212.png";
 import royalOperaImg from "@assets/image_1772605843928.png";
 import actionPointImg from "@assets/image_1772606155245.png";
+import fabylandImg from "@assets/image_1772606478547.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1794,6 +1795,22 @@ export const attractions: Attraction[] = [
     image: actionPointImg,
     mapUrl: "https://maps.app.goo.gl/Gj39JJ67Z7T4rKAA8",
     rating: "4.7"
+  },
+  {
+    id: "1036",
+    name: "عالم فابي لاند",
+    nameAr: "عالم فابي لاند",
+    description: "مركز ترفيهي للأطفال والعائلات في مسقط جراند مول يضم منطقة ألعاب سوفت بلاي ومتاهات للأطفال، وألعاب فيديو ومهارة واسترداد جوائز، وقاعات مخصصة لحفلات أعياد الميلاد. الأسعار بنظام شحن البطاقة (800 بيسة - 1.600 ر.ع للألعاب الفردية). مفتوح يومياً 10:00 ص - 11:00 م، وعطلات نهاية الأسبوع حتى 12:00 منتصف الليل.",
+    descriptionEn: "A family entertainment center at Muscat Grand Mall featuring soft play areas and mazes for children, video games, skill games, and prize redemption games, plus dedicated birthday party halls. Prices use a card-charging system (800 baisa - 1.600 OMR per game). Open daily 10 AM - 11 PM, weekends until midnight.",
+    descriptionFr: "Un centre de divertissement familial au Muscat Grand Mall avec des aires de jeux souples et des labyrinthes pour enfants, des jeux vidéo, des jeux d'adresse et des jeux à lots, ainsi que des salles de fêtes d'anniversaire. Tarifs par système de carte rechargeable. Ouvert tous les jours 10h-23h, week-ends jusqu'à minuit.",
+    descriptionTr: "Muscat Grand Mall'da bulunan aile eğlence merkezi, çocuklar için yumuşak oyun alanları ve labirentler, video oyunları, beceri oyunları ve ödül oyunları ile doğum günü partisi salonları sunmaktadır. Fiyatlar kart yükleme sistemiyle çalışır. Her gün 10:00-23:00, hafta sonları gece yarısına kadar açık.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: fabylandImg,
+    mapUrl: "https://maps.app.goo.gl/dYb9Fkq2Nk5eLUtm7",
+    rating: "4.4"
   },
   {
     id: "61",
