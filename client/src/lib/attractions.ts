@@ -99,6 +99,7 @@ import palmeraGardenImg from "@assets/image_1772605456212.png";
 import royalOperaImg from "@assets/image_1772605843928.png";
 import actionPointImg from "@assets/image_1772606155245.png";
 import fabylandImg from "@assets/image_1772606478547.png";
+import muscatGrandMallImg from "@assets/image_1772608249756.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1539,6 +1540,22 @@ export const attractions: Attraction[] = [
     image: mallOfOmanImg,
     mapUrl: "https://maps.app.goo.gl/QhhpVwEMgDP3e61x5",
     rating: "4.3"
+  },
+  {
+    id: "1038",
+    name: "مسقط جراند مول",
+    nameAr: "مسقط جراند مول",
+    description: "مركز تجاري متكامل في ولاية بوشر يضم كارفور وصالات سينما ومنطقة ألعاب مغلقة للأطفال (ترامبو إكستريم). يوفر صرافات آلية لعدة بنوك ومكاتب اتصالات ومكتب بريد. مواقف سيارات مظللة تحت وفوق الأرض مع خدمة غسيل السيارات ومصليات للرجال والنساء. مفتوح يومياً 8:00 ص - 12:00 ص.",
+    descriptionEn: "A comprehensive shopping center in Bousher featuring Carrefour, cinemas, and an indoor children's play area (Trampo Extreme). Offers ATMs for several banks, telecom offices, and a post office. Covered parking (underground and above ground) with car wash service and prayer rooms. Open daily 8 AM - 12 AM.",
+    descriptionFr: "Un centre commercial complet à Bousher comprenant Carrefour, des salles de cinéma et une aire de jeux intérieure pour enfants (Trampo Extreme). Distributeurs automatiques, bureaux de télécommunications et bureau de poste. Parking couvert avec service de lavage et salles de prière. Ouvert tous les jours 8h-minuit.",
+    descriptionTr: "Bousher'da Carrefour, sinema salonları ve kapalı çocuk oyun alanı (Trampo Extreme) içeren kapsamlı bir alışveriş merkezi. Birçok banka ATM'si, telekom ofisleri ve postane sunar. Araba yıkama hizmeti ile kapalı otopark ve mescitler. Her gün 08:00-00:00 arası açık.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "markets",
+    image: muscatGrandMallImg,
+    mapUrl: "https://maps.app.goo.gl/JafzbvVJ7EoykNYZA",
+    rating: "4.5"
   },
   {
     id: "61",
