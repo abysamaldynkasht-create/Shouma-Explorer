@@ -75,6 +75,7 @@ import jebelQitarImg from "@/assets/jebel-qitar.png";
 import omanAcrossAgesImg from "@assets/image_1772600713536.png";
 import bahlaFortImg from "@assets/image_1772600976310.png";
 import sahwaParkImg from "@assets/image_1772600917148.png";
+import jabreenCastleImg from "@assets/image_1772601059161.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1002,6 +1003,22 @@ export const attractions: Attraction[] = [
     category: "heritage",
     image: bahlaFortImg,
     mapUrl: "https://maps.app.goo.gl/M6KzvWsARkGMwUtz6",
+    rating: "4.8"
+  },
+  {
+    id: "1013",
+    name: "حصن جبرين",
+    nameAr: "حصن جبرين",
+    description: "حصن تاريخي يعود للقرن السابع عشر، يُعد تحفة معمارية تجمع بين الحصن والقصر، ويتميز بنقوشه وزخارفه الإسلامية الرائعة. رسوم الدخول: 500 بيسة للعمانيين / 3 ريال للسياح.",
+    descriptionEn: "A 17th-century historic fort considered an architectural masterpiece combining fortress and palace, featuring exquisite Islamic carvings and decorations. Entry fee: 500 Baisa for Omanis / 3 OMR for tourists.",
+    descriptionFr: "Un fort historique du XVIIe siècle considéré comme un chef-d'œuvre architectural alliant forteresse et palais, avec de magnifiques gravures et décorations islamiques. Entrée : 500 Baisa pour les Omanais / 3 OMR pour les touristes.",
+    descriptionTr: "Kale ve sarayı birleştiren mimari bir şaheser olarak kabul edilen 17. yüzyıldan kalma tarihi bir kale, olağanüstü İslami oymalar ve süslemeler içerir. Giriş ücreti: Umanlılar için 500 Baisa / turistler için 3 OMR.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية بهلاء",
+    category: "heritage",
+    image: jabreenCastleImg,
+    mapUrl: "https://maps.app.goo.gl/gQCxcLHjXLoAA3QK9",
     rating: "4.8"
   },
   {
