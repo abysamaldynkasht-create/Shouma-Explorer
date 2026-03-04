@@ -54,7 +54,7 @@ import ibraSouqImg from "@/assets/ibra-souq.png";
 import wahibaSandsImg from "@/assets/wahiba-sands.png";
 import wadiTiwiImg from "@/assets/wadi-tiwi.png";
 import baitDarwazaImg from "@/assets/bait-darwaza.png";
-import wadiBaniKhalidImg from "@/assets/wadi-bani-khalid.png";
+import wadiBaniKhalidImg from "@assets/image_1772600395560.png";
 import muscatMallImg from "@/assets/muscat-mall.png";
 import mallOfOmanImg from "@/assets/mall-of-oman.png";
 import squSquareImg from "@/assets/squ-square.png";
