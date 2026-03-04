@@ -90,6 +90,7 @@ import seebFortImg from "@assets/image_1772602334297.png";
 import fiqaMosqueImg from "@assets/image_1772602603532.png";
 import baitAlOudImg from "@assets/image_1772602845500.png";
 import haratAlAqrImg from "@assets/image_1772602872583.png";
+import sqMosqueSeebImg from "@assets/image_1772603235690.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1658,6 +1659,22 @@ export const attractions: Attraction[] = [
     image: baitAlOudImg,
     mapUrl: "https://maps.app.goo.gl/jK7Mh2Aj4RY2vaCN7",
     rating: "4.4"
+  },
+  {
+    id: "1028",
+    name: "جامع السلطان قابوس بالسيب",
+    nameAr: "جامع السلطان قابوس بالسيب",
+    description: "جامع يتميز بقاعة صلاة رئيسية واسعة بنقوش جصية وسجاد فاخر، ومصلى مخصص للنساء مجهز بالكامل. يضم مدرسة لتعليم وتحفيظ القرآن الكريم، ومرافق عامة تشمل دورات مياه ومواقف سيارات واسعة ومصليات خارجية للجنائز. المداخل والممرات مهيأة بالكامل لمستخدمي الكراسي المتحركة وكبار السن.",
+    descriptionEn: "A mosque featuring a spacious main prayer hall with plaster engravings and premium carpets, and a fully equipped dedicated women's prayer hall. Includes a Quran learning school, public facilities with restrooms, spacious parking, and outdoor funeral prayer areas. Fully wheelchair and elderly accessible entrances and corridors.",
+    descriptionFr: "Une mosquée dotée d'une vaste salle de prière principale avec des gravures en plâtre et des tapis de luxe, et une salle de prière pour femmes entièrement équipée. Comprend une école coranique, des toilettes publiques, un grand parking et des espaces de prière funéraire extérieurs. Entièrement accessible aux fauteuils roulants et aux personnes âgées.",
+    descriptionTr: "Alçı oymalar ve lüks halılarla geniş bir ana namaz salonu ve tam donanımlı kadınlara özel namaz salonu içeren bir cami. Kur'an öğretim okulu, umumi tuvaletler, geniş otopark ve açık cenaze namaz alanları içerir. Tekerlekli sandalye ve yaşlı erişimine tam uyumlu girişler ve koridorlar.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "heritage",
+    image: sqMosqueSeebImg,
+    mapUrl: "https://maps.app.goo.gl/EwAugU4ffRwKV877A",
+    rating: "4.8"
   },
   {
     id: "61",
