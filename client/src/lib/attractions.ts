@@ -76,6 +76,7 @@ import omanAcrossAgesImg from "@assets/image_1772600713536.png";
 import bahlaFortImg from "@assets/image_1772600976310.png";
 import sahwaParkImg from "@assets/image_1772600917148.png";
 import jabreenCastleImg from "@assets/image_1772601059161.png";
+import jabalShamsImg from "@assets/image_1772601315074.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1020,6 +1021,22 @@ export const attractions: Attraction[] = [
     image: jabreenCastleImg,
     mapUrl: "https://maps.app.goo.gl/gQCxcLHjXLoAA3QK9",
     rating: "4.8"
+  },
+  {
+    id: "1014",
+    name: "جبل شمس",
+    nameAr: "جبل شمس",
+    description: "أعلى قمة جبلية في سلطنة عُمان ومنطقة الخليج العربي بارتفاع يتجاوز 3,000 متر. يوفر إطلالات خلابة على وادي النخر (غراند كانيون عُمان) ومسارات مشي جبلية مميزة.",
+    descriptionEn: "The highest peak in Oman and the Arabian Gulf region, rising over 3,000 meters. It offers breathtaking views of Wadi An Nakhr (Oman's Grand Canyon) and remarkable mountain hiking trails.",
+    descriptionFr: "Le plus haut sommet d'Oman et de la région du Golfe arabique, culminant à plus de 3 000 mètres. Il offre des vues à couper le souffle sur le Wadi An Nakhr (le Grand Canyon d'Oman) et des sentiers de randonnée remarquables.",
+    descriptionTr: "Umman'ın ve Arap Körfezi bölgesinin en yüksek zirvesi, 3.000 metrenin üzerinde yükselen bir dağ. Wadi An Nakhr'a (Umman'ın Büyük Kanyonu) nefes kesici manzaralar ve olağanüstü dağ yürüyüş parkurları sunar.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية الحمراء",
+    category: "nature",
+    image: jabalShamsImg,
+    mapUrl: "https://maps.app.goo.gl/W3dHHsLg2Vv6vcts5",
+    rating: "4.9"
   },
   {
     id: "35",
