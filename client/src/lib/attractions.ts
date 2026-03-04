@@ -102,6 +102,7 @@ import fabylandImg from "@assets/image_1772606478547.png";
 import muscatGrandMallImg from "@assets/image_1772608249756.png";
 import salalahParkImg from "@assets/image_1772652346801.png";
 import naseemWaterparkImg from "@assets/image_1772652813046.png";
+import ateenParkImg from "@assets/image_1772653138663.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1590,6 +1591,22 @@ export const attractions: Attraction[] = [
     image: naseemWaterparkImg,
     mapUrl: "https://maps.app.goo.gl/onqDcJwB6vEQrwC57",
     rating: "4.4"
+  },
+  {
+    id: "1041",
+    name: "منتزه أتين الطبيعي",
+    nameAr: "منتزه أتين الطبيعي",
+    description: "يقع في سهل أتين الشهير، أحد أهم الوجهات الطبيعية والترفيهية في صلالة خاصة في فصل الخريف. يتميز بمساحات خضراء ممتدة على طول الجبال وهدوء طبيعي ساحر مع ضباب كثيف ومناظر خلابة تمزج بين السهل والجبل. مثالي للتخييم العائلي. يضم ممشى مرصوف ومطاعم المضابي التقليدية ومسارح فعاليات ومحلات تجارية ومناطق ألعاب هوائية ومواقف سيارات ودورات مياه.",
+    descriptionEn: "Located in the famous Ateen Plain, one of the most important natural and recreational destinations in Salalah, especially during the Khareef (monsoon) season. Features vast green spaces extending along the mountains with enchanting natural tranquility, thick fog, and stunning views blending plains and mountains. Ideal for family camping. Includes paved walkways, traditional Madhabi restaurants, event stages, shops, inflatable play areas, parking, and restrooms.",
+    descriptionFr: "Situé dans la célèbre plaine d'Ateen, l'une des destinations naturelles et récréatives les plus importantes de Salalah, surtout pendant la saison du Khareef. Espaces verts s'étendant le long des montagnes avec brouillard dense et vues panoramiques. Comprend des sentiers pavés, des restaurants traditionnels Madhabi, des scènes d'événements, des boutiques et des aires de jeux gonflables.",
+    descriptionTr: "Ünlü Ateen Ovası'nda yer alan, özellikle Khareef (muson) mevsiminde Salalah'ın en önemli doğal ve rekreasyonel destinasyonlarından biri. Dağlar boyunca uzanan geniş yeşil alanlar, yoğun sis ve ova ile dağları harmanlayan muhteşem manzaralar. Döşeli yürüyüş yolları, geleneksel Madhabi restoranları, etkinlik sahneleri, dükkanlar ve şişme oyun alanları içerir.",
+    governorate: "محافظة ظفار",
+    governorateId: "dhofar",
+    wilayat: "ولاية صلالة",
+    category: "nature",
+    image: ateenParkImg,
+    mapUrl: "https://maps.app.goo.gl/XRqzYLRrwrTebDme9",
+    rating: "4.7"
   },
   {
     id: "61",
