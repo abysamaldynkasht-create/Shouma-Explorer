@@ -100,6 +100,7 @@ import royalOperaImg from "@assets/image_1772605843928.png";
 import actionPointImg from "@assets/image_1772606155245.png";
 import fabylandImg from "@assets/image_1772606478547.png";
 import muscatGrandMallImg from "@assets/image_1772608249756.png";
+import salalahParkImg from "@assets/image_1772652346801.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1555,6 +1556,22 @@ export const attractions: Attraction[] = [
     category: "markets",
     image: muscatGrandMallImg,
     mapUrl: "https://maps.app.goo.gl/JafzbvVJ7EoykNYZA",
+    rating: "4.5"
+  },
+  {
+    id: "1039",
+    name: "حديقة صلالة العامة",
+    nameAr: "حديقة صلالة العامة",
+    description: "من أكبر الحدائق العامة في قلب مدينة صلالة، تتميز بمسطحاتها الخضراء الشاسعة وأشجارها الاستوائية الكثيفة. ملاذ عائلي بأجواء هادئة ومنظمة مع ممرات مرصوفة للمشي ومناطق ألعاب للأطفال وآلات رياضة عامة ومصليات ودورات مياه ومقهى صغير ومواقف سيارات واسعة. يومياً 4:00 م - 12:00 ص (الجمعة والسبت من 9:00 ص).",
+    descriptionEn: "One of the largest public parks in the heart of Salalah, featuring vast green spaces and dense tropical trees. A family haven with paved walking paths, children's play areas, public exercise equipment, prayer rooms, restrooms, a small café, and spacious parking. Daily 4 PM - 12 AM (Fri & Sat from 9 AM).",
+    descriptionFr: "L'un des plus grands parcs publics au cœur de Salalah, avec de vastes espaces verts et des arbres tropicaux denses. Un havre familial avec sentiers pavés, aires de jeux, équipements sportifs, salles de prière, toilettes, petit café et parking spacieux. Tous les jours 16h-minuit (ven. et sam. dès 9h).",
+    descriptionTr: "Salalah'ın kalbinde, geniş yeşil alanları ve yoğun tropikal ağaçlarıyla en büyük halka açık parklardan biri. Döşeli yürüyüş yolları, çocuk oyun alanları, spor aletleri, mescitler, tuvaletler, küçük kafe ve geniş otopark. Her gün 16:00-00:00 (Cum. ve Cmt. 09:00'dan).",
+    governorate: "محافظة ظفار",
+    governorateId: "dhofar",
+    wilayat: "ولاية صلالة",
+    category: "entertainment",
+    image: salalahParkImg,
+    mapUrl: "https://maps.app.goo.gl/onRSKiZziZnCeTto6",
     rating: "4.5"
   },
   {
