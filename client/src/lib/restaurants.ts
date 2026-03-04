@@ -9,6 +9,7 @@ import alhawashImg from "@/assets/alhawash.png";
 import souqDuqmImg from "@/assets/souq-duqm.png";
 import ainAlkhaleejImg from "@assets/image_1772573893188.png";
 import binAteeqImg from "@assets/image_1772574323731.png";
+import cafeBateelImg from "@assets/image_1772603776289.png";
 
 export const restaurants: Restaurant[] = [
   {
@@ -178,5 +179,19 @@ export const restaurants: Restaurant[] = [
     rating: 4.6,
     features: ["مأكولات عمانية أصيلة", "مندي ومضبي", "أسعار مناسبة", "شعبية عالية"],
     mapUrl: "https://maps.app.goo.gl/vmXmWTYzsyyejR6u6",
+  },
+  {
+    id: "13",
+    name: "Café Bateel",
+    nameAr: "كافيه بتيل",
+    description: "كافيه بتيل في الموج مسقط يقدم تجربة فاخرة تجمع بين القهوة المختصة والمأكولات العالمية الراقية في أجواء أنيقة. يشتهر بتمور بتيل الفاخرة والشوكولاتة الفريدة، بالإضافة إلى الإفطار والغداء والمعجنات الطازجة. يتميز بإطلالته على الموج وجلساته الداخلية والخارجية المريحة.",
+    city: "الموج مسقط، ولاية بوشر",
+    region: "محافظة مسقط",
+    image: cafeBateelImg,
+    cuisine: "مقهى عالمي فاخر",
+    priceRange: "expensive",
+    rating: 4.7,
+    features: ["تمور فاخرة", "شوكولاتة بتيل", "قهوة مختصة", "إفطار ومعجنات", "إطلالة بحرية"],
+    mapUrl: "https://maps.app.goo.gl/nrtWYWLSrpDmGjr98",
   },
 ];
