@@ -101,6 +101,7 @@ import actionPointImg from "@assets/image_1772606155245.png";
 import fabylandImg from "@assets/image_1772606478547.png";
 import muscatGrandMallImg from "@assets/image_1772608249756.png";
 import salalahParkImg from "@assets/image_1772652346801.png";
+import naseemWaterparkImg from "@assets/image_1772652813046.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1573,6 +1574,22 @@ export const attractions: Attraction[] = [
     image: salalahParkImg,
     mapUrl: "https://maps.app.goo.gl/onRSKiZziZnCeTto6",
     rating: "4.5"
+  },
+  {
+    id: "1040",
+    name: "حديقة النسيم المائية",
+    nameAr: "حديقة النسيم المائية",
+    description: "أكبر حديقة مائية متكاملة في صلالة بمنطقة سهل أتين، تضم منزلقات مائية للكبار والصغار وحديقة حيوانات مصغرة وساحة بينتبول ومطاعم وأكشاك طعام وغرف تبديل ملابس وصناديق أمانات ومواقف سيارات. مفتوحة يومياً 10:00 ص - 7:00 م. الأسعار: السباحة 8 ر.ع، المرافق 4 ر.ع (بدون سباحة)، البينتبول 7 ر.ع، حديقة الحيوان 3 ر.ع.",
+    descriptionEn: "The largest integrated water park in Salalah, located in Sahl Ateen. Features water slides for adults and children, a mini zoo, paintball arena, restaurants, food stalls, changing rooms, lockers, and parking. Open daily 10 AM - 7 PM. Prices: Swimming 8 OMR, Facilities 4 OMR (no swimming), Paintball 7 OMR, Zoo 3 OMR.",
+    descriptionFr: "Le plus grand parc aquatique intégré de Salalah, situé à Sahl Ateen. Comprend des toboggans aquatiques, un mini-zoo, une arène de paintball, des restaurants, des vestiaires et des casiers. Ouvert tous les jours 10h-19h. Tarifs: Baignade 8 OMR, Installations 4 OMR, Paintball 7 OMR, Zoo 3 OMR.",
+    descriptionTr: "Salalah'ın Sahl Ateen bölgesindeki en büyük entegre su parkı. Yetişkinler ve çocuklar için su kaydırakları, mini hayvanat bahçesi, paintball alanı, restoranlar, soyunma odaları ve kilitli dolaplar içerir. Her gün 10:00-19:00 arası açık. Yüzme 8 OMR, Tesisler 4 OMR, Paintball 7 OMR, Hayvanat Bahçesi 3 OMR.",
+    governorate: "محافظة ظفار",
+    governorateId: "dhofar",
+    wilayat: "ولاية صلالة",
+    category: "entertainment",
+    image: naseemWaterparkImg,
+    mapUrl: "https://maps.app.goo.gl/onqDcJwB6vEQrwC57",
+    rating: "4.4"
   },
   {
     id: "61",
