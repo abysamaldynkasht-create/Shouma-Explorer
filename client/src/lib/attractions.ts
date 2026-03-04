@@ -91,6 +91,7 @@ import fiqaMosqueImg from "@assets/image_1772602603532.png";
 import baitAlOudImg from "@assets/image_1772602845500.png";
 import haratAlAqrImg from "@assets/image_1772602872583.png";
 import sqMosqueSeebImg from "@assets/image_1772603235690.png";
+import seebBeachImg from "@assets/image_1772603650600.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1675,6 +1676,22 @@ export const attractions: Attraction[] = [
     image: sqMosqueSeebImg,
     mapUrl: "https://maps.app.goo.gl/EwAugU4ffRwKV877A",
     rating: "4.8"
+  },
+  {
+    id: "1029",
+    name: "شاطئ السيب",
+    nameAr: "شاطئ السيب",
+    description: "شاطئ عام مجهز بممرات مرصوفة للمشي والجري وركوب الدراجات، ومناطق ألعاب آمنة للأطفال. يضم دورات مياه ومصليات وأماكن جلوس مظللة على الواجهة البحرية، بالإضافة إلى عربات طعام تقدم وجبات خفيفة وحلوى عُمانية. مواقف سيارات واسعة وإضاءة ليلية تسمح بالتنزه المسائي.",
+    descriptionEn: "A public beach equipped with paved walking, jogging, and cycling paths, and safe children's play areas. Features restrooms, prayer rooms, shaded seating along the waterfront, plus food trucks serving snacks and Omani sweets. Spacious parking and night lighting for evening strolls.",
+    descriptionFr: "Une plage publique équipée de sentiers pavés pour la marche, le jogging et le vélo, et d'aires de jeux sécurisées pour les enfants. Comprend des toilettes, des salles de prière, des sièges ombragés le long du front de mer, et des food trucks servant des collations et des douceurs omanaises. Grand parking et éclairage nocturne.",
+    descriptionTr: "Yürüyüş, koşu ve bisiklet için asfalt yollar ve güvenli çocuk oyun alanlarıyla donatılmış halka açık bir plaj. Tuvaletler, namaz odaları, sahil boyunca gölgeli oturma alanları ve Umman tatlıları sunan yiyecek kamyonları içerir. Geniş otopark ve akşam yürüyüşleri için gece aydınlatması.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "nature",
+    image: seebBeachImg,
+    mapUrl: "https://maps.app.goo.gl/GJ72xqZYQxSg6jDf6",
+    rating: "4.5"
   },
   {
     id: "61",
