@@ -93,6 +93,7 @@ import haratAlAqrImg from "@assets/image_1772602872583.png";
 import sqMosqueSeebImg from "@assets/image_1772603235690.png";
 import seebBeachImg from "@assets/image_1772603650600.png";
 import alMoujImg from "@assets/image_1772604327165.png";
+import wadiKhoudImg from "@assets/image_1772604355683.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1709,6 +1710,22 @@ export const attractions: Attraction[] = [
     image: alMoujImg,
     mapUrl: "https://maps.app.goo.gl/L7XvURpbJiBHLHQ79",
     rating: "4.8"
+  },
+  {
+    id: "1031",
+    name: "وادي الخوض",
+    nameAr: "وادي الخوض",
+    description: "وادٍ طبيعي خلاب يضم سد وادي الخوض بإطلالات رائعة ومسارات للمشي الجبلي والاستكشاف. تتوفر أكشاك متنقلة للمشروبات والوجبات الخفيفة في المواسم السياحية، ومواقف سيارات منظمة بالقرب من المدخل والسد.",
+    descriptionEn: "A stunning natural wadi featuring Wadi Al Khoud Dam with magnificent views and hiking trails for exploration. Mobile food stalls are available during tourist seasons, with organized parking near the entrance and dam.",
+    descriptionFr: "Un wadi naturel magnifique avec le barrage de Wadi Al Khoud offrant des vues splendides et des sentiers de randonnée. Des stands de nourriture mobiles sont disponibles en saison touristique, avec un parking organisé près de l'entrée et du barrage.",
+    descriptionTr: "Muhteşem manzaralar ve yürüyüş parkurları sunan Wadi Al Khoud Barajı ile çarpıcı bir doğal vadi. Turizm sezonlarında mobil yiyecek tezgahları mevcuttur, giriş ve baraj yakınında düzenli otopark bulunur.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "nature",
+    image: wadiKhoudImg,
+    mapUrl: "https://maps.app.goo.gl/cPrMQgwCbm4B8Pny6",
+    rating: "4.5"
   },
   {
     id: "61",
