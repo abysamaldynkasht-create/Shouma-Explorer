@@ -85,6 +85,7 @@ import birkatAlMawzImg from "@assets/image_1772601912719.png";
 import ridaydaFortImg from "@assets/image_1772601989490.png";
 import cityCentreMuscatImg from "@assets/image_1772601998013.png";
 import roseFarmsImg from "@assets/image_1772602116361.png";
+import izkiOldImg from "@assets/image_1772602312650.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1125,6 +1126,22 @@ export const attractions: Attraction[] = [
     image: roseFarmsImg,
     mapUrl: "https://maps.app.goo.gl/Mr2WNUGqrKiANERw6",
     rating: "4.8"
+  },
+  {
+    id: "1023",
+    name: "إزكي القديمة",
+    nameAr: "إزكي القديمة",
+    description: "من أقدم المستوطنات البشرية في عُمان، تضم حارة اليمن وحارة النزار التاريخيتين بأزقتها الضيقة وبيوتها الحجرية والطينية العريقة. تُعد شاهداً حياً على الحضارة العُمانية القديمة وتخطيطها المعماري الفريد. الدخول مجاني.",
+    descriptionEn: "One of the oldest human settlements in Oman, featuring the historic Harat Al Yemen and Harat Al Nizar quarters with narrow alleys and ancient stone and mud-brick houses. A living witness to ancient Omani civilization and its unique architectural planning. Free entry.",
+    descriptionFr: "L'une des plus anciennes colonies humaines d'Oman, avec les quartiers historiques de Harat Al Yemen et Harat Al Nizar aux ruelles étroites et maisons anciennes en pierre et en terre. Un témoin vivant de la civilisation omanaise ancienne. Entrée gratuite.",
+    descriptionTr: "Umman'ın en eski yerleşim yerlerinden biri, dar sokakları ve eski taş ve kerpiç evleriyle tarihi Harat Al Yemen ve Harat Al Nizar mahallelerini içerir. Kadim Umman medeniyetinin ve benzersiz mimari planlamasının yaşayan bir tanığı. Giriş ücretsiz.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية إزكي",
+    category: "heritage",
+    image: izkiOldImg,
+    mapUrl: "https://maps.app.goo.gl/fMYUtrjz5wNjx7YQ7",
+    rating: "4.6"
   },
   {
     id: "35",
