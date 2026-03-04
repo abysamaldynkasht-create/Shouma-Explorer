@@ -87,6 +87,7 @@ import cityCentreMuscatImg from "@assets/image_1772601998013.png";
 import roseFarmsImg from "@assets/image_1772602116361.png";
 import izkiOldImg from "@assets/image_1772602312650.png";
 import seebFortImg from "@assets/image_1772602334297.png";
+import fiqaMosqueImg from "@assets/image_1772602603532.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1607,6 +1608,22 @@ export const attractions: Attraction[] = [
     image: seebFortImg,
     mapUrl: "https://maps.app.goo.gl/PrXZmYGBsecG4NMi9",
     rating: "4.3"
+  },
+  {
+    id: "1025",
+    name: "جامع فيقا",
+    nameAr: "جامع فيقا",
+    description: "مسجد بعمارة إسلامية حديثة يتميز بنقوشه وتصميمه العصري الفريد، مع نظام صوتي عالي الجودة وسجاد فاخر. يضم مصلى مخصصاً للنساء، وتُقام فيه دروس دينية وحلقات قرآنية بانتظام. المداخل مهيأة بالكامل للكراسي المتحركة مع دورات مياه عامة.",
+    descriptionEn: "A mosque with modern Islamic architecture featuring unique contemporary design, high-quality sound system, and premium carpets. Includes a dedicated women's prayer hall, with regular religious classes and Quran circles. Fully wheelchair-accessible entrances with public restrooms.",
+    descriptionFr: "Une mosquée à l'architecture islamique moderne avec un design contemporain unique, un système sonore de haute qualité et des tapis de luxe. Comprend une salle de prière pour femmes, avec des cours religieux et des cercles coraniques réguliers. Entrées entièrement accessibles en fauteuil roulant.",
+    descriptionTr: "Benzersiz çağdaş tasarımı, yüksek kaliteli ses sistemi ve lüks halılarıyla modern İslami mimariye sahip bir cami. Düzenli dini dersler ve Kur'an halkaları ile kadınlara özel namaz salonu içerir. Tekerlekli sandalyeye tam erişilebilir girişler ve genel tuvaletler mevcuttur.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "heritage",
+    image: fiqaMosqueImg,
+    mapUrl: "https://maps.app.goo.gl/STGtCbDM5ggV2yAG7",
+    rating: "4.7"
   },
   {
     id: "61",
