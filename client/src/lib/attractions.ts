@@ -84,6 +84,7 @@ import wadiTanufImg from "@assets/image_1772601831058.png";
 import birkatAlMawzImg from "@assets/image_1772601912719.png";
 import ridaydaFortImg from "@assets/image_1772601989490.png";
 import cityCentreMuscatImg from "@assets/image_1772601998013.png";
+import roseFarmsImg from "@assets/image_1772602116361.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1108,6 +1109,22 @@ export const attractions: Attraction[] = [
     image: ridaydaFortImg,
     mapUrl: "https://maps.app.goo.gl/24bPLhfgLnjG9nne9",
     rating: "4.6"
+  },
+  {
+    id: "1022",
+    name: "مزارع الورد في الجبل الأخضر",
+    nameAr: "مزارع الورد في الجبل الأخضر",
+    description: "مزارع الورد الدمشقي الشهيرة على الجبل الأخضر، حيث يُقطف الورد يدوياً ويُقطّر لإنتاج ماء الورد العُماني الأصيل. تزدهر المزارع في موسم الربيع (أبريل - مايو) وتُعد تجربة فريدة لمحبي الطبيعة والتراث. الدخول مجاني، وبعض المزارع الخاصة قد تطلب رسوماً رمزية.",
+    descriptionEn: "The famous Damask rose farms on Al Jabal Al Akhdar, where roses are handpicked and distilled to produce authentic Omani rosewater. The farms bloom in spring (April-May) and offer a unique experience for nature and heritage lovers. Free entry; some private farms may charge a small fee.",
+    descriptionFr: "Les célèbres fermes de roses de Damas sur le Jabal Al Akhdar, où les roses sont cueillies à la main et distillées pour produire l'authentique eau de rose omanaise. Les fermes fleurissent au printemps (avril-mai). Entrée gratuite ; certaines fermes privées peuvent demander un petit supplément.",
+    descriptionTr: "Jabal Al Akhdar'daki ünlü Şam gülü çiftlikleri, güller elle toplanır ve otantik Umman gül suyu üretmek için damıtılır. Çiftlikler ilkbaharda (Nisan-Mayıs) çiçek açar. Giriş ücretsiz; bazı özel çiftlikler küçük bir ücret talep edebilir.",
+    governorate: "محافظة الداخلية",
+    governorateId: "dakhiliyah",
+    wilayat: "ولاية الجبل الأخضر",
+    category: "nature",
+    image: roseFarmsImg,
+    mapUrl: "https://maps.app.goo.gl/Mr2WNUGqrKiANERw6",
+    rating: "4.8"
   },
   {
     id: "35",
