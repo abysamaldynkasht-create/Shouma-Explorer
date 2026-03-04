@@ -83,6 +83,7 @@ import omanAquariumImg from "@assets/image_1772601705477.png";
 import wadiTanufImg from "@assets/image_1772601831058.png";
 import birkatAlMawzImg from "@assets/image_1772601912719.png";
 import ridaydaFortImg from "@assets/image_1772601989490.png";
+import cityCentreMuscatImg from "@assets/image_1772601998013.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1539,6 +1540,22 @@ export const attractions: Attraction[] = [
     image: omanAquariumImg,
     mapUrl: "https://maps.app.goo.gl/qAZ9JT4xUBhscg6c9",
     rating: "4.7"
+  },
+  {
+    id: "1021",
+    name: "سيتي سنتر مسقط",
+    nameAr: "سيتي سنتر مسقط",
+    description: "أول وجهة تسوق وتسلية متكاملة في عُمان منذ 2001، يقع في الموالح الجنوبية على طريق السلطان قابوس بالقرب من المطار. يضم أكثر من 200 متجر تشمل ماركات عالمية، وكارفور هايبر ماركت، وفوكس سينما بتقنية IMAX، وماجيك بلانيت للترفيه العائلي، ومطاعم ومقاهي متنوعة. يوفر مواقف مجانية وخدمات لذوي الاحتياجات الخاصة وصرافة.",
+    descriptionEn: "Oman's first integrated shopping and entertainment destination since 2001, located in South Al Mawaleh on Sultan Qaboos Highway near the airport. Features 200+ stores with global brands, Carrefour hypermarket, VOX Cinemas with IMAX, Magic Planet family entertainment, and diverse dining options. Offers free parking, accessibility services, and currency exchange.",
+    descriptionFr: "La première destination intégrée de shopping et divertissement d'Oman depuis 2001, située à Al Mawaleh Sud sur l'autoroute Sultan Qaboos près de l'aéroport. Plus de 200 magasins de marques internationales, hypermarché Carrefour, cinémas VOX avec IMAX, Magic Planet et restaurants variés. Parking gratuit et services d'accessibilité.",
+    descriptionTr: "Umman'ın 2001'den beri ilk entegre alışveriş ve eğlence merkezi, havalimanı yakınında Sultan Qaboos Otoyolu üzerinde Güney Al Mawaleh'de yer alır. 200'den fazla küresel marka mağazası, Carrefour hipermarket, IMAX'lı VOX Sinemaları, Magic Planet aile eğlencesi ve çeşitli restoranlar içerir. Ücretsiz otopark ve erişilebilirlik hizmetleri sunar.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "markets",
+    image: cityCentreMuscatImg,
+    mapUrl: "https://maps.app.goo.gl/oXE3UgeTMN9YEcUm8",
+    rating: "4.5"
   },
   {
     id: "61",
