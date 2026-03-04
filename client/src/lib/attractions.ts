@@ -94,6 +94,7 @@ import sqMosqueSeebImg from "@assets/image_1772603235690.png";
 import seebBeachImg from "@assets/image_1772603650600.png";
 import alMoujImg from "@assets/image_1772604327165.png";
 import wadiKhoudImg from "@assets/image_1772604355683.png";
+import bousherHeightsImg from "@assets/image_1772604967818.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1726,6 +1727,22 @@ export const attractions: Attraction[] = [
     image: wadiKhoudImg,
     mapUrl: "https://maps.app.goo.gl/cPrMQgwCbm4B8Pny6",
     rating: "4.5"
+  },
+  {
+    id: "1032",
+    name: "منتزه مرتفعات بوشر",
+    nameAr: "منتزه مرتفعات بوشر",
+    description: "منتزه حضري يوفر مسارات مخصصة للمشي والجري، وجلسات عائلية وشبابية مظللة ومضاءة. يضم دورات مياه عامة وخدمة استئجار السكوترات الكهربائية عبر التطبيق. وجهة مثالية للاسترخاء والرياضة وسط مساحات خضراء واسعة.",
+    descriptionEn: "An urban park offering dedicated walking and jogging paths, shaded and lit family and youth seating areas. Features public restrooms and electric scooter rental via app. An ideal destination for relaxation and sports amid vast green spaces.",
+    descriptionFr: "Un parc urbain offrant des sentiers de marche et de jogging dédiés, des aires de repos familiales ombragées et éclairées. Comprend des toilettes publiques et la location de trottinettes électriques via application. Une destination idéale pour la détente et le sport au milieu de vastes espaces verts.",
+    descriptionTr: "Yürüyüş ve koşu için özel parkurlar, gölgeli ve aydınlatılmış aile ve gençlik oturma alanları sunan bir şehir parkı. Umumi tuvaletler ve uygulama üzerinden elektrikli scooter kiralama hizmeti içerir. Geniş yeşil alanlar arasında dinlenme ve spor için ideal bir destinasyon.",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية بوشر",
+    category: "entertainment",
+    image: bousherHeightsImg,
+    mapUrl: "https://maps.app.goo.gl/osWJ8SxAhJqGcZbm7",
+    rating: "4.6"
   },
   {
     id: "61",
