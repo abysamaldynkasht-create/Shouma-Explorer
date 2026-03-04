@@ -79,6 +79,7 @@ import jabreenCastleImg from "@assets/image_1772601059161.png";
 import jabalShamsImg from "@assets/image_1772601315074.png";
 import seebParkImg from "@assets/image_1772601333396.png";
 import wadiBaniHabibImg from "@assets/image_1772601448180.png";
+import omanAquariumImg from "@assets/image_1772601705477.png";
 
 const imageMap: Record<string, string> = {};
 
@@ -1471,6 +1472,22 @@ export const attractions: Attraction[] = [
     image: seebParkImg,
     mapUrl: "https://maps.app.goo.gl/ZJVBZrNpLa1nSF4C9",
     rating: "4.4"
+  },
+  {
+    id: "1017",
+    name: "عُمان أكواريوم",
+    nameAr: "عُمان أكواريوم",
+    description: "أول وأكبر حوض سمك داخلي في عُمان والشرق الأوسط، يمتد على أكثر من 8,000 م² على ثلاثة طوابق داخل مسقط مول. يضم أكثر من 30,000 كائن بحري و1,000 نوع من الأسماك، بالإضافة إلى البطاريق والتماسيح والسلاحف. يشمل عروضاً تفاعلية وتجارب غوص وورش عمل للأطفال. الباقة الفضية: 8.500 ر.ع للكبار / 6.500 ر.ع للأطفال. الذهبية: 11 ر.ع للكبار / 8 ر.ع للأطفال. مجاني لمن دون 4 سنوات. مفتوح يومياً من 10 صباحاً حتى 10 مساءً (11 مساءً الخميس والجمعة).",
+    descriptionEn: "The first and largest indoor aquarium in Oman and the Middle East, spanning over 8,000 m² across three floors inside Muscat Mall. Houses over 30,000 marine creatures and 1,000 fish species, plus penguins, crocodiles, and turtles. Features interactive shows, diving experiences, and children's workshops. Silver package: 8.500 OMR adults / 6.500 OMR children. Gold: 11 OMR adults / 8 OMR children. Free for children under 4. Open daily 10 AM–10 PM (11 PM Thu & Fri).",
+    descriptionFr: "Le premier et plus grand aquarium intérieur d'Oman et du Moyen-Orient, s'étendant sur plus de 8 000 m² sur trois étages au Muscat Mall. Abrite plus de 30 000 créatures marines et 1 000 espèces de poissons, ainsi que des pingouins, crocodiles et tortues. Forfait Argent : 8,500 OMR adultes / 6,500 OMR enfants. Or : 11 OMR adultes / 8 OMR enfants. Gratuit pour les moins de 4 ans. Ouvert tous les jours de 10h à 22h (23h jeu. et ven.).",
+    descriptionTr: "Umman ve Orta Doğu'nun ilk ve en büyük kapalı akvaryumu, Muscat Mall içinde üç katta 8.000 m²'den fazla alana yayılır. 30.000'den fazla deniz canlısı ve 1.000 balık türü, ayrıca penguenler, timsahlar ve kaplumbağalar barındırır. Gümüş paket: 8,500 OMR yetişkin / 6,500 OMR çocuk. Altın: 11 OMR yetişkin / 8 OMR çocuk. 4 yaş altı ücretsiz. Her gün 10:00–22:00 (Per. ve Cum. 23:00).",
+    governorate: "محافظة مسقط",
+    governorateId: "muscat",
+    wilayat: "ولاية السيب",
+    category: "entertainment",
+    image: omanAquariumImg,
+    mapUrl: "https://maps.app.goo.gl/qAZ9JT4xUBhscg6c9",
+    rating: "4.7"
   },
   {
     id: "61",
