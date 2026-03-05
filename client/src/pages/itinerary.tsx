@@ -1,9 +1,11 @@
+import { useState, useCallback } from "react";
 import { useLocation, useSearch } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -18,14 +20,30 @@ import {
   Building2,
   Car,
   Clock,
-  Download,
-  Share2,
   Home,
   Sparkles,
-  Users,
-  Wallet
+  Wallet,
+  Pencil,
+  Replace,
+  Trash2,
+  Plus,
+  X,
+  Check,
+  Navigation,
+  Loader2,
 } from "lucide-react";
-import type { Itinerary, ItineraryDay } from "@shared/schema";
+import type { Itinerary, ItineraryDay, ItineraryActivity } from "@shared/schema";
+
+interface Suggestion {
+  id: string;
+  name: string;
+  location: string;
+  category?: string;
+  governorateId?: string;
+  lat: number;
+  lng: number;
+  distance?: number;
+}
 
 const activityIcons: Record<string, React.ReactNode> = {
   attraction: <MapPin className="w-4 h-4" />,
@@ -50,9 +68,115 @@ export default function ItineraryPage() {
 
   const fullUrl = searchString ? `/api/itinerary?${searchString}` : "/api/itinerary";
   
-  const { data: itinerary, isLoading, error } = useQuery<Itinerary>({
+  const { data: fetchedItinerary, isLoading, error } = useQuery<Itinerary>({
     queryKey: [fullUrl],
   });
+
+  const [editedItinerary, setEditedItinerary] = useState<Itinerary | null>(null);
+  const [editMode, setEditMode] = useState(false);
+  const [replaceTarget, setReplaceTarget] = useState<{ dayIndex: number; activityIndex: number } | null>(null);
+  const [addTarget, setAddTarget] = useState<{ dayIndex: number; afterIndex: number } | null>(null);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false);
+
+  const itinerary = editedItinerary || fetchedItinerary;
+
+  const initEditMode = useCallback(() => {
+    if (fetchedItinerary && !editedItinerary) {
+      setEditedItinerary(JSON.parse(JSON.stringify(fetchedItinerary)));
+    }
+    setEditMode(true);
+  }, [fetchedItinerary, editedItinerary]);
+
+  const fetchSuggestions = async (type: string, excludeIds: string[], governorateId?: string) => {
+    setLoadingSuggestions(true);
+    try {
+      const params = new URLSearchParams({ type, exclude: excludeIds.join(",") });
+      if (governorateId) params.set("governorateId", governorateId);
+      const res = await fetch(`/api/itinerary/suggestions?${params}`);
+      const data = await res.json();
+      setSuggestions(data);
+    } catch {
+      setSuggestions([]);
+    } finally {
+      setLoadingSuggestions(false);
+    }
+  };
+
+  const handleReplace = (dayIndex: number, activityIndex: number) => {
+    if (!editedItinerary) return;
+    const activity = editedItinerary.days[dayIndex].activities[activityIndex];
+    const usedIds = editedItinerary.days.flatMap(d => d.activities.filter(a => a.itemId).map(a => a.itemId!));
+    const govs = editedItinerary.governorates;
+    setReplaceTarget({ dayIndex, activityIndex });
+    fetchSuggestions(activity.type, usedIds, govs.length === 1 ? govs[0] : undefined);
+  };
+
+  const confirmReplace = (suggestion: Suggestion) => {
+    if (!replaceTarget || !editedItinerary) return;
+    const updated = { ...editedItinerary, days: [...editedItinerary.days] };
+    const day = { ...updated.days[replaceTarget.dayIndex] };
+    const activities = [...day.activities];
+    const oldActivity = activities[replaceTarget.activityIndex];
+    activities[replaceTarget.activityIndex] = {
+      ...oldActivity,
+      activity: suggestion.name,
+      location: suggestion.location,
+      itemId: suggestion.id,
+    };
+    day.activities = activities;
+    updated.days[replaceTarget.dayIndex] = day;
+    setEditedItinerary(updated);
+    setReplaceTarget(null);
+    setSuggestions([]);
+  };
+
+  const handleDelete = (dayIndex: number, activityIndex: number) => {
+    if (!editedItinerary) return;
+    const updated = { ...editedItinerary, days: [...editedItinerary.days] };
+    const day = { ...updated.days[dayIndex] };
+    const activities = [...day.activities];
+    activities.splice(activityIndex, 1);
+    day.activities = recalculateTimes(activities);
+    updated.days[dayIndex] = day;
+    setEditedItinerary(updated);
+  };
+
+  const handleAddPlace = (dayIndex: number, afterIndex: number) => {
+    if (!editedItinerary) return;
+    const usedIds = editedItinerary.days.flatMap(d => d.activities.filter(a => a.itemId).map(a => a.itemId!));
+    const govs = editedItinerary.governorates;
+    setAddTarget({ dayIndex, afterIndex });
+    fetchSuggestions("attraction", usedIds, govs.length === 1 ? govs[0] : undefined);
+  };
+
+  const confirmAdd = (suggestion: Suggestion) => {
+    if (!addTarget || !editedItinerary) return;
+    const updated = { ...editedItinerary, days: [...editedItinerary.days] };
+    const day = { ...updated.days[addTarget.dayIndex] };
+    const activities = [...day.activities];
+    const newActivity: ItineraryActivity = {
+      time: "12:00",
+      activity: suggestion.name,
+      location: suggestion.location,
+      type: "attraction",
+      itemId: suggestion.id,
+    };
+    activities.splice(addTarget.afterIndex + 1, 0, newActivity);
+    day.activities = recalculateTimes(activities);
+    updated.days[addTarget.dayIndex] = day;
+    setEditedItinerary(updated);
+    setAddTarget(null);
+    setSuggestions([]);
+  };
+
+  const recalculateTimes = (activities: ItineraryActivity[]): ItineraryActivity[] => {
+    const timeSlots = ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
+    return activities.map((a, i) => ({
+      ...a,
+      time: i < timeSlots.length ? timeSlots[i] : `${21 + (i - timeSlots.length)}:00`,
+    }));
+  };
 
   const getBudgetLabel = (value: string) => {
     const labels: Record<string, string> = {
@@ -70,6 +194,7 @@ export default function ItineraryPage() {
   };
 
   const handleItemClick = (type: string, id: string) => {
+    if (editMode) return;
     const routes: Record<string, string> = {
       attraction: `/attractions/${id}`,
       restaurant: `/restaurants/${id}`,
@@ -218,7 +343,7 @@ export default function ItineraryPage() {
             </div>
           </div>
           {itinerary.governorates && itinerary.governorates.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
               {itinerary.governorates.map((gov) => (
                 <Badge key={gov} variant="secondary" className="text-sm">
                   <MapPin className="w-3 h-3 mr-1" />
@@ -227,13 +352,54 @@ export default function ItineraryPage() {
               ))}
             </div>
           )}
+          <Button
+            data-testid="button-edit-itinerary"
+            variant={editMode ? "default" : "outline"}
+            size="lg"
+            onClick={() => {
+              if (editMode) {
+                setEditMode(false);
+              } else {
+                initEditMode();
+              }
+            }}
+            className="h-12 px-6 rounded-full"
+          >
+            {editMode ? (
+              <>
+                <Check className="w-5 h-5" />
+                <span className="mx-2">{t('finishEditing')}</span>
+              </>
+            ) : (
+              <>
+                <Pencil className="w-5 h-5" />
+                <span className="mx-2">{t('editItinerary')}</span>
+              </>
+            )}
+          </Button>
         </div>
       </section>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
+        {editMode && (
+          <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-xl text-center">
+            <p className="text-sm text-primary font-medium">{t('editModeHint')}</p>
+          </div>
+        )}
+
         <div className="space-y-8">
-          {itinerary.days.map((day) => (
-            <DayCard key={day.day} day={day} t={t} onItemClick={handleItemClick} />
+          {itinerary.days.map((day, dayIndex) => (
+            <DayCard
+              key={day.day}
+              day={day}
+              dayIndex={dayIndex}
+              t={t}
+              editMode={editMode}
+              onItemClick={handleItemClick}
+              onReplace={handleReplace}
+              onDelete={handleDelete}
+              onAdd={handleAddPlace}
+            />
           ))}
         </div>
 
@@ -259,11 +425,110 @@ export default function ItineraryPage() {
           </Button>
         </div>
       </main>
+
+      <Dialog open={replaceTarget !== null} onOpenChange={() => { setReplaceTarget(null); setSuggestions([]); }}>
+        <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Replace className="w-5 h-5 text-primary" />
+              {t('replacePlaceTitle')}
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-muted-foreground mb-4">{t('replacePlaceDesc')}</p>
+          {loadingSuggestions ? (
+            <div className="flex items-center justify-center py-8">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          ) : suggestions.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">{t('noSuggestions')}</p>
+          ) : (
+            <div className="space-y-2">
+              {suggestions.map((s) => (
+                <button
+                  key={s.id}
+                  data-testid={`suggestion-replace-${s.id}`}
+                  onClick={() => confirmReplace(s)}
+                  className="w-full text-start p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-foreground truncate">{s.name}</p>
+                    <p className="text-xs text-muted-foreground truncate">{s.location}</p>
+                  </div>
+                  {s.distance !== undefined && (
+                    <Badge variant="secondary" className="shrink-0 text-xs">
+                      <Navigation className="w-3 h-3 mr-1" />
+                      {s.distance} {t('km')}
+                    </Badge>
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={addTarget !== null} onOpenChange={() => { setAddTarget(null); setSuggestions([]); }}>
+        <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Plus className="w-5 h-5 text-primary" />
+              {t('addPlaceTitle')}
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-muted-foreground mb-4">{t('addPlaceDesc')}</p>
+          {loadingSuggestions ? (
+            <div className="flex items-center justify-center py-8">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          ) : suggestions.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">{t('noSuggestions')}</p>
+          ) : (
+            <div className="space-y-2">
+              {suggestions.map((s) => (
+                <button
+                  key={s.id}
+                  data-testid={`suggestion-add-${s.id}`}
+                  onClick={() => confirmAdd(s)}
+                  className="w-full text-start p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-foreground truncate">{s.name}</p>
+                    <p className="text-xs text-muted-foreground truncate">{s.location}</p>
+                  </div>
+                  {s.distance !== undefined && (
+                    <Badge variant="secondary" className="shrink-0 text-xs">
+                      <Navigation className="w-3 h-3 mr-1" />
+                      {s.distance} {t('km')}
+                    </Badge>
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
 
-function DayCard({ day, t, onItemClick }: { day: ItineraryDay; t: (key: string) => string; onItemClick: (type: string, id: string) => void }) {
+function DayCard({ 
+  day, dayIndex, t, editMode, onItemClick, onReplace, onDelete, onAdd 
+}: { 
+  day: ItineraryDay; 
+  dayIndex: number;
+  t: (key: string) => string; 
+  editMode: boolean;
+  onItemClick: (type: string, id: string) => void;
+  onReplace: (dayIndex: number, activityIndex: number) => void;
+  onDelete: (dayIndex: number, activityIndex: number) => void;
+  onAdd: (dayIndex: number, afterIndex: number) => void;
+}) {
   return (
     <Card data-testid={`card-day-${day.day}`} className="overflow-hidden">
       <CardHeader className="bg-gradient-to-l from-primary/5 to-transparent pb-4">
@@ -271,45 +536,92 @@ function DayCard({ day, t, onItemClick }: { day: ItineraryDay; t: (key: string) 
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
             <span className="text-lg font-bold text-primary">{day.day}</span>
           </div>
-          <div>
+          <div className="flex-1">
             <CardTitle className="text-xl">{day.title}</CardTitle>
             <p className="text-sm text-muted-foreground">{t('dayNumber')} {day.day}</p>
           </div>
+          {editMode && (
+            <Button
+              data-testid={`button-add-place-day-${day.day}`}
+              variant="outline"
+              size="sm"
+              onClick={() => onAdd(dayIndex, day.activities.length - 1)}
+              className="shrink-0 gap-1 text-primary border-primary/30 hover:bg-primary/10"
+            >
+              <Plus className="w-4 h-4" />
+              <span className="hidden sm:inline">{t('addPlace')}</span>
+            </Button>
+          )}
         </div>
       </CardHeader>
       <CardContent className="pt-6">
         <div className="space-y-4">
           {day.activities.map((activity, index) => (
-            <div 
-              key={index}
-              data-testid={`activity-${day.day}-${index}`}
-              className={`flex gap-4 items-start ${activity.itemId ? 'cursor-pointer hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors' : ''}`}
-              onClick={() => activity.itemId && onItemClick(activity.type, activity.itemId)}
-            >
-              <div className="flex flex-col items-center">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${activityColors[activity.type]}`}>
-                  {activityIcons[activity.type]}
+            <div key={index}>
+              <div 
+                data-testid={`activity-${day.day}-${index}`}
+                className={`flex gap-4 items-start group relative ${!editMode && activity.itemId ? 'cursor-pointer hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors' : ''} ${editMode ? '-mx-2 px-2 py-2 rounded-lg border border-transparent hover:border-primary/20 hover:bg-primary/5 transition-all' : ''}`}
+                onClick={() => !editMode && activity.itemId && onItemClick(activity.type, activity.itemId)}
+              >
+                <div className="flex flex-col items-center">
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${activityColors[activity.type]}`}>
+                    {activityIcons[activity.type]}
+                  </div>
+                  {index < day.activities.length - 1 && (
+                    <div className="w-0.5 h-12 bg-border mt-2" />
+                  )}
                 </div>
-                {index < day.activities.length - 1 && (
-                  <div className="w-0.5 h-12 bg-border mt-2" />
-                )}
-              </div>
-              <div className="flex-1 pb-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
-                  <Clock className="w-4 h-4" />
-                  <span>{activity.time}</span>
-                </div>
-                <h4 className={`font-semibold mb-1 ${activity.itemId ? 'text-primary hover:underline' : 'text-foreground'}`}>
-                  {activity.activity}
-                </h4>
-                <p className="text-sm text-muted-foreground flex items-center gap-1">
-                  <MapPin className="w-3 h-3" />
-                  {activity.location}
-                </p>
-                {activity.description && (
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {activity.description}
+                <div className="flex-1 pb-4 min-w-0">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                    <Clock className="w-4 h-4" />
+                    <span>{activity.time}</span>
+                  </div>
+                  <h4 className={`font-semibold mb-1 ${!editMode && activity.itemId ? 'text-primary hover:underline' : 'text-foreground'}`}>
+                    {activity.activity}
+                  </h4>
+                  <p className="text-sm text-muted-foreground flex items-center gap-1">
+                    <MapPin className="w-3 h-3" />
+                    {activity.location}
                   </p>
+                  {activity.description && (
+                    <p className="text-sm text-muted-foreground mt-2">
+                      {activity.description}
+                    </p>
+                  )}
+                </div>
+                {editMode && activity.type !== "transport" && (
+                  <div className="flex flex-col gap-1 shrink-0">
+                    <Button
+                      data-testid={`button-replace-${day.day}-${index}`}
+                      variant="ghost"
+                      size="icon"
+                      className="w-8 h-8 text-primary hover:bg-primary/10"
+                      onClick={(e) => { e.stopPropagation(); onReplace(dayIndex, index); }}
+                      title={t('replacePlace')}
+                    >
+                      <Replace className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      data-testid={`button-delete-${day.day}-${index}`}
+                      variant="ghost"
+                      size="icon"
+                      className="w-8 h-8 text-destructive hover:bg-destructive/10"
+                      onClick={(e) => { e.stopPropagation(); onDelete(dayIndex, index); }}
+                      title={t('deletePlace')}
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      data-testid={`button-add-after-${day.day}-${index}`}
+                      variant="ghost"
+                      size="icon"
+                      className="w-8 h-8 text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30"
+                      onClick={(e) => { e.stopPropagation(); onAdd(dayIndex, index); }}
+                      title={t('addPlace')}
+                    >
+                      <Plus className="w-4 h-4" />
+                    </Button>
+                  </div>
                 )}
               </div>
             </div>

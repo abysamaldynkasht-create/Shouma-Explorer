@@ -199,6 +199,65 @@ Add interesting additional information, historical and cultural details, and tip
     }
   });
 
+  app.get("/api/itinerary/suggestions", async (req, res) => {
+    try {
+      const type = (req.query.type as string) || "attraction";
+      const category = req.query.category as string;
+      const lat = parseFloat(req.query.lat as string);
+      const lng = parseFloat(req.query.lng as string);
+      const excludeIds = ((req.query.exclude as string) || "").split(",").filter(Boolean);
+      const governorateId = req.query.governorateId as string;
+
+      let items: GeoItem[] = [];
+      if (type === "restaurant") {
+        items = [...appRestaurants];
+      } else if (type === "hotel") {
+        items = [...appHotels];
+      } else {
+        items = [...appAttractions];
+      }
+
+      if (governorateId) {
+        const filtered = items.filter(i => i.governorateId === governorateId);
+        if (filtered.length > 0) items = filtered;
+      }
+
+      if (category && type === "attraction") {
+        const catFiltered = items.filter(i => i.category === category);
+        if (catFiltered.length > 0) items = catFiltered;
+      }
+
+      items = items.filter(i => !excludeIds.includes(i.id));
+
+      if (!isNaN(lat) && !isNaN(lng)) {
+        const anchor: GeoItem = { id: "_anchor", name: "", location: "", lat, lng };
+        items.sort((a, b) => {
+          const distA = haversineDistance(anchor.lat, anchor.lng, a.lat, a.lng);
+          const distB = haversineDistance(anchor.lat, anchor.lng, b.lat, b.lng);
+          return distA - distB;
+        });
+      }
+
+      const suggestions = items.slice(0, 8).map(item => ({
+        id: item.id,
+        name: item.name,
+        location: item.location,
+        category: item.category,
+        governorateId: item.governorateId,
+        lat: item.lat,
+        lng: item.lng,
+        distance: !isNaN(lat) && !isNaN(lng) 
+          ? Math.round(haversineDistance(lat, lng, item.lat, item.lng) * 10) / 10 
+          : undefined,
+      }));
+
+      return res.json(suggestions);
+    } catch (error) {
+      console.error("Suggestions error:", error);
+      return res.status(500).json({ message: "حدث خطأ في جلب الاقتراحات" });
+    }
+  });
+
   app.post("/api/group-trips", async (req, res) => {
     try {
       const result = insertGroupTripRequestSchema.safeParse(req.body);

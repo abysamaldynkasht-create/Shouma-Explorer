@@ -134,7 +134,7 @@ const questions: Question[] = [
   },
   {
     id: "preferredActivities",
-    titleKey: "activities",
+    titleKey: "activitiesQuestion",
     subtitleKey: "activitiesSubtitle",
     type: "multiple",
     options: [
@@ -629,7 +629,7 @@ export default function ShoumatakPage() {
                   <div className="p-4 flex items-center justify-between hover:bg-muted/50 cursor-pointer" onClick={() => jumpToStep(9)}>
                     <div className="flex items-center gap-3">
                       <Activity className="w-5 h-5 text-primary" />
-                      <span className="font-medium">{t('activities')}</span>
+                      <span className="font-medium">{t('activitiesQuestion')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="flex flex-wrap gap-1 justify-end max-w-xs">
