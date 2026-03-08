@@ -67,11 +67,17 @@ Preferred communication style: Simple, everyday language.
 - Users table with username/password authentication
 - Questionnaire schema for trip preferences (duration, budget, interests, group size, activities, accommodation, meals)
 - Itinerary types for generated trip plans with geographic clustering (Haversine distance)
-- All appAttractions, appHotels, appRestaurants in server/routes.ts have lat/lng coordinates
-- Itinerary generator uses nearest-neighbor algorithm to group geographically close places per day
+- All appAttractions, appHotels, appRestaurants, appActivities in server/routes.ts have lat/lng coordinates and estimatedCost
+- **Interest-based itinerary generation**: Maps user interests (adventure, nature, culture, swimming, etc.) to attraction categories; prioritizes matching places
+- **Activities pool**: 14 activities (hiking, camel riding, diving, camping, turtle watching, etc.) injected into days when interests match
+- **Budget system**: Each item has estimatedCost; budget multipliers (low=0.6, medium=1.0, high=1.5, luxury=2.5) scale hotel/transport costs
+- **BudgetSummary**: Returned in itinerary response with breakdown: hotels, restaurants, attractions, activities, transport, total (in OMR)
+- **Frontend budget card**: Displayed at bottom of itinerary page with cost per item badges and auto-recalculation on edits
+- **Randomization**: shuffle() applied to data pools for different plans each run
+- **Smart replace**: Category-based filtering in suggestions API; cost shown in suggestion cards; budget auto-recalculated on replace/add/delete
 - Activities include distance descriptions (e.g., "5 كم من الفندق") and estimated travel times
-- Day titles are region-specific (e.g., "استكشاف مسقط" for Muscat, "تراث الداخلية" for Dakhiliyah)
-- Global deduplication: tracks usedAttractions, usedHotels, usedRestaurants across all days; falls back to full data pool before repeating any place
+- Day titles are region-specific (e.g., "استكشاف مسقط" for Muscat, "تراث الداخلية" for Dakhiliyah) — covers all 11 governorates
+- Global deduplication: tracks usedAttractions, usedHotels, usedRestaurants, usedActivities across all days; falls back to full data pool before repeating any place
 - Hotel preference: questionnaire asks user if they want single hotel (same throughout) or multiple hotels (different each day); defaults to single
 - Geographic clustering: attractions per day are grouped within same governorate (80km radius), restaurants and hotels selected nearest to day's attractions
 - Attraction interface with optional lat/lng coordinates for geolocation features

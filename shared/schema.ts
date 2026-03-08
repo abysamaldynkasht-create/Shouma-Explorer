@@ -78,17 +78,28 @@ export interface ItineraryActivity {
   time: string;
   activity: string;
   location: string;
-  type: "attraction" | "restaurant" | "hotel" | "transport";
+  type: "attraction" | "restaurant" | "hotel" | "transport" | "activity";
   image?: string;
   description?: string;
   rating?: string;
   itemId?: string;
+  estimatedCost?: number;
+  category?: string;
 }
 
 export interface ItineraryDay {
   day: number;
   title: string;
   activities: ItineraryActivity[];
+}
+
+export interface BudgetSummary {
+  hotels: number;
+  restaurants: number;
+  attractions: number;
+  activities: number;
+  transport: number;
+  total: number;
 }
 
 export interface Itinerary {
@@ -98,6 +109,7 @@ export interface Itinerary {
   budget: string;
   governorates: string[];
   days: ItineraryDay[];
+  budgetSummary?: BudgetSummary;
 }
 
 export interface Category {

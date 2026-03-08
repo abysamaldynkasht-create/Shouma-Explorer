@@ -42,6 +42,7 @@ interface Suggestion {
   governorateId?: string;
   lat: number;
   lng: number;
+  estimatedCost?: number;
   distance?: number;
 }
 
@@ -50,6 +51,7 @@ const activityIcons: Record<string, React.ReactNode> = {
   restaurant: <UtensilsCrossed className="w-4 h-4" />,
   hotel: <Building2 className="w-4 h-4" />,
   transport: <Car className="w-4 h-4" />,
+  activity: <Sparkles className="w-4 h-4" />,
 };
 
 const activityColors: Record<string, string> = {
@@ -57,6 +59,7 @@ const activityColors: Record<string, string> = {
   restaurant: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
   hotel: "bg-stone-100 text-stone-700 dark:bg-stone-900/30 dark:text-stone-400",
   transport: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+  activity: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
 };
 
 export default function ItineraryPage() {
@@ -88,11 +91,12 @@ export default function ItineraryPage() {
     setEditMode(true);
   }, [fetchedItinerary, editedItinerary]);
 
-  const fetchSuggestions = async (type: string, excludeIds: string[], governorateId?: string) => {
+  const fetchSuggestions = async (type: string, excludeIds: string[], governorateId?: string, category?: string) => {
     setLoadingSuggestions(true);
     try {
       const params = new URLSearchParams({ type, exclude: excludeIds.join(",") });
       if (governorateId) params.set("governorateId", governorateId);
+      if (category) params.set("category", category);
       const res = await fetch(`/api/itinerary/suggestions?${params}`);
       const data = await res.json();
       setSuggestions(data);
@@ -103,13 +107,38 @@ export default function ItineraryPage() {
     }
   };
 
+  const recalcBudget = (itin: Itinerary): Itinerary => {
+    let hotels = 0, restaurants = 0, attractions = 0, activitiesCost = 0, transport = 0;
+    for (const day of itin.days) {
+      for (const act of day.activities) {
+        const cost = act.estimatedCost || 0;
+        if (act.type === "hotel" && cost > 0) hotels += cost;
+        else if (act.type === "restaurant") restaurants += cost;
+        else if (act.type === "attraction") attractions += cost;
+        else if (act.type === "activity") activitiesCost += cost;
+      }
+    }
+    transport = itin.budgetSummary?.transport || 0;
+    return {
+      ...itin,
+      budgetSummary: {
+        hotels,
+        restaurants,
+        attractions,
+        activities: activitiesCost,
+        transport,
+        total: hotels + restaurants + attractions + activitiesCost + transport,
+      },
+    };
+  };
+
   const handleReplace = (dayIndex: number, activityIndex: number) => {
     if (!editedItinerary) return;
     const activity = editedItinerary.days[dayIndex].activities[activityIndex];
-    const usedIds = editedItinerary.days.flatMap(d => d.activities.filter(a => a.itemId).map(a => a.itemId!));
+    const usedIds = editedItinerary.days.flatMap(d => d.activities.filter(a => a.itemId && a.type === activity.type).map(a => a.itemId!));
     const govs = editedItinerary.governorates;
     setReplaceTarget({ dayIndex, activityIndex });
-    fetchSuggestions(activity.type, usedIds, govs.length === 1 ? govs[0] : undefined);
+    fetchSuggestions(activity.type, usedIds, govs.length === 1 ? govs[0] : undefined, activity.category);
   };
 
   const confirmReplace = (suggestion: Suggestion) => {
@@ -123,10 +152,12 @@ export default function ItineraryPage() {
       activity: suggestion.name,
       location: suggestion.location,
       itemId: suggestion.id,
+      estimatedCost: suggestion.estimatedCost ?? oldActivity.estimatedCost,
+      category: suggestion.category ?? oldActivity.category,
     };
     day.activities = activities;
     updated.days[replaceTarget.dayIndex] = day;
-    setEditedItinerary(updated);
+    setEditedItinerary(recalcBudget(updated));
     setReplaceTarget(null);
     setSuggestions([]);
   };
@@ -139,7 +170,7 @@ export default function ItineraryPage() {
     activities.splice(activityIndex, 1);
     day.activities = recalculateTimes(activities);
     updated.days[dayIndex] = day;
-    setEditedItinerary(updated);
+    setEditedItinerary(recalcBudget(updated));
   };
 
   const handleAddPlace = (dayIndex: number, afterIndex: number) => {
@@ -161,11 +192,13 @@ export default function ItineraryPage() {
       location: suggestion.location,
       type: "attraction",
       itemId: suggestion.id,
+      estimatedCost: suggestion.estimatedCost || 0,
+      category: suggestion.category,
     };
     activities.splice(addTarget.afterIndex + 1, 0, newActivity);
     day.activities = recalculateTimes(activities);
     updated.days[addTarget.dayIndex] = day;
-    setEditedItinerary(updated);
+    setEditedItinerary(recalcBudget(updated));
     setAddTarget(null);
     setSuggestions([]);
   };
@@ -403,6 +436,34 @@ export default function ItineraryPage() {
           ))}
         </div>
 
+        {itinerary.budgetSummary && (
+          <Card data-testid="card-budget-summary" className="mt-10 overflow-hidden border-primary/20">
+            <CardHeader className="bg-gradient-to-l from-primary/10 to-primary/5">
+              <CardTitle className="flex items-center gap-3 text-xl">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Wallet className="w-5 h-5 text-primary" />
+                </div>
+                {t('estimatedBudget')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                <BudgetRow icon={<Building2 className="w-4 h-4" />} label={t('hotelsCost')} value={itinerary.budgetSummary.hotels} currency={t('omrCurrency')} />
+                <BudgetRow icon={<UtensilsCrossed className="w-4 h-4" />} label={t('restaurantsCost')} value={itinerary.budgetSummary.restaurants} currency={t('omrCurrency')} />
+                <BudgetRow icon={<MapPin className="w-4 h-4" />} label={t('attractionsCost')} value={itinerary.budgetSummary.attractions} currency={t('omrCurrency')} />
+                <BudgetRow icon={<Sparkles className="w-4 h-4" />} label={t('activitiesCost')} value={itinerary.budgetSummary.activities} currency={t('omrCurrency')} />
+                <BudgetRow icon={<Car className="w-4 h-4" />} label={t('transportCost')} value={itinerary.budgetSummary.transport} currency={t('omrCurrency')} />
+              </div>
+              <div className="border-t border-border pt-4 flex items-center justify-between">
+                <span className="text-lg font-bold text-foreground">{t('totalCost')}</span>
+                <span data-testid="text-total-cost" className="text-2xl font-bold text-primary">
+                  {itinerary.budgetSummary.total} {t('omrCurrency')}
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         <div className="flex flex-wrap justify-center gap-4 mt-12">
           <Button
             data-testid="button-new-plan"
@@ -457,12 +518,19 @@ export default function ItineraryPage() {
                     <p className="font-semibold text-foreground truncate">{s.name}</p>
                     <p className="text-xs text-muted-foreground truncate">{s.location}</p>
                   </div>
-                  {s.distance !== undefined && (
-                    <Badge variant="secondary" className="shrink-0 text-xs">
-                      <Navigation className="w-3 h-3 mr-1" />
-                      {s.distance} {t('km')}
-                    </Badge>
-                  )}
+                  <div className="flex items-center gap-2 shrink-0">
+                    {s.estimatedCost !== undefined && s.estimatedCost > 0 && (
+                      <Badge variant="outline" className="text-xs border-primary/30 text-primary">
+                        {s.estimatedCost} {t('omrCurrency')}
+                      </Badge>
+                    )}
+                    {s.distance !== undefined && (
+                      <Badge variant="secondary" className="text-xs">
+                        <Navigation className="w-3 h-3 mr-1" />
+                        {s.distance} {t('km')}
+                      </Badge>
+                    )}
+                  </div>
                 </button>
               ))}
             </div>
@@ -501,12 +569,19 @@ export default function ItineraryPage() {
                     <p className="font-semibold text-foreground truncate">{s.name}</p>
                     <p className="text-xs text-muted-foreground truncate">{s.location}</p>
                   </div>
-                  {s.distance !== undefined && (
-                    <Badge variant="secondary" className="shrink-0 text-xs">
-                      <Navigation className="w-3 h-3 mr-1" />
-                      {s.distance} {t('km')}
-                    </Badge>
-                  )}
+                  <div className="flex items-center gap-2 shrink-0">
+                    {s.estimatedCost !== undefined && s.estimatedCost > 0 && (
+                      <Badge variant="outline" className="text-xs border-primary/30 text-primary">
+                        {s.estimatedCost} {t('omrCurrency')}
+                      </Badge>
+                    )}
+                    {s.distance !== undefined && (
+                      <Badge variant="secondary" className="text-xs">
+                        <Navigation className="w-3 h-3 mr-1" />
+                        {s.distance} {t('km')}
+                      </Badge>
+                    )}
+                  </div>
                 </button>
               ))}
             </div>
@@ -583,6 +658,11 @@ function DayCard({
                     <MapPin className="w-3 h-3" />
                     {activity.location}
                   </p>
+                  {activity.estimatedCost !== undefined && activity.estimatedCost > 0 && (
+                    <Badge variant="outline" className="mt-1 text-xs w-fit border-primary/30 text-primary">
+                      {activity.estimatedCost} {t('omrCurrency')}
+                    </Badge>
+                  )}
                   {activity.description && (
                     <p className="text-sm text-muted-foreground mt-2">
                       {activity.description}
@@ -629,5 +709,19 @@ function DayCard({
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+function BudgetRow({ icon, label, value, currency }: { icon: React.ReactNode; label: string; value: number; currency: string }) {
+  return (
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm text-muted-foreground truncate">{label}</p>
+        <p className="font-semibold text-foreground">{value} {currency}</p>
+      </div>
+    </div>
   );
 }
