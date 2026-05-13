@@ -1,6 +1,15 @@
-node_modules
-dist
+# dependencies
+node_modules/
+
+# environment variables
+.env
+
+# build output
+dist/
+build/
+
+# logs
+*.log
+
+# OS files
 .DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
